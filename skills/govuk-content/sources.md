@@ -8,7 +8,7 @@ Only the 3 main sources and the pages linked from them are used. If a source mov
 
 Site: https://guidance.publishing.service.gov.uk/
 
-The site is in public beta, so pages may move. If a link breaks, search the site for the page title.
+Web guidance can move. If a link breaks, search the site for the page title, and update the address and date.
 
 | Page | Address | What we took | Used in | Last checked |
 |---|---|---|---|---|

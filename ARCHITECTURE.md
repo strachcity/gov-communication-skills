@@ -253,7 +253,7 @@ Only public sources inform the privacy skill. Practice that nobody owns, like ru
 |---|---|---|---|
 | The law, the regulator and GOV.UK guidance | UK GDPR, PECR, ICO guidance, Service Standard point 9, Service Manual, GOV.UK Notify security, Government Security Classifications | `privacy-aware-communications` | quoted from the source, not legal advice |
 | Departments' published guidance | data protection and disclosure guidance published on GOV.UK | `privacy-aware-communications`, as examples of how accountable organisations apply the law | examples, not rules for other organisations |
-| Default positions for each channel | "no special category information in a text message" | `privacy-aware-communications`, marked as interpretation | needs confirmation by each organisation's DPO |
+| Risk heuristics for each channel | "special category information, or wording that lets it be inferred, is high risk in a text message" | `privacy-aware-communications`, marked as interpretation | describes a risk, not a policy. Needs a confirmed position from each organisation's DPO |
 | An organisation's own decisions | a DPO's decision, a privacy notice, a disclosure policy | the user's service context | confirmed only for what it actually says |
 
 There's no single cross-government disclosure policy on GOV.UK. Departments publish their own, and they apply the same principles: check identity before discussing a case, need to know, and lawful authority before telling a third party.
@@ -263,7 +263,7 @@ There's no single cross-government disclosure policy on GOV.UK. Departments publ
 1. Spots what a message would reveal, in each channel.
 2. Checks it against GOV.UK guidance, the law and ICO guidance, like data minimisation, security, and health as special category data.
 3. Looks for a confirmed decision in the service context that covers it, and applies and cites it.
-4. Otherwise, uses the default position, marked "needs confirmation", or flags the exact question and who should answer it.
+4. Otherwise, gives the risk heuristic and its lower-risk option, marked "needs confirmation", or flags the exact question and who should answer it.
 
 For a set of messages, it can list what each moment reveals in each channel. A DPO can review one table instead of every message, and it can feed a DPIA. Their answers become confirmed decisions in the service context.
 

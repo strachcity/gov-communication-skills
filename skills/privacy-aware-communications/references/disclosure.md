@@ -41,7 +41,7 @@ Interpretation: whether a carer, relative or representative can be told about so
 
 Interpretation: a message can reveal that a third party, like a doctor, an employer or a referee, is involved in a case. That may reveal special category information about the person, and something about the third party. For example, "We have contacted your GP" reveals a health matter.
 
-Default position: say no more about a third party than the person needs to understand what's happening and what to do. Flag the level of detail for each channel. See `channels.md`.
+Risk heuristic: saying more about a third party than the person needs to understand what's happening and what to do is high risk. Flag the level of detail for each channel. See `channels.md`.
 
 ## Identity checks
 

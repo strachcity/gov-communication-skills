@@ -14,6 +14,7 @@ Lines starting with ">" are quoted from the source. Lines starting with "Interpr
 - Special category data
 - Lawful basis
 - Being clear with people about their information
+- Information about businesses and organisations
 - Service messages and direct marketing
 
 ## Data minimisation
@@ -104,6 +105,18 @@ From the Service Manual, "Collecting personal information from users":
 
 Interpretation: if a message tells the customer about something they would not expect, like their information being shared with someone, the message itself may need to say so. Flag it.
 
+## Information about businesses and organisations
+
+From the ICO, "What is personal data?":
+
+> Information concerning a 'legal' rather than a 'natural' person is not personal data. Consequently, information about a limited company or another legal entity, which might have a legal personality separate to its owners or directors, does not constitute personal data and does not fall within the scope of the UK GDPR.
+
+> However, the UK GDPR does apply to personal data relating to individuals acting as sole traders, employees, partners, and company directors wherever they are individually identifiable and the information relates to them as an individual rather than as the representative of a legal person.
+
+> A name and a corporate email address clearly relates to a particular individual and is therefore personal data.
+
+Interpretation: never treat "business information" as automatically outside UK GDPR. Information about a limited company is generally not personal data. Information about an identifiable sole trader, partner, director or employee can be, where it relates to them as an individual. A message to a business's named contact contains that person's personal data, like their name and email address.
+
 ## Service messages and direct marketing
 
 The Privacy and Electronic Communications Regulations (PECR) have extra rules for direct marketing by email and text. The ICO says service messages are not direct marketing:
@@ -128,4 +141,6 @@ Source: ICO, "Direct marketing and the public sector"
 
 Interpretation: messages about a person's own case are likely to be service messages. Adding promotion, like encouraging take-up of a different service, can change that. Flag any promotional content.
 
-This also qualifies the Service Manual's 2017 statement "You don't need to ask permission to send transactional messages". The ICO guidance is newer and adds the right to object. Record both, and flag the right to object for the DPO.
+This fits with the Service Manual's statement "You don't need to ask permission to send transactional messages". The 2 don't contradict each other. You generally don't need marketing-style opt-in to send a service message. You still need a lawful basis for processing, transparency, and to consider the person's rights and communication preferences, including the right to object. Flag the right to object for the DPO.
+
+`kinds-of-message.md` has the full framework: the 3 questions to ask, and the 4 kinds of message.

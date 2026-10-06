@@ -158,7 +158,7 @@ Check these with `privacy-aware-communications`. Don't decide them here.
 - **the third party's information:** telling the customer the third party hasn't replied is information about the third party too
 - **what the customer already knows:** if the customer named or chose the third party, describing them may reveal less. That's still a decision for the service
 - **chasing and no reply:** what happens if there's no reply is a policy decision. A communication judgement doesn't settle it. Don't infer it
-- **channel:** a text should usually say only that the case is waiting and point to a more secure route. Check the channel defaults
+- **channel:** describing the third party in a text is higher risk. The lower-risk option says only that the case is waiting and points to a more secure route. Check the channel's risk heuristics
 
 ## Baseline copy
 
@@ -211,7 +211,7 @@ As a pointer, if the service sends the detail by email or letter, or has decided
 We've sent you [an email / a letter] about your [case]. You do not need to do anything now.
 ```
 
-Interpretation: these versions don't describe the third party, following the text message default in `privacy-aware-communications`. A service can say more in a text only with a confirmed decision. Both the date and the web address would usually go over 160 characters, so choose one.
+Interpretation: these versions don't describe the third party, following the text message risk heuristics in `privacy-aware-communications`. A service can say more in a text only with a confirmed decision. Both the date and the web address would usually go over 160 characters, so choose one.
 
 See "Text messages" in `../moments.md` for counting characters and sender IDs.
 

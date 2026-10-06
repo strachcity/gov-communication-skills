@@ -24,7 +24,8 @@ We have received your form. Your reference is AB1234567. You do not need to do a
 - produce a disclosure inventory table
 - flag that the sender ID "MedicalTeam" lets anyone who sees the phone infer a health matter, citing the ICO point that receiving a message can itself reveal information
 - treat the reference number as personal data, but accept it as needed for the message
-- apply the text message default position and mark it "needs confirmation"
+- give the text message risk heuristic, with its lower-risk option, and mark it "needs confirmation"
+- describe the heuristic as a risk, not as the organisation's policy
 - say who should confirm it, like the DPO or information assurance team
 
 ## A correct response must not

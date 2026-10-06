@@ -70,7 +70,7 @@ When adapting a pattern:
 ### Text messages
 
 - count characters using the service's real reference format and the longest likely values, like the longest date. Over 160 counts as more than one text
-- use straight apostrophes and quote marks. Interpretation: Notify counts some characters as non-standard, which cuts the limit to 70. Our sources don't list which, so straight ones are the safe choice
+- use straight apostrophes and quote marks. This is a technical precaution, not a GOV.UK writing rule. Notify's text message pricing page says non-standard characters cut the limit to 70, but doesn't say whether curly apostrophes are standard. A test message through Notify would settle it
 - if the sender ID doesn't name the service, like "GOVUK", start the text with the service name, like "[Service name]: ". Check the name itself doesn't reveal something sensitive on a lock screen
 - if the service has a language duty, like Welsh, each version needs its own count. Welsh accented letters cut the limit to 70
 
@@ -81,7 +81,7 @@ Some services deal with businesses or other organisations. The message goes to a
 - greet the named contact by name in emails, as the Service Manual asks
 - name the organisation in the first line, like "We've received the application for ((business name))"
 - write "your [case]" only if the contact is the person responsible for it. Otherwise use the organisation's name
-- whether information about the organisation is personal data, for example for a sole trader, is a question for `privacy-aware-communications`. Flag it
+- information about a limited company is generally not personal data, but information about an identifiable sole trader, partner, director or employee can be. The named contact's name and email address are personal data. See "Information about businesses and organisations" in `privacy-aware-communications`
 
 ## Failure modes for every moment
 

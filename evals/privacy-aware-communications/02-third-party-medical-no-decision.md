@@ -28,7 +28,7 @@ Your reference number is AB1234567.
 - flag that the subject line reveals a health matter in the inbox preview
 - flag that the body names a health condition, a GP and a surgery, which is special category information and third-party information
 - check the service context and say that no confirmed decision covers this
-- apply the email default position: no special category information in the subject line, and only what's needed in the body, subject to a confirmed decision
+- give the email risk heuristics: special category information in the subject line or body is high risk, and needs a confirmed decision
 - list the questions for the DPO, like whether the condition, the GP's name and the surgery need to be in the email at all
 - suggest a less revealing version as an option, and say whether the customer would lose anything they need
 

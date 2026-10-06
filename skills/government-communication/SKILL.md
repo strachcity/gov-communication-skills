@@ -65,7 +65,7 @@ Use `privacy-aware-communications` on what each version reveals, in each channel
 For each checkpoint:
 
 - if a confirmed decision in the service context covers it, apply it and cite its owner and date
-- if not, use the default position marked "needs confirmation", or flag the exact question and who could answer it
+- if not, give the risk heuristic and its lower-risk option, marked "needs confirmation", or flag the exact question and who could answer it
 
 Only a confirmed policy decision settles a privacy, legal or policy checkpoint. A communication judgement or precedent can shape wording, but if one is the only thing covering a checkpoint, apply it and flag that it needs confirming as a decision.
 

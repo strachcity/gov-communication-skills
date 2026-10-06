@@ -44,11 +44,15 @@ Record it in `moments.md` alongside the modifiers, with its own pattern file.
 
 ### 3. Resolve the sole trader question in the privacy skill
 
+Done on 6 October 2026.
+
 Add ICO guidance on what is personal data. Information about a legal entity, like a limited company, is generally not personal data. Information about an identifiable sole trader, partner, director or employee can be, where it relates to them as an individual.
 
 Interpretation for the skill: never treat "business information" as automatically outside UK GDPR. Cite the ICO page in `sources.md`, and replace the flag in `moments.md` under "When the customer is an organisation".
 
 ### 4. Replace the consent question with a framework for kinds of message
+
+Done on 6 October 2026, in `privacy-aware-communications/references/kinds-of-message.md`.
 
 Don't build a "consent needed: yes or no" table. Consent on its own is the wrong question, and a binary table invites 2 mistakes: "we have consent, so we can send anything" and "we don't have consent, so we can't send an update".
 
@@ -75,6 +79,8 @@ This closes the open question in section 11.
 
 ### 5. Rename "default positions" in the privacy skill
 
+Done on 6 October 2026. Privacy evals rerun, see `evals/results.md`.
+
 "Default position" reads too much like an organisation's policy, even when marked as interpretation. Rename them "risk heuristics" in `ARCHITECTURE.md`, `privacy-aware-communications/SKILL.md` and its references, and reword each one as a risk, not a rule. For example:
 
 > Risk heuristic: treat special category information, or wording that lets it be inferred, as high risk in a text message. A confirmed service position is needed before including it.
@@ -83,9 +89,13 @@ Check the patterns and the front door for the old wording, and rerun the privacy
 
 ### 6. Treat curly apostrophes as a technical precaution
 
+Done on 6 October 2026.
+
 Notify's text message pricing page lists standard characters, and says non-standard characters cut the limit to 70, but doesn't say whether curly apostrophes are standard. Keep straight apostrophes in text message baselines, and describe this as a technical precaution, not a GOV.UK writing rule. A test message through Notify would settle it. It doesn't hold up the library.
 
 ### 7. Drop "public beta" as a special risk
+
+Done on 6 October 2026.
 
 Any web guidance can move. Remove the public beta warnings from `CLAUDE.md`, `govuk-content/sources.md` and section 3 of this plan. Replace them with one maintenance rule: check source addresses and dates when a skill is materially updated, or when a link fails.
 
@@ -189,7 +199,6 @@ https://guidance.publishing.service.gov.uk/
 - **what we take:** plain English, tone, active voice, must and need to, contractions, structure, headings, lists, links, titles, and the A to Z rules for numbers, dates, punctuation, capitals and words to avoid
 - **applies to:** all 4 channels for language and style, and web pages for titles, summaries and page structure
 - **why it applies beyond web pages:** the Service Manual says emails and text messages should "Follow the Government Digital Service (GDS) style guide", and its letters page says to "adapt the writing standards that apply to digital content"
-- **caveats:** the site is in public beta, so links may move
 
 ### GOV.UK Service Manual
 

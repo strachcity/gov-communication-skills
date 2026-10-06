@@ -79,9 +79,9 @@ Content guidance cites at least one of the 3 main sources:
 
 A supporting source can be used only where the main sources have a gap. Say which gap it fills, and that it needs confirmation. `PLAN.md` lists the agreed supporting sources.
 
-The publishing guidance site is in public beta, so check links still work and update them if pages move.
+Web guidance can move or change. Check source addresses and dates when a skill is materially updated, or when a link fails.
 
-Privacy guidance cites the legislation, ICO guidance, GOV.UK guidance, or a department's published guidance. It is not legal advice. Default positions derived from these sources are marked as interpretation and "needs confirmation" until the organisation's data protection officer confirms them.
+Privacy guidance cites the legislation, ICO guidance, GOV.UK guidance, or a department's published guidance. It is not legal advice. Risk heuristics derived from these sources describe a risk, not a policy. They are marked as interpretation and "needs confirmation" until the organisation's data protection officer confirms a position.
 
 ## Service context
 

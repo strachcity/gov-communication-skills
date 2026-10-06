@@ -25,9 +25,10 @@ The ICO says some of its guidance is under review following the Data (Use and Ac
 ## Reference files
 
 - `references/principles.md`: always. The legal principles that bear on communications, quoted from the source
-- `references/channels.md`: always. What each channel can expose, and a default position for each, derived from the sources
+- `references/channels.md`: always. What each channel can expose, and risk heuristics for each, derived from the sources
 - `references/disclosure.md`: when a communication would tell someone something about a person, including the person themselves on a call, or a third party
 - `references/dpia.md`: when asked for a DPIA, or for a privacy assessment of a set of messages
+- `references/kinds-of-message.md`: when a question is about consent, opting in or out, feedback requests, or promotional content, or whether a message can be sent at all
 
 ## What this skill does
 
@@ -49,15 +50,15 @@ Then list what the body reveals:
 
 Output the inventory as a table:
 
-| Message | Channel | Visible before opening | Revealed in the message | Special category, or allows inference? | Position | Status |
+| Message | Channel | Visible before opening | Revealed in the message | Special category, or allows inference? | Risk heuristic or confirmed decision | Status |
 |---|---|---|---|---|---|---|
 
-### 2. Check it against the principles and the channel defaults
+### 2. Check it against the principles and the risk heuristics
 
 Use `references/principles.md` and `references/channels.md`. For each item, ask:
 
 - is it needed for the purpose of this message? (data minimisation)
-- is this channel secure enough for it, given the channel default? (security)
+- is this channel secure enough for it, given the channel's risk heuristics? (security)
 - could it reach the wrong person, like an out-of-date number or address? (accuracy and security)
 - does it reveal or allow someone to infer special category information?
 
@@ -65,7 +66,7 @@ Use `references/principles.md` and `references/channels.md`. For each item, ask:
 
 If you were given a service context, look for a decision that covers the item. Only apply it if its status is "confirmed", and cite its owner and date.
 
-Otherwise, record the channel default as the position and mark it "needs confirmation". If the default doesn't settle it, flag the exact question and who should answer it, usually the DPO or information assurance team.
+Otherwise, give the risk heuristic: say what the risk is, give the lower-risk option, and mark it "needs confirmation". Never present a heuristic as the organisation's policy. If the heuristic doesn't settle it, flag the exact question and who should answer it, usually the DPO or information assurance team.
 
 ## Boundaries
 

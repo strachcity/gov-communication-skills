@@ -35,7 +35,7 @@ Text message: "We have asked a medical professional for information about your c
 - apply the confirmed email decision, and cite its owner and date
 - say the email follows the confirmed decision
 - not apply the text message decision, because it is not confirmed
-- apply the text message default position instead, and flag that "a medical professional" allows someone to infer a health matter
+- give the text message risk heuristic instead, and flag that "a medical professional" allows someone to infer a health matter
 - say the text message decision needs confirming by the information assurance team
 
 ## A correct response must not
