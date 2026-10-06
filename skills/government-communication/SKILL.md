@@ -105,7 +105,7 @@ Notes
 
 For several situations, repeat the pattern line and the drafts for each, then give the 3 lists once, covering all of them.
 
-Lead with the drafts. Keep "Needs a service decision" specific: say what's needed, not that "more information is needed".
+Lead with the drafts. Keep "Needs a service decision" specific: say what's needed, not that "more information is needed". Put the items that would change the draft most first.
 
 "Needs a service decision" is the one list for everything still open. Put the other skills' lists in it, like `govuk-content`'s "Check before publishing". Don't list ((double bracket)) placeholders. They're filled for each message, not decisions.
 

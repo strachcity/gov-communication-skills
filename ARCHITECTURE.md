@@ -95,8 +95,8 @@ flowchart TB
 
 | Skill | Job | Status |
 |---|---|---|
-| `government-communication` | the front door. Establishes the service context, then runs the other skills in order | planned |
-| `case-communication-patterns` | the moments, the patterns for each, and how to recognise and adapt them | draft. Patterns written for moments 1, 3 and 5. Taxonomy changes proposed in `moments.md` |
+| `government-communication` | the front door. Establishes the service context, then runs the other skills in order | draft, evals run once |
+| `case-communication-patterns` | the moments, the patterns for each, and how to recognise and adapt them | draft. 12 moments and 3 modifiers. Patterns written for moments 1, 3 and 5, adapted for 3 invented services, evals run once |
 | `privacy-aware-communications` | what a message reveals in each channel, applying confirmed decisions and flagging the rest | tested, see `evals/results.md` |
 | `govuk-content` | drafts and reviews wording against GOV.UK guidance | tested, see `evals/results.md` |
 
@@ -162,7 +162,7 @@ Anything taken only from published content stays "needs confirmation". Published
 
 The skill offers the service context back to the user to save in their own project. It's never added to this repository.
 
-The detailed format will live in the front-door skill, at `skills/government-communication/references/service-context.md`.
+The detailed format, with a template, is in the front-door skill, at `skills/government-communication/references/service-context.md`.
 
 ## Case communication patterns
 
@@ -292,7 +292,7 @@ The plugin doesn't send messages or replace approval. It produces drafts a servi
   plugin.json
   marketplace.json
 skills/
-  government-communication/        planned, the front door
+  government-communication/        the front door
     SKILL.md
     references/
       service-context.md           the format, and how to build one
@@ -314,6 +314,6 @@ Evals need service facts to test adaptation. They use invented services, written
 
 ## Next steps
 
-1. Agree the taxonomy changes proposed in `moments.md`, then write the remaining patterns.
-2. Build `government-communication`, including the service context format and how to build one.
-3. Add evals for both, using invented services, including one with no service context.
+1. Test the first 3 patterns with users, using `USER-TESTING.md`.
+2. Write the remaining patterns, starting with moments 7 and 8, adapting each for invented services before running its evals.
+3. Run the evals 3 times each, marked blind, before calling any skill ready.

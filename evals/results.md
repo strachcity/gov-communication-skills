@@ -1,5 +1,36 @@
 # Eval results
 
+## Round 3: 6 October 2026
+
+The 5 new cases for `case-communication-patterns` and `government-communication`, each run once with the skills. To save usage, there were no runs without the skills, and the agent that wrote the skills marked the results, as in round 1.
+
+| Case | Result |
+|---|---|
+| case-communication-patterns 01: map a case journey | 8 of 8 |
+| case-communication-patterns 02: draft a generic message | 6 of 6 |
+| case-communication-patterns 03: adapt the waiting pattern with a partial service context | 9 of 9 |
+| government-communication 01: no service context | 9 of 9 |
+| government-communication 02: service context from published documentation | 9 of 9 |
+| **Total** | **41 of 41** |
+
+### What the runs showed
+
+- every run used only confirmed facts. Unconfirmed decisions and facts from published content became placeholders, with the candidate values listed
+- every run kept the third party and sensitive evidence out of text messages, and committed to the service's update date rather than the third party's reply
+- one run found that what's needed can change from case to case. The pattern now allows ((what we need)) for each message
+- the lists of what needs a service decision were long, up to 17 items. The front door now puts the items that would change the draft most first
+- one expectation in government-communication 02 conflicted with the skill's rule to use only confirmed facts. The expectation was reworded
+
+### Before these runs
+
+The patterns and front door were adapted for 3 invented services, a permit, a benefit and a registration service. That found 36 problems, which were fixed before the evals ran. Each pattern's evidence section records what changed.
+
+### Limits
+
+- 1 run each, so this doesn't show how consistent the skills are
+- not marked blind, and no comparison without the skills
+- the checks were written by the same agent that wrote the skills
+
 ## Round 2: 6 October 2026
 
 9 cases, each run 3 times with the skill and 3 times without, so 54 runs. A separate agent marked each case. It saw the 6 responses shuffled and relabelled, so it could not tell which used the skill.

@@ -61,7 +61,7 @@ From the service context:
 |---|---|
 | [service name] | the name customers know the service by |
 | [case] | the customer's word for their case, like "application" |
-| [what we need] | specific enough to act on. Check the privacy checkpoints first |
+| [what we need] | specific enough to act on. Check the privacy checkpoints first. If it changes from case to case, write it as ((what we need)), filled for each message |
 | [short description] | a neutral description for a text, subject line or first line |
 | [how to provide it] | each route, like an upload page, a postal address or a phone call |
 | [upload URL] | a full GOV.UK web address, if there's an upload route |

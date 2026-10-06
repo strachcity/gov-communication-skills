@@ -47,8 +47,6 @@ Claude uses the skills when a task fits, or you can ask for one by name, like "u
 
 The service context holds your service's facts and decisions, like its terminology, case states, timescales, channels, sender details and confirmed policy or disclosure decisions. Keep it in your own project, not in this repository. `ARCHITECTURE.md` describes what it can contain.
 
-Steps 2, 3 and 8 come with the `government-communication` skill, which is planned. Until then, give the other skills your service's facts in the conversation.
-
 ## How the repository is organised
 
 - `skills/`: one folder per skill. Each skill holds its own guidance in `references/` and lists its sources in `sources.md`
@@ -60,8 +58,8 @@ There's no folder for any named service. Each directory has a README that sets o
 
 | Skill | What it does | Status |
 |---|---|---|
-| `government-communication` | the front door. Helps you create a service context, then uses the other skills to draft or review a whole communication | planned |
-| `case-communication-patterns` | the moments every case-based service shares, a generic pattern for each, and how to recognise and adapt them | draft. Patterns written for 3 moments, evals written but not run |
+| `government-communication` | the front door. Helps you create a service context, then uses the other skills to draft or review a whole communication | draft, evals run once, see `evals/results.md` |
+| `case-communication-patterns` | the moments every case-based service shares, a generic pattern for each, and how to recognise and adapt them | draft. Patterns written for 3 of the 12 moments, evals run once, see `evals/results.md` |
 | `privacy-aware-communications` | lists what a message reveals in each channel, applies confirmed decisions, flags the rest, and drafts the communications part of a DPIA | tested, see `evals/results.md` |
 | `govuk-content` | drafts and reviews content against GOV.UK guidance, and flags privacy and policy questions without answering them | tested, see `evals/results.md` |
 
@@ -74,6 +72,6 @@ There's no folder for any named service. Each directory has a README that sets o
 
 ## Working here
 
-Read `CLAUDE.md` before adding or changing anything. It covers how knowledge is added, where it goes, and what to do when a position is not known. `ARCHITECTURE.md` explains what we are building and how the parts fit. `PLAN.md` has the build plan.
+Read `CLAUDE.md` before adding or changing anything. It covers how knowledge is added, where it goes, and what to do when a position is not known. `ARCHITECTURE.md` explains what we are building and how the parts fit. `PLAN.md` has the build plan. `USER-TESTING.md` is a pack for testing the patterns with users.
 
 No build step, no package manager, no framework. Everything is Markdown.
