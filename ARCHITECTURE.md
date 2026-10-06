@@ -18,7 +18,8 @@ If we design those moments well once, a service only has to tailor them: its wor
 | `govuk-content` skill: how to write | first version, not yet tested |
 | 5 evals for `govuk-content` | written, not yet run |
 | Communication moments: what to say and when | proposed in this document |
-| `privacy-aware-communications` skill: what a message can reveal | planned |
+| `privacy-aware-communications` skill: what a message can reveal | first version, not yet tested |
+| 3 evals for `privacy-aware-communications` | written, not yet run |
 | Drivers Medical service pack | planned |
 | `government-communication` skill: putting it together | planned |
 
@@ -201,12 +202,16 @@ Interpretation: this pattern comes from 2 services. It's a strong candidate for 
 
 ### Where privacy knowledge comes from
 
-Only 2 kinds of knowledge inform the privacy skill. Practice that nobody owns, like rules agreed in a workshop, is not a source.
+Only public sources inform the privacy skill. Practice that nobody owns, like rules agreed in a workshop, is not a source, and nor are unpublished documents.
 
 | Kind | Examples | Where it lives | Status |
 |---|---|---|---|
-| GOV.UK guidance, the law and the regulator | Service Standard point 9, Service Manual pages, UK GDPR, the Data Protection Act 2018, PECR, ICO guidance | generic, in `privacy-aware-communications` | quoted from the source, still not legal advice |
-| Decisions by someone accountable | a DPIA, an information assurance position, a DPO ruling, the organisation's data protection policy | the service pack, as a policy decision with an owner and a date | confirmed only when the owner has confirmed it |
+| The law, the regulator and GOV.UK guidance | UK GDPR, PECR, ICO guidance, Service Standard point 9, Service Manual, GOV.UK Notify security, Government Security Classifications | generic, in `privacy-aware-communications` | quoted from the source, not legal advice |
+| Departments' published guidance | HM Passport Office data protection guidance, HMRC's information disclosure guide | generic, as examples of how accountable organisations apply the law | examples, not rules for other organisations |
+| Default positions for each channel | "no special category information in a text message" | generic, derived from the sources above and marked as interpretation | needs confirmation by each organisation's DPO |
+| An organisation's published position | a department's personal information charter or privacy notice | the service pack | confirmed only for what it actually says |
+
+There's no single cross-government disclosure policy on GOV.UK. Departments publish their own, and they apply the same principles: check identity before discussing a case, need to know, and lawful authority before telling a third party.
 
 Interpretation: a pattern seen in several services, like brief text messages that point to an email, is not evidence of what is required or lawful. The rule that lets a moment enter the generic library after appearing in 2 services does not apply to privacy.
 
@@ -224,7 +229,7 @@ For a set of messages, the skill lists what each moment reveals in each channel.
 ```mermaid
 flowchart TB
     L["GOV.UK guidance, law, ICO"] --> P["privacy-aware-communications<br/>principles and channel risks"]
-    D["DPIA, DPO and information<br/>assurance decisions"] --> SP["Service pack<br/>confirmed decisions, with owner and date"]
+    D["Published organisation positions"] --> SP["Service pack<br/>confirmed decisions, with owner and date"]
     M["Draft message set"] --> P
     P --> Q{"Is there a confirmed decision<br/>that covers this?"}
     SP --> Q

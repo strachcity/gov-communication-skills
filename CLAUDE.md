@@ -69,7 +69,7 @@ A supporting source can be used only where the main sources have a gap. Say whic
 
 The publishing guidance site is in public beta, so check links still work and update them if pages move.
 
-Privacy guidance cites the legislation, ICO guidance or a named internal decision. It is not legal advice. Anything that would change what a real communication contains needs confirming with the service's data protection officer or legal team, and its status should say so until it is.
+Privacy guidance cites the legislation, ICO guidance, GOV.UK guidance, or a department's published guidance. It is not legal advice. Default positions derived from these sources are marked as interpretation and "needs confirmation" until the organisation's data protection officer confirms them.
 
 ## How to add service knowledge
 
@@ -94,9 +94,9 @@ Never present a hypothesis or judgement as a policy decision.
 
 ## This repository is public
 
-Never commit real communications, case details, personal data or internal policy correspondence.
+Use only publicly available sources. Never commit real communications, case details, personal data, internal documents or internal policy correspondence.
 
-Keep raw source material in `_source-material/`, which git ignores. Only add extracts that have been anonymised and cleared for publication.
+Unpublished material, like workshop outputs, can inform thinking but is never a source. If you need to look at it locally, keep it in `_source-material/`, which git ignores.
 
 ## How to add a skill
 
