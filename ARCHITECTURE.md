@@ -15,11 +15,11 @@ If we design those moments well once, a service only has to tailor them: its wor
 | Part | Status |
 |---|---|
 | Repository structure and rules (`CLAUDE.md`) | done |
-| `govuk-content` skill: how to write | first version, not yet tested |
-| 5 evals for `govuk-content` | written, not yet run |
-| Communication moments: what to say and when | proposed in this document |
-| `privacy-aware-communications` skill: what a message can reveal | first version, not yet tested |
-| 3 evals for `privacy-aware-communications` | written, not yet run |
+| `govuk-content` skill: how to write | tested, see `evals/results.md` |
+| 6 evals for `govuk-content` | run 3 times each, marked blind |
+| `communication-moments` skill: what to say and when | draft in `skills/communication-moments/`, 2 evals written, not run |
+| `privacy-aware-communications` skill: what a message can reveal | tested, see `evals/results.md` |
+| 3 evals for `privacy-aware-communications` | run 3 times each, marked blind |
 | Drivers Medical service pack | planned |
 | `government-communication` skill: putting it together | planned |
 

@@ -18,9 +18,9 @@ Each directory has a README that sets out what belongs there and what does not.
 
 | Skill | What it does | Status |
 |---|---|---|
-| `govuk-content` | drafts and reviews content against GOV.UK guidance, and flags privacy and policy questions without answering them | first version, not yet tested |
-| `communication-moments` | the moments every case-based service shares, like "we've received it" or "we need something from you", and what each message must contain | proposed in `ARCHITECTURE.md` |
-| `privacy-aware-communications` | lists what a message reveals in each channel, applies confirmed decisions, flags the rest, and drafts the communications part of a DPIA | first version, not yet tested |
+| `govuk-content` | drafts and reviews content against GOV.UK guidance, and flags privacy and policy questions without answering them | tested, see `evals/results.md` |
+| `communication-moments` | the moments every case-based service shares, what each message must establish, and the evidence for each | draft, evals written but not run |
+| `privacy-aware-communications` | lists what a message reveals in each channel, applies confirmed decisions, flags the rest, and drafts the communications part of a DPIA | tested, see `evals/results.md` |
 | `government-communication` | combines the other skills with service knowledge to draft or review a whole communication | planned |
 
 ## How the layers depend on each other

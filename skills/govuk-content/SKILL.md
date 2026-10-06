@@ -52,6 +52,8 @@ Flag, do not decide, when the content:
 
 For example, if a status message says "Your case is with our medical team", you can flag that it gives no next step or timescale. You must not decide to add "We are waiting for your doctor to reply". That is a fact and a disclosure decision, not a wording choice.
 
+When you suggest clearer wording for something vague, like "a third party", use a placeholder such as [who was asked]. Do not give examples like "your doctor", because an example can itself make a disclosure decision.
+
 When you flag something, say what needs checking and who could answer it, if you can tell. A privacy or policy check is a separate step, done by someone else or by another skill.
 
 Never change the meaning while improving the wording. Keep eligibility, deadlines, amounts, legal duties, consequences and contact details exactly as given. Keep distinctions that matter, like "must" against "need to", or "received" against "approved". If the original is ambiguous in a way that changes what the reader does, flag it rather than choosing.
@@ -88,6 +90,7 @@ Rules for the table:
 - if something repeats many times, add one short line after the table instead of many rows
 - if nothing needs to change, say so in one line instead of an empty table
 - flags from "Boundaries" go in the table too, with "Proposed change" saying what needs checking rather than inventing wording
+- any question about "must", "need to" or "should" goes in the "Confused / Uncertain?" column, because the right word depends on the legal position
 - a review covers grammar, spelling and typos as well as GOV.UK style, in the same table
 
 If the user asks for a discussion of the content approach instead of a line-by-line check, give it in plain English. Lead with the most important point.
