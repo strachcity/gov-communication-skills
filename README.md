@@ -8,7 +8,18 @@ Nothing here is legal advice, and nothing here is an official GOV.UK or DVLA pub
 
 ## Install
 
-This repository is a Claude Code plugin. In Claude Code, run:
+This repository is a plugin marketplace.
+
+In claude.ai, Cowork or the Claude desktop app:
+
+1. Go to Customize, then Plugins.
+2. Select Add, then Add marketplace.
+3. Enter `strachcity/gov-communication-skills`.
+4. Install "GOV.UK communication skills".
+
+A plugin added on claude.ai is also available in Claude Code when you sign in with the same account.
+
+In Claude Code on its own, run:
 
 ```
 /plugin marketplace add strachcity/gov-communication-skills
