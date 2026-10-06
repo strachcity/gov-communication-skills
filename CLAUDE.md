@@ -81,7 +81,20 @@ The publishing guidance site is in public beta, so check links still work and up
 
 Privacy entries cite the legislation, ICO guidance or a named internal decision. They are not legal advice. Anything that would change what a real communication contains needs confirming with the service's data protection officer or legal team, and its status should say so until it is.
 
-Service entries also say who made the decision and when, if known.
+Service entries also start with a `Kind:` line:
+
+- `policy decision`: made by someone with authority, so say who and when
+- `communication judgement`: a design decision based on research or experience
+- `precedent`: wording that was approved or rejected, with the reason if known
+- `hypothesis`: from prototypes or workshops, not yet tested or agreed
+
+Never present a hypothesis or judgement as a policy decision.
+
+## This repository is public
+
+Never commit real communications, case details, personal data or internal policy correspondence.
+
+Keep raw source material in `_source-material/`, which git ignores. Only add extracts that have been anonymised and cleared for publication.
 
 ## How to add a skill
 
