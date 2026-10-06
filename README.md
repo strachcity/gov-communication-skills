@@ -78,22 +78,18 @@ No build step, no package manager, no framework. Everything is Markdown.
 
 ## Licence
 
-This work is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International licence](https://creativecommons.org/licenses/by-nc-sa/4.0/) (CC BY-NC-SA 4.0). The full legal text is in `LICENSE`.
+This work is licensed under the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/). The full text is in `LICENSE`.
 
 Copyright 2026 strachcity and contributors.
 
-It's free for anyone in government, or anyone else, to use. In summary, you can:
+You can:
 
 - use it in your service, team or department
-- copy and share it
+- copy, publish and share it
 - edit, adapt and build on it
 
-As long as you:
+As long as you credit it. Use this statement, or link to it:
 
-- credit this repository and say if you changed it
-- do not sell it, or use it mainly for commercial advantage or payment
-- share anything you build from it under the same licence
+> Contains material from gov-communication-skills (https://github.com/strachcity/gov-communication-skills), licensed under the Open Government Licence v3.0.
 
-This summary is not a substitute for the licence. If they differ, the licence applies.
-
-Some files quote GOV.UK guidance and other public sector information. That material stays under its own licence, usually the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/). Each skill's `sources.md` says where it came from.
+Some files quote GOV.UK guidance and other public sector information. That material stays under its own licence, usually the Open Government Licence v3.0 too. Each skill's `sources.md` says where it came from.
