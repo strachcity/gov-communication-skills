@@ -6,6 +6,23 @@ The first use case is DVLA Drivers Medical. The generic skills are written so th
 
 Nothing here is legal advice, and nothing here is an official GOV.UK or DVLA publication.
 
+## Install
+
+This repository is a Claude Code plugin. In Claude Code, run:
+
+```
+/plugin marketplace add strachcity/gov-communication-skills
+/plugin install gov-communication-skills@gov-communication-skills
+```
+
+To try it from a local copy instead:
+
+```
+claude --plugin-dir path/to/gov-communication-skills
+```
+
+The plugin adds 3 skills. Claude uses them when a task fits, or you can ask for one by name, like "use govuk-content to review this email".
+
 ## How the repository is organised
 
 - `skills/`: one folder per skill. Each generic skill holds its own guidance in `references/` and lists its sources in `sources.md`

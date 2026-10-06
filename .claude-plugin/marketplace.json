@@ -1,0 +1,16 @@
+{
+  "name": "gov-communication-skills",
+  "owner": {
+    "name": "strachcity"
+  },
+  "metadata": {
+    "description": "UK government customer communication skills: GOV.UK content style, privacy-aware messaging and communication moments."
+  },
+  "plugins": [
+    {
+      "name": "gov-communication-skills",
+      "source": "./",
+      "description": "Skills for drafting and reviewing UK government customer communications."
+    }
+  ]
+}

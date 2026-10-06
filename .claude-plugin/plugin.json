@@ -1,0 +1,17 @@
+{
+  "name": "gov-communication-skills",
+  "version": "0.1.0",
+  "description": "Skills for drafting and reviewing UK government customer communications: GOV.UK content style, privacy-aware messaging, and a draft model of the communication moments that case-based services share.",
+  "author": {
+    "name": "strachcity"
+  },
+  "repository": "https://github.com/strachcity/gov-communication-skills",
+  "keywords": [
+    "govuk",
+    "content-design",
+    "plain-english",
+    "privacy",
+    "uk-gdpr",
+    "notify"
+  ]
+}
