@@ -22,7 +22,7 @@ If we design those moments well once, a service only has to tailor them: its wor
 | Drivers Medical service pack | planned |
 | `government-communication` skill: putting it together | planned |
 
-## What the 2 examples show
+## What the examples show
 
 ### Drivers Medical storyboards
 
@@ -50,9 +50,19 @@ Its text messages are short pointers, like "We have emailed you about your passp
 
 Some of its choices are service-specific and should not become generic. For example, its text messages name the person who confirmed the customer's identity. Whether that's acceptable depends on each service's privacy position.
 
+### Drivers Medical communications matrix
+
+A first draft from a September 2026 workshop: 19 communications for the postal and telephone route, each with a trigger, purpose, content, primary channel and alternatives, plus how each one changes across channels. It's marked as a draft, and its channel rules came from the workshop, not from data protection or other guidance. So we use it for its structure and its moments, and not for its rules.
+
+It adds:
+
+- **more moments:** a written record of a phone conversation, a delay message, a "still waiting" update, and a deliberate decision to send nothing when an internal event doesn't change anything for the customer
+- **legal effect:** some messages are formal notices that must be served in writing. Others must not look like a notice, and must not arrive before the notice they refer to
+- **a channel table:** one message across letter, phone, text, email and status tracker, including "not suitable". This is the output we're planning to produce
+
 ## The foundations: communication moments
 
-These are the moments both examples share, written without any service's words. Each one is a candidate for the generic library.
+These are the moments the examples share, written without any service's words. Each one is a candidate for the generic library.
 
 | Moment | The customer wants to know | Drivers Medical board | HM Passport Office |
 |---|---|---|---|
@@ -69,8 +79,11 @@ These are the moments both examples share, written without any service's words. 
 | 11. What happens after the decision | what arrives, and anything they need to do | not yet designed | printing, delivery, "sign your passport" |
 | 12. You need to act before a date | that something is due | not yet designed | passport expiry reminders |
 | 13. We're closing your case | why, and how to restart | not yet designed | withdrawn applications |
+| 14. Here's a record of what we discussed | what was asked and answered | matrix only | no |
+| 15. There's a delay | why, whose action it waits on, and whether they need to do anything | matrix only | no |
+| 16. We're still waiting | that someone is still chasing | matrix only | no |
 
-Moments 10 to 13 are the gaps in the Drivers Medical board. Moment 10 is also where the open question about decision language sits.
+Moments 10 to 13 are the gaps in the Drivers Medical board. The matrix covers 10 and 12. Moment 10 is also where the open question about decision language sits.
 
 ### What every message contains
 
@@ -84,6 +97,12 @@ The drafts on the board share an anatomy, and the Service Manual asks for the sa
 6. What happens if they do not act, where that applies.
 7. How to track progress or get help.
 8. Who it's from.
+
+Each moment also has properties that change how it's written:
+
+- **legal effect:** is this a formal notice? If so, the channel and wording need legal review, and the skills flag it rather than decide. Which messages have legal effect is a service fact
+- **action:** does the customer need to do something, or nothing? The wording differs sharply
+- **sensitivity:** what would the message reveal, and in which channel? This is a privacy question
 
 Each part is a slot. Some slots are generic, like the order. Some are filled by the service, like the timescale. Some need a privacy decision, like how much the headline can say.
 
@@ -178,6 +197,65 @@ flowchart LR
 
 Interpretation: this pattern comes from 2 services. It's a strong candidate for the privacy skill, but it stays a hypothesis until a privacy source or a recorded decision supports it.
 
+## Privacy and data protection
+
+### Where privacy knowledge comes from
+
+Only 2 kinds of knowledge inform the privacy skill. Practice that nobody owns, like rules agreed in a workshop, is not a source.
+
+| Kind | Examples | Where it lives | Status |
+|---|---|---|---|
+| GOV.UK guidance, the law and the regulator | Service Standard point 9, Service Manual pages, UK GDPR, the Data Protection Act 2018, PECR, ICO guidance | generic, in `privacy-aware-communications` | quoted from the source, still not legal advice |
+| Decisions by someone accountable | a DPIA, an information assurance position, a DPO ruling, the organisation's data protection policy | the service pack, as a policy decision with an owner and a date | confirmed only when the owner has confirmed it |
+
+Interpretation: a pattern seen in several services, like brief text messages that point to an email, is not evidence of what is required or lawful. The rule that lets a moment enter the generic library after appearing in 2 services does not apply to privacy.
+
+### What the privacy skill does
+
+1. Spots what a message would reveal, in each channel.
+2. Checks it against the principles in GOV.UK guidance, the law and ICO guidance, like data minimisation, security, and health as special category data.
+3. Looks for a confirmed decision in the service pack that covers it, and applies and cites it.
+4. Otherwise, flags the exact question and who should answer it.
+
+### A disclosure inventory
+
+For a set of messages, the skill lists what each moment reveals in each channel. A DPO or information assurance lead can review one table instead of every message. It can also feed a DPIA.
+
+```mermaid
+flowchart TB
+    L["GOV.UK guidance, law, ICO"] --> P["privacy-aware-communications<br/>principles and channel risks"]
+    D["DPIA, DPO and information<br/>assurance decisions"] --> SP["Service pack<br/>confirmed decisions, with owner and date"]
+    M["Draft message set"] --> P
+    P --> Q{"Is there a confirmed decision<br/>that covers this?"}
+    SP --> Q
+    Q -- "yes" --> A["Apply it and cite it"]
+    Q -- "no" --> F["Flag the question<br/>and who should answer it"]
+    A --> I["Disclosure inventory<br/>for DPO review"]
+    F --> I
+    I -. "answers become decisions" .-> SP
+```
+
+### An organisation layer, later
+
+Data protection policy is usually set by a department or agency, not a service. When a second service from the same organisation arrives, its shared decisions should live once, in an organisation layer above the service packs, rather than be copied into each one.
+
+## How this differs from building an LLM
+
+We're not building or training a language model. We're writing what a general model reads before it starts work.
+
+- **the model:** a general model, like Claude, already knows how to write. Nothing about it changes
+- **the skills:** instructions, checklists and quoted guidance in plain Markdown, which the model reads at the moment it does the task. They work like the style guide, decision log and checklist you'd hand a new content designer
+- **the evals:** worked examples that test whether the model, with the skills, does the right thing
+
+This matters for government work:
+
+- every rule can be traced to a source, and checked
+- a rule can be fixed the same day guidance changes, by editing a file
+- unknowns are flagged, not guessed
+- the skills can move to a different model without being rebuilt
+
+The model can still make mistakes. The evals measure how often, and human review and approval stay in place.
+
 ## What we're building, exactly
 
 The skills don't send messages or replace approval. They produce a draft message set, in a form a service can review and load into a template tool, like GOV.UK Notify.
@@ -224,6 +302,7 @@ This repository is public. The board and the passport office screenshots are fin
 
 - the passport office screenshots include people's names and what look like real references
 - the board names internal systems and an internal reference format
+- the matrix names staff, a supplier contract and internal systems
 
 The Drivers Medical service pack should hold anonymised, cleared extracts only.
 
