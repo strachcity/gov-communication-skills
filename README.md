@@ -61,7 +61,7 @@ There's no folder for any named service. Each directory has a README that sets o
 | Skill | What it does | Status |
 |---|---|---|
 | `government-communication` | the front door. Helps you create a service context, then uses the other skills to draft or review a whole communication | planned |
-| `case-communication-patterns` | the moments every case-based service shares, a generic pattern for each, and how to recognise and adapt them | draft. The moments exist, evals written but not run. The written patterns are next |
+| `case-communication-patterns` | the moments every case-based service shares, a generic pattern for each, and how to recognise and adapt them | draft. Patterns written for 3 moments, evals written but not run |
 | `privacy-aware-communications` | lists what a message reveals in each channel, applies confirmed decisions, flags the rest, and drafts the communications part of a DPIA | tested, see `evals/results.md` |
 | `govuk-content` | drafts and reviews content against GOV.UK guidance, and flags privacy and policy questions without answering them | tested, see `evals/results.md` |
 

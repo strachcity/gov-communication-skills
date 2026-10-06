@@ -13,7 +13,8 @@ This is a draft. The moments are proposals, tested and revised as evidence is ad
 
 ## Reference files
 
-- `references/moments.md`: always. The moments, what each message must establish, and the evidence for each
+- `references/moments.md`: always. The moments, the message anatomy, the modifiers, and the evidence for each moment
+- `references/patterns/<pattern>.md`: when drafting or adapting a message for a moment that has a pattern. Read only the pattern you need. Patterns exist for moments 1, 3 and 5 so far
 
 ## The service context
 
@@ -36,9 +37,18 @@ Given a description of a service's case journey, map each point where the custom
 
 Some points need no message. If an internal step doesn't change anything for the customer, say no message is needed, and name the next moment they'll get.
 
+### Recognise the pattern
+
+Work out which moment the request is about, from the customer's situation, not the service's event. Then pick:
+
+- the variant, from the pattern file
+- any modifier, like reminder, final reminder or delay
+
+If 2 moments seem to fit, check "Not this pattern" in each pattern file. If none fits, say so.
+
 ### Draft a generic message for a moment
 
-Use the message anatomy in `references/moments.md`. Fill every service-specific detail with a placeholder in square brackets, like [service name], [reference], [who was asked] or [timescale]. Never fill a placeholder with a guess.
+If the moment has a pattern, start from its baseline copy for each channel. Otherwise use the message anatomy in `references/moments.md`. Fill every service-specific detail with a placeholder in square brackets, like [service name], [reference], [who was asked] or [timescale]. Never fill a placeholder with a guess.
 
 Then:
 
@@ -49,6 +59,10 @@ Then:
 ### Adapt a pattern for a service
 
 If you were given a service context, use its confirmed facts for the placeholders. Leave the rest as placeholders, and list them.
+
+Adapt the pattern, don't rewrite it. Keep its core information and its order. Change the wording only where the service's terminology or a confirmed decision needs it. If a service departs from the pattern, check its service context records the reason, and say so in your answer.
+
+Work through the pattern's "Privacy and policy checkpoints". Each one is answered by a confirmed decision in the service context, or flagged.
 
 Never move a service's detail into the generic pattern. If a service needs something no moment covers, say so in your answer. Don't create a new moment for it.
 

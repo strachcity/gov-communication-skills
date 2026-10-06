@@ -96,7 +96,7 @@ flowchart TB
 | Skill | Job | Status |
 |---|---|---|
 | `government-communication` | the front door. Establishes the service context, then runs the other skills in order | planned |
-| `case-communication-patterns` | the moments, the patterns for each, and how to recognise and adapt them | draft. The moments exist, the substantially written patterns are next |
+| `case-communication-patterns` | the moments, the patterns for each, and how to recognise and adapt them | draft. Patterns written for moments 1, 3 and 5. Taxonomy changes proposed in `moments.md` |
 | `privacy-aware-communications` | what a message reveals in each channel, applying confirmed decisions and flagging the rest | tested, see `evals/results.md` |
 | `govuk-content` | drafts and reviews wording against GOV.UK guidance | tested, see `evals/results.md` |
 
@@ -300,7 +300,7 @@ skills/
     SKILL.md
     references/
       moments.md                   the moments, anatomy and evidence
-      patterns/                    planned, one substantially written pattern per moment
+      patterns/                    one substantially written pattern per moment, 3 so far
     sources.md
   privacy-aware-communications/
   govuk-content/
@@ -314,6 +314,6 @@ Evals need service facts to test adaptation. They use invented services, written
 
 ## Next steps
 
-1. Write the substantially written patterns, starting with moments 1, 5 and 9.
+1. Agree the taxonomy changes proposed in `moments.md`, then write the remaining patterns.
 2. Build `government-communication`, including the service context format and how to build one.
 3. Add evals for both, using invented services, including one with no service context.

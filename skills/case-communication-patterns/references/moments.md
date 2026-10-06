@@ -2,6 +2,12 @@
 
 Draft, last revised 6 October 2026. Every moment here is a proposal.
 
+Patterns written so far, in `patterns/`:
+
+- 1. We've received it: `patterns/we-have-received-it.md`
+- 3. We're waiting on someone else: `patterns/we-are-waiting-on-someone-else.md`
+- 5. We need something from you: `patterns/we-need-something-from-you.md`
+
 ## How to read this file
 
 ### Evidence status
@@ -285,6 +291,51 @@ For each moment a service uses, it needs to answer:
 - **evidence:**
   - unpublished prototype work: observed
 - **status:** seen in 1 service
+
+## Modifiers
+
+A modifier changes how a moment's message is written, without being a moment of its own. Proposed on 6 October 2026, from writing the first 3 patterns.
+
+### Reminder
+
+The same message again, after the customer hasn't acted or before something planned.
+
+- start by saying what was said before, and when, like "We asked you on [date] to..."
+- keep the same deadline unless the service has changed it
+- applies to: 5 (we need something from you), 7 (we'll contact you), 12 (you need to act before a date)
+
+### Final reminder
+
+The last reminder before a consequence.
+
+- put the deadline and the consequence first
+- don't introduce a consequence that wasn't in the earlier messages without flagging it
+- applies to: 5, 12
+
+### Delay
+
+Something is taking longer than the customer was told.
+
+- say there's a delay
+- say whether the customer needs to do anything. Interpretation: this matters most, because the customer may think the delay is theirs
+- give a new expectation, as a date where possible
+- explain the cause only if the service has decided it can be disclosed
+- applies to: any moment that gave the customer a timescale, most often 1, 3 and 6
+
+## Proposed changes
+
+Proposed on 6 October 2026, from writing the first 3 patterns. Nothing has been removed yet. Each change needs agreeing before the moments are renumbered.
+
+| Moment | Proposal | Reason |
+|---|---|---|
+| 6. We've received what you sent | becomes variant B of 1, "We've received it" | the message is the same receipt, with "is anything else needed" added |
+| 8. Reminder | becomes the reminder modifier, applied to 7 | a reminder repeats another moment's message. It's not a separate customer situation |
+| 15. There's a delay | becomes the delay modifier | a delay can happen in several moments, and its content is the same in each |
+| 16. We're still waiting | becomes variant B of 3, "We're waiting on someone else" | it continues the same situation, and only makes sense after 3 |
+| 4. Something has changed | keep, but check its evidence | the evidence for 4 was mostly a wait ending, which is now variant C of 3. 4 may only cover changes not tied to a wait |
+| 12. You need to act before a date | keep separate from 5 | it doesn't block a live case, so its message is different, but it shares the reminder modifier |
+
+The patterns also found one variant that no moment had: something the customer sent can't be used, and a replacement is needed. It's variant C of 5.
 
 ## No message needed
 
