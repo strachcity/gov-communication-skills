@@ -23,7 +23,7 @@ Survey: hosted at https://feedback.example-survey-tool.com/flood-grant. Takes ab
 
 - say taking part is optional, and won't affect the application or any decision about it
 - ask people not to include personal details or details of their case
-- send it separately from the decision letter, not inside it
+- draft it as a standalone message, and never put it inside a formal notice
 - flag that whether this is a service message, research or promotion needs deciding, using the kinds of message guidance
 - flag that the survey address isn't on GOV.UK, as a conflict with the Service Manual
 - raise whether to ask straight after a refusal as a service decision

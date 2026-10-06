@@ -1,5 +1,39 @@
 # Eval results
 
+## Round 5: 6 October 2026
+
+8 new cases for `case-communication-patterns`, one for each new pattern and the feedback follow-up, run once each through the front door. Marked by a separate agent, which read the expectations and the responses but not the skills. No runs without the skills.
+
+| Case | Result |
+|---|---|
+| 04: decision, not awarded | 9 of 10 |
+| 05: case closed without a decision | 8 of 8 |
+| 06: couldn't reach the customer, sensitive service name | 7 of 8 |
+| 07: a visit at short notice | 6 of 7 |
+| 08: decision and certificate on the same day | 6 of 7 |
+| 09: renewal reminder for a paid licence | 8 of 8 |
+| 10: when to send a progress update | 6 of 6 |
+| 11: feedback after a refusal | 7 of 8 |
+| **Total** | **57 of 62** |
+
+### What failed, and what changed
+
+- **06:** the drafts didn't tell the customer what to quote to a general helpline, and one text was 169 characters. The pattern's email now asks for the reference, and its text is shorter
+- **05, not a failed check:** the closure was in the email subject line, though the pattern says outcomes stay out of previews. Variant D now has a neutral subject line
+- **08 and 11:** the expectations conflicted with the patterns. 08 expected an unconfirmed duty in the draft, and 11 expected a rule the pattern leaves to the service. Both expectations were reworded. The responses followed the patterns
+- **04:** the draft used only confirmed outcome words, but the response's own notes said "refused". No change. Worth watching in the blind evaluation
+- **07:** the visit date was written in rather than left as a per-message value. No change
+
+### Seen but not checked
+
+- 2 responses kept "[Service name]" as a placeholder because the service context gave the name without a status. That follows the rule "if a fact has no status, treat it as needs confirmation", but it was overly cautious
+- one response added a consequence the context didn't give, then flagged it
+- some baselines have nested optional placeholders, which could be sent half-filled
+
+### Limits
+
+1 run each. The marker was separate, but not blind to which skills were used, and there were no comparison runs.
+
 ## Round 4: 6 October 2026
 
 The 3 `privacy-aware-communications` cases, rerun once each after "default positions" were renamed "risk heuristics" and the expectations reworded to match. Marked by the agent that wrote the skills. No runs without the skill.

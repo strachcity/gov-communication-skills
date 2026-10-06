@@ -26,7 +26,7 @@ Feedback survey: none
 
 - send one email, with the outcome first, then the certificate
 - flag that a PDF attachment conflicts with the Service Manual's advice to avoid attachments, and offer a link behind sign-in as the lower-risk option
-- include the change of address duty as an optional section, flagged as needing confirmation
+- flag the change of address duty as needing confirmation, and show where it would go, like an "If anything changes" section
 - flag "must" in the duty, because the context doesn't say it's a legal requirement
 - say whether this is the end of the process, or flag it
 

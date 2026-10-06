@@ -267,10 +267,16 @@ What happens next
 
 ### Variant D, closed without a decision
 
-Headline for a letter, and subject line for an email:
+Headline for a letter:
 
 ```
 We've closed your [case]
+```
+
+Subject line for an email, keeping the closure out of previews:
+
+```
+[Service name]: update on your [case]
 ```
 
 Body:

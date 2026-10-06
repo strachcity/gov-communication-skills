@@ -111,11 +111,20 @@ The next big question is how well the plugin works for a team that installs it w
 - ask them to set up a service context and draft messages for their own service
 - record where they got stuck, and fix the instructions rather than adding rules
 
+### Before the full blind evaluation
+
+Found while writing and testing the remaining patterns, 6 October 2026:
+
+- decide whether a service context fact with no status, like the service's own name, should block a draft. The rule treats it as "needs confirmation", which made 2 runs overly cautious
+- simplify nested optional placeholders in the baselines, which could be sent half-filled
+- decide how to handle a standing duty with no due date, recorded in "Gaps" in `moments.md`
+- add evals for an organisation customer, a Welsh language duty, and a message with promotion added
+- check that each pattern's text baselines fit in 160 characters with long but realistic values
+
 ### Alongside the work package
 
 - test the patterns with users, later. A test pack can be written then
 - rerun all evals 3 times each, marked blind, with comparison runs, before calling any skill ready
-- add evals for an organisation customer and a service with a Welsh language duty
 
 ## Scope
 

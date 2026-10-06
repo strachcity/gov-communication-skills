@@ -143,8 +143,10 @@ Interpretation: don't give the case reference or the reason for the call. Whethe
 ### Text message
 
 ```
-[Service name] tried to call you today. We need to speak to you about your [case]. [We'll call again at ((time of next attempt)). / Call us on [direct number], [opening times].]
+[Service name] tried to call you. [We'll call again at ((time of next attempt)). / Please call us on [number], [opening times]. Quote ((reference)).]
 ```
+
+Interpretation: if the customer has to call a general helpline, telling them to quote their reference gets them to the right place. Count the text with real values. With a long service name and opening times it can go over 160 characters.
 
 ### Email
 
@@ -161,6 +163,8 @@ What you need to do
 
 [Call / Contact] us [on or before ((deadline))]:
 [how to get in touch]
+
+When you get in touch, give your reference number: ((reference)).
 
 To check this email is genuine, [how to check it's genuine].
 
