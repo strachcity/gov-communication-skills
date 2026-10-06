@@ -48,13 +48,13 @@ If 2 moments seem to fit, check "Not this pattern" in each pattern file. If none
 
 ### Draft a generic message for a moment
 
-If the moment has a pattern, start from its baseline copy for each channel. Otherwise use the message anatomy in `references/moments.md`. Fill every service-specific detail with a placeholder in square brackets, like [service name], [reference], [who we've asked] or [timescale]. Never fill a placeholder with a guess.
+If the moment has a pattern, start from its baseline copy for each channel. Otherwise use the message anatomy in `references/moments.md`. Keep the pattern's placeholders: [square brackets] for service facts and ((double brackets)) for values filled for each message. See "How to use the baseline copy" in `references/moments.md`. Never fill a placeholder with a guess.
 
 Then:
 
 1. Apply the `privacy-aware-communications` skill to what the message reveals, if it's available.
 2. Apply the `govuk-content` skill to the wording, if it's available.
-3. List the questions the service must answer before the message can be used, under "For the service to fill in".
+3. List the questions the service must answer before the message can be used, under "Needs a service decision".
 
 ### Adapt a pattern for a service
 

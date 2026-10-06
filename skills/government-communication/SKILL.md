@@ -42,8 +42,9 @@ Only use facts marked "confirmed". Anything else becomes a placeholder and goes 
 Work out:
 
 - **the task:** draft a new message, adapt a pattern, review an existing message, or plan the messages for a case journey
-- **the channels:** email, text message, letter or status page. If the user doesn't say, use the channels in the service context. If it doesn't say either, draft an email and a text message and say why
+- **the channels:** email, text message, letter or status page. If the user doesn't say, use the channels the service context lists as in use. Don't draft for planned channels unless asked. If the context doesn't say either, draft an email and a text message and say why. Follow "How to use the baseline copy" in `case-communication-patterns` for choosing between channels
 - **the customer's situation:** what has just happened in their case, from their point of view
+- **how many situations:** if the request covers several, handle each one separately, then give one combined list of what needs a decision
 
 ### 3. Identify the pattern
 
@@ -66,11 +67,15 @@ For each checkpoint:
 - if a confirmed decision in the service context covers it, apply it and cite its owner and date
 - if not, use the default position marked "needs confirmation", or flag the exact question and who could answer it
 
+Only a confirmed policy decision settles a privacy, legal or policy checkpoint. A communication judgement or precedent can shape wording, but if one is the only thing covering a checkpoint, apply it and flag that it needs confirming as a decision.
+
 Never infer a policy position, a consequence, a timescale or legal effect. Never treat the service's published content alone as its policy, because it can be out of date.
 
 ### 6. Apply GOV.UK content guidance
 
 Use `govuk-content` on each draft, as a drafting check. Fix the wording without changing the meaning or adding facts.
+
+If the service context records a language duty, like Welsh, flag that each message needs a version in that language. Don't translate unless the user asks.
 
 ### 7. Return the result
 
@@ -98,7 +103,13 @@ Notes
 - [any judgement you made, like choosing between 2 moments, and any departure from the pattern]
 ```
 
+For several situations, repeat the pattern line and the drafts for each, then give the 3 lists once, covering all of them.
+
 Lead with the drafts. Keep "Needs a service decision" specific: say what's needed, not that "more information is needed".
+
+"Needs a service decision" is the one list for everything still open. Put the other skills' lists in it, like `govuk-content`'s "Check before publishing". Don't list ((double bracket)) placeholders. They're filled for each message, not decisions.
+
+If a message reveals personal or sensitive information, add a short "What each version reveals" table from `privacy-aware-communications` before "Needs a service decision".
 
 For a review, give the `govuk-content` review table, then:
 

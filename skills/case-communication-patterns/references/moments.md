@@ -53,6 +53,36 @@ Parts 4 to 6 come from the Service Manual, which says to:
 
 > explain what you'll do next and when they'll hear from you - if you won't be contacting them again, make it clear that it's the end of the process
 
+## How to use the baseline copy
+
+Each pattern has baseline copy for each channel. It uses 2 kinds of placeholder:
+
+- **[square brackets]:** a service fact, filled once from the service context, like [sender] or [tracking URL]. Only use confirmed facts
+- **((double brackets)):** a value filled for each message when it's sent, like ((reference)) or ((deadline)). GOV.UK Notify uses this format for personalisation. These are not gaps in the service context
+
+When adapting a pattern:
+
+- leave out any line for something the service doesn't have, like a tracking route
+- don't draft for a channel the service doesn't use, or only plans to use, unless the user asks
+- if the service context records how it chooses channels, like "letters only if there's no email address", draft the main channel and say which customers get the alternative
+- send one channel for each moment unless there's a reason to send 2. The Service Manual says to avoid sending an email and a text message at the same time "unless there's a very good reason"
+
+### Text messages
+
+- count characters using the service's real reference format and the longest likely values, like the longest date. Over 160 counts as more than one text
+- use straight apostrophes and quote marks. Interpretation: Notify counts some characters as non-standard, which cuts the limit to 70. Our sources don't list which, so straight ones are the safe choice
+- if the sender ID doesn't name the service, like "GOVUK", start the text with the service name, like "[Service name]: ". Check the name itself doesn't reveal something sensitive on a lock screen
+- if the service has a language duty, like Welsh, each version needs its own count. Welsh accented letters cut the limit to 70
+
+## When the customer is an organisation
+
+Some services deal with businesses or other organisations. The message goes to a named contact, who may not own the case.
+
+- greet the named contact by name in emails, as the Service Manual asks
+- name the organisation in the first line, like "We've received the application for ((business name))"
+- write "your [case]" only if the contact is the person responsible for it. Otherwise use the organisation's name
+- whether information about the organisation is personal data, for example for a sole trader, is a question for `privacy-aware-communications`. Flag it
+
 ## Failure modes for every moment
 
 These apply to all moments, so they aren't repeated below.
@@ -254,7 +284,7 @@ A modifier changes how a moment's message is written, without being a moment of 
 The same message again, after the customer hasn't acted or before something planned.
 
 - start by saying what was said before, and when, like "We asked you on [date] to..."
-- keep the same deadline unless the service has changed it
+- keep the same deadline, if there is one, unless the service has changed it
 - applies to: 5 (we need something from you), 6 (we'll contact you), 10 (you need to act before a date)
 
 ### Final reminder

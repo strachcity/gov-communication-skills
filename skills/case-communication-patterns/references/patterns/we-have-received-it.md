@@ -2,7 +2,7 @@
 
 Moment 1 in `../moments.md`. Draft, last revised 6 October 2026.
 
-Lines starting with ">" are quotes. Lines starting with "Interpretation:" are ours. Placeholders are in square brackets. Fill them only from confirmed facts in the service context.
+Lines starting with ">" are quotes. Lines starting with "Interpretation:" are ours. "How to use the baseline copy" in `../moments.md` explains the 2 kinds of placeholder.
 
 ## Purpose
 
@@ -29,7 +29,7 @@ Every version of this message says:
 
 - what was received
 - that the service now has it
-- whether the customer needs to do anything. Usually they don't, so say "You do not need to do anything now"
+- whether the customer needs to do anything. Usually they don't, so say "You do not need to do anything now". Only say this if it's true. See variant D
 
 Emails, letters and status pages also say:
 
@@ -41,25 +41,37 @@ Interpretation: a text message can leave out what happens next if it points to a
 ## Optional information
 
 - the date it was received. Useful if the customer posted it, or if the date matters to them
-- a timescale for the next step, only if the service can meet it
+- what that date means, if it has legal significance and the service has confirmed what to say
+- a timescale for the next step, only if the service can meet it. If it only applies once the service has checked what was sent, say so
 - how to track progress
 - what will happen to anything they sent that they'll want back, like original documents
 - how to get help
 
-## Service placeholders
+## Placeholders
+
+From the service context:
 
 | Placeholder | What the service context supplies |
 |---|---|
 | [service name] | the name customers know the service by |
-| [what we received] | the customer's word for it, like "application". Check the privacy checkpoints first |
-| [date received] | the date, like 6 October 2026 |
-| [reference] | the case reference in the format customers see |
+| [what we received] | the customer's word for it, like "application". It must not read as the outcome. If the case is called a "registration" or a "licence", write "application to register" or "licence application" instead. Check the privacy checkpoints too |
 | [next step] | what the customer will experience next, not the internal process |
-| [timescale] | when that will happen, as a date or a range the service can meet |
+| [timescale] | when that will happen, as a range the service can meet |
+| [timescale condition] | when the timescale applies, like "if your application is complete" |
+| [what the date means] | only if receipt has legal significance, in the service's confirmed words |
 | [tracking URL] | a full GOV.UK web address |
-| [contact route] | how to get help, like a phone number and opening times |
+| [contact details] | how to get help, in the A to Z format, like "Telephone: 0300 000 0000" with opening times on separate lines |
 | [sender] | who the message is from, as the customer will recognise it |
-| [first name] [last name] | the customer's full name |
+| [letter greeting] | from the service's letter template |
+
+Filled for each message:
+
+| Placeholder | Value |
+|---|---|
+| ((first name)) ((last name)) | the customer's full name, or the named contact's |
+| ((reference)) | the case reference |
+| ((date received)) | the date, like 6 October 2026 |
+| ((date)) | the date of the letter |
 
 ## Variants
 
@@ -73,7 +85,7 @@ The customer has sent something the service asked for during the case. This was 
 
 Change the baseline:
 
-- say what was asked for and when, like "the [what we asked for] we asked for on [date asked]"
+- say what was asked for and when, like "the [what we asked for] we asked for on ((date asked))"
 - say whether anything else is still needed. If it is, use "We need something from you", variant B, instead
 - never say it has been accepted or approved if it has only arrived
 
@@ -82,6 +94,10 @@ Change the baseline:
 Use this when work starts straight away. Send one message, not 2 messages hours apart. Add a line saying what happens next.
 
 Interpretation: receipt and work starting can be days apart in some services, which is why they're separate moments. When they aren't, combine them.
+
+### D. Received, and every customer has a next step
+
+Every customer needs to do something next, like send a document or book an appointment. Don't say "You do not need to do anything now". Confirm receipt in the first line, then make the request using the "We need something from you" pattern, in the same message.
 
 ### Not this pattern
 
@@ -94,11 +110,12 @@ Interpretation: receipt and work starting can be days apart in some services, wh
 
 ## Common failure modes
 
-- saying "received" in a way that sounds like "accepted" or "approved"
+- "received" in a way that sounds like "accepted", "approved" or "registered"
+- "You do not need to do anything now" when every customer does
 - no reference, so the customer cannot quote it when they get in touch
 - "in due course" or "shortly" instead of a next step or timescale
 - describing the internal process, like scanning or allocating to a team. The Service Manual says: "Don't explain back-end processes or policy."
-- a timescale the service cannot meet
+- a timescale the service cannot meet, or one that only applies to complete applications, given without saying so
 - naming something in a text or subject line that reveals what the case is about
 
 ## Privacy and policy checkpoints
@@ -106,34 +123,35 @@ Interpretation: receipt and work starting can be days apart in some services, wh
 Check these with `privacy-aware-communications`. Don't decide them here.
 
 - **what was received:** would naming it reveal special category or sensitive information? This matters most in the sender name, subject line, first line and any text message. If it would, use a neutral word in those places
-- **reference:** it is personal data. Include it where the customer needs it, and don't add other identifiers
-- **legal significance:** does the date of receipt matter legally? For example, it may show the customer met a duty to tell the service by a date, or it may start a time limit. This is a service fact. If it applies, the message may need legal review and a fixed channel
+- **reference:** it is personal data. Include it where the customer needs it, and don't add other identifiers. Check the reference format itself doesn't reveal the service or the subject, like a prefix seen on a lock screen
+- **legal significance:** does the date of receipt matter legally? For example, it may show the customer met a duty to tell the service by a date, or it may start a time limit. This is a service fact. If it applies, the message may need legal review and a fixed channel. If the service context doesn't list this message as a formal communication, that's not confirmation it has no legal effect
 - **originals:** what happens to original documents is a service fact. Don't promise their return unless the service context confirms it
 
 ## Baseline copy
 
-Fill the placeholders from confirmed facts. Leave anything unconfirmed as a placeholder and list it under "For the service to fill in". Don't force every part into every channel.
+Leave out any line for something the service doesn't have, like a tracking route. Don't force every part into every channel.
 
 ### Email
 
 ```
 Subject: [Service name]: we've received your [what we received]
 
-Dear [first name] [last name]
+Dear ((first name)) ((last name))
 
-We've received your [what we received]. We got it on [date received].
+We've received your [what we received]. We got it on ((date received)).
 
-Your reference number is [reference]. Use it if you contact us.
+Your reference number is ((reference)). Use it if you contact us.
 
 What happens next
 
-We'll [next step] by [timescale].
+We'll [next step] by [timescale] [timescale condition].
 
 You do not need to do anything now.
 
 You can check the progress of your [what we received] at [tracking URL]
 
-If you need help, contact [contact route].
+If you need help, contact us:
+[contact details]
 
 [Sender]
 ```
@@ -143,32 +161,40 @@ If you need help, contact [contact route].
 With a tracking route:
 
 ```
-We've received your [what we received]. Reference: [reference]. You do not need to do anything now. Track it: [tracking URL]
+We've received your [what we received]. Reference: ((reference)). You do not need to do anything now. Track it: [tracking URL]
 ```
 
 Without one:
 
 ```
-We've received your [what we received]. Your reference is [reference]. We'll [next step] by [timescale]. You do not need to do anything now.
+We've received your [what we received]. Reference: ((reference)). We'll [next step] by [timescale]. You do not need to do anything now.
 ```
 
-Count the characters after filling the placeholders. Over 160 counts as more than one text. With a 50-character web address and an 11-character reference, the first version is about 155 characters.
+As a pointer, if the service sends the detail by email or letter, or has decided texts must say less:
+
+```
+We've sent you [an email / a letter] about your [what we received]. Reference: ((reference)).
+```
+
+Send a pointer text only once the email or letter is likely to have arrived.
+
+See "Text messages" in `../moments.md` for counting characters and sender IDs.
 
 ### Letter
 
 ```
-[Reference: [reference]]
-[Date]
+Reference: ((reference))
+((date))
 
 We've received your [what we received]
 
-Dear [first name] [last name]
+[letter greeting]
 
-We received your [what we received] on [date received].
+We received your [what we received] on ((date received)). [what the date means]
 
 What happens next
 
-We'll [next step] by [timescale].
+We'll [next step] by [timescale] [timescale condition].
 
 You do not need to do anything now.
 
@@ -178,22 +204,25 @@ Check progress or get help
 
 You can check the progress of your [what we received] at [short tracking URL].
 
-If you need help, contact [contact route]. Have your reference number ready.
+If you need help, contact us:
+[contact details]
+
+Have your reference number ready.
 
 [Sender]
 ```
 
-The main sources don't cover how to greet or sign off a letter. Follow the service's letter template, and flag it if there isn't one.
+The main sources don't cover how to greet or sign off a letter. Use the service's letter template, and flag it if there isn't one.
 
 ### Status page, behind sign-in
 
 ```
 Status: Received
 
-We received your [what we received] on [date received].
+We received your [what we received] on ((date received)).
 
 What happens next
-We'll [next step] by [timescale].
+We'll [next step] by [timescale] [timescale condition].
 
 You do not need to do anything now.
 ```
@@ -202,7 +231,7 @@ Keep personal information out of the page title, the main heading and the web ad
 
 ## Evidence
 
-- **status:** supported by a main source, and seen in 2 services. Not yet tested with users
+- **status:** supported by a main source, and seen in 2 services. Adapted for 3 invented services. Not yet tested with users
 - **Service Manual**, describing transactional messages: "they completed a transaction, and you're sending them a confirmation email"
 - **HM Passport Office**, "How we communicate with customers" (published): automatic notifications "let the customer know we have received the lost or stolen report" and "give the customer a reference number". It also sends "an automatic email response to acknowledge receipt" of an email to a team mailbox
 - **unpublished design work in one service:** the moment occurs. No detail is recorded
@@ -215,3 +244,13 @@ Interpretation, from adapting this pattern back to each source:
 - a published service gives the reference in its own notification. The pattern allows this
 - the date received matters most to customers who posted something. It's optional rather than core
 - the date can also matter legally, which added the "legal significance" checkpoint
+
+### Adapted for invented services
+
+Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026:
+
+- a case word that is also the outcome, like "registration", made "We've received your registration" read as "you're registered". [what we received] now warns against this
+- every business in one service had a standard next step, so "You do not need to do anything now" was false. Variant D was added
+- a decision timescale applied only once an application was checked as complete. [timescale condition] was added
+- a service that only lets texts point to a letter had no text to start from. The pointer text was added
+- a reference prefix could reveal the service on a lock screen. The reference checkpoint now covers the format

@@ -14,8 +14,8 @@ Draft a generic email for "we need something from you" that any service could ta
 ## A correct response must
 
 - follow the message anatomy: what has happened, greeting, reference, what to do and by when, what happens if they don't, how to get help, who it's from
-- use placeholders for every service detail, like [service name], [what we need], [deadline] and [how to send it]
-- list the questions the service must answer under "For the service to fill in"
+- use placeholders for every service detail, like [service name], [what we need], ((deadline)) and [how to provide it]
+- list the questions the service must answer under "Needs a service decision"
 - avoid asking for personal information in the email itself
 
 ## A correct response must not

@@ -73,13 +73,16 @@ Owner: [role]
 
 | Fact | Value | Status | Source | Owner | Last checked |
 |---|---|---|---|---|---|
-| Customer word for the case | application | confirmed | service team | product manager | 6 October 2026 |
-| Reference format | [example] | | | | |
+| Service name | | | | | |
+| Customer word for the case | | | | | |
+| Reference format | | | | | |
 | Sender name | | | | | |
 | Text message sender ID | | | | | |
 | Contact route | | | | | |
 | Tracking route | | | | | |
-| Channels used | | | | | |
+| Channels in use | | | | | |
+| Channels planned | | | | | |
+| How the channel is chosen | | | | | |
 
 ## Terminology
 
@@ -113,7 +116,7 @@ Status: confirmed | needs confirmation | open question
 
 ## Constraints
 
-- [constraint, with its source]
+- [constraint, with its source, like a language duty or a template tool]
 
 ## Departures from the generic patterns
 
@@ -131,7 +134,11 @@ Status: confirmed | needs confirmation | open question
 - use only facts marked "confirmed"
 - if 2 facts conflict, use neither. Flag both
 - if a fact has no status, treat it as "needs confirmation"
+- if a confirmed fact has no owner, use it, and note the missing owner
 - if a fact is out of date or its source is unclear, use it only if confirmed, and mention the date
+- "About the service" and "Users" are background. Use them to understand the service, not as facts to put in a message
+- a message missing from "Formal or legally significant communications" is not confirmation it has no legal effect
+- only a confirmed policy decision settles a privacy, legal or policy question. A communication judgement or precedent can shape wording
 
 ## When there isn't one yet
 
@@ -174,8 +181,8 @@ Give the user the service context to save in their own project, like `service-co
 
 | Pattern | Facts |
 |---|---|
-| We've received it | customer word for what was received, reference format, next step and timescale, tracking route, contact route, sender, whether receipt has legal significance |
-| We're waiting on someone else | customer word for the case, how the third party can be described in each channel, when the service will next update the customer, what happens if there's no reply, tracking route, contact route, sender |
-| We need something from you | what's needed and a neutral description of it, return routes, deadline, consequence of not acting, whether there's a legal requirement, next step after receipt, contact route, sender |
+| We've received it | customer word for what was received, reference format, next step and timescale, when the timescale applies, tracking route, contact details, sender, whether receipt has legal significance |
+| We're waiting on someone else | customer word for the case, how the third party can be described in each channel, how often the service updates customers, what happens if there's no reply, tracking route, contact details, sender |
+| We need something from you | what's needed and a neutral description of it, how to provide it, the deadline or deadline rule, consequence of not acting, whether there's a legal requirement, how customers can check the request is genuine, next step after receipt, contact details, sender |
 
 The full placeholder table is in each pattern file in `case-communication-patterns`.
