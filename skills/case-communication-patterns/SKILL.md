@@ -20,7 +20,7 @@ This is a draft. The moments are proposals, tested and revised as evidence is ad
 
 This skill contains no service's rules. Service facts come from a service context the user gives you, in the conversation or in a file in their own project. It may hold the service's terminology, case states, timescales, channels, sender and contact details, and confirmed policy or disclosure decisions.
 
-Only use a fact marked as confirmed. Treat anything else as a placeholder, and list it.
+Use descriptive facts the user gives you, like the service name or contact details, as they are. Use decisions, like timescales, consequences, channel and disclosure decisions, only if they're marked confirmed. Treat anything else as a placeholder, and list it.
 
 If there's no service context, work without one and use placeholders.
 
@@ -59,7 +59,7 @@ Then:
 
 ### Adapt a pattern for a service
 
-If you were given a service context, use its confirmed facts for the placeholders. Leave the rest as placeholders, and list them.
+If you were given a service context, use its descriptive facts, and its confirmed decisions, for the placeholders. Leave the rest as placeholders, and list them.
 
 Adapt the pattern, don't rewrite it. Keep its core information and its order. Change the wording only where the service's terminology or a confirmed decision needs it. If a service departs from the pattern, check its service context records the reason, and say so in your answer.
 

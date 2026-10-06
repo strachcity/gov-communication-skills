@@ -71,6 +71,7 @@ From the service context:
 | [how long] | how long the survey takes, tested, not estimated |
 | [survey URL] | a full web address. See the checkpoints on the domain |
 | [other ways] | another way to give feedback, like phone or post |
+| [how to take part] | for letters, a full sentence, like how to use a reply form and prepaid envelope, or a phone number |
 | [what we do with it] | only if the service has confirmed it |
 | [how to stop] | only if the service offers it |
 | [sender] | who the message is from |
@@ -137,13 +138,19 @@ Dear ((first name)) ((last name))
 
 We'd like to know what you thought of [service name], so we can improve it.
 
-It takes about [how long]. It's optional, and it will not affect your [case] or any decision about it[, or [what it won't affect]].
+It takes about [how long]. It's optional, and it will not affect your [case] or any decision about it.
+
+[If there's something else the customer might worry it affects:]
+It will not affect [what it won't affect] either.
+[End if]
 
 Please do not include personal details or details of your [case].
 
 Give feedback: [survey URL]
 
-[You can also give feedback [other ways].]
+[If there are other ways to give feedback:]
+You can also give feedback [other ways].
+[End if]
 
 [Sender]
 ```
@@ -154,7 +161,7 @@ The letter has no reference on purpose. Linking feedback to a case is a privacy 
 
 ### Text message
 
-```
+```sms
 [Service name]: tell us what you thought. It's optional, takes [how long] and will not affect your [case]: [survey URL]
 ```
 
@@ -173,7 +180,7 @@ We'd like to know what you thought of [service name], so we can improve it.
 
 It takes about [how long]. It's optional, and it will not affect your [case] or any decision about it.
 
-[How to take part, like a reply form and a prepaid envelope, or a phone number.]
+[how to take part]
 
 [Sender]
 ```

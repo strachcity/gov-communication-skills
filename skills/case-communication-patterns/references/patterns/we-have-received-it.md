@@ -58,6 +58,7 @@ From the service context:
 | [next step] | what the customer will experience next, not the internal process |
 | [timescale] | when that will happen, as a range the service can meet |
 | [timescale condition] | when the timescale applies, like "if your application is complete" |
+| [what we sent] | for pointer texts: "an email" or "a letter" |
 | [what the date means] | only if receipt has legal significance, in the service's confirmed words |
 | [tracking URL] | a full GOV.UK web address |
 | [contact details] | how to get help, in the A to Z format, like "Telephone: 0300 000 0000" with opening times on separate lines |
@@ -119,7 +120,11 @@ We've recorded what you told us when we spoke on ((date of call)).
 
 ((what we recorded))
 
-If anything is wrong, [correction route] [on or before ((correction deadline))].
+If anything is wrong, [correction route].
+
+[If the service sets a deadline for corrections:]
+Tell us on or before ((correction deadline)).
+[End if]
 ```
 
 What the customer told the service may have legal significance, like telling the service about a change. Check the "legal significance" checkpoint.
@@ -171,7 +176,11 @@ Your reference number is ((reference)). Use it if you contact us.
 
 What happens next
 
-We'll [next step] by [timescale] [timescale condition].
+We'll [next step] by [timescale].
+
+[If the timescale has a condition:]
+This timescale applies [timescale condition].
+[End if]
 
 You do not need to do anything now.
 
@@ -187,23 +196,25 @@ If you need help, contact us:
 
 With a tracking route:
 
-```
-We've received your [what we received]. Reference: ((reference)). You do not need to do anything now. Track it: [tracking URL]
+```sms
+We've received your [what we received]. You do not need to do anything. Track it: [tracking URL]
 ```
 
 Without one:
 
-```
+```sms
 We've received your [what we received]. Reference: ((reference)). We'll [next step] by [timescale]. You do not need to do anything now.
 ```
 
 As a pointer, if the service sends the detail by email or letter, or has decided texts must say less:
 
-```
-We've sent you [an email / a letter] about your [what we received]. Reference: ((reference)).
+```sms
+We've sent you [what we sent] about your [what we received]. Reference: ((reference)).
 ```
 
 Send a pointer text only once the email or letter is likely to have arrived.
+
+The tracking version leaves out the reference to fit in one text. The email or tracking page gives it.
 
 See "Text messages" in `../moments.md` for counting characters and sender IDs.
 
@@ -217,15 +228,25 @@ We've received your [what we received]
 
 [letter greeting]
 
-We received your [what we received] on ((date received)). [what the date means]
+We received your [what we received] on ((date received)).
+
+[If the date has legal significance:]
+[what the date means]
+[End if]
 
 What happens next
 
-We'll [next step] by [timescale] [timescale condition].
+We'll [next step] by [timescale].
+
+[If the timescale has a condition:]
+This timescale applies [timescale condition].
+[End if]
 
 You do not need to do anything now.
 
-[Optional: We'll return your [original documents] by [timescale].]
+[If the service returns originals:]
+We'll return your [original documents] by [timescale].
+[End if]
 
 Check progress or get help
 
@@ -249,7 +270,11 @@ Status: Received
 We received your [what we received] on ((date received)).
 
 What happens next
-We'll [next step] by [timescale] [timescale condition].
+We'll [next step] by [timescale].
+
+[If the timescale has a condition:]
+This timescale applies [timescale condition].
+[End if]
 
 You do not need to do anything now.
 ```

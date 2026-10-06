@@ -65,9 +65,12 @@ From the service context:
 | [next step] | what happens next, or [end of process] |
 | [challenge route] | how to challenge the decision, if there is one. It may have more than one stage, like a review and then an appeal. Give each stage as a step |
 | [challenge deadline rule] | how the deadline for a challenge is worked out, including what it counts from and whether it's calendar or working days |
-| [ongoing duties] | only if the customer has a standing duty after the decision, like telling the service about changes |
+| [ongoing duties] | only if the customer has a continuing duty after the decision, like telling the service about changes. Variant D of "You need to act before a date" has the copy |
 | [reasons] | only if the service has confirmed how reasons are given |
 | [restart route] | for variant D, how to apply again or restart, if the service allows it |
+| [what closing means] | for variant D, what closing means for the customer, like what happens to anything they paid or sent, as the service has confirmed |
+| [outcome headline] | a headline for the letter, like "Your [case] has been [outcome]", in the service's confirmed words |
+| [what we sent] | for pointer texts: "an email" or "a letter" |
 | [contact details] | how to get help, in the A to Z format |
 | [sender] | who the message is from |
 | [letter greeting] | from the service's letter template |
@@ -162,7 +165,7 @@ Leave out any line for something the service doesn't have. A formal notice may n
 Reference: ((reference))
 ((date))
 
-[Outcome headline, like "Your [case] has been [outcome]"]
+[outcome headline]
 
 [letter greeting]
 
@@ -172,6 +175,7 @@ Reference: ((reference))
 Why we made this decision
 
 ((reasons for this case))
+[End if]
 
 [If there's a challenge route:]
 If you disagree with this decision
@@ -179,6 +183,7 @@ If you disagree with this decision
 We made this decision on ((decision date)).
 
 You can [challenge route]. You need to do this on or before ((challenge deadline)).
+[End if]
 
 What happens next
 
@@ -188,6 +193,7 @@ What happens next
 If anything changes
 
 [ongoing duties]
+[End if]
 
 If you need help, contact us:
 [contact details]
@@ -212,6 +218,7 @@ Your reference number is ((reference)).
 Why we made this decision
 
 ((reasons for this case))
+[End if]
 
 [If there's a challenge route:]
 If you disagree with this decision
@@ -219,6 +226,7 @@ If you disagree with this decision
 We made this decision on ((decision date)).
 
 You can [challenge route]. You need to do this on or before ((challenge deadline)).
+[End if]
 
 What happens next
 
@@ -228,6 +236,7 @@ What happens next
 If anything changes
 
 [ongoing duties]
+[End if]
 
 If you need help, contact us:
 [contact details]
@@ -241,13 +250,13 @@ Interpretation: the subject line says a decision has been made, not what it is. 
 
 A pointer, by default:
 
-```
-[Service name]: we've made a decision on your [case]. We've [emailed you / sent you a letter] with details. Reference: ((reference))
+```sms
+[Service name]: we've made a decision on your [case]. We've sent you [what we sent] with details. Reference: ((reference))
 ```
 
 Self-contained, only for an outcome the service has decided can go in a text, and never for a formal notice:
 
-```
+```sms
 [Service name]: [outcome sentence]. [next step, in a few words]. Reference: ((reference))
 ```
 
@@ -258,8 +267,10 @@ Status: [outcome]
 
 [outcome sentence] [what it means]
 
+[If there's a challenge route:]
 If you disagree
 You can [challenge route] on or before ((challenge deadline)).
+[End if]
 
 What happens next
 [next step]
@@ -284,20 +295,23 @@ Body:
 ```
 We've closed your [case] because [reason for closing].
 
-[What this means, like what happens to anything you paid or sent.]
+[what closing means]
 
+[If the customer can restart:]
 If you still want to [what they applied for], you can [restart route].
+[End if]
 
 [If closing can be challenged:]
 If you disagree, you can [challenge route] on or before ((challenge deadline)).
+[End if]
 
 Your reference number is ((reference)).
 ```
 
 Text, as a pointer:
 
-```
-[Service name]: we've closed your [case]. We've [emailed you / sent you a letter] with details.
+```sms
+[Service name]: we've closed your [case]. We've sent you [what we sent] with details.
 ```
 
 ## Evidence

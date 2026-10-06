@@ -54,6 +54,11 @@ From the service context:
 | [how to do it] | the route, with a full GOV.UK web address if online |
 | [what you'll need] | only if needed |
 | [due wording] | "is due on" for a deadline, or "expires on" for an expiry |
+| [action] | what the customer needs to do, in lower case, like "renew it" or "send your annual return" |
+| [action short] | for texts, a short instruction starting with a capital letter, like "Renew it" |
+| [duty period] | for variant D, how soon after a change the customer must tell the service, like "14 days" |
+| [what counts as a change] | for variant D, in the customer's words, like "you move house" |
+| [how to tell us] | for variant D, the route |
 | [consequence] | what happens if they don't act, as the service has confirmed it. "Must" only if the service context records a legal requirement. If it says "must" without saying why, flag it |
 | [cost] | only if confirmed |
 | [unsubscribe route] | for variant C |
@@ -84,10 +89,18 @@ Like an annual return, review or report. Say what's needed and by when. This inc
 
 The Service Manual calls these subscription messages. Always give a way to unsubscribe.
 
+### D. A continuing duty, with no fixed due date
+
+The customer has a duty that starts when something happens, like telling the service about a change within a set time. There's no date to remind them of. This was recorded as a gap, and now has its own copy.
+
+- say what the duty is, what counts as a change, how soon they must act, and how
+- say what happens if they don't, only if the service has confirmed it
+- send it as a section in a decision or "What you applied for is on its way", or as a standalone reminder if the service sends one
+- "must" only if the service context records a legal requirement. Otherwise "need to"
+
 ### Not this pattern
 
 - an open application can't progress until the customer acts: use "We need something from you"
-- a standing duty with no due date, like telling the service about changes: see "Gaps" in `../moments.md`
 - something to do when an item arrives: use "What you applied for is on its way", variant C
 
 ## Modifiers that apply
@@ -115,7 +128,7 @@ Check these with `privacy-aware-communications`. Don't decide them here.
 
 ## Baseline copy
 
-Leave out any line for something the service doesn't have.
+Inline placeholders always have a value. Optional content is a whole block, from `[If ...:]` to `[End if]`. Variant D has its own copy, below.
 
 ### Email
 
@@ -124,60 +137,120 @@ Subject: [Service name]: your [what's due] [due wording] ((due date))
 
 Dear ((first name)) ((last name))
 
-Your [what's due] [((record identifier))] [due wording] ((due date)).
+Your [what's due] [due wording] ((due date)).
 
-[Renew / Do it] on or before ((last date to act)).
+[If the customer may have more than one:]
+This is for ((record identifier)).
+[End if]
 
-How to [renew / do it]
+You need to [action] on or before ((last date to act)).
+
+How to [action]
 
 [how to do it]
 
 [If there's a cost:]
 It costs [cost].
+[End if]
 
-[You'll need:
-[what you'll need]]
+[If they need anything to do it:]
+You'll need:
 
-If you do not [renew / do it] in time
+[what you'll need]
+[End if]
+
+[If the service has confirmed a consequence:]
+If you do not [action] in time
 
 [consequence]
+[End if]
 
-[For variant C:]
+[If the customer signed up for these reminders:]
 You're getting this email because you signed up for reminders. To stop them, [unsubscribe route].
+[End if]
 
 [Sender]
 ```
 
 ### Text message
 
-```
-[Service name]: your [what's due] [due wording] ((due date)). [Renew / Do it] on or before ((last date to act)) at [how to do it]
+```sms
+[Service name]: your [what's due] [due wording] ((due date)). [action short] on or before ((last date to act)): [how to do it]
 ```
 
 ### Letter
 
 ```
-[Reference: ((reference)), if the service uses one]
+[If the service uses a reference:]
+Reference: ((reference))
+[End if]
 ((date))
 
 Your [what's due] [due wording] ((due date))
 
 [letter greeting]
 
-Your [what's due] [((record identifier))] [due wording] ((due date)).
+Your [what's due] [due wording] ((due date)).
 
-[Renew / Do it] on or before ((last date to act)).
+[If the customer may have more than one:]
+This is for ((record identifier)).
+[End if]
 
-How to [renew / do it]
+You need to [action] on or before ((last date to act)).
+
+How to [action]
 
 [how to do it]
 
 [If there's a cost:]
 It costs [cost].
+[End if]
 
-If you do not [renew / do it] in time
+[If the service has confirmed a consequence:]
+If you do not [action] in time
 
 [consequence]
+[End if]
+
+[Sender]
+```
+
+### Variant D, a continuing duty
+
+As a section in another message, like a decision or "What you applied for is on its way":
+
+```
+If anything changes
+
+You need to tell us within [duty period] if [what counts as a change].
+
+[how to tell us]
+
+[If the service has confirmed a consequence:]
+If you do not tell us
+
+[consequence]
+[End if]
+```
+
+As a standalone reminder, by email:
+
+```
+Subject: [Service name]: tell us if anything changes
+
+Dear ((first name)) ((last name))
+
+You need to tell us within [duty period] if [what counts as a change].
+
+[how to tell us]
+
+[If the service has confirmed a consequence:]
+If you do not tell us
+
+[consequence]
+[End if]
+
+You do not need to do anything if nothing has changed.
 
 [Sender]
 ```
@@ -204,4 +277,4 @@ Interpretation, from adapting this pattern for a permit, a benefit and a registr
 - [cost] wasn't used in the copy, and there was no licence number. Both are fixed
 - an annual review of an ongoing award didn't fit "not a live case". Variant B now covers reviews of something the customer already has
 - one service context said "must return" without saying it was a legal requirement. The [consequence] placeholder now says to flag this
-- a standing duty to report changes fitted no moment. It's recorded in "Gaps"
+- a standing duty to report changes fitted no moment. Variant D was added for it

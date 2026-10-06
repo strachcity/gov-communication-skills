@@ -65,8 +65,19 @@ Parts 4 to 6 come from the Service Manual, which says to:
 
 Each pattern has baseline copy for each channel. It uses 2 kinds of placeholder:
 
-- **[square brackets]:** a service fact, filled once from the service context, like [sender] or [tracking URL]. Only use confirmed facts
+- **[square brackets]:** a service fact, filled once from the service context, like [sender] or [tracking URL]. Descriptive facts the user gives you can be used as they are. Decisions, like timescales and consequences, need to be confirmed. See "2 kinds of fact" in the `government-communication` skill's `references/service-context.md`
 - **((double brackets)):** a value filled for each message when it's sent, like ((reference)) or ((deadline)). GOV.UK Notify uses this format for personalisation. These are not gaps in the service context
+
+### Optional copy
+
+Optional copy is always a whole block, never part of a sentence:
+
+- a placeholder inside a sentence must always have a value. If a part of a sentence might not apply, rewrite it as a separate block
+- an optional block starts with a line like `[If there's a cost:]` and ends with `[End if]`. Everything between is complete sentences or a heading and its content
+- where a sentence has alternatives, like "an email" or "a letter", it uses one placeholder, like [what we sent], which always gets a value
+- the only exception is the "[Service name]: " prefix on texts, which is kept or removed whole
+
+Remove the `[If ...:]` and `[End if]` lines when filling in the copy. This stops a draft from being sent half filled.
 
 A service fact can be a rule, like "20 working days after we receive a complete application". Turn it into a date for each message, and flag what the rule counts from and whether it's calendar or working days. If the rule itself isn't confirmed, list the rule as needing a decision, not the date.
 
@@ -104,8 +115,8 @@ Send a pointer only once the email or letter is likely to have arrived. A pointe
 
 ### Text messages
 
-- count characters using the service's real reference format and the longest likely values, like the longest date. Over 160 counts as more than one text
-- use straight apostrophes and quote marks. This is a technical precaution, not a GOV.UK writing rule. Notify's text message pricing page says non-standard characters cut the limit to 70, but doesn't say whether curly apostrophes are standard. A test message through Notify would settle it
+- count characters using the service's real reference format and the longest likely values, like the longest date. Over 160 counts as more than one text. In this repository, `evals/text-message-lengths.py` checks every baseline with long values
+- use straight apostrophes and quote marks. This is a technical precaution, not a GOV.UK writing rule. Notify's text message pricing page says non-standard characters cut the limit to 70. It lists "single and double quotation marks" and "dashes" as standard, but doesn't say whether that includes curly ones. A test message through Notify would settle it
 - the text baselines start with "[Service name]: ". Leave it out if the sender ID already names the service
 - if the sender ID doesn't name the service, like "GOVUK", and the service name would reveal something sensitive on a lock screen, there's a trade-off: an anonymous text looks like a scam, and a named one reveals the service. That's a decision for the service. Flag it, and don't resolve it by revealing more
 - if the service has a language duty, like Welsh, each version needs its own count. Welsh accented letters cut the limit to 70
@@ -345,4 +356,4 @@ Evidence: unpublished prototype work. Status: seen in 1 service.
 
 Points a service needs that no moment covers yet. Add them here in generic words, with the date. Do not name the service.
 
-- **a standing duty, with no due date:** like a duty to tell the service about changes within a set time. It isn't a moment, because nothing happens on a date. For now, include it as an optional "If anything changes" section in "We've made a decision" or "What you applied for is on its way". Found 6 October 2026
+None open. A continuing duty with no fixed due date, found on 6 October 2026, is now variant D of "You need to act before a date".

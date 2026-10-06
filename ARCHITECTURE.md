@@ -36,7 +36,7 @@ Service facts come from a service context. The user supplies it at the point of 
 2. Tell it about the service, or point it to existing service documentation.
 3. The plugin creates the service context, or reads an existing one.
 4. It identifies the generic case communication pattern that fits.
-5. It adapts the pattern using the service's confirmed facts.
+5. It adapts the pattern using the service's facts, and only its confirmed decisions.
 6. It runs privacy and policy checks.
 7. It applies GOV.UK content guidance.
 8. It returns a strong first draft, and lists anything that still needs a service decision.
@@ -146,7 +146,7 @@ The kinds are:
 - **precedent:** wording that was approved or rejected, with the reason if known
 - **hypothesis:** from prototypes or workshops, not yet tested or agreed
 
-The skills only use facts marked confirmed. A hypothesis or judgement is never treated as a policy decision.
+The skills use descriptive facts the user gives them, like the service name or contact details, as they are. Decisions, like timescales, consequences, channel and disclosure decisions, are only used if they're marked confirmed. A hypothesis or judgement is never treated as a policy decision.
 
 ### When there isn't one yet
 

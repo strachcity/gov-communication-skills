@@ -58,7 +58,8 @@ From the service context:
 | [if it does not arrive] | what to do, and when, as the service has confirmed it |
 | [what to do when it arrives] | like sign it or activate it, only if needed |
 | [collection or download details] | for variant B |
-| [ongoing duties] | only if the customer has a standing duty, like telling the service about changes |
+| [ongoing duties] | only if the customer has a continuing duty, like telling the service about changes. See variant D of "You need to act before a date" |
+| [when the next reminder comes] | a full sentence, like "We'll remind you before it expires." |
 | [contact details] | how to get help, in the A to Z format |
 | [sender] | who the message is from |
 | [letter greeting] | from the service's letter template |
@@ -139,10 +140,11 @@ We sent your [what we've issued] by [how it's sent] on ((date sent)). It should 
 
 Your reference number is ((reference)).
 
-[What to do when it arrives:]
+[If there's something to do when it arrives:]
 When it arrives
 
 [what to do when it arrives]
+[End if]
 
 If it has not arrived by ((arrive by))
 
@@ -150,20 +152,24 @@ If it has not arrived by ((arrive by))
 
 [If this is the end of the process, and no reminders follow:]
 This is the last message we'll send you about this [case].
+[End if]
 
-[If reminders follow, like for a renewal, say when instead.]
+[If reminders follow, like for a renewal:]
+[when the next reminder comes]
+[End if]
 
-[If there are ongoing duties:]
+[If there's a continuing duty:]
 If anything changes
 
 [ongoing duties]
+[End if]
 
 [Sender]
 ```
 
 ### Text message
 
-```
+```sms
 [Service name]: we sent your [what we've issued] on ((date sent)). It should arrive by ((arrive by)). If it has not arrived by then, [if it does not arrive, in a few words].
 ```
 

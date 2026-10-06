@@ -56,6 +56,7 @@ From the service context:
 | [service name] | the name customers know the service by |
 | [case] | the customer's word for their case |
 | [kind of contact] | like "call", "appointment" or "visit" |
+| [contact phrase] | what the service will do, like "call you", "see you" or "visit you" |
 | [purpose] | what the contact is for, only at the level the service has confirmed |
 | [what to have ready] | documents, information or anything else |
 | [how to recognise it] | like the number the call will come from, or that the caller will give a reference |
@@ -90,7 +91,7 @@ Confirm the date, time and place. The Service Manual's example of a transactiona
 
 Someone from the service will visit the customer's home or premises. Say how to recognise them, like identification they'll show. This is core information for a visit, in every channel, because it protects the customer from someone pretending to be from the service.
 
-```
+```sms
 [Service name]: we'll visit you on ((date and time)). Our officer will show [how to recognise it]. To change it, [how to change it].
 ```
 
@@ -137,13 +138,13 @@ Leave out any line for something the service doesn't have.
 
 ### Text message
 
-```
+```sms
 [Service name]: we'll call you on ((date and time)) about your [case]. To change this, [how to change it].
 ```
 
 For an appointment:
 
-```
+```sms
 [Service name]: your appointment is on ((date and time)) at ((place)). To change it, [how to change it].
 ```
 
@@ -154,7 +155,12 @@ Subject: [Service name]: your [kind of contact] on ((date and time))
 
 Dear ((first name)) ((last name))
 
-We'll [call you / see you / visit you] on ((date and time)) [at ((place))] about your [case].
+We'll [contact phrase] on ((date and time)) about your [case].
+
+[If there's a place:]
+The address is:
+((place))
+[End if]
 
 Your reference number is ((reference)).
 
@@ -172,6 +178,7 @@ If the time does not work
 
 [If the service offers support:]
 If you need support, like an interpreter, [support available].
+[End if]
 
 [Sender]
 ```
@@ -186,7 +193,12 @@ Your [kind of contact] on ((date and time))
 
 [letter greeting]
 
-We'll [call you / see you / visit you] on ((date and time)) [at ((place))] about your [case].
+We'll [contact phrase] on ((date and time)) about your [case].
+
+[If there's a place:]
+The address is:
+((place))
+[End if]
 
 What to have ready
 
@@ -200,10 +212,11 @@ If the time does not work
 
 [how to change it]
 
-[If the service has confirmed it:]
+[If the service has confirmed a consequence:]
 If you miss it
 
 [missed consequence]
+[End if]
 
 If you need help, contact us:
 [contact details]
@@ -216,14 +229,16 @@ The main sources don't cover how to greet or sign off a letter. Use the service'
 ### Status page, behind sign-in
 
 ```
-[Kind of contact]: ((date and time))
+[Kind of contact, with a capital letter]: ((date and time))
 
-[Place: ((place))]
+[If there's a place:]
+Place: ((place))
+[End if]
 
 What to have ready
 [what to have ready]
 
-[Link: Change or cancel]
+Link: Change or cancel
 ```
 
 ## Evidence

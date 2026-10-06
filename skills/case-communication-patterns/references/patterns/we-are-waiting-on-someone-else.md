@@ -55,6 +55,8 @@ From the service context:
 | [who we've asked] | how the third party can be described, in each channel. See "Describing the third party" |
 | [what we've asked for] | only if the service has confirmed it can be described |
 | [next stage] | for variant E, what the other organisation will do |
+| [who acts next] | for variant E, a full sentence, like "They'll contact you directly to book an inspection." or "We'll tell you when they've finished." |
+| [what we sent] | for pointer texts: "an email" or "a letter" |
 | [update commitment] | how often or when the service updates customers while waiting |
 | [timescale] | the expected wait, only if the service has a confirmed one |
 | [if no reply] | what the service will do, as confirmed by a policy decision |
@@ -100,7 +102,9 @@ Only send it if there's something new to say, like a new update date, that the s
 ```
 We're still waiting for information we need from [who we've asked] before we can continue with your [case].
 
-[We contacted them again on ((date chased)).]
+[If the service has chased:]
+We contacted them again on ((date chased)).
+[End if]
 
 You do not need to do anything now. We'll update you by ((update date)).
 ```
@@ -134,7 +138,7 @@ The rest of the baseline talks about waiting for information, which doesn't fit 
 ```
 Your [case] has been passed to [who we've asked], who will [next stage].
 
-[They'll contact you directly to [what they'll arrange]. / We'll tell you when they've finished.]
+[who acts next]
 
 You do not need to do anything now.
 
@@ -197,7 +201,9 @@ What happens next
 
 We'll update you by ((update date)), or sooner if we get what we need.
 
-[Optional: If we do not hear from them by ((date)), we'll [if no reply].]
+[If the service has confirmed what happens if there's no reply:]
+If we do not hear from them by ((date)), we'll [if no reply].
+[End if]
 
 You can check the progress of your [case] at [tracking URL]
 
@@ -211,20 +217,20 @@ If you need help, contact us:
 
 With an update date:
 
-```
+```sms
 Your [case] is waiting for information from someone else. You do not need to do anything. We'll update you by ((update date)).
 ```
 
 With a tracking route instead:
 
-```
-Your [case] is waiting for information from someone else. You do not need to do anything. Track it: [tracking URL]
+```sms
+Your [case] is waiting on someone else. You do not need to do anything. Track it: [tracking URL]
 ```
 
 As a pointer, if the service sends the detail by email or letter, or has decided texts must say less:
 
-```
-We've sent you [an email / a letter] about your [case]. You do not need to do anything now.
+```sms
+We've sent you [what we sent] about your [case]. You do not need to do anything now.
 ```
 
 Interpretation: these versions don't describe the third party, following the text message risk heuristics in `privacy-aware-communications`. A service can say more in a text only with a confirmed decision. Both the date and the web address would usually go over 160 characters, so choose one.
@@ -249,7 +255,9 @@ What happens next
 
 We'll write to you again by ((update date)), or sooner if we get what we need.
 
-[Optional: If we do not hear from them by ((date)), we'll [if no reply].]
+[If the service has confirmed what happens if there's no reply:]
+If we do not hear from them by ((date)), we'll [if no reply].
+[End if]
 
 Check progress or get help
 

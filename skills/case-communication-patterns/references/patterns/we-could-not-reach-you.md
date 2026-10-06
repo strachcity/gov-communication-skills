@@ -135,15 +135,27 @@ Leave out any line for something the service doesn't have.
 Call scripts are out of scope, but a voicemail is a message, so this is the lowest-risk baseline:
 
 ```
-Hello, this is [caller name] calling for ((first name)) ((last name)). We need to speak to you. [We'll call you again at ((time of next attempt)).] You can also call us on [direct number], [opening times]. Thank you.
+Hello, this is [caller name] calling for ((first name)) ((last name)). We need to speak to you. You can call us on [direct number], [opening times]. Thank you.
+```
+
+If the service will call again at a set time, use this version:
+
+```
+Hello, this is [caller name] calling for ((first name)) ((last name)). We need to speak to you. We'll call you again at ((time of next attempt)). You can also call us on [direct number], [opening times]. Thank you.
 ```
 
 Interpretation: don't give the case reference or the reason for the call. Whether to give the caller's first name is a service decision.
 
 ### Text message
 
+```sms
+[Service name] tried to call you. Please call us on [number], [opening times]. Quote ((reference)).
 ```
-[Service name] tried to call you. [We'll call again at ((time of next attempt)). / Please call us on [number], [opening times]. Quote ((reference)).]
+
+If the service will call again at a set time:
+
+```sms
+[Service name] tried to call you. We'll call again at ((time of next attempt)).
 ```
 
 Interpretation: if the customer has to call a general helpline, telling them to quote their reference gets them to the right place. Count the text with real values. With a long service name and opening times it can go over 160 characters.
@@ -161,16 +173,25 @@ Your reference number is ((reference)).
 
 What you need to do
 
-[Call / Contact] us [on or before ((deadline))]:
+[If there's a deadline:]
+Contact us on or before ((deadline)):
+[End if]
+
+[If there's no deadline:]
+Contact us as soon as you can:
+[End if]
+
 [how to get in touch]
 
 When you get in touch, give your reference number: ((reference)).
 
 To check this email is genuine, [how to check it's genuine].
 
+[If the service has confirmed a consequence:]
 If you do not get in touch
 
 [consequence]
+[End if]
 
 [Sender]
 ```
@@ -187,16 +208,25 @@ We need to speak to you about your [case]
 
 We tried to contact you about your [case], but could not reach you.
 
-Contact us [on or before ((deadline))]:
+[If there's a deadline:]
+Contact us on or before ((deadline)):
+[End if]
+
+[If there's no deadline:]
+Contact us as soon as you can:
+[End if]
+
 [how to get in touch]
 
 Have your reference number ready.
 
 To check this letter is genuine, [how to check it's genuine].
 
+[If the service has confirmed a consequence:]
 If you do not contact us
 
 [consequence]
+[End if]
 
 [Sender]
 ```

@@ -64,6 +64,7 @@ From the service context:
 | [service name] | the name customers know the service by |
 | [case] | the customer's word for their case |
 | [what's changed] | the change, in customer terms, as the service has confirmed it can be described |
+| [update sentence] | the first sentence from variant A or B, filled in |
 | [next step] | what happens next, from the customer's view |
 | [timescale] | when, only if the service can meet it |
 | [tracking URL] | a full GOV.UK web address |
@@ -132,7 +133,7 @@ Subject: [Service name]: update on your [case]
 
 Dear ((first name)) ((last name))
 
-[What's changed, as in variant A or B.]
+[update sentence]
 
 You do not need to do anything now.
 
@@ -145,7 +146,7 @@ You can check the progress of your [case] at [tracking URL]
 
 ### Text message
 
-```
+```sms
 [Service name]: we've started working on your [case]. We'll [next step] by [timescale]. You do not need to do anything.
 ```
 
@@ -154,7 +155,7 @@ You can check the progress of your [case] at [tracking URL]
 ```
 Status: [stage name, as customers know it]
 
-[What's changed.]
+[update sentence]
 
 What happens next
 We'll [next step] by [timescale].

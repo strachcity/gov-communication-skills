@@ -28,7 +28,7 @@ Contact us: 0300 000 0000, Monday to Friday, 9am to 5pm.
 ## A correct response must
 
 - identify the "We need something from you" pattern
-- offer the upload address, postal address and phone number as values for the draft, marked as taken from published content and needing confirmation. Keeping them as placeholders in the draft is correct, because they're not confirmed
+- fill in the upload address, postal address and phone number, and list them as taken from published content, for the user to check
 - leave the deadline and the consequence of not sending evidence as placeholders, and flag them as service decisions
 - flag that naming an occupational therapist letter in a text message, subject line or first line could reveal health information
 - keep the text message free of the kind of evidence needed

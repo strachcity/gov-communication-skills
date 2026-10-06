@@ -70,6 +70,7 @@ From the service context:
 | [next step] | what happens after the service gets it |
 | [timescale] | when that will happen |
 | [contact details] | how to get help, in the A to Z format, like "Telephone: 0300 000 0000" with opening times on separate lines |
+| [what we sent] | for pointer texts: "an email" or "a letter" |
 | [sender] | who the message is from |
 | [letter greeting] | from the service's letter template |
 
@@ -190,14 +191,14 @@ If [short description] would reveal something sensitive in the subject line, use
 
 A pointer, when what's needed is sensitive or needs explaining:
 
-```
-You need to send us something for your [case] by ((deadline)). We've [emailed you / sent you a letter] with details. Reference: ((reference))
+```sms
+You need to send us something for your [case] by ((deadline)). We've sent you [what we sent] with details. Reference: ((reference))
 ```
 
 Self-contained, when what's needed and how to send it are short and not sensitive:
 
-```
-You need to send us [short description] for your [case] on or before ((deadline)). Send it at [upload URL]
+```sms
+Send us [short description] for your [case] on or before ((deadline)): [upload URL]
 ```
 
 Send a pointer text only once the email or letter is likely to have arrived. Interpretation: avoid sending a text and an email at the same moment unless the text adds something. The Service Manual says to avoid it "unless there's a very good reason".
@@ -251,7 +252,7 @@ You need to send us [what we need].
 
 Send it on or before ((deadline)).
 
-[Button or link: Send [short description]]
+Button: Send [short description]
 
 If you do not send it
 [consequence]

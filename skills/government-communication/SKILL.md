@@ -35,7 +35,7 @@ If there isn't one, help the user create one. Follow "When there isn't one yet" 
 
 If the user doesn't want to give any context, carry on. Use placeholders for every service fact.
 
-Only use facts marked "confirmed". Anything else becomes a placeholder and goes on the list for the service.
+Use descriptive facts the user gives you, like the service name or contact details, without asking for a status. Use decisions, like timescales, consequences, channel and disclosure decisions, only if they're marked "confirmed". Anything else becomes a placeholder and goes on the list for the service. "2 kinds of fact" in `references/service-context.md` has the detail.
 
 ### 2. Understand the request
 
@@ -54,7 +54,7 @@ If 2 moments could fit, say which you chose and why. If none fits, say so. Don't
 
 ### 4. Adapt the pattern with service facts
 
-Start from the pattern's baseline copy for each channel. Fill the placeholders from confirmed facts in the service context. Use the service's terminology, and keep internal terms out.
+Start from the pattern's baseline copy for each channel. Fill the placeholders from the service context: descriptive facts as given, and decisions only if confirmed. Use the service's terminology, and keep internal terms out.
 
 Keep the pattern's core information and order. If the service context records a justified departure from the pattern, apply it and say so.
 
@@ -97,7 +97,11 @@ Needs a service decision
 - [each placeholder still unfilled, and each privacy, policy or legal question, with who could answer it]
 
 Used from the service context
-- [each confirmed fact or decision used, with its owner and date]
+- [each confirmed decision used, with its owner and date]
+- [each descriptive fact used]
+
+Taken from documentation
+- [each descriptive fact taken from documentation, with its source, for the user to check]
 
 Notes
 - [any judgement you made, like choosing between 2 moments, and any departure from the pattern]

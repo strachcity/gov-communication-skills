@@ -10,6 +10,7 @@ A service context holds one service's facts and decisions. It belongs to the use
 
 - What it can contain
 - How each fact is recorded
+- 2 kinds of fact
 - Template
 - Reading a service context
 - When there isn't one yet
@@ -49,7 +50,36 @@ A decision also records its kind:
 - **precedent:** wording that was approved or rejected, with the reason if known
 - **hypothesis:** from prototypes or workshops, not yet tested or agreed
 
-Only confirmed facts are used in drafts. A hypothesis or judgement is never treated as a policy decision, even if it's marked confirmed. Say so if you see one marked that way.
+A hypothesis or judgement is never treated as a policy decision, even if it's marked confirmed. Say so if you see one marked that way.
+
+## 2 kinds of fact
+
+### Descriptive facts
+
+Low-risk facts that describe the service, like:
+
+- the service name, and the customer's word for their case
+- the sender name, text message sender ID and reference format
+- contact details, opening times, and tracking or upload addresses
+- the name of what's issued, like "licence" or "certificate"
+
+When the user supplies one directly, use it. It doesn't need a status. If it's marked "needs confirmation" or "open question", don't use it.
+
+When one is taken from documentation, rather than supplied by the user, fill it in and list it under "Taken from documentation", with the source, so the user can check it's current.
+
+### Decisions
+
+Facts that decide what a message commits the service to, or reveals:
+
+- policy decisions
+- privacy and disclosure decisions, including what a channel can say
+- legal effect, formal notices, outcome wording and challenge routes
+- consequences of not acting
+- timescales and deadlines, and the rules behind them
+- channel decisions, like which channel a message uses
+- whether something is a legal requirement, so "must" is right
+
+Use one only if it's marked "confirmed". Otherwise keep the placeholder and flag it. Never infer one from documentation.
 
 ## Template
 
@@ -131,11 +161,11 @@ Status: confirmed | needs confirmation | open question
 
 ## Reading a service context
 
-- use only facts marked "confirmed"
+- use descriptive facts the user supplies, and decisions marked "confirmed". See "2 kinds of fact"
 - if 2 facts conflict, use neither. Flag both
-- if a fact has no status, treat it as "needs confirmation"
+- if a decision has no status, treat it as "needs confirmation"
 - if a confirmed fact has no owner, use it, and note the missing owner
-- if a fact is out of date or its source is unclear, use it only if confirmed, and mention the date
+- if a decision is out of date or its source is unclear, use it only if confirmed, and mention the date
 - "About the service" and "Users" are background. Use them to understand the service, not as facts to put in a message. If background conflicts with a fact, flag both
 - a fact that uses "must" is only a legal requirement if the service context says so. Otherwise use "need to", and flag it
 - a message missing from "Formal or legally significant communications" is not confirmation it has no legal effect
