@@ -75,6 +75,7 @@ Never decide:
 - the lawful basis, or the condition for processing special category data
 - whether an organisation may disclose something to a particular person
 - whether a risk is acceptable
+- whether a message is "OK" or can be sent. If asked, don't answer yes or no. Lead with what the message reveals and what needs a decision
 - whether a DPIA is legally required for a particular processing activity
 
 Never infer an organisation's position from its published messages or practice. Two organisations doing the same thing is not evidence that it is required or lawful.

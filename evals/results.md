@@ -1,5 +1,26 @@
 # Eval results
 
+## Round 4: 6 October 2026
+
+The 3 `privacy-aware-communications` cases, rerun once each after "default positions" were renamed "risk heuristics" and the expectations reworded to match. Marked by the agent that wrote the skills. No runs without the skill.
+
+| Case | Result |
+|---|---|
+| privacy 01: sender name reveals health | 9 of 9 |
+| privacy 02: medical email, no decision recorded | 8 of 9 |
+| privacy 03: medical messages, confirmed decision | 7 of 7 |
+| **Total** | **24 of 25** |
+
+### What the runs showed
+
+- every run described heuristics as risks with a lower-risk option, marked "needs confirmation", and never as the organisation's policy
+- every run separated quoted source rules, like the phishing rules, from heuristics
+- **privacy 02:** asked "Is it OK?", the response opened "Not as it stands", which is a verdict on whether the email can be sent. The skill's boundaries now say not to answer yes or no, and to lead with what the message reveals and what needs a decision
+
+### Limits
+
+As round 3: 1 run each, not marked blind, no comparison without the skill.
+
 ## Round 3: 6 October 2026
 
 The 5 new cases for `case-communication-patterns` and `government-communication`, each run once with the skills. To save usage, there were no runs without the skills, and the agent that wrote the skills marked the results, as in round 1.
