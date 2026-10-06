@@ -14,7 +14,7 @@ This is a draft. The moments are proposals, tested and revised as evidence is ad
 ## Reference files
 
 - `references/moments.md`: always. The moments, the message anatomy, the modifiers, and the evidence for each moment
-- `references/patterns/<pattern>.md`: when drafting or adapting a message for a moment that has a pattern. Read only the pattern you need. Patterns exist for moments 1, 3 and 5 so far
+- `references/patterns/<pattern>.md`: when drafting or adapting a message for a moment that has a pattern. Read only the pattern you need. Every moment has a pattern, and so does the "Ask for feedback" follow-up
 
 ## The service context
 
@@ -43,6 +43,7 @@ Work out which moment the request is about, from the customer's situation, not t
 
 - the variant, from the pattern file
 - any modifier, like reminder, final reminder or delay
+- any follow-up, like asking for feedback
 
 If 2 moments seem to fit, check "Not this pattern" in each pattern file. If none fits, say so.
 

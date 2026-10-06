@@ -99,10 +99,23 @@ Interpretation: receipt and work starting can be days apart in some services, wh
 
 Every customer needs to do something next, like send a document or book an appointment. Don't say "You do not need to do anything now". Confirm receipt in the first line, then make the request using the "We need something from you" pattern, in the same message.
 
+### E. We've recorded what you told us
+
+The customer gave information in a conversation, like a phone call, and the service confirms what it recorded. This was moment 12 (see "Changes to the moments" in `../moments.md`).
+
+Change the baseline:
+
+- say when the conversation happened, like "when we spoke on ((date of call))"
+- summarise what was recorded, only as much as the customer needs to check it
+- say how to correct it, and by when, if the service has decided this
+- if the conversation agreed something the customer needs to do, use "We need something from you" for it, in the same message
+
+Interpretation: a record of a conversation can repeat sensitive answers. Keep them out of texts and previews, and check the channel with `privacy-aware-communications`. This variant has weak evidence: one unpublished service. See "Evidence gaps".
+
 ### Not this pattern
 
 - if what arrived is incomplete, and the customer needs to act, use "We need something from you", variant B. Don't send a receipt that suggests everything is fine
-- if the service has made a decision, use moment 8
+- if the service has made a decision, use moment 7, "We've made a decision"
 
 ## Modifiers that apply
 
@@ -234,7 +247,11 @@ Keep personal information out of the page title, the main heading and the web ad
 - **status:** supported by a main source, and seen in 2 services. Adapted for 3 invented services. Not yet tested with users
 - **Service Manual**, describing transactional messages: "they completed a transaction, and you're sending them a confirmation email"
 - **HM Passport Office**, "How we communicate with customers" (published): automatic notifications "let the customer know we have received the lost or stolen report" and "give the customer a reference number". It also sends "an automatic email response to acknowledge receipt" of an email to a team mailbox
-- **unpublished design work in one service:** the moment occurs. No detail is recorded
+- **unpublished design work in one service:** the moment occurs, and so does a record of a conversation. No detail is recorded
+
+### Evidence gaps
+
+- variant E, a record of a conversation, has no published evidence. No published source we've found shows a service confirming in writing what a customer said on a call
 
 ### Tested against the evidence
 

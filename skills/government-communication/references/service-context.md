@@ -183,6 +183,13 @@ Give the user the service context to save in their own project, like `service-co
 |---|---|
 | We've received it | customer word for what was received, reference format, next step and timescale, when the timescale applies, tracking route, contact details, sender, whether receipt has legal significance |
 | We're waiting on someone else | customer word for the case, how the third party can be described in each channel, how often the service updates customers, what happens if there's no reply, tracking route, contact details, sender |
+| Your case has moved on | which stages customers are told about, and how each is described, next step and timescale, whether customers can stop these updates |
+| We'll contact you | kinds of contact used, how customers recognise genuine contact, how to change it, what to have ready, support offered, when the service calls |
 | We need something from you | what's needed and a neutral description of it, how to provide it, the deadline or deadline rule, consequence of not acting, whether there's a legal requirement, how customers can check the request is genuine, next step after receipt, contact details, sender |
+| We couldn't reach you | how many attempts and when, what a voicemail can say, the direct number to call back, how customers check contact is genuine, what happens if they don't respond |
+| We've made a decision | confirmed wording for each outcome, whether it's a formal notice and its required channel and content, how reasons are given, challenge route and deadline rule, what happens when a case is closed without a decision |
+| What you applied for is on its way | what's issued and how it's sent, arrival timescale, what to do if it doesn't arrive, anything to do when it arrives, whether it's the end of the process |
+| You need to act before a date | what's due and when reminders are sent, how to do it, consequence of not acting, whether customers signed up for reminders, whether it's a paid service |
+| Ask for feedback | when the service asks, the survey address and its domain, how long it takes, other ways to give feedback, lawful basis and whether customers can opt out |
 
 The full placeholder table is in each pattern file in `case-communication-patterns`.
