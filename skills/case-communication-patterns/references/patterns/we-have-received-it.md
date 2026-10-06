@@ -69,7 +69,7 @@ The start of a case. Use the baseline copy below.
 
 ### B. Received something we asked for
 
-The customer has sent something the service asked for during the case. This replaces moment 6 (see "Proposed changes" in `../moments.md`).
+The customer has sent something the service asked for during the case. This was moment 6 (see "Changes to the moments" in `../moments.md`).
 
 Change the baseline:
 
@@ -86,7 +86,7 @@ Interpretation: receipt and work starting can be days apart in some services, wh
 ### Not this pattern
 
 - if what arrived is incomplete, and the customer needs to act, use "We need something from you", variant B. Don't send a receipt that suggests everything is fine
-- if the service has made a decision, use moment 10
+- if the service has made a decision, use moment 8
 
 ## Modifiers that apply
 

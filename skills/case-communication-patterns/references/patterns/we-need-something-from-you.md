@@ -248,4 +248,4 @@ Interpretation, from adapting this pattern back to each source:
 - a live service's reminders lead to withdrawal. That supports stating the consequence early, and the final reminder modifier
 - a request text can be self-contained when the ask isn't sensitive, so there are 2 text versions
 - customers may need a choice of return routes, so [how to send it] allows more than one
-- renewal reminders also looked like this pattern, but they don't block a live case. They stay with moment 12
+- renewal reminders also looked like this pattern, but they don't block a live case. They stay with moment 10

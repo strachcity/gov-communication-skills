@@ -8,6 +8,8 @@ Patterns written so far, in `patterns/`:
 - 3. We're waiting on someone else: `patterns/we-are-waiting-on-someone-else.md`
 - 5. We need something from you: `patterns/we-need-something-from-you.md`
 
+There are 12 moments and 3 modifiers. "Changes to the moments" at the end says how they changed from the first draft.
+
 ## How to read this file
 
 ### Evidence status
@@ -80,12 +82,13 @@ For each moment a service uses, it needs to answer:
 - **customer action:** usually no
 - **failure modes:** no reference, so the customer can't quote it when they call (interpretation)
 - **privacy or policy questions:** whether the message should say what was received, if that reveals the subject of the case
-- **not to be confused with:** 6, which is for something sent later in the case
+- **not to be confused with:** 2, which says work has started. Something sent later in the case is variant B of this moment
 - **evidence:**
   - unpublished prototype work: observed
   - HM Passport Office: "If a customer sends an email to an examination team mailbox, we will send them an automatic email response to acknowledge receipt of the email."
   - Service Manual, describing transactional messages: "they completed a transaction, and you're sending them a confirmation email"
 - **status:** supported by a main source
+- **includes:** variant B, "We've received what you sent", which was moment 6
 
 ### 2. Work has started
 
@@ -108,11 +111,12 @@ For each moment a service uses, it needs to answer:
 - **customer action:** usually no, sometimes yes
 - **failure modes:** making the customer think the delay is theirs (interpretation)
 - **privacy or policy questions:** whether to say who the service is waiting on. Naming them can reveal sensitive information
-- **not to be confused with:** 5, where the service is waiting on the customer, and 16, which is a later update
+- **not to be confused with:** 5, where the service is waiting on the customer
 - **evidence:**
   - unpublished prototype work: observed
   - HM Passport Office: tells customers when "we send an email to their digital referee asking them to complete the referee section of the application"
 - **status:** seen in 2 or more services
+- **includes:** variant B, "We're still waiting", which was moment 16, and variant C, when the wait ends
 
 ### 4. Something has changed
 
@@ -122,11 +126,12 @@ For each moment a service uses, it needs to answer:
 - **customer action:** usually no
 - **failure modes:** an update that says something happened but not what it means for them (interpretation)
 - **privacy or policy questions:** whether the update reveals anything about a third party
-- **not to be confused with:** 10, which is a decision
+- **not to be confused with:** 8, which is a decision, and variant C of 3, where a wait has ended
 - **evidence:**
   - unpublished prototype work: observed
   - HM Passport Office: tells customers when "the referee has completed the application" and when "we have finished automatic identity checks"
 - **status:** seen in 2 or more services
+- **evidence note:** most of the evidence first recorded here was a wait ending, which is now variant C of 3. This moment may only cover changes not tied to a wait. Check before writing its pattern
 
 ### 5. We need something from you
 
@@ -143,20 +148,7 @@ For each moment a service uses, it needs to answer:
   - Service Manual: "make it clear what you need the user to do and include any deadlines"
 - **status:** supported by a main source
 
-### 6. We've received what you sent
-
-- **customer situation:** they've sent something the service asked for
-- **customer questions:** did it arrive? Is it what you needed? What now?
-- **should establish:** it arrived, what happens next and when, whether anything else is needed
-- **customer action:** usually no
-- **failure modes:** saying it's been accepted when it has only arrived (interpretation)
-- **privacy or policy questions:** none known
-- **not to be confused with:** 1, the first acknowledgement
-- **evidence:**
-  - unpublished prototype work: observed
-- **status:** seen in 1 service
-
-### 7. We'll contact you
+### 6. We'll contact you
 
 - **customer situation:** the service plans to call or contact them
 - **customer questions:** when? Is it genuine? What should I have ready?
@@ -164,26 +156,13 @@ For each moment a service uses, it needs to answer:
 - **customer action:** sometimes, like being available
 - **failure modes:** no way to tell the contact is genuine, so the customer ignores it (interpretation)
 - **privacy or policy questions:** what can be said on the call before identity is checked
-- **not to be confused with:** 8, a reminder of planned contact
+- **not to be confused with:** 7, where contact was attempted and failed. A reminder of planned contact uses the reminder modifier
 - **evidence:**
   - unpublished prototype work: observed
-- **status:** seen in 1 service
+- **status:** seen in 2 or more services, counting the reminder evidence
+- **includes:** reminders of planned contact, using the reminder modifier. This was moment 8, whose evidence was: unpublished prototype work, observed; HM Passport Office: "We send automated SMS text messages to customers to remind them they have booked a counter appointment."
 
-### 8. Reminder
-
-- **customer situation:** something planned is coming up, like an appointment or call
-- **customer questions:** when is it? Do I need to do anything?
-- **should establish:** what's coming, when, what to have ready, how to change it
-- **customer action:** sometimes
-- **failure modes:** a reminder that doesn't say how to change or cancel (interpretation)
-- **privacy or policy questions:** whether the reminder reveals what the appointment is for
-- **not to be confused with:** 12, a deadline the customer must meet
-- **evidence:**
-  - unpublished prototype work: observed
-  - HM Passport Office: "We send automated SMS text messages to customers to remind them they have booked a counter appointment."
-- **status:** seen in 2 or more services
-
-### 9. We couldn't reach you
+### 7. We couldn't reach you
 
 - **customer situation:** the service tried to contact them and couldn't
 - **customer questions:** who was it? Was it important? What do I do now?
@@ -197,7 +176,7 @@ For each moment a service uses, it needs to answer:
   - HM Passport Office: when there's no answer, staff "leave a voicemail to confirm you will call again in 2 hours", and after 3 attempts send a letter
 - **status:** seen in 2 or more services
 
-### 10. We've made a decision
+### 8. We've made a decision
 
 - **customer situation:** the case has an outcome
 - **customer questions:** what's the outcome? What does it mean for me? Can I challenge it?
@@ -211,7 +190,7 @@ For each moment a service uses, it needs to answer:
   - HM Passport Office: sends an automated message "to tell them we have approved their application"
 - **status:** seen in 2 or more services
 
-### 11. What happens after the decision
+### 9. What happens after the decision
 
 - **customer situation:** the decision is made and something follows from it
 - **customer questions:** what will arrive, and when? Do I need to do anything?
@@ -219,13 +198,13 @@ For each moment a service uses, it needs to answer:
 - **customer action:** sometimes
 - **failure modes:** ending contact without saying the case is finished (interpretation, from the Service Manual's "make it clear that it's the end of the process")
 - **privacy or policy questions:** none known
-- **not to be confused with:** 12, a future deadline
+- **not to be confused with:** 10, a future deadline
 - **evidence:**
   - unpublished prototype work: observed
   - HM Passport Office: "We will send customers an automatic message reminding them to sign their new passport when they receive it."
 - **status:** seen in 2 or more services
 
-### 12. You need to act before a date
+### 10. You need to act before a date
 
 - **customer situation:** something is due, like a renewal
 - **customer questions:** what's due? By when? How do I do it?
@@ -240,7 +219,7 @@ For each moment a service uses, it needs to answer:
   - Service Manual, describing transactional messages: "they paid for an annual service a year ago, and you're reminding them that it's about to expire"
 - **status:** supported by a main source
 
-### 13. We're closing your case
+### 11. We're closing your case
 
 - **customer situation:** the case is ending without the outcome they applied for, for example because they didn't reply
 - **customer questions:** why? Can I restart it?
@@ -248,12 +227,12 @@ For each moment a service uses, it needs to answer:
 - **customer action:** sometimes
 - **failure modes:** closing without warning first (interpretation)
 - **privacy or policy questions:** the rules for withdrawing or closing a case
-- **not to be confused with:** 10, a decision on the case
+- **not to be confused with:** 8, a decision on the case
 - **evidence:**
   - HM Passport Office: "If we do not get a reply to an email or letter we have sent to a customer who has a live application with us, we will follow the withdrawn application guidance."
 - **status:** seen in 1 service
 
-### 14. Here's a record of what we discussed
+### 12. Here's a record of what we discussed
 
 - **customer situation:** they've had a conversation with the service
 - **customer questions:** what did we agree? What happens now?
@@ -261,40 +240,14 @@ For each moment a service uses, it needs to answer:
 - **customer action:** sometimes, like correcting the record
 - **failure modes:** none recorded yet
 - **privacy or policy questions:** the record may repeat sensitive answers, which limits the channel
-- **not to be confused with:** 6, which confirms something sent in writing
-- **evidence:**
-  - unpublished prototype work: observed
-- **status:** seen in 1 service
-
-### 15. There's a delay
-
-- **customer situation:** the case is taking longer than they were told
-- **customer questions:** why? Is it my fault? How long now?
-- **should establish:** that there's a delay, whether the customer needs to do anything, the new expectation
-- **customer action:** depends. The wording differs sharply between "you haven't sent something" and "someone else hasn't"
-- **failure modes:** not saying whether the delay is the customer's to fix (interpretation)
-- **privacy or policy questions:** whether to explain the cause, if it reveals a third party
-- **not to be confused with:** 3 and 16
-- **evidence:**
-  - unpublished prototype work: observed
-- **status:** seen in 1 service
-
-### 16. We're still waiting
-
-- **customer situation:** the service is still waiting on someone else, after a first message
-- **customer questions:** is anyone chasing? Can I help?
-- **should establish:** that the service is still waiting and chasing, whether the customer can help, the new expectation
-- **customer action:** sometimes
-- **failure modes:** repeating moment 3 with no new information (interpretation)
-- **privacy or policy questions:** as moment 3
-- **not to be confused with:** 3, the first message
+- **not to be confused with:** variant B of 1, which confirms something sent in writing
 - **evidence:**
   - unpublished prototype work: observed
 - **status:** seen in 1 service
 
 ## Modifiers
 
-A modifier changes how a moment's message is written, without being a moment of its own. Proposed on 6 October 2026, from writing the first 3 patterns.
+A modifier changes how a moment's message is written, without being a moment of its own. Agreed on 6 October 2026, from writing the first 3 patterns.
 
 ### Reminder
 
@@ -302,7 +255,7 @@ The same message again, after the customer hasn't acted or before something plan
 
 - start by saying what was said before, and when, like "We asked you on [date] to..."
 - keep the same deadline unless the service has changed it
-- applies to: 5 (we need something from you), 7 (we'll contact you), 12 (you need to act before a date)
+- applies to: 5 (we need something from you), 6 (we'll contact you), 10 (you need to act before a date)
 
 ### Final reminder
 
@@ -310,7 +263,7 @@ The last reminder before a consequence.
 
 - put the deadline and the consequence first
 - don't introduce a consequence that wasn't in the earlier messages without flagging it
-- applies to: 5, 12
+- applies to: 5, 10
 
 ### Delay
 
@@ -320,22 +273,27 @@ Something is taking longer than the customer was told.
 - say whether the customer needs to do anything. Interpretation: this matters most, because the customer may think the delay is theirs
 - give a new expectation, as a date where possible
 - explain the cause only if the service has decided it can be disclosed
-- applies to: any moment that gave the customer a timescale, most often 1, 3 and 6
+- applies to: any moment that gave the customer a timescale, most often 1, 2 and 3
+- was moment 15. Its evidence was unpublished prototype work only
 
-## Proposed changes
+## Changes to the moments
 
-Proposed on 6 October 2026, from writing the first 3 patterns. Nothing has been removed yet. Each change needs agreeing before the moments are renumbered.
+Agreed on 6 October 2026, after writing the first 3 patterns. There were 16 moments, and now there are 12, with 3 modifiers.
 
-| Moment | Proposal | Reason |
+| Was | Now | Reason |
 |---|---|---|
-| 6. We've received what you sent | becomes variant B of 1, "We've received it" | the message is the same receipt, with "is anything else needed" added |
-| 8. Reminder | becomes the reminder modifier, applied to 7 | a reminder repeats another moment's message. It's not a separate customer situation |
-| 15. There's a delay | becomes the delay modifier | a delay can happen in several moments, and its content is the same in each |
-| 16. We're still waiting | becomes variant B of 3, "We're waiting on someone else" | it continues the same situation, and only makes sense after 3 |
-| 4. Something has changed | keep, but check its evidence | the evidence for 4 was mostly a wait ending, which is now variant C of 3. 4 may only cover changes not tied to a wait |
-| 12. You need to act before a date | keep separate from 5 | it doesn't block a live case, so its message is different, but it shares the reminder modifier |
+| 6. We've received what you sent | variant B of 1 | the message is the same receipt, with "is anything else needed" added |
+| 7. We'll contact you | 6 | renumbered |
+| 8. Reminder | the reminder modifier, applied to 6 | a reminder repeats another moment's message. It's not a separate customer situation |
+| 9 to 14 | 7 to 12 | renumbered |
+| 15. There's a delay | the delay modifier | a delay can happen in several moments, and its content is the same in each |
+| 16. We're still waiting | variant B of 3 | it continues the same situation, and only makes sense after 3 |
 
-The patterns also found one variant that no moment had: something the customer sent can't be used, and a replacement is needed. It's variant C of 5.
+Also from the patterns:
+
+- 4 is kept, but its evidence needs checking, because most of it was a wait ending
+- 10 is kept separate from 5. It doesn't block a live case, but it shares the reminder modifier
+- something the customer sent can't be used, and a replacement is needed: this is variant C of 5
 
 ## No message needed
 

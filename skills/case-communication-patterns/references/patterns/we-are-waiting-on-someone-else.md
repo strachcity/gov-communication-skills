@@ -81,7 +81,7 @@ Use the baseline copy below.
 
 ### B. Still waiting
 
-The service is still waiting after the first message. This replaces moment 16 (see "Proposed changes" in `../moments.md`).
+The service is still waiting after the first message. This was moment 16 (see "Changes to the moments" in `../moments.md`).
 
 Only send it if there's something new to say, like a new update date, that the service has chased, or that the customer can now help. Don't repeat variant A.
 
