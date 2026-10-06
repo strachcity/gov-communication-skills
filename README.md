@@ -75,3 +75,21 @@ There's no folder for any named service. Each directory has a README that sets o
 Read `CLAUDE.md` before adding or changing anything. It covers how knowledge is added, where it goes, and what to do when a position is not known. `ARCHITECTURE.md` explains what we are building and how the parts fit. `PLAN.md` has the build plan. `USER-TESTING.md` is a pack for testing the patterns with users.
 
 No build step, no package manager, no framework. Everything is Markdown.
+
+## Licence
+
+This work is licensed under the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/). The full text is in `LICENSE`.
+
+Copyright 2026 strachcity and contributors.
+
+You can:
+
+- use it in your service, team or department
+- copy, publish and share it
+- edit, adapt and build on it
+
+As long as you credit it. Use this statement, or link to it:
+
+> Contains material from gov-communication-skills (https://github.com/strachcity/gov-communication-skills), licensed under the Open Government Licence v3.0.
+
+Some files quote GOV.UK guidance and other public sector information. That material stays under its own licence, usually the Open Government Licence v3.0 too. Each skill's `sources.md` says where it came from.
