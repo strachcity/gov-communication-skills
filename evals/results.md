@@ -1,5 +1,29 @@
 # Eval results
 
+## Round 6: 6 October 2026
+
+After separating descriptive facts from decisions, and making optional copy block-level. 3 new edge-case evals, plus 2 earlier evals rerun to test the new facts rule. 1 run each, through the front door. Marked by a separate agent that didn't read the skills.
+
+| Case | Result |
+|---|---|
+| government-communication 03: an organisation as the customer | 7 of 9 |
+| government-communication 04: a Welsh language duty | 8 of 8 |
+| privacy 04: promotion added to a service message | 8 of 8 |
+| government-communication 02: service context from documentation, rerun | 9 of 9 |
+| case-communication-patterns 08: decision and certificate together, rerun | 7 of 7 |
+| **Total** | **39 of 41** |
+
+### What the runs showed
+
+- every run used the descriptive facts it was given, like the sender, contact details and web addresses. None held them back. No run used an unconfirmed decision
+- **leftover markers:** 3 drafts left `[If ...:]` and `[End if]` lines in, and one kept a challenge section for a customer who got what they asked for. The front door now says to resolve every block before returning a draft. A rerun of the worst case came back with no markers and no irrelevant sections
+- **government-communication 03:** the draft handled the second email address's authority, but didn't say the named contact may have left. It also didn't say the contact's name and email address are personal data. The guidance for both is in `moments.md`. No change yet. Worth watching in the blind evaluation
+- **privacy 04:** passed every check, but matched one quote to the wrong principle, data minimisation instead of purpose limitation
+
+### Limits
+
+1 run each, no comparison runs. The marker was separate, but not blind to which skills were used.
+
 ## Round 5: 6 October 2026
 
 8 new cases for `case-communication-patterns`, one for each new pattern and the feedback follow-up, run once each through the front door. Marked by a separate agent, which read the expectations and the responses but not the skills. No runs without the skills.

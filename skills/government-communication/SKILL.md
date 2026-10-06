@@ -58,6 +58,12 @@ Start from the pattern's baseline copy for each channel. Fill the placeholders f
 
 Keep the pattern's core information and order. If the service context records a justified departure from the pattern, apply it and say so.
 
+Resolve every optional block before you return a draft. Never leave an `[If ...:]` or `[End if]` line in a draft:
+
+- if the condition applies, keep the content and remove the 2 marker lines
+- if it doesn't apply, like a challenge route when the customer got what they asked for, remove the whole block
+- if you don't know, remove the block from the draft, and list the condition under "Needs a service decision", with the text that would go in
+
 ### 5. Run privacy and policy checks
 
 Use `privacy-aware-communications` on what each version reveals, in each channel. Work through the pattern's "Privacy and policy checkpoints".

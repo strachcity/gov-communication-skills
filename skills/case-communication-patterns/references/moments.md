@@ -77,7 +77,7 @@ Optional copy is always a whole block, never part of a sentence:
 - where a sentence has alternatives, like "an email" or "a letter", it uses one placeholder, like [what we sent], which always gets a value
 - the only exception is the "[Service name]: " prefix on texts, which is kept or removed whole
 
-Remove the `[If ...:]` and `[End if]` lines when filling in the copy. This stops a draft from being sent half filled.
+When drafting for a service, resolve every block. Keep it and remove the marker lines if the condition applies. Remove the whole block if it doesn't. If it's unknown, leave the block out of the draft and list it for the service. A draft should never contain `[If ...:]` or `[End if]`.
 
 A service fact can be a rule, like "20 working days after we receive a complete application". Turn it into a date for each message, and flag what the rule counts from and whether it's calendar or working days. If the rule itself isn't confirmed, list the rule as needing a decision, not the date.
 
