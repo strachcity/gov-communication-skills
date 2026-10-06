@@ -9,7 +9,7 @@ This file is a working plan, not guidance. `ARCHITECTURE.md` describes the desig
 Last updated 6 October 2026.
 
 - `govuk-content` and `privacy-aware-communications` are tested, with blind-marked evals
-- `case-communication-patterns` has 12 moments and 3 modifiers. Patterns are written for moments 1, 3 and 5, adapted for 3 invented services, and their evals run once
+- `case-communication-patterns` has 9 moments, 3 modifiers and 1 follow-up, "Ask for feedback". Every one has a pattern, adapted for 3 invented services, with evals run once
 - `government-communication`, the front door, exists in draft with its own evals, run once
 - testing with users is planned for later. Until then, no pattern is marked "tested with users"
 - the repository is licensed under the Open Government Licence v3.0
@@ -19,6 +19,8 @@ Last updated 6 October 2026.
 Do these in order. Each pattern follows the same method as the first 3: compare the evidence, write the pattern, adapt it for 2 or 3 invented services, fix what breaks, then write and run its evals.
 
 ### 1. Write the remaining 9 patterns
+
+Done on 6 October 2026. Writing them reduced 12 moments to 9. See "Changes to the moments" in `moments.md`.
 
 Most evidenced and most distinct first. The less evidenced, more ambiguous moments come last, so they can still be merged or removed if writing the pattern shows they're weak.
 
@@ -33,6 +35,8 @@ Most evidenced and most distinct first. The less evidenced, more ambiguous momen
 9. Something has changed (moment 4). Check its evidence first, because most of it was a wait ending, now part of moment 3
 
 ### 2. Add "ask for feedback" as a follow-up, not a moment
+
+Done on 6 October 2026, in `patterns/ask-for-feedback.md`.
 
 A feedback or satisfaction request doesn't communicate a case state. It's attached to another moment, so it's a follow-up, not moment 13.
 

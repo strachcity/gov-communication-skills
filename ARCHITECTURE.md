@@ -96,7 +96,7 @@ flowchart TB
 | Skill | Job | Status |
 |---|---|---|
 | `government-communication` | the front door. Establishes the service context, then runs the other skills in order | draft, evals run once |
-| `case-communication-patterns` | the moments, the patterns for each, and how to recognise and adapt them | draft. 12 moments and 3 modifiers. Patterns written for moments 1, 3 and 5, adapted for 3 invented services, evals run once |
+| `case-communication-patterns` | the moments, the patterns for each, and how to recognise and adapt them | draft. 9 moments, 3 modifiers and 1 follow-up, each with a pattern adapted for 3 invented services, evals run once |
 | `privacy-aware-communications` | what a message reveals in each channel, applying confirmed decisions and flagging the rest | tested, see `evals/results.md` |
 | `govuk-content` | drafts and reviews wording against GOV.UK guidance | tested, see `evals/results.md` |
 
@@ -300,7 +300,7 @@ skills/
     SKILL.md
     references/
       moments.md                   the moments, anatomy and evidence
-      patterns/                    one substantially written pattern per moment, 3 so far
+      patterns/                    one substantially written pattern per moment, and the feedback follow-up
     sources.md
   privacy-aware-communications/
   govuk-content/
