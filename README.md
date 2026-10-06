@@ -72,7 +72,7 @@ There's no folder for any named service. Each directory has a README that sets o
 
 ## Working here
 
-Read `CLAUDE.md` before adding or changing anything. It covers how knowledge is added, where it goes, and what to do when a position is not known. `ARCHITECTURE.md` explains what we are building and how the parts fit. `PLAN.md` has the build plan. `USER-TESTING.md` is a pack for testing the patterns with users.
+Read `CLAUDE.md` before adding or changing anything. It covers how knowledge is added, where it goes, and what to do when a position is not known. `ARCHITECTURE.md` explains what we are building and how the parts fit. `PLAN.md` has the build plan.
 
 No build step, no package manager, no framework. Everything is Markdown.
 

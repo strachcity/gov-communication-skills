@@ -11,7 +11,7 @@ Last updated 6 October 2026.
 - `govuk-content` and `privacy-aware-communications` are tested, with blind-marked evals
 - `case-communication-patterns` has 12 moments and 3 modifiers. Patterns are written for moments 1, 3 and 5, adapted for 3 invented services, and their evals run once
 - `government-communication`, the front door, exists in draft with its own evals, run once
-- `USER-TESTING.md` is written. No testing has been done
+- testing with users is planned for later. Until then, no pattern is marked "tested with users"
 - the repository is licensed under the Open Government Licence v3.0
 
 ## Current work package
@@ -109,7 +109,7 @@ The next big question is how well the plugin works for a team that installs it w
 
 ### Alongside the work package
 
-- run the user testing in `USER-TESTING.md`
+- test the patterns with users, later. A test pack can be written then
 - rerun all evals 3 times each, marked blind, with comparison runs, before calling any skill ready
 - add evals for an organisation customer and a service with a Welsh language duty
 
