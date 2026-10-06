@@ -6,11 +6,11 @@ This repository holds agent skills and supporting knowledge for UK government cu
 
 Ask one question first: would this still be true for a different government service?
 
-- yes, and it comes from GOV.UK publishing guidance: `knowledge/content-design/`
-- yes, and it is about personal data, channels or special category data: `knowledge/privacy/`
+- yes, and it comes from GOV.UK content guidance: `skills/govuk-content/references/`
+- yes, and it is about personal data, channels or special category data: `skills/privacy-aware-communications/references/`
 - no, it is true for one service only: `services/<service>/`
-- it describes how to carry out a drafting or review task: `skills/`
-- it is a worked example with an expected result: `evals/`
+- it describes how to carry out a drafting or review task: the skill's `SKILL.md`
+- it is a worked example with an expected result: `evals/<skill>/`
 
 If you are not sure which, put it in the service folder and say why in the entry. Something wrongly kept specific does little harm. Something wrongly made generic changes the output for every service.
 
@@ -49,39 +49,41 @@ This applies to knowledge entries, skill instructions and skill output alike.
 
 A flagged gap is a useful result. A confident wrong answer about data protection or a licensing decision can harm a real person.
 
-## How to add a knowledge entry
+## How to add guidance to a skill
 
-One topic per file, in Markdown, named for the topic in lower case with hyphens, like `modal-verbs.md`.
+Each generic skill keeps its guidance in a small number of reference files in `references/`, grouped by when the agent needs them. The core principles needed for most tasks go in `SKILL.md` itself.
 
-Start each entry with these lines:
-
-```
-Source: <URL or document name>
-Last checked: <date, like 6 October 2026>
-Status: confirmed | needs confirmation | open question
-Owner: <person or role who can confirm it, if known>
-```
-
-Then write the entry.
-
-- quote or closely follow the source, and link to it
-- keep what the source says separate from your interpretation of it
+- quote or closely follow the source. Mark quotes with ">" and our own reading with "Interpretation:"
+- add every source to the skill's `sources.md`, with its address, what we took from it, which file uses it and the date checked
 - add a short example of right and wrong where it helps
 - if a summary drifts from its source, the source wins and the summary is wrong until fixed
+- if the guidance is silent, say so. Do not invent a rule
 
-Content design entries cite at least one of the 3 main sources:
+Content guidance cites at least one of the 3 main sources:
 
 - GOV.UK content and publishing guidance: https://guidance.publishing.service.gov.uk/
 - the GOV.UK Service Manual: https://www.gov.uk/service-manual
 - GOV.UK Notify guidance: https://www.notifications.service.gov.uk/using-notify
 
-A supporting source can be used only where the main sources have a gap. The entry names the gap and is marked "needs confirmation". `PLAN.md` lists the agreed supporting sources.
+A supporting source can be used only where the main sources have a gap. Say which gap it fills, and that it needs confirmation. `PLAN.md` lists the agreed supporting sources.
 
 The publishing guidance site is in public beta, so check links still work and update them if pages move.
 
-Privacy entries cite the legislation, ICO guidance or a named internal decision. They are not legal advice. Anything that would change what a real communication contains needs confirming with the service's data protection officer or legal team, and its status should say so until it is.
+Privacy guidance cites the legislation, ICO guidance or a named internal decision. It is not legal advice. Anything that would change what a real communication contains needs confirming with the service's data protection officer or legal team, and its status should say so until it is.
 
-Service entries also start with a `Kind:` line:
+## How to add service knowledge
+
+One topic per file in `services/<service>/`, named for the topic in lower case with hyphens. Start each file with these lines:
+
+```
+Kind: policy decision | communication judgement | precedent | hypothesis
+Source: <document, meeting or person>
+Last checked: <date, like 6 October 2026>
+Status: confirmed | needs confirmation | open question
+Owner: <person or role who can confirm it, if known>
+```
+
+The kinds are:
 
 - `policy decision`: made by someone with authority, so say who and when
 - `communication judgement`: a design decision based on research or experience
@@ -98,12 +100,12 @@ Keep raw source material in `_source-material/`, which git ignores. Only add ext
 
 ## How to add a skill
 
-One folder per skill in `skills/`, with a `SKILL.md` inside.
+One folder per skill in `skills/`, following `skills/README.md`.
 
-- the skill names which knowledge it loads, by path
-- the skill does not copy knowledge into itself, so there is one place to fix it
+- `SKILL.md` starts with a `name` and a `description`. The description says what the skill does and when to use it
+- keep `SKILL.md` under 500 lines, and say when to read each reference file
 - a generic skill takes the service as an input and contains no service rules
-- add at least one eval in `evals/` before calling a skill ready
+- add evals in `evals/<skill>/` before calling a skill ready
 
 ## Writing style for this repository
 
@@ -113,7 +115,7 @@ Everything here follows the guidance it holds.
 - British English
 - bullets start lower case and have no full stop
 - numbered steps are full sentences
-- no em dashes or en dashes
+- no em dashes or en dashes, except inside exact quotes from a source
 
 ## Keep it small
 

@@ -14,4 +14,4 @@ Knowledge that is true for one service only. One folder per service.
 
 - generic content design or privacy guidance, even if this service is where it was first noticed
 
-A service rule never moves into `knowledge/` or a generic skill without an explicit, recorded decision. See `CLAUDE.md`.
+A service rule never moves into a generic skill without an explicit, recorded decision. See `CLAUDE.md`.

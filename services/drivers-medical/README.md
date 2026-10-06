@@ -13,7 +13,7 @@ Drivers Medical handles cases where a driver's medical condition may affect whet
 
 ## What does not belong here
 
-- anything that would be true for another DVLA service or another department, which goes in `knowledge/`
+- anything that would be true for another DVLA service or another department, which goes in a generic skill
 
 ## Status
 

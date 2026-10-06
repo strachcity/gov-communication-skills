@@ -168,7 +168,7 @@ A supporting source is used only for its gap, and its entries are marked "needs 
 | Components and patterns for prototype pages | GOV.UK Design System, for prototype pages only: https://design-system.service.gov.uk/ |
 | Greeting and sign-off in letters, and sign-off in emails | your colleague's govuk-style-writer skill. This gap is now much smaller, because the letters page covers structure |
 | Privacy law | UK GDPR, the Data Protection Act 2018 and ICO guidance, for the privacy skill only |
-| Text message formatting and length | find the current Notify pages. If Notify doesn't cover them, record them as open questions |
+| Text message formatting | Notify covers length (on its pricing page) but not formatting. The skill treats text messages as plain text and marks that as interpretation |
 
 The ICO says some of its guidance is under review following the Data (Use and Access) Act. Privacy entries need their "last checked" date kept up to date, and should be checked again before any real use.
 
@@ -185,11 +185,7 @@ Each one is recorded in the relevant reference, citing both sources. The skills 
 
 ## 7. Where things live
 
-There's one structural choice to make. Everything else follows from it.
-
-### Option 1: knowledge inside each skill (recommended)
-
-Each generic skill holds its own reference files. Service knowledge stays outside, as data.
+Decided on 6 October 2026: guidance lives inside each skill, following standard practice for agent skills. The shared `knowledge/` folder has been removed.
 
 ```
 skills/
@@ -198,39 +194,17 @@ skills/
     references/
     sources.md
   privacy-aware-communications/
-    SKILL.md
-    references/
-    sources.md
   government-communication/
-    SKILL.md
 services/
   drivers-medical/
 evals/
+  govuk-content/
 ```
 
-Why I'd choose this:
-
-- **each skill works on its own:** it can be shared as a single file, the way your colleague shared theirs, which doesn't work if it points to a separate `knowledge/` folder
-- **the boundary is built in:** privacy knowledge can only be used through the privacy skill
-- **you can test each layer alone:** this matches the build order below
-
-### Option 2: keep the current shared `knowledge/` folder
-
-All skills read from one shared knowledge folder.
-
-- it's simpler if many skills need the same knowledge
-- the skills can't be shared on their own
-
-### Reference files
-
-Either way, I'd use fewer, larger reference files than the plan had before:
-
-- **the core:** the principles an agent needs in most tasks go in `SKILL.md` itself
-- **the rest:** a small number of reference files hold guidance that's only needed sometimes, like the A to Z rules, or the rules for one channel
-- **sources:** each skill has a `sources.md` listing every source with its title, address, date checked and what we took from it
-- **marking interpretation:** in every file, text marked as our interpretation is kept separate from what a source says
-
-About 30 tiny files would be harder for an agent to reason with than about 6 well-organised ones.
+- each skill works on its own, so it can be shared as a single file
+- privacy guidance can only be used through the privacy skill
+- the core principles go in `SKILL.md`, and detail goes in a few reference files read only when needed
+- each skill lists its sources in `sources.md`
 
 ## 8. Source material for Drivers Medical
 
@@ -294,8 +268,8 @@ Running the evals is manual for now. Only add tooling if that becomes painful.
 
 The rhythm for each step is: take a source, extract the principles, test them against examples, refine, then add the next source.
 
-1. Choose an option for where things live (section 7), and restructure the folders if needed.
-2. Build `govuk-content`, using the main sources only.
+1. Choose where things live (section 7). Done.
+2. Build `govuk-content`, using the main sources only. First version done, not yet tested.
 3. Test it with the 5 evals, including Drivers Medical examples with the policy questions taken out. Refine.
 4. Build `privacy-aware-communications`, with every entry marked "needs confirmation". Test it with its 3 evals.
 5. Add Drivers Medical as a service. Classify the source material, starting with `DESIGN.md`, rather than turning it into rules.
