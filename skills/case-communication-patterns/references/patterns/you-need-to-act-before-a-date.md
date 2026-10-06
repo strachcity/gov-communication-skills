@@ -53,9 +53,10 @@ From the service context:
 | [what's due] | the customer's word for it, like "licence renewal" |
 | [how to do it] | the route, with a full GOV.UK web address if online |
 | [what you'll need] | only if needed |
-| [consequence] | what happens if they don't act, as the service has confirmed it. "Must" only if there's a legal requirement |
+| [due wording] | "is due on" for a deadline, or "expires on" for an expiry |
+| [consequence] | what happens if they don't act, as the service has confirmed it. "Must" only if the service context records a legal requirement. If it says "must" without saying why, flag it |
 | [cost] | only if confirmed |
-| [unsubscribe route] | for variant D |
+| [unsubscribe route] | for variant C |
 | [sender] | who the message is from |
 | [letter greeting] | from the service's letter template |
 
@@ -64,31 +65,29 @@ Filled for each message:
 | Placeholder | Value |
 |---|---|
 | ((first name)) ((last name)) | the customer's full name |
-| ((due date)) | the date |
-| ((what it's for)) | like a vehicle or a property, if the customer has more than one |
+| ((due date)) | the date it's due or expires |
+| ((last date to act)) | if different, the last date the customer can act in time |
+| ((record identifier)) | like a licence or permit number, if the customer may have more than one |
 | ((date)) | the date of the letter |
 
 ## Variants
 
-### A. A renewal is due
+### A. Something is due to expire or be renewed
 
-Say what's due, the date, and how to renew.
+Say what expires and when, and how to renew it if the customer can. Give the last date to act separately from the expiry date, if they differ, so the customer knows renewing on the expiry date may be too late.
 
-### B. Something is expiring
+### B. A regular obligation is due
 
-There may be nothing to renew. Say what's expiring and when, and what happens after.
+Like an annual return, review or report. Say what's needed and by when. This includes reviews of something the customer already has, like an ongoing award, even if a missed review could stop it.
 
-### C. A regular obligation is due
-
-Like an annual return or report. Say what's needed and by when.
-
-### D. The customer signed up for reminders
+### C. The customer signed up for reminders
 
 The Service Manual calls these subscription messages. Always give a way to unsubscribe.
 
 ### Not this pattern
 
-- the case can't progress until the customer acts: use "We need something from you"
+- an open application can't progress until the customer acts: use "We need something from you"
+- a standing duty with no due date, like telling the service about changes: see "Gaps" in `../moments.md`
 - something to do when an item arrives: use "What you applied for is on its way", variant C
 
 ## Modifiers that apply
@@ -121,24 +120,29 @@ Leave out any line for something the service doesn't have.
 ### Email
 
 ```
-Subject: [Service name]: your [what's due] is due on ((due date))
+Subject: [Service name]: your [what's due] [due wording] ((due date))
 
 Dear ((first name)) ((last name))
 
-Your [what's due] [for ((what it's for))] is due on ((due date)).
+Your [what's due] [((record identifier))] [due wording] ((due date)).
+
+[Renew / Do it] on or before ((last date to act)).
 
 How to [renew / do it]
 
 [how to do it]
 
+[If there's a cost:]
+It costs [cost].
+
 [You'll need:
 [what you'll need]]
 
-If you do not [renew / do it] on or before ((due date))
+If you do not [renew / do it] in time
 
 [consequence]
 
-[For variant D:]
+[For variant C:]
 You're getting this email because you signed up for reminders. To stop them, [unsubscribe route].
 
 [Sender]
@@ -147,25 +151,31 @@ You're getting this email because you signed up for reminders. To stop them, [un
 ### Text message
 
 ```
-[Service name]: your [what's due] is due on ((due date)). [Renew / Do it] at [how to do it]
+[Service name]: your [what's due] [due wording] ((due date)). [Renew / Do it] on or before ((last date to act)) at [how to do it]
 ```
 
 ### Letter
 
 ```
+[Reference: ((reference)), if the service uses one]
 ((date))
 
-Your [what's due] is due on ((due date))
+Your [what's due] [due wording] ((due date))
 
 [letter greeting]
 
-Your [what's due] [for ((what it's for))] is due on ((due date)).
+Your [what's due] [((record identifier))] [due wording] ((due date)).
+
+[Renew / Do it] on or before ((last date to act)).
 
 How to [renew / do it]
 
 [how to do it]
 
-If you do not [renew / do it] on or before ((due date))
+[If there's a cost:]
+It costs [cost].
+
+If you do not [renew / do it] in time
 
 [consequence]
 
@@ -186,4 +196,12 @@ If you do not [renew / do it] on or before ((due date))
 
 ### Adapted for invented services
 
-Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026. See `evals/results.md`.
+Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026:
+
+- for any licence, "renewal due" and "expiring" overlapped. They merged into variant A
+- the baseline said "is due on" where an expiry needed "expires on". [due wording] was added
+- the copy implied renewing on the expiry date was in time. ((last date to act)) was added
+- [cost] wasn't used in the copy, and there was no licence number. Both are fixed
+- an annual review of an ongoing award didn't fit "not a live case". Variant B now covers reviews of something the customer already has
+- one service context said "must return" without saying it was a legal requirement. The [consequence] placeholder now says to flag this
+- a standing duty to report changes fitted no moment. It's recorded in "Gaps"

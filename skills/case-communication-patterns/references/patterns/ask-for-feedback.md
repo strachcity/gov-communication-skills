@@ -67,6 +67,7 @@ From the service context:
 |---|---|
 | [service name] | the name customers know the service by |
 | [case] | the customer's word for their case |
+| [what it won't affect] | anything else the customer might worry it affects, like a later inspection or a rating by another organisation, as the service has confirmed |
 | [how long] | how long the survey takes, tested, not estimated |
 | [survey URL] | a full web address. See the checkpoints on the domain |
 | [other ways] | another way to give feedback, like phone or post |
@@ -94,7 +95,9 @@ The Service Manual says services should try to get feedback from users who drop 
 
 ### C. After delivery
 
-After what was applied for has arrived, at the end of the process.
+After what was applied for has arrived, at the end of the process. If the decision and delivery happen together, ask once, after both.
+
+Interpretation: if another organisation continues the customer's journey, like an inspection after registration, this may not be the end of their experience. Say what the feedback is about.
 
 ### D. After a completed interaction
 
@@ -119,7 +122,7 @@ Check these with `privacy-aware-communications`. Don't decide them here.
 - **free text:** don't invite sensitive case details by default. If the research needs them, the research design must support it, and the DPO should confirm
 - **survey domain:** the Service Manual says emails and texts should "only send links which point to the GOV.UK domain". Many survey tools use other domains. This is a conflict to flag, not to resolve
 - **survey supplier:** if a supplier runs the survey, they may process the customer's data. Flag it for the DPO
-- **channel and timing:** a text late at night, or straight after bad news, is a judgement for the service
+- **channel and timing:** a text late at night, or straight after bad news, is a judgement for the service. Use the channel the customer uses. For customers who don't use email or texts, the Service Manual mentions a survey by post or by phone
 
 ## Baseline copy
 
@@ -134,7 +137,7 @@ Dear ((first name)) ((last name))
 
 We'd like to know what you thought of [service name], so we can improve it.
 
-It takes about [how long]. It's optional, and it will not affect your [case].
+It takes about [how long]. It's optional, and it will not affect your [case] or any decision about it[, or [what it won't affect]].
 
 Please do not include personal details or details of your [case].
 
@@ -147,11 +150,15 @@ Give feedback: [survey URL]
 
 Interpretation: "please" is fine here. This is a request the customer can say no to, not an instruction.
 
+The letter has no reference on purpose. Linking feedback to a case is a privacy question for the DPO, not a default.
+
 ### Text message
 
 ```
-[Service name]: tell us what you thought of the service. It takes about [how long], it's optional and will not affect your [case]: [survey URL]
+[Service name]: tell us what you thought. It's optional, takes [how long] and will not affect your [case]: [survey URL]
 ```
+
+With a long service name and web address, this goes over 160 characters. Leave out the service name if the sender ID gives it.
 
 ### Letter
 
@@ -164,7 +171,7 @@ Tell us what you thought of [service name]
 
 We'd like to know what you thought of [service name], so we can improve it.
 
-It takes about [how long]. It's optional, and it will not affect your [case].
+It takes about [how long]. It's optional, and it will not affect your [case] or any decision about it.
 
 [How to take part, like a reply form and a prepaid envelope, or a phone number.]
 
@@ -195,4 +202,9 @@ It takes about [how long]. It's optional, and it will not affect your [case]: [s
 
 ### Adapted for invented services
 
-Interpretation, from adapting this follow-up for a permit, a benefit and a registration service on 6 October 2026. See `evals/results.md`.
+Interpretation, from adapting this follow-up for a permit, a benefit and a registration service on 6 October 2026:
+
+- "it will not affect your [case]" was weak after a decision, and didn't cover the customer's real worry in one service, a later rating by another organisation. The baseline now says "or any decision about it", with [what it won't affect]
+- the text with a supplier's web address was 185 characters. The baseline is shorter, and the survey domain stays a flagged conflict
+- asking after a decision and after delivery overlapped when both happened together
+- one service's text rules only allowed a pointer to a letter, so feedback could only go by post

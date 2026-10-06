@@ -129,6 +129,22 @@ Your [case] has been passed to [who we've asked], who will [next stage].
 
 Say whether they'll contact the customer directly, if the service context confirms it. If not, flag it.
 
+The rest of the baseline talks about waiting for information, which doesn't fit a hand-off. Use this instead:
+
+```
+Your [case] has been passed to [who we've asked], who will [next stage].
+
+[They'll contact you directly to [what they'll arrange]. / We'll tell you when they've finished.]
+
+You do not need to do anything now.
+
+Your reference number is ((reference)).
+```
+
+Status page: "Status: With [who we've asked]".
+
+If [who we've asked] will contact the customer, this message also does the job of "We'll contact you". Don't send both.
+
 ### Not this pattern
 
 - the service is waiting on the customer: use "We need something from you"

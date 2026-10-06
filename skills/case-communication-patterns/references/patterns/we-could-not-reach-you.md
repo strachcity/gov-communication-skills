@@ -53,9 +53,10 @@ From the service context:
 | Placeholder | What the service context supplies |
 |---|---|
 | [service name] | the name customers know the service by. Check it doesn't reveal something sensitive when heard on a voicemail |
+| [caller name] | how the caller introduces themselves on a voicemail. Usually the service name. If that's sensitive, a neutral name, only if the service has decided one |
 | [case] | the customer's word for their case |
 | [retry plan] | when and how the service will try again, as the service has confirmed it |
-| [how to get in touch] | the route to use, like a direct number, with when it's open |
+| [how to get in touch] | the route to use, with when it's open. If only a general helpline exists, say what to tell them, like the reference |
 | [how to check it's genuine] | like "find our number on GOV.UK", as the service has decided |
 | [consequence] | what happens if they don't get in touch, as the service has confirmed it |
 | [deadline rule] | how the deadline to get in touch is worked out |
@@ -72,12 +73,15 @@ Filled for each message:
 | ((time of next attempt)) | if the service will call again at a set time |
 | ((deadline)) | the date to get in touch by |
 | ((date)) | the date of the letter |
+| ((dates of attempts)) | when the service tried, if the service includes this |
 
 ## Variants
 
 ### A. We'll try again
 
 A first missed call. The service will call again. Say when, if it can.
+
+If the service hasn't decided whether it tries again, don't choose between A and B. Keep [retry plan] as a placeholder and flag it.
 
 ### B. Please get in touch
 
@@ -86,6 +90,10 @@ The service has stopped trying, and needs the customer to contact it. Use the st
 ### C. A message couldn't be delivered
 
 An email bounced, a text failed or a letter came back. Use a different channel the service holds. Ask the customer to check or update their contact details, without saying which details failed in a way that reveals them to someone else.
+
+If the service has no other channel, say so. A banner on a status page behind sign-in may be the only route, and the customer may never see it. Flag this for the service.
+
+For an organisation, a failed message often means the named contact has left. See "When the customer is an organisation" in `../moments.md`.
 
 Interpretation: when a message fails, the details on file may belong to someone else now. Say less in the new message, not more.
 
@@ -127,7 +135,7 @@ Leave out any line for something the service doesn't have.
 Call scripts are out of scope, but a voicemail is a message, so this is the lowest-risk baseline:
 
 ```
-Hello, this is [service name] calling for ((first name)) ((last name)). We need to speak to you. [We'll call you again at ((time of next attempt)).] You can also call us on [direct number], [opening times]. Thank you.
+Hello, this is [caller name] calling for ((first name)) ((last name)). We need to speak to you. [We'll call you again at ((time of next attempt)).] You can also call us on [direct number], [opening times]. Thank you.
 ```
 
 Interpretation: don't give the case reference or the reason for the call. Whether to give the caller's first name is a service decision.
@@ -151,7 +159,7 @@ Your reference number is ((reference)).
 
 What you need to do
 
-Call us on or before ((deadline)):
+[Call / Contact] us [on or before ((deadline))]:
 [how to get in touch]
 
 To check this email is genuine, [how to check it's genuine].
@@ -175,7 +183,7 @@ We need to speak to you about your [case]
 
 We tried to contact you about your [case], but could not reach you.
 
-Contact us on or before ((deadline)):
+Contact us [on or before ((deadline))]:
 [how to get in touch]
 
 Have your reference number ready.
@@ -211,4 +219,11 @@ The call times and number of attempts are one service's policy. They're evidence
 
 ### Adapted for invented services
 
-Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026. See `evals/results.md`.
+Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026:
+
+- one service's name would reveal a sensitive subject on a voicemail. [caller name] was added, with the trade-off flagged in `../moments.md`
+- one service hadn't decided whether it tries again. The pattern now says not to choose between A and B
+- the email assumed a deadline. It's now optional
+- one service only had a general helpline. [how to get in touch] now covers that
+- one service had only email and a status page, so variant C had no other channel. The pattern now says to flag this
+- for a business, a bounced email often meant the named contact had left

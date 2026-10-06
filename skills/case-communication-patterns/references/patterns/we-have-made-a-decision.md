@@ -59,11 +59,13 @@ From the service context:
 |---|---|
 | [service name] | the name customers know the service by |
 | [case] | the customer's word for their case |
-| [outcome] | the service's confirmed wording for each possible outcome, like "approved" or "refused". Never choose decision words for the service |
+| [outcome] | the service's confirmed word for each possible outcome. Never choose decision words for the service. Some services have banned words, like "approved" |
+| [outcome sentence] | the outcome as a sentence that works for every outcome, like "Your [case] has been [outcome]" or "You have not been [outcome]". Check it reads correctly for each outcome |
 | [what it means] | what the outcome means for the customer, in the service's confirmed words |
 | [next step] | what happens next, or [end of process] |
-| [challenge route] | how to challenge the decision, if there is one, like a review or an appeal |
-| [challenge deadline rule] | how the deadline for a challenge is worked out |
+| [challenge route] | how to challenge the decision, if there is one. It may have more than one stage, like a review and then an appeal. Give each stage as a step |
+| [challenge deadline rule] | how the deadline for a challenge is worked out, including what it counts from and whether it's calendar or working days |
+| [ongoing duties] | only if the customer has a standing duty after the decision, like telling the service about changes |
 | [reasons] | only if the service has confirmed how reasons are given |
 | [restart route] | for variant D, how to apply again or restart, if the service allows it |
 | [contact details] | how to get help, in the A to Z format |
@@ -105,16 +107,17 @@ The case ends without a decision on its merits, for example because the customer
 - say what this means, like whether anything they paid or sent is returned. Only from the service context
 - say what they can do now, like apply again, if the service allows it
 - never present it as a refusal on the merits
+- whether closing the case is itself a decision the customer can challenge is a service fact. Flag it if the service context doesn't say
 
 Interpretation: if the case was closed because the customer didn't reply, the earlier requests should have said this could happen. If they didn't, flag it. See the final reminder modifier.
 
-### E. Decision with an action
+### Apply with any variant
 
-The customer needs to do something because of the decision, like pay, confirm or send something. Give the outcome first, then use "We need something from you" for the action, in the same message.
+These combine with A to D, rather than replacing them.
 
-### F. Formal notice
-
-The decision has legal effect, or the law sets how it's given. The service context must say so. Flag it for legal review. The channel, the wording and what must be included may be fixed by law. Don't adapt the wording of a formal notice without that review.
+- **an action:** the customer needs to do something because of the decision, like pay or confirm. Give the outcome first, then use "We need something from you" for the action, in the same message
+- **issued at the same time:** what was applied for is sent with the decision, or on the same day. Give the outcome first, then the core information from "What you applied for is on its way", in one message. See "Combining moments" in `../moments.md`
+- **formal notice:** the decision has legal effect, or the law sets how it's given. The service context must say so. The channel, the wording and what must be included may be fixed by law. Draft from the baseline, but mark the whole draft as needing legal review, and don't present it as ready to send
 
 ### Not this pattern
 
@@ -143,7 +146,8 @@ Check these with `privacy-aware-communications`. Don't decide them here.
 - **legal effect:** is this decision a formal notice? What must it contain, and which channel must it use? This is a service fact. A message missing from the service context's list of formal communications is not confirmation it has none
 - **decision words:** the outcome must use the service's confirmed wording. Never infer it from published content
 - **reasons:** whether and how reasons are given is a service decision. Reasons can reveal special category information, or information about a third party
-- **challenge route:** the route, who can use it, and the deadline must come from the service context. Never infer them
+- **challenge route:** the route, who can use it, and the deadline must come from the service context. Never infer them. If the service context confirms there's no route, leave the section out. If it's unknown, keep the placeholder and flag it
+- **challenge deadline:** check what the deadline counts from, like the date of the decision or the date of the letter, and whether it's calendar or working days
 - **preview and lock screen:** an outcome in a subject line, first line or text can reveal sensitive information. Refusals are high risk in previews
 - **who receives it:** if someone acts for the customer, who gets the decision is a service decision
 - **pointer texts:** if a text points to a formal notice, send it only after the notice is likely to have arrived
@@ -162,21 +166,28 @@ Reference: ((reference))
 
 [letter greeting]
 
-We've [outcome] your [case]. [what it means]
+[outcome sentence] [what it means]
 
-[Reasons, if given:]
+[If reasons are given:]
 Why we made this decision
 
 ((reasons for this case))
+
+[If there's a challenge route:]
+If you disagree with this decision
+
+We made this decision on ((decision date)).
+
+You can [challenge route]. You need to do this on or before ((challenge deadline)).
 
 What happens next
 
 [next step]
 
-[If there's a challenge route:]
-If you disagree with this decision
+[If there are ongoing duties:]
+If anything changes
 
-You can [challenge route]. You need to do this on or before ((challenge deadline)).
+[ongoing duties]
 
 If you need help, contact us:
 [contact details]
@@ -193,23 +204,30 @@ Subject: [Service name]: we've made a decision on your [case]
 
 Dear ((first name)) ((last name))
 
-We've [outcome] your [case]. [what it means]
+[outcome sentence] [what it means]
 
 Your reference number is ((reference)).
 
-[Reasons, if given:]
+[If reasons are given:]
 Why we made this decision
 
 ((reasons for this case))
+
+[If there's a challenge route:]
+If you disagree with this decision
+
+We made this decision on ((decision date)).
+
+You can [challenge route]. You need to do this on or before ((challenge deadline)).
 
 What happens next
 
 [next step]
 
-[If there's a challenge route:]
-If you disagree with this decision
+[If there are ongoing duties:]
+If anything changes
 
-You can [challenge route]. You need to do this on or before ((challenge deadline)).
+[ongoing duties]
 
 If you need help, contact us:
 [contact details]
@@ -224,13 +242,13 @@ Interpretation: the subject line says a decision has been made, not what it is. 
 A pointer, by default:
 
 ```
-We've made a decision on your [case]. We've [emailed you / sent you a letter] with details. Reference: ((reference))
+[Service name]: we've made a decision on your [case]. We've [emailed you / sent you a letter] with details. Reference: ((reference))
 ```
 
 Self-contained, only for an outcome the service has decided can go in a text, and never for a formal notice:
 
 ```
-Your [case] has been [outcome]. [next step, in a few words]. Reference: ((reference))
+[Service name]: [outcome sentence]. [next step, in a few words]. Reference: ((reference))
 ```
 
 ### Status page, behind sign-in
@@ -238,16 +256,24 @@ Your [case] has been [outcome]. [next step, in a few words]. Reference: ((refere
 ```
 Status: [outcome]
 
-We've [outcome] your [case]. [what it means]
-
-What happens next
-[next step]
+[outcome sentence] [what it means]
 
 If you disagree
 You can [challenge route] on or before ((challenge deadline)).
+
+What happens next
+[next step]
 ```
 
-### Variant D, closed without a decision, email body
+### Variant D, closed without a decision
+
+Headline for a letter, and subject line for an email:
+
+```
+We've closed your [case]
+```
+
+Body:
 
 ```
 We've closed your [case] because [reason for closing].
@@ -256,7 +282,16 @@ We've closed your [case] because [reason for closing].
 
 If you still want to [what they applied for], you can [restart route].
 
+[If closing can be challenged:]
+If you disagree, you can [challenge route] on or before ((challenge deadline)).
+
 Your reference number is ((reference)).
+```
+
+Text, as a pointer:
+
+```
+[Service name]: we've closed your [case]. We've [emailed you / sent you a letter] with details.
 ```
 
 ## Evidence
@@ -275,4 +310,14 @@ Your reference number is ((reference)).
 
 ### Adapted for invented services
 
-Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026. See `evals/results.md`.
+Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026:
+
+- "We've [outcome] your [case]" failed for "not awarded". [outcome sentence] replaced it
+- one service had a 2-stage challenge route, a review then an appeal. [challenge route] now allows steps
+- the challenge deadline counted from the decision date, which the baseline didn't show. A decision date line was added, with a checkpoint on how the deadline is counted
+- the action and formal notice variants combined with the others, so they moved to "Apply with any variant"
+- one service granted and emailed a permit on the same day. "Issued at the same time" was added
+- the variant B advice put the challenge route after the reasons, but the baseline didn't. The baseline order now matches
+- variant D had only an email body. It now has a headline, a text, and a checkpoint on whether closing can be challenged
+- one service bans the word "approved". The [outcome] placeholder now warns about banned words
+- one service has a standing duty to report changes. An optional "If anything changes" section was added

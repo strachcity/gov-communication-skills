@@ -58,6 +58,7 @@ From the service context:
 | [if it does not arrive] | what to do, and when, as the service has confirmed it |
 | [what to do when it arrives] | like sign it or activate it, only if needed |
 | [collection or download details] | for variant B |
+| [ongoing duties] | only if the customer has a standing duty, like telling the service about changes |
 | [contact details] | how to get help, in the A to Z format |
 | [sender] | who the message is from |
 | [letter greeting] | from the service's letter template |
@@ -82,6 +83,10 @@ Use the baseline copy.
 
 Say where and how, and any deadline for collecting it. For a download, give the full GOV.UK web address, never an attachment.
 
+### E. Sent by email
+
+The document itself is sent by email. Replace "should arrive by" with what's attached or linked. The Service Manual says emails should "avoid sending attachments". Flag this conflict for the service. The lower-risk option is a link to download it behind sign-in.
+
 ### C. Something to do when it arrives
 
 The customer needs to do something with it, like sign it. Say so clearly in the first message, and in a reminder if the service sends one.
@@ -92,7 +97,7 @@ The service is returning documents or items the customer sent. Say what's being 
 
 ### Not this pattern
 
-- the decision itself: use "We've made a decision"
+- the decision itself: use "We've made a decision". If the decision and the issue happen together, combine them, with the outcome first. See "Combining moments" in `../moments.md`
 - something the customer needs to do before a date, unrelated to delivery: use "You need to act before a date"
 
 ## Modifiers that apply
@@ -117,6 +122,7 @@ Check these with `privacy-aware-communications`. Don't decide them here.
 - **address:** check the address is current before sending. An item sent to an old address reaches someone else
 - **lost items:** what happens if it's lost, and whether there's a charge, must come from the service context
 - **downloads:** case documents should be behind sign-in, not attached or linked openly
+- **attachments:** sending the document as an email attachment conflicts with the Service Manual's advice to avoid attachments. Flag it
 
 ## Baseline copy
 
@@ -142,8 +148,15 @@ If it has not arrived by ((arrive by))
 
 [if it does not arrive]
 
-[If this is the end of the process:]
+[If this is the end of the process, and no reminders follow:]
 This is the last message we'll send you about this [case].
+
+[If reminders follow, like for a renewal, say when instead.]
+
+[If there are ongoing duties:]
+If anything changes
+
+[ongoing duties]
 
 [Sender]
 ```
@@ -198,4 +211,8 @@ If it has not arrived by then
 
 ### Adapted for invented services
 
-Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026. See `evals/results.md`.
+Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026:
+
+- 2 services sent the document by email on the day of the decision. "Should arrive by" didn't fit, and the attachment conflict wasn't raised. Variant E and the attachment checkpoint were added, with a pointer to combining with the decision
+- "This is the last message" was wrong where a renewal reminder follows
+- one service had a standing duty to report changes. An optional "If anything changes" section was added

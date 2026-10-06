@@ -62,6 +62,7 @@ From the service context:
 | [tracking URL] | a full GOV.UK web address |
 | [contact details] | how to get help, in the A to Z format, like "Telephone: 0300 000 0000" with opening times on separate lines |
 | [sender] | who the message is from, as the customer will recognise it |
+| [correction route] | for variant E, how to correct the record |
 | [letter greeting] | from the service's letter template |
 
 Filled for each message:
@@ -72,6 +73,9 @@ Filled for each message:
 | ((reference)) | the case reference |
 | ((date received)) | the date, like 6 October 2026 |
 | ((date)) | the date of the letter |
+| ((date of call)) | for variant E |
+| ((what we recorded)) | for variant E, only as much as the customer needs to check it |
+| ((correction deadline)) | for variant E, if the service sets one |
 
 ## Variants
 
@@ -109,6 +113,16 @@ Change the baseline:
 - summarise what was recorded, only as much as the customer needs to check it
 - say how to correct it, and by when, if the service has decided this
 - if the conversation agreed something the customer needs to do, use "We need something from you" for it, in the same message
+
+```
+We've recorded what you told us when we spoke on ((date of call)).
+
+((what we recorded))
+
+If anything is wrong, [correction route] [on or before ((correction deadline))].
+```
+
+What the customer told the service may have legal significance, like telling the service about a change. Check the "legal significance" checkpoint.
 
 Interpretation: a record of a conversation can repeat sensitive answers. Keep them out of texts and previews, and check the channel with `privacy-aware-communications`. This variant has weak evidence: one unpublished service. See "Evidence gaps".
 

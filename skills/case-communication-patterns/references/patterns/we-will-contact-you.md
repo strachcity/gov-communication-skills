@@ -72,7 +72,7 @@ Filled for each message:
 |---|---|
 | ((first name)) ((last name)) | the customer's full name |
 | ((reference)) | the case reference |
-| ((date and time)) | the date, and the time or time window |
+| ((date and time)) | the date, and the time or time window, like "between 1pm and 3pm" |
 | ((place)) | for an appointment or visit |
 | ((date)) | the date of the letter |
 
@@ -88,7 +88,13 @@ Confirm the date, time and place. The Service Manual's example of a transactiona
 
 ### C. A visit is planned
 
-Someone from the service will visit the customer's home or premises. Say how to recognise them, like identification they'll show.
+Someone from the service will visit the customer's home or premises. Say how to recognise them, like identification they'll show. This is core information for a visit, in every channel, because it protects the customer from someone pretending to be from the service.
+
+```
+[Service name]: we'll visit you on ((date and time)). Our officer will show [how to recognise it]. To change it, [how to change it].
+```
+
+With a long service name and a time window, this is close to 160 characters. Count it with real values.
 
 ### D. Contact is coming, but not at a set time
 
@@ -96,6 +102,7 @@ The service will contact the customer within a period, without a set time. Give 
 
 ### Not this pattern
 
+- another organisation will contact the customer, as part of passing the case on: use "We're waiting on someone else", variant E
 - the contact already failed: use "We couldn't reach you"
 - the customer needs to book or call: use "We need something from you", variant G
 
@@ -120,6 +127,7 @@ Check these with `privacy-aware-communications`. Don't decide them here.
 - **how to recognise it:** what the service tells customers to expect is a service decision. Publishing a caller number helps customers, but scammers can copy it
 - **identity on the call:** the service needs to check the customer's identity before discussing the case. How is a service decision
 - **when to call:** when the service can call is a service decision
+- **arriving in time:** check the message can arrive before the contact. A letter can't announce a call tomorrow. If no channel the service uses can arrive in time, flag it
 - **missed contact:** the consequence of missing it must come from the service context
 - **kind of message:** a booking confirmation the customer asked for is a service message. Reminders the customer can opt out of may be optional service updates. See `kinds-of-message.md` in `privacy-aware-communications`
 
@@ -192,6 +200,11 @@ If the time does not work
 
 [how to change it]
 
+[If the service has confirmed it:]
+If you miss it
+
+[missed consequence]
+
 If you need help, contact us:
 [contact details]
 
@@ -229,4 +242,9 @@ The call hours are one service's policy, not a rule for other services. That a p
 
 ### Adapted for invented services
 
-Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026. See `evals/results.md`.
+Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026:
+
+- one service only uses letters and pointer texts, so nothing could announce a call the next day. The "arriving in time" checkpoint was added
+- the visit variant had no text, and the text left out how to recognise the officer. Both are fixed
+- the letter had a [missed consequence] placeholder but no line for it
+- when another organisation will make the contact, the hand-off belongs in "We're waiting on someone else", variant E

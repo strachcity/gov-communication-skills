@@ -136,7 +136,8 @@ Status: confirmed | needs confirmation | open question
 - if a fact has no status, treat it as "needs confirmation"
 - if a confirmed fact has no owner, use it, and note the missing owner
 - if a fact is out of date or its source is unclear, use it only if confirmed, and mention the date
-- "About the service" and "Users" are background. Use them to understand the service, not as facts to put in a message
+- "About the service" and "Users" are background. Use them to understand the service, not as facts to put in a message. If background conflicts with a fact, flag both
+- a fact that uses "must" is only a legal requirement if the service context says so. Otherwise use "need to", and flag it
 - a message missing from "Formal or legally significant communications" is not confirmation it has no legal effect
 - only a confirmed policy decision settles a privacy, legal or policy question. A communication judgement or precedent can shape wording
 

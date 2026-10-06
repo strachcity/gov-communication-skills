@@ -68,18 +68,46 @@ Each pattern has baseline copy for each channel. It uses 2 kinds of placeholder:
 - **[square brackets]:** a service fact, filled once from the service context, like [sender] or [tracking URL]. Only use confirmed facts
 - **((double brackets)):** a value filled for each message when it's sent, like ((reference)) or ((deadline)). GOV.UK Notify uses this format for personalisation. These are not gaps in the service context
 
+A service fact can be a rule, like "20 working days after we receive a complete application". Turn it into a date for each message, and flag what the rule counts from and whether it's calendar or working days. If the rule itself isn't confirmed, list the rule as needing a decision, not the date.
+
 When adapting a pattern:
 
-- leave out any line for something the service doesn't have, like a tracking route
+- leave out a line only when the service context confirms the service doesn't have that thing, like a tracking route. If the fact is just unknown, keep the placeholder and flag it
 - don't draft for a channel the service doesn't use, or only plans to use, unless the user asks
 - if the service context records how it chooses channels, like "letters only if there's no email address", draft the main channel and say which customers get the alternative
-- send one channel for each moment unless there's a reason to send 2. The Service Manual says to avoid sending an email and a text message at the same time "unless there's a very good reason"
+- send one channel for each moment unless there's a reason to send 2. The Service Manual says to avoid sending an email and a text message at the same time "unless there's a very good reason". A letter followed by a pointer text counts as one message with a pointer. Updating a status page doesn't count as a second message
+- check the channel can arrive in time. A letter can't announce a call tomorrow. If no channel the service uses can arrive in time, flag it
+- if the customer's word for their case is also an outcome, like "registration" or "licence", don't let it read as the outcome. Write "application to register" or "licence application" where it would
+- if the service context maps a case state to a moment, treat it as a starting point. If the pattern doesn't fit, say so
+
+### Combining moments
+
+Sometimes 2 moments happen at once, like a decision and the thing being issued, or a receipt and a request. Send one message:
+
+1. Lead with the moment that matters most to the customer, usually the outcome or the action.
+2. Then give the other moment's core information.
+3. Keep each moment's checkpoints.
+
+### Pointer messages
+
+When the detail goes by email or letter, or the service has decided texts must say less, a text can point to it. The patterns use these 2 generic pointers:
+
+```
+We've sent you [an email / a letter] about your [case].
+```
+
+```
+Please contact us about your [case]. [how to get in touch]
+```
+
+Send a pointer only once the email or letter is likely to have arrived. A pointer that only says "contact us" from an unrecognised sender looks like a scam. Say how to check it's genuine where the service has decided how.
 
 ### Text messages
 
 - count characters using the service's real reference format and the longest likely values, like the longest date. Over 160 counts as more than one text
 - use straight apostrophes and quote marks. This is a technical precaution, not a GOV.UK writing rule. Notify's text message pricing page says non-standard characters cut the limit to 70, but doesn't say whether curly apostrophes are standard. A test message through Notify would settle it
-- if the sender ID doesn't name the service, like "GOVUK", start the text with the service name, like "[Service name]: ". Check the name itself doesn't reveal something sensitive on a lock screen
+- the text baselines start with "[Service name]: ". Leave it out if the sender ID already names the service
+- if the sender ID doesn't name the service, like "GOVUK", and the service name would reveal something sensitive on a lock screen, there's a trade-off: an anonymous text looks like a scam, and a named one reveals the service. That's a decision for the service. Flag it, and don't resolve it by revealing more
 - if the service has a language duty, like Welsh, each version needs its own count. Welsh accented letters cut the limit to 70
 
 ## When the customer is an organisation
@@ -88,7 +116,9 @@ Some services deal with businesses or other organisations. The message goes to a
 
 - greet the named contact by name in emails, as the Service Manual asks
 - name the organisation in the first line, like "We've received the application for ((business name))"
-- write "your [case]" only if the contact is the person responsible for it. Otherwise use the organisation's name
+- write "your [case]" only if the contact is the person responsible for it. Otherwise write "the [case] for ((organisation name))"
+- the named contact may have left. A bounced email or returned letter may mean a new person needs to be found, and whether they have authority to act is a service decision
+- a sole trader may work from home. Their business address, opening hours or inspection dates can reveal where they live and when they're in. Treat these as personal data
 - information about a limited company is generally not personal data, but information about an identifiable sole trader, partner, director or employee can be. The named contact's name and email address are personal data. See "Information about businesses and organisations" in `privacy-aware-communications`
 
 ## Failure modes for every moment
@@ -315,4 +345,4 @@ Evidence: unpublished prototype work. Status: seen in 1 service.
 
 Points a service needs that no moment covers yet. Add them here in generic words, with the date. Do not name the service.
 
-None recorded yet.
+- **a standing duty, with no due date:** like a duty to tell the service about changes within a set time. It isn't a moment, because nothing happens on a date. For now, include it as an optional "If anything changes" section in "We've made a decision" or "What you applied for is on its way". Found 6 October 2026

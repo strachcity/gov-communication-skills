@@ -185,4 +185,8 @@ Interpretation, 6 October 2026:
 
 ### Adapted for invented services
 
-Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026. See `evals/results.md`.
+Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026:
+
+- "work has started after a 2-week queue" fitted variant A, but the decision timescale was a rule counting from an unclear date. The shared rule on timescales in `../moments.md` now covers this
+- a case passed to another organisation fitted "We're waiting on someone else", variant E, better than this pattern
+- a case word that is also an outcome produced "Your registration has been registered". The shared rule in `../moments.md` now covers this
