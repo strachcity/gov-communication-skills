@@ -2,6 +2,12 @@
 
 How we get from an empty structure to working skills for drafting and reviewing government communications.
 
+This file is a working plan, not guidance. Archive it once the first skills are built.
+
+Sources reviewed on 6 October 2026.
+
+## Scope
+
 The first skills cover 4 channels:
 
 - web pages in prototypes
@@ -11,288 +17,196 @@ The first skills cover 4 channels:
 
 The first service is DVLA Drivers Medical.
 
-This file is a working plan, not guidance. Delete or archive it once the first skills are built.
+Out of scope for now:
 
-Sources reviewed on 6 October 2026.
+- NHS guidance, which will become its own service-specific skill later
+- NHS App messages, phone scripts and web chat
+- Welsh
 
-## 1. Source review
+## 1. Main sources
 
-Each source is rated for how much we should rely on it, what we take from it and where it goes.
+These 3 sources are the basis for all generic knowledge. Every entry in `knowledge/content-design/` cites at least one of them.
 
 ### GOV.UK content and publishing guidance
 
-https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/
+https://guidance.publishing.service.gov.uk/
 
-- **authority:** primary. This is the GOV.UK standard
-- **what it covers:** writing guidelines (user needs, clear language, structure, tone, titles, summaries, links, change notes), the A to Z style guide and the technical A to Z
-- **take:** almost all of it, one rule per entry, quoted
-- **goes to:** `knowledge/content-design/`
-- **caveats:**
-  - the site is in public beta, so links may move
-  - the guidance is written for GOV.UK web pages, so some parts (summaries, change notes, titles for search) do not apply to emails, texts or letters, and each entry must say which channels it applies to
-  - the guidance pages use en dashes themselves, so "no dashes" is your house rule for this repository, not a GOV.UK rule
-
-Useful finding: the must, need to and can distinction is written down in "Use clear language", under "Make requirements clear". Your style check prompt says it isn't a literal A to Z entry, which is right, but it does have a citable source. "Should" as a recommendation is not defined there, so that part stays a convention.
+- **what it is:** how to write for GOV.UK, including the writing guidelines, the A to Z style guide and the technical A to Z
+- **what we take:** plain English, tone, active voice, must and need to, contractions, structure, headings, lists, links, titles, and the A to Z rules for numbers, dates, punctuation, capitals and words to avoid
+- **applies to:** all 4 channels for language and style, and web pages for titles, summaries and page structure
+- **why it applies beyond web pages:** the Service Manual says emails and text messages should "Follow the Government Digital Service (GDS) style guide"
+- **caveats:** the site is in public beta, so links may move. It's written for GOV.UK content pages, not service pages, emails or letters, so each entry says which channels it applies to
 
 ### GOV.UK Service Manual
+
+https://www.gov.uk/service-manual
+
+The pages we use:
 
 - "Planning and writing text messages and emails": https://www.gov.uk/service-manual/design/sending-emails-and-text-messages
 - "Writing for user interfaces": https://www.gov.uk/service-manual/design/writing-for-user-interfaces
 
-**Authority:** primary for services.
+What it covers:
 
-**Take:**
+- **for emails and text messages:** when to send them, transactional and subscription messages, choosing a channel, protecting users from phishing, personalising messages, being concise and giving clear instructions
+- **for prototype web pages:** wording for service pages, like headings, buttons and short instructions
 
-- channel choice, transactional and subscription messages
-- personalising messages, being concise, giving clear instructions
-- the phishing rules
-- microcopy for prototype pages
+What it applies to:
 
-**Goes to:**
+- emails, text messages and prototype web pages
+- it has no page on letters
 
-- writing rules go to `knowledge/content-design/`
-- the phishing and "too sensitive to send" rules also go to `knowledge/privacy/`
+Caveats:
 
-**Caveats:**
-
-- **the email and text page is old:** it was last updated on 3 October 2017, before UK GDPR applied
-- **one statement needs checking:** "You don't need to ask permission to send transactional messages" is a data protection claim, so it goes in as "needs confirmation", not as fact
-- **its examples don't all follow its own advice:** for example, it says to sign off with "Regards" and uses an unexplained acronym, so the examples aren't templates
-- **there's no letters page:** I checked 2 likely addresses and both were not found
-
-### GOV.UK Design System
-
-https://design-system.service.gov.uk/
-
-- **authority:** primary for prototype web pages
-- **take:** the wording guidance inside components and patterns, like question pages, error messages, check answers and confirmation pages
-- **goes to:** `knowledge/content-design/`, as web page entries
-- **caveat:** take wording guidance only, not markup, since DTx-experiments already holds the markup
+- the email and text message page was last updated in 2017, before UK GDPR applied
+- its examples don't always follow its own advice, so we won't use them as templates
 
 ### GOV.UK Notify guidance
 
-https://www.notifications.service.gov.uk/using-notify/guidance
+https://www.notifications.service.gov.uk/using-notify
 
-- **authority:** primary for what emails, texts and letters can technically contain, if the service sends through Notify
-- **take:** formatting (emails can have headings, bullets, inset text and numbered steps, letters can have headings, bullets, numbered steps and page breaks, neither can have bold or italics), links and URLs, personalisation, text message sender names, the letter specification
-- **goes to:** `knowledge/content-design/`, as channel entries
-- **caveat:** whether Drivers Medical sends through GOV.UK Notify is a service fact we don't know yet
+**What it covers:** what an email, text message or letter can technically contain if it's sent through GOV.UK Notify.
 
-### Inclusive language
+**What we take:**
 
-https://www.gov.uk/government/publications/inclusive-communication/inclusive-language-words-to-use-and-avoid-when-writing-about-disability
+- formatting: what each channel can and can't include, and that none of them can use bold or italics
+- links and URLs
+- personalisation and optional content
+- text message sender IDs
+- the letter specification
 
-- **authority:** primary
-- **goes to:** `knowledge/content-design/`
-- **caveat:** this matters a lot for Drivers Medical, where every customer has a health condition or disability
+**Applies to:** emails, text messages and letters.
 
-### NHS digital service manual content guide
+**Caveat:** it's only binding if the service sends through GOV.UK Notify. We don't know yet whether Drivers Medical does.
 
-https://service-manual.nhs.uk/content
+## 2. What each source covers, by channel
 
-- **authority:** secondary. It's good, well-researched guidance, but it's the NHS's, not GOV.UK's
-- **what it covers:** health literacy, voice and tone, the A to Z of NHS health writing, writing NHS messages (updated August 2026), numbers, punctuation, formatting and inclusive content
-- **take:**
-  - the health literacy evidence
-  - the per-channel advice for emails, texts and letters
-  - trust and phishing advice
-  - writing to someone who has a carer
-  - plain names for conditions
-- **goes to:** a separate area, `knowledge/content-design/nhs/`, loaded only when a service chooses to adopt it (see decision 1)
+This shows where each piece of knowledge comes from. A dash means no main source covers it.
 
-**Caveats:**
+| Topic | Web page | Email | Text message | Letter |
+|---|---|---|---|---|
+| Plain English, tone, style | Publishing | Publishing | Publishing | Publishing |
+| Structure, headings, lists | Publishing | Publishing, Notify | - | Publishing, Notify |
+| Links | Publishing | Service Manual, Notify | Service Manual, Notify | Notify |
+| Titles and summaries | Publishing | none | none | none |
+| Wording on service pages | Service Manual | none | none | none |
+| Components and patterns | - | none | none | none |
+| When to send, choosing a channel | none | Service Manual | Service Manual | - |
+| Greeting, sender, sign-off | none | Service Manual, Notify | Service Manual, Notify | - |
+| Phishing protection | none | Service Manual | Service Manual | - |
+| Formatting limits | none | Notify | - | Notify |
+| Message length | none | none | - | Notify |
+| What is too sensitive to send | - | Service Manual (one line) | Service Manual (one line) | - |
 
-- **it isn't a rulebook:** it says it is "a guide, not a rulebook", and defers to the GOV.UK A to Z for anything it doesn't cover
-- **it conflicts with GOV.UK in places:** see section 3
-- **its own example messages break its own advice:** for example, a letter says "within 30 days of the date of this letter", starts with "Please complete", and has a question as a heading. They're useful as eval inputs, not as models
+"None" means the topic doesn't apply to that channel.
 
-### The govuk-style-writer skill (uploaded)
+## 3. Gaps the main sources don't fill
 
-**Authority:** secondary. It's a summary of other sources, so every rule must be checked against its source before we use it.
+There are 4 gaps. Each needs a supporting source or a decision. Supporting sources are used only for their gap, and their entries say so.
 
-**What's strong, and worth reusing as design ideas rather than content:**
+### Gap 1: components and patterns for prototype pages
 
-- it works out the channel, reader and context before writing
-- it lists what must never change, like eligibility, deadlines, amounts, legal duties and consequences
-- it ends with a "Check before publishing" list of things to confirm
-- it has a section on sensitive and difficult messages
-- it has per-channel advice for letters, emails and texts
+The Service Manual covers wording, but question pages, error messages, check answers and confirmation pages are documented in the GOV.UK Design System.
 
-**Where it doesn't fit our architecture:**
+**Proposal:** add the GOV.UK Design System as a supporting source for prototype web pages only: https://design-system.service.gov.uk/
 
-- **it mixes layers:** generic GOV.UK rules, other organisations' guides and department rules sit in one file, which is the mixing this repository is designed to avoid
-- **"the domain guide wins" happens automatically:** here, a service has to choose to adopt a guide, and record that it has
-- **most of it is out of scope:** justice, HMRC, Home Office, functional standards and Welsh
-- **some claims cite no source:** a few things I couldn't trace to a source, like "Dear" being "also safer for government generally". In fact the service manual does support "Dear" for emails, so that one can be cited properly
+### Gap 2: how to write a letter
 
-**Checked against the source and correct:**
+None of the 3 sources covers greetings, sign-offs, where the reference number goes, deadlines as dates or letter headings. Notify only covers what a letter can technically contain.
 
-- negative contractions
-- the use of "one"
-- must, need to and can
-- Notify formatting for emails and letters
+**Proposal:** use your colleague's govuk-style-writer skill as the supporting source for letter conventions only. This is the case where it's necessary. Entries based on it are marked "needs confirmation" and name it as the source.
 
-**What we'll do with it:** use it as a checklist of topics and as a reference for how the skills should work. We won't copy its text.
+### Gap 3: privacy and special category data
 
-**Open question:** who wrote it, and can we reuse its structure?
+The Service Manual says only that some information is "too sensitive to be sent by email or text", and to ask your information assurance team. None of the 3 sources covers the law.
 
-### DTx-experiments `drivers-medical/DESIGN.md`
+**Proposal:** use the legislation and ICO guidance as supporting sources for `knowledge/privacy/` only. Every entry is marked "needs confirmation", with the data protection officer (DPO) as owner.
 
-- **authority:** prototype design judgement for Drivers Medical, not confirmed DVLA policy
-- **take:**
-  - internal terms customers must never see
-  - waits shown as a range with a reason
-  - never a countdown or a percentage complete
-  - who holds the case, in words customers recognise
-  - the decision language open question
-- **goes to:** `services/drivers-medical/`, as "needs confirmation" with DVLA policy named as owner
-- **caveat:** these came from prototype work and research, not from a recorded policy decision
-
-### Not used
-
-- **govuk-design-guide:** it's about GOV.UK website templates, not writing, and has no licence file
-- **prompt-to-page:** it only hosts installers, the app is proprietary, and its guidance comes from the GOV.UK Design System, which we use directly
-
-### Privacy sources, not yet reviewed in depth
-
-These are the sources the privacy work will need. I've confirmed they're reachable but haven't read them for content yet.
-
+- UK GDPR Article 9 and the Data Protection Act 2018, Schedule 1
 - ICO guidance on special category data: https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/special-category-data/
 - ICO guide to data security: https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/security/a-guide-to-data-security/
-- UK GDPR Article 9, and the Data Protection Act 2018 Schedule 1
-- the Government Security Classifications policy, for what can go by email
-- the NHS England "Messaging best practice" guidance, which the NHS content guide refers to for governance and channel choice. It's an example from health, not a rule for DVLA
 
-## 2. Decisions needed
+### Gap 4: text message length and formatting
 
-These change what gets built. I've made a recommendation for each.
+Notify's formatting page lists what emails and letters can include, but not text messages. Notify's pricing page should cover the 160-character limit for one text message and how some characters count twice. The address I tried returned "not found".
 
-### Decision 1: how to treat the NHS content guide
+**Proposal:** find the current Notify pages for both before writing `channel-text-message.md`. If Notify doesn't cover them, record them as open questions.
 
-**Recommendation:** keep it as separate generic knowledge in `knowledge/content-design/nhs/`. Drivers Medical adopts individual entries by recorded decision, not the whole guide.
+## 4. Where the main sources disagree
 
-The reasons:
+Each one gets recorded in the relevant entry, citing both sources, and the skills flag it rather than picking a side.
 
-- DVLA is a GOV.UK service, so GOV.UK style is the default
-- Drivers Medical customers are writing and reading about their health and their GP, so some NHS advice clearly helps
-- adopting the whole guide would bring in things like numerals for "one", which contradict GOV.UK with no gain for DVLA customers
-
-### Decision 2: what happens when sources conflict
-
-**Recommendation:**
-
-- GOV.UK is the default
-- a service can depart from it only through a recorded service decision
-- the skill flags any conflict it meets rather than picking a side
-
-This is the opposite of the uploaded skill, where the domain guide wins automatically.
-
-### Decision 3: which channels are in scope
-
-**Recommendation:** in scope are web pages in prototypes, emails, text messages and letters.
-
-Out of scope for now:
-
-- NHS App messages
-- phone and IVR scripts
-- web chat
-- Welsh
-
-### Decision 4: how many skills
-
-**Recommendation:** 2 skills, each taking the channel as an input.
-
-- **`review-communication`:** your style check prompt turned into a skill. It outputs your 6-column table, adds privacy and service findings to the same table, and uses "Confused / Uncertain?" for anything needing confirmation
-- **`draft-communication`:** works out the context, drafts for the channel, then runs the same checks as the review and ends with "Check before publishing"
-
-That's better than 1 skill per channel, because the rules are mostly shared and a fix should only happen once.
-
-### Decision 5: Welsh
-
-**Recommendation:** out of scope for the first version, but record it as an open question for Drivers Medical.
-
-DVLA is based in Swansea and probably has Welsh language duties, but we don't know what they require for these communications.
-
-## 3. Conflicts found so far
-
-Each one gets recorded in the relevant knowledge entry, citing both sources.
-
-| Topic | GOV.UK | NHS | Proposed handling |
+| Topic | Service Manual | Notify | Proposed handling |
 |---|---|---|---|
-| The number one | "one" in prose | numerals for all numbers | GOV.UK by default |
-| "Should" | not defined in GOV.UK guidance | avoid, can sound patronising | GOV.UK by default, flag "should" for checking |
-| Bold in letters | GOV.UK Notify letters cannot have bold | letters can have bold | depends on how the service sends letters, which is a service fact |
-| Greeting in texts | not needed | start with the person's name | open question for each service |
-| Email sign-off | the service manual example uses "Regards" | "Yours sincerely" | flag, there's no GOV.UK rule |
-| Links in messages | only GOV.UK domain links | NHS.UK or GOV.UK | GOV.UK by default |
+| Link text in emails | spell out URLs in full | link text is fine in emails the recipient expects, or with more than 2 links | full URLs by default, and flag link text for checking |
+| Short URLs | avoid redirects | a short URL from GDS or your IT team is fine | flag, because a short URL is a redirect |
+| Which sites to link to | only the GOV.UK domain | no rule | GOV.UK only, and flag any other domain |
 
-## 4. What to build
+## 5. Decisions
+
+### Already decided
+
+- **main sources:** GOV.UK publishing guidance, the Service Manual and GOV.UK Notify
+- **NHS guidance:** excluded for now, and a future service-specific skill
+- **your colleague's skill:** can be reused, but only where the main sources have a gap
+
+### Recommended, waiting for you to confirm
+
+- **supporting sources:** the 3 for gaps 1 to 3 above, each used only for its gap
+- **conflicts:** GOV.UK is the default. A service can only depart from it through a recorded decision, and the skills flag any conflict they meet
+- **skills:** 2 skills, review and draft, each taking the channel as an input. The review uses your 6-column table
+- **Welsh:** out of scope for the first version, and recorded as an open question for DVLA
+
+## 6. What to build
+
+Each file below names its source. "Publishing" means the GOV.UK publishing guidance.
 
 ### `knowledge/content-design/`
 
-Each entry says which channels it applies to.
+Language and style, all channels:
 
-These are grouped for planning only. Each one is a separate file.
+- `plain-english.md`: Publishing
+- `active-voice.md`: Publishing
+- `modal-verbs.md`: Publishing, "Use clear language", the section "Make requirements clear"
+- `contractions.md`: Publishing
+- `tone.md`: Publishing
+- `numbers.md`: Publishing
+- `dates-and-times.md`: Publishing
+- `money.md`: Publishing
+- `capitalisation.md`: Publishing
+- `punctuation.md`: Publishing
+- `words-to-avoid.md`: Publishing
 
-**Writing:**
+Structure:
 
-- `meet-user-needs.md`
-- `plain-english.md`
-- `active-voice.md`
-- `modal-verbs.md`
-- `contractions.md`
-- `tone.md`
-- `inclusive-language.md`
+- `front-loading.md`: Publishing
+- `headings.md`: Publishing, Notify
+- `bullet-lists.md`: Publishing, Notify
+- `numbered-steps.md`: Publishing, Notify
+- `links.md`: Publishing, Service Manual, Notify
 
-**Structure:**
+Web pages:
 
-- `front-loading.md`
-- `headings.md`
-- `bullet-lists.md`
-- `numbered-steps.md`
-- `links.md`
+- `titles.md`: Publishing
+- `summaries.md`: Publishing
+- `service-page-wording.md`: Service Manual
+- `question-pages.md`: Design System (gap 1)
+- `error-messages.md`: Design System (gap 1)
+- `check-answers.md`: Design System (gap 1)
+- `confirmation-pages.md`: Design System (gap 1)
 
-**Style:**
+Channels:
 
-- `numbers.md`
-- `dates-and-times.md`
-- `money.md`
-- `capitalisation.md`
-- `punctuation.md`
-- `words-to-avoid.md`
-
-**Web pages only:**
-
-- `titles.md`
-- `summaries.md`
-- `question-pages.md`
-- `error-messages.md`
-- `check-answers.md`
-- `confirmation-pages.md`
-
-**Channels:**
-
-- `channel-email.md`
-- `channel-text-message.md`
-- `channel-letter.md`
-- `channel-web-page.md`
-
-**Accessibility:**
-
-- `accessibility.md`
-
-### `knowledge/content-design/nhs/`
-
-Only the entries Drivers Medical might adopt:
-
-- `health-literacy.md`
-- `naming-conditions.md`
-- `writing-to-people-with-carers.md`
-- `trust-and-phishing.md`
+- `channel-email.md`: Service Manual, Notify
+- `channel-text-message.md`: Service Manual, Notify
+- `channel-letter.md`: Notify, and your colleague's skill (gap 2)
+- `channel-web-page.md`: Publishing, Service Manual
+- `when-to-send-messages.md`: Service Manual
+- `phishing-protection.md`: Service Manual
 
 ### `knowledge/privacy/`
 
-Every entry starts as "needs confirmation", with the data protection officer (DPO) as owner.
+All from gap 3, all "needs confirmation":
 
 - `special-category-data.md`
 - `what-a-message-can-reveal.md`: including what the sender name, subject line or envelope reveals on its own
@@ -302,55 +216,54 @@ Every entry starts as "needs confirmation", with the data protection officer (DP
 - `channel-web-page.md`
 - `requests-for-personal-information.md`
 - `third-parties-and-carers.md`
-- `transactional-and-subscription-messages.md`
+- `transactional-and-subscription-messages.md`: starts from the Service Manual's claim that you don't need permission to send transactional messages, which needs checking against UK GDPR and the Privacy and Electronic Communications Regulations (PECR)
 
 ### `services/drivers-medical/`
 
-- `vocabulary.md`: customer-facing words, and internal words never to use
+Taken from DTx-experiments `drivers-medical/DESIGN.md`, all marked "needs confirmation" with DVLA policy as owner:
+
+- `vocabulary.md`: words customers recognise, and internal terms never to use
 - `waits-and-timescales.md`
 - `decision-language.md`: open question
-- `channels.md`: which channels the service uses and how it sends them. Unknown
+- `channels.md`: which channels the service uses, and whether it sends through Notify. Unknown
 - `legal-basis.md`: open question, owned by the DVLA DPO
-- `adopted-guidance.md`: which NHS entries the service has adopted, and departures from GOV.UK
+- `departures-from-guidance.md`: any recorded decisions to depart from GOV.UK
 - `open-questions.md`
 
 ### `skills/`
 
-- `review-communication/SKILL.md`
-- `draft-communication/SKILL.md`
+- `review-communication/SKILL.md`: your style check prompt turned into a skill. It outputs the 6-column table. Privacy and service findings go in the same table, with "Confused / Uncertain?" used for anything needing confirmation
+- `draft-communication/SKILL.md`: works out the context, drafts for the channel, runs the same checks as the review, and ends with "Check before publishing"
 
 ### `evals/`
 
-1 folder per skill. Each case is a short Markdown file with input, channel, service, must do and must not do.
+1 folder per skill. Each case is a short Markdown file with the input, channel, service, what the skill must do and what it must not do.
 
 The first cases:
 
-- a GOV.UK web page passage with known style errors
+- a web page passage with known style errors
 - a passage with nothing wrong, to check nothing gets flagged
-- the NHS address-check letter from the content guide, which breaks several rules
+- an email that breaks the Service Manual's phishing rules
 - a text message whose sender name reveals a health condition
-- a Drivers Medical letter reviewed without service knowledge, to check no service rules have leaked into the generic skill
+- a Drivers Medical letter reviewed without service knowledge, to check no service rules leak into the generic skill
 - the same letter reviewed with service knowledge
 - a draft request where the legal position is unknown, to check the skill flags it rather than guessing
 
-Running the evals is manual for now: run the skill on each case and check it against the case's list. Only add tooling if that becomes painful.
+Running the evals is manual for now. Only add tooling if that becomes painful.
 
-## 5. Build order
+## 7. Build order
 
 Each step is small enough to review on its own.
 
-1. Agree decisions 1 to 5.
-2. Add the content design entries a review needs first: plain English, active voice, modal verbs, contractions, punctuation, words to avoid, numbers, and dates and times.
+1. Confirm the recommended decisions in section 5.
+2. Add the first content design entries: plain English, active voice, modal verbs, contractions, punctuation, words to avoid, numbers, and dates and times.
 3. Build `review-communication` for web pages only, with 3 evals.
-4. Add the email, text message and letter channel entries, and widen the review skill and its evals to cover them.
+4. Add the email, text message and letter entries, and widen the review skill and its evals to cover them.
 5. Add the privacy entries, marked "needs confirmation", with 2 privacy evals.
-6. Add Drivers Medical service knowledge from DTx-experiments, all marked "needs confirmation", with the leak test eval.
+6. Add Drivers Medical service knowledge, with the leak test eval.
 7. Build `draft-communication`, reusing the same knowledge and evals.
-8. Add the NHS entries Drivers Medical adopts, if decision 1 says so.
 
-Step 3 gives you a working review skill early. It's also the version of your style check prompt that cites real sources.
-
-## 6. Open questions
+## 8. Open questions
 
 | Question | Who could answer |
 |---|---|
@@ -360,5 +273,10 @@ Step 3 gives you a working review skill early. It's also the version of your sty
 | What is the lawful basis for processing health data in Drivers Medical, and does it limit channels? | DVLA DPO, legal |
 | Does DVLA say a decision is made at first notification? | DVLA policy |
 | What do DVLA's Welsh language duties require for these communications? | DVLA Welsh language team |
-| Who wrote the govuk-style-writer skill, and can we reuse its structure? | you |
-| Is "You don't need to ask permission to send transactional messages" still correct under UK GDPR and the Privacy and Electronic Communications Regulations (PECR)? | DPO, or ICO guidance |
+| Is "You don't need to ask permission to send transactional messages" still correct under UK GDPR and PECR? | DPO, or ICO guidance |
+
+## 9. Reviewed and not used
+
+- **NHS digital service manual content guide:** excluded for now. It's good guidance, and it becomes a source when the NHS service-specific skill is built
+- **govuk-design-guide:** it's about GOV.UK website templates, not writing
+- **prompt-to-page:** it only hosts app installers, and the app is proprietary

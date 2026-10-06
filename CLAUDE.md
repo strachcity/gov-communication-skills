@@ -69,7 +69,15 @@ Then write the entry.
 - add a short example of right and wrong where it helps
 - if a summary drifts from its source, the source wins and the summary is wrong until fixed
 
-Content design entries cite GOV.UK publishing guidance at https://guidance.publishing.service.gov.uk/ first. That site is in public beta, so check links still work and update them if pages move.
+Content design entries cite at least one of the 3 main sources:
+
+- GOV.UK content and publishing guidance: https://guidance.publishing.service.gov.uk/
+- the GOV.UK Service Manual: https://www.gov.uk/service-manual
+- GOV.UK Notify guidance: https://www.notifications.service.gov.uk/using-notify
+
+A supporting source can be used only where the main sources have a gap. The entry names the gap and is marked "needs confirmation". `PLAN.md` lists the agreed supporting sources.
+
+The publishing guidance site is in public beta, so check links still work and update them if pages move.
 
 Privacy entries cite the legislation, ICO guidance or a named internal decision. They are not legal advice. Anything that would change what a real communication contains needs confirming with the service's data protection officer or legal team, and its status should say so until it is.
 
