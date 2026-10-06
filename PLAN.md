@@ -115,11 +115,15 @@ The next big question is how well the plugin works for a team that installs it w
 
 Found while writing and testing the remaining patterns, 6 October 2026:
 
-- decide whether a service context fact with no status, like the service's own name, should block a draft. The rule treats it as "needs confirmation", which made 2 runs overly cautious
-- simplify nested optional placeholders in the baselines, which could be sent half-filled
-- decide how to handle a standing duty with no due date, recorded in "Gaps" in `moments.md`
-- add evals for an organisation customer, a Welsh language duty, and a message with promotion added
-- check that each pattern's text baselines fit in 160 characters with long but realistic values
+All done on 6 October 2026:
+
+- descriptive facts the user supplies are used without a status. Decisions still need to be confirmed. See "2 kinds of fact" in `service-context.md`
+- optional copy is block-level, from `[If ...:]` to `[End if]`
+- a continuing duty with no due date is variant D of "You need to act before a date"
+- evals added for an organisation customer, a Welsh language duty, and promotion added to a service message
+- `evals/text-message-lengths.py` checks every text baseline with long but realistic values
+
+The full blind evaluation can now run: every eval, 3 times each, with comparison runs without the skills, marked by a separate agent that can't tell which is which.
 
 ### Alongside the work package
 
