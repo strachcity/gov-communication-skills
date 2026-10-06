@@ -19,6 +19,7 @@ Each directory has a README that sets out what belongs there and what does not.
 | Skill | What it does | Status |
 |---|---|---|
 | `govuk-content` | drafts and reviews content against GOV.UK guidance, and flags privacy and policy questions without answering them | first version, not yet tested |
+| `communication-moments` | the moments every case-based service shares, like "we've received it" or "we need something from you", and what each message must contain | proposed in `ARCHITECTURE.md` |
 | `privacy-aware-communications` | spots privacy issues, applies recorded service decisions, and flags anything not decided | planned |
 | `government-communication` | combines the other skills with service knowledge to draft or review a whole communication | planned |
 
@@ -33,6 +34,6 @@ If a skill only works for one service, it is not generic. It belongs with that s
 
 ## Working here
 
-Read `CLAUDE.md` before adding or changing anything. It covers how knowledge is added, where it goes, and what to do when a position is not known. `PLAN.md` has the build plan.
+Read `CLAUDE.md` before adding or changing anything. It covers how knowledge is added, where it goes, and what to do when a position is not known. `ARCHITECTURE.md` explains what we are building and how the parts fit. `PLAN.md` has the build plan.
 
 No build step, no package manager, no framework. Everything is Markdown.
