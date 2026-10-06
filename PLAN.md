@@ -1,10 +1,107 @@
 # Plan
 
-How we get from an empty structure to working skills for drafting and reviewing government communications.
+How we get from the current skills to a pattern library any government service can use.
 
-This file is a working plan, not guidance. Archive it once the first skills are built. `ARCHITECTURE.md` describes the design, and takes precedence where the 2 differ.
+This file is a working plan, not guidance. `ARCHITECTURE.md` describes the design, and takes precedence where the 2 differ. Sections 1 to 9 and 12 record the source review from 6 October 2026, which still applies.
 
-Sources reviewed on 6 October 2026.
+## State of play
+
+Last updated 6 October 2026.
+
+- `govuk-content` and `privacy-aware-communications` are tested, with blind-marked evals
+- `case-communication-patterns` has 12 moments and 3 modifiers. Patterns are written for moments 1, 3 and 5, adapted for 3 invented services, and their evals run once
+- `government-communication`, the front door, exists in draft with its own evals, run once
+- `USER-TESTING.md` is written. No testing has been done
+- the repository is licensed under the Open Government Licence v3.0
+
+## Current work package
+
+Do these in order. Each pattern follows the same method as the first 3: compare the evidence, write the pattern, adapt it for 2 or 3 invented services, fix what breaks, then write and run its evals.
+
+### 1. Write the remaining 9 patterns
+
+Most evidenced and most distinct first. The less evidenced, more ambiguous moments come last, so they can still be merged or removed if writing the pattern shows they're weak.
+
+1. We couldn't reach you (moment 7)
+2. We've made a decision (moment 8)
+3. We're closing your case (moment 11)
+4. We'll contact you (moment 6)
+5. What happens after the decision (moment 9)
+6. You need to act before a date (moment 10)
+7. Here's a record of what we discussed (moment 12)
+8. Work has started (moment 2)
+9. Something has changed (moment 4). Check its evidence first, because most of it was a wait ending, now part of moment 3
+
+### 2. Add "ask for feedback" as a follow-up, not a moment
+
+A feedback or satisfaction request doesn't communicate a case state. It's attached to another moment, so it's a follow-up, not moment 13.
+
+- **where it can follow:** a case closing, a decision, a completed interaction, or delivery of what was applied for
+- **guardrails:** say why feedback is wanted and how long it takes, never imply it affects the case, and don't invite sensitive case detail in free text unless the research design supports it
+- **classification:** say whether it's a service message, research or promotion. Its lawful basis and whether the customer can opt out need checking. Don't assume it's a service message
+
+Record it in `moments.md` alongside the modifiers, with its own pattern file.
+
+### 3. Resolve the sole trader question in the privacy skill
+
+Add ICO guidance on what is personal data. Information about a legal entity, like a limited company, is generally not personal data. Information about an identifiable sole trader, partner, director or employee can be, where it relates to them as an individual.
+
+Interpretation for the skill: never treat "business information" as automatically outside UK GDPR. Cite the ICO page in `sources.md`, and replace the flag in `moments.md` under "When the customer is an organisation".
+
+### 4. Replace the consent question with a framework for kinds of message
+
+Don't build a "consent needed: yes or no" table. Consent on its own is the wrong question, and a binary table invites 2 mistakes: "we have consent, so we can send anything" and "we don't have consent, so we can't send an update".
+
+Add a reference to `privacy-aware-communications` called "Service messages, optional messages and marketing". It separates 3 questions:
+
+1. Is this a service message or direct marketing?
+2. What UK GDPR lawful basis supports processing the person's data?
+3. Does the person have an objection or preference the service must consider?
+
+And 4 kinds of message:
+
+| Kind | Example | Consent before sending? | Other questions |
+|---|---|---|---|
+| core service message | receipt, request for evidence, decision | usually not needed just because it's an email or text | lawful basis, transparency, suitable contact details and channel |
+| optional service update | proactive progress updates, convenience reminders | may not be needed if necessary and proportionate to the service's function, but preferences and objections matter | the service should say whether it's optional |
+| feedback or satisfaction | "tell us about your experience" | depends on its purpose and lawful basis. Don't assume it's a service message | research or marketing, and whether taking part is genuinely optional |
+| promotional message | promoting an unrelated service | direct marketing rules may apply | PECR and UK GDPR |
+
+Source: the ICO's guidance on direct marketing and the public sector. It says purely administrative messages, like appointment reminders and acknowledgements of applications, are not direct marketing. It also says people may have a right to object where a public authority relies on public task. Quote the source, and mark the table as interpretation, needing confirmation.
+
+Reword the line in `principles.md` that says the ICO "qualifies" the Service Manual's statement on permission. The 2 don't contradict each other. The rule is: you generally don't need marketing-style opt-in to send a service message, but you still need a lawful basis, transparency, and to consider rights and communication preferences.
+
+This closes the open question in section 11.
+
+### 5. Rename "default positions" in the privacy skill
+
+"Default position" reads too much like an organisation's policy, even when marked as interpretation. Rename them "risk heuristics" in `ARCHITECTURE.md`, `privacy-aware-communications/SKILL.md` and its references, and reword each one as a risk, not a rule. For example:
+
+> Risk heuristic: treat special category information, or wording that lets it be inferred, as high risk in a text message. A confirmed service position is needed before including it.
+
+Check the patterns and the front door for the old wording, and rerun the privacy evals afterwards, because their expectations use it.
+
+### 6. Treat curly apostrophes as a technical precaution
+
+Notify's text message pricing page lists standard characters, and says non-standard characters cut the limit to 70, but doesn't say whether curly apostrophes are standard. Keep straight apostrophes in text message baselines, and describe this as a technical precaution, not a GOV.UK writing rule. A test message through Notify would settle it. It doesn't hold up the library.
+
+### 7. Drop "public beta" as a special risk
+
+Any web guidance can move. Remove the public beta warnings from `CLAUDE.md`, `govuk-content/sources.md` and section 3 of this plan. Replace them with one maintenance rule: check source addresses and dates when a skill is materially updated, or when a link fails.
+
+### 8. Test with a new team
+
+The next big question is how well the plugin works for a team that installs it with no prior knowledge. Once the library is complete:
+
+- give it to someone outside this work, with only the README
+- ask them to set up a service context and draft messages for their own service
+- record where they got stuck, and fix the instructions rather than adding rules
+
+### Alongside the work package
+
+- run the user testing in `USER-TESTING.md`
+- rerun all evals 3 times each, marked blind, with comparison runs, before calling any skill ready
+- add evals for an organisation customer and a service with a Welsh language duty
 
 ## Scope
 
@@ -229,13 +326,7 @@ Running the evals is manual for now. Only add tooling if that becomes painful.
 
 ## 10. Build order
 
-1. Choose where things live. Done.
-2. Build and test `govuk-content`. Done.
-3. Build and test `privacy-aware-communications`. Done.
-4. Draft the moments in `case-communication-patterns`. Done.
-5. Write a substantially written pattern for each moment, starting with moments 1, 5 and 9.
-6. Build `government-communication`, including the service context format and how to help a user create one.
-7. Add evals for steps 5 and 6, using invented services.
+Steps 1 to 4 are done: where things live, `govuk-content`, `privacy-aware-communications` and the moments. The first 3 patterns and the front door are in draft. "Current work package" at the top has the next steps.
 
 ## 11. Open questions
 
@@ -243,7 +334,7 @@ Each service's own open questions belong in its service context, not here.
 
 | Question | Who could answer |
 |---|---|
-| Is "You don't need to ask permission to send transactional messages" still correct under UK GDPR and PECR? | DPO, or ICO guidance |
+| None at the moment. The question about permission for transactional messages is answered by step 4 of the work package | |
 
 ## 12. Reviewed and not used
 

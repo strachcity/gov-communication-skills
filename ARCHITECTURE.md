@@ -314,6 +314,4 @@ Evals need service facts to test adaptation. They use invented services, written
 
 ## Next steps
 
-1. Test the first 3 patterns with users, using `USER-TESTING.md`.
-2. Write the remaining patterns, starting with moments 7 and 8, adapting each for invented services before running its evals.
-3. Run the evals 3 times each, marked blind, before calling any skill ready.
+`PLAN.md` has the current work package, in order.
