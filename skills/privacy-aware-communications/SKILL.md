@@ -63,7 +63,7 @@ Use `references/principles.md` and `references/channels.md`. For each item, ask:
 
 ### 3. Apply confirmed decisions, flag the rest
 
-If you were given a service pack, look for a decision that covers the item. Only apply it if its status is "confirmed", and cite its owner and date.
+If you were given a service context, look for a decision that covers the item. Only apply it if its status is "confirmed", and cite its owner and date.
 
 Otherwise, record the channel default as the position and mark it "needs confirmation". If the default doesn't settle it, flag the exact question and who should answer it, usually the DPO or information assurance team.
 

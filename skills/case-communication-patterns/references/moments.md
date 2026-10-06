@@ -18,7 +18,7 @@ A moment's status only changes when new evidence is added here.
 
 ### Evidence sources
 
-- **Drivers Medical:** "observed in Drivers Medical prototype work, unpublished". This is the service's own design work, not a published source, so no detail is recorded here
+- **unpublished prototype work:** "observed in unpublished prototype work". This is one service's own design work, not a published source. It shows that a moment occurs, so no detail is recorded and the service is not named
 - **HM Passport Office:** "How we communicate with customers", caseworker guidance, published on GOV.UK: https://www.gov.uk/government/publications/how-we-communicate-with-customers/how-we-communicate-with-customers-accessible-version
 - **Service Manual:** "Planning and writing text messages and emails": https://www.gov.uk/service-manual/design/sending-emails-and-text-messages
 
@@ -76,7 +76,7 @@ For each moment a service uses, it needs to answer:
 - **privacy or policy questions:** whether the message should say what was received, if that reveals the subject of the case
 - **not to be confused with:** 6, which is for something sent later in the case
 - **evidence:**
-  - Drivers Medical: observed in prototype work, unpublished
+  - unpublished prototype work: observed
   - HM Passport Office: "If a customer sends an email to an examination team mailbox, we will send them an automatic email response to acknowledge receipt of the email."
   - Service Manual, describing transactional messages: "they completed a transaction, and you're sending them a confirmation email"
 - **status:** supported by a main source
@@ -91,7 +91,7 @@ For each moment a service uses, it needs to answer:
 - **privacy or policy questions:** whether naming who holds the case reveals something sensitive
 - **not to be confused with:** 1, which only confirms arrival
 - **evidence:**
-  - Drivers Medical: observed in prototype work, unpublished
+  - unpublished prototype work: observed
 - **status:** seen in 1 service
 
 ### 3. We're waiting on someone else
@@ -104,7 +104,7 @@ For each moment a service uses, it needs to answer:
 - **privacy or policy questions:** whether to say who the service is waiting on. Naming them can reveal sensitive information
 - **not to be confused with:** 5, where the service is waiting on the customer, and 16, which is a later update
 - **evidence:**
-  - Drivers Medical: observed in prototype work, unpublished
+  - unpublished prototype work: observed
   - HM Passport Office: tells customers when "we send an email to their digital referee asking them to complete the referee section of the application"
 - **status:** seen in 2 or more services
 
@@ -118,7 +118,7 @@ For each moment a service uses, it needs to answer:
 - **privacy or policy questions:** whether the update reveals anything about a third party
 - **not to be confused with:** 10, which is a decision
 - **evidence:**
-  - Drivers Medical: observed in prototype work, unpublished
+  - unpublished prototype work: observed
   - HM Passport Office: tells customers when "the referee has completed the application" and when "we have finished automatic identity checks"
 - **status:** seen in 2 or more services
 
@@ -132,7 +132,7 @@ For each moment a service uses, it needs to answer:
 - **privacy or policy questions:** how the customer can send it securely, and what the consequence of not acting is
 - **not to be confused with:** 3, where the service is waiting on someone else
 - **evidence:**
-  - Drivers Medical: observed in prototype work, unpublished
+  - unpublished prototype work: observed
   - HM Passport Office: "When customers do not send us the documents we need, we will send them automatic reminders through text message or email." It also tells customers when "we need a new photo"
   - Service Manual: "make it clear what you need the user to do and include any deadlines"
 - **status:** supported by a main source
@@ -147,7 +147,7 @@ For each moment a service uses, it needs to answer:
 - **privacy or policy questions:** none known
 - **not to be confused with:** 1, the first acknowledgement
 - **evidence:**
-  - Drivers Medical: observed in prototype work, unpublished
+  - unpublished prototype work: observed
 - **status:** seen in 1 service
 
 ### 7. We'll contact you
@@ -160,7 +160,7 @@ For each moment a service uses, it needs to answer:
 - **privacy or policy questions:** what can be said on the call before identity is checked
 - **not to be confused with:** 8, a reminder of planned contact
 - **evidence:**
-  - Drivers Medical: observed in prototype work, unpublished
+  - unpublished prototype work: observed
 - **status:** seen in 1 service
 
 ### 8. Reminder
@@ -173,7 +173,7 @@ For each moment a service uses, it needs to answer:
 - **privacy or policy questions:** whether the reminder reveals what the appointment is for
 - **not to be confused with:** 12, a deadline the customer must meet
 - **evidence:**
-  - Drivers Medical: observed in prototype work, unpublished
+  - unpublished prototype work: observed
   - HM Passport Office: "We send automated SMS text messages to customers to remind them they have booked a counter appointment."
 - **status:** seen in 2 or more services
 
@@ -187,7 +187,7 @@ For each moment a service uses, it needs to answer:
 - **privacy or policy questions:** what can go in a voicemail or text. HM Passport Office guidance says not to leave personal or special category data on an answerphone
 - **not to be confused with:** 5, a written request for something
 - **evidence:**
-  - Drivers Medical: observed in prototype work, unpublished
+  - unpublished prototype work: observed
   - HM Passport Office: when there's no answer, staff "leave a voicemail to confirm you will call again in 2 hours", and after 3 attempts send a letter
 - **status:** seen in 2 or more services
 
@@ -201,7 +201,7 @@ For each moment a service uses, it needs to answer:
 - **privacy or policy questions:** whether the decision is a formal notice, which channel it must use, and what decision language the service can use
 - **not to be confused with:** 4, a progress update
 - **evidence:**
-  - Drivers Medical: observed in prototype work, unpublished
+  - unpublished prototype work: observed
   - HM Passport Office: sends an automated message "to tell them we have approved their application"
 - **status:** seen in 2 or more services
 
@@ -215,7 +215,7 @@ For each moment a service uses, it needs to answer:
 - **privacy or policy questions:** none known
 - **not to be confused with:** 12, a future deadline
 - **evidence:**
-  - Drivers Medical: observed in prototype work, unpublished
+  - unpublished prototype work: observed
   - HM Passport Office: "We will send customers an automatic message reminding them to sign their new passport when they receive it."
 - **status:** seen in 2 or more services
 
@@ -229,7 +229,7 @@ For each moment a service uses, it needs to answer:
 - **privacy or policy questions:** none known
 - **not to be confused with:** 5, a request during a live case
 - **evidence:**
-  - Drivers Medical: observed in prototype work, unpublished
+  - unpublished prototype work: observed
   - HM Passport Office: sends texts "to remind them their passport (or their child's passport) is due to expire"
   - Service Manual, describing transactional messages: "they paid for an annual service a year ago, and you're reminding them that it's about to expire"
 - **status:** supported by a main source
@@ -257,7 +257,7 @@ For each moment a service uses, it needs to answer:
 - **privacy or policy questions:** the record may repeat sensitive answers, which limits the channel
 - **not to be confused with:** 6, which confirms something sent in writing
 - **evidence:**
-  - Drivers Medical: observed in prototype work, unpublished
+  - unpublished prototype work: observed
 - **status:** seen in 1 service
 
 ### 15. There's a delay
@@ -270,7 +270,7 @@ For each moment a service uses, it needs to answer:
 - **privacy or policy questions:** whether to explain the cause, if it reveals a third party
 - **not to be confused with:** 3 and 16
 - **evidence:**
-  - Drivers Medical: observed in prototype work, unpublished
+  - unpublished prototype work: observed
 - **status:** seen in 1 service
 
 ### 16. We're still waiting
@@ -283,17 +283,17 @@ For each moment a service uses, it needs to answer:
 - **privacy or policy questions:** as moment 3
 - **not to be confused with:** 3, the first message
 - **evidence:**
-  - Drivers Medical: observed in prototype work, unpublished
+  - unpublished prototype work: observed
 - **status:** seen in 1 service
 
 ## No message needed
 
 Some internal events don't change anything for the customer, like a case moving between teams. They need no message.
 
-Evidence: Drivers Medical prototype work, unpublished. Status: seen in 1 service.
+Evidence: unpublished prototype work. Status: seen in 1 service.
 
 ## Gaps
 
-Points a service needs that no moment covers yet. Add them here with the service and date.
+Points a service needs that no moment covers yet. Add them here in generic words, with the date. Do not name the service.
 
 None recorded yet.

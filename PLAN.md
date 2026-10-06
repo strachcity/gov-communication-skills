@@ -2,7 +2,7 @@
 
 How we get from an empty structure to working skills for drafting and reviewing government communications.
 
-This file is a working plan, not guidance. Archive it once the first skills are built.
+This file is a working plan, not guidance. Archive it once the first skills are built. `ARCHITECTURE.md` describes the design, and takes precedence where the 2 differ.
 
 Sources reviewed on 6 October 2026.
 
@@ -15,35 +15,30 @@ The first skills cover 4 channels:
 - text messages
 - letters
 
-The first service is DVLA Drivers Medical.
+The skills work for any government service. Service facts come from the user's service context, never from this repository.
 
 Out of scope for now:
 
-- NHS guidance, which will become its own service-specific skill later
+- NHS guidance. A service that needs it can bring it in its own service context
 - NHS App messages, phone scripts and web chat
 - Welsh
 
-## 1. Four kinds of knowledge
+## 1. Kinds of knowledge
 
-Every piece of knowledge in this repository is one of these. Keeping them apart is the point of the structure.
+Keeping these apart is the point of the structure. Only the generic kinds live in this repository.
 
 | Kind | Example | Where it lives |
 |---|---|---|
 | GOV.UK content guidance | "Put the most important information at the top." | generic, in the content skill |
 | Privacy principle | "Do not request personal information in an email or text message." | generic, in the privacy skill |
-| Service policy decision | "We can tell the licence holder we have asked their GP for information in circumstances X and Y." | service folder |
-| Service communication judgement | "When a case is waiting on a GP, say so, because otherwise people phone to ask." | service folder |
+| Service policy decision | "We can tell the customer we have asked [who was asked] for information in circumstances X and Y." | the user's service context, not this repository |
+| Service communication judgement | "When a case is waiting on someone else, say who, because otherwise people phone to ask." | the user's service context, not this repository |
 
-Service knowledge also records where it came from, because a prototype is not a policy:
-
-- **policy decision:** made by someone with authority, with their name or role and the date
-- **communication judgement:** a design decision based on research or experience
-- **precedent:** wording that was approved or rejected, with the reason if known
-- **hypothesis:** an idea from prototypes or workshops that hasn't been tested or agreed
+Case communication patterns are a third generic kind, in `case-communication-patterns`. How a service context records its facts is set out in `ARCHITECTURE.md`.
 
 ## 2. Skills
 
-There are 3 skills. Each of the first 2 owns one kind of generic knowledge. The third combines them with service knowledge.
+There are 4 skills. `case-communication-patterns` is described in `ARCHITECTURE.md`. The other 3 are described here.
 
 ### `govuk-content`
 
@@ -71,14 +66,14 @@ The skill works like this:
 
 ### `government-communication`
 
-Combines the other 2 skills with service knowledge, to draft or review a whole communication. Each step happens in order.
+The front door. Combines the other skills with the user's service context, to draft or review a whole communication. Each step happens in order.
 
-1. Work out what the communication is for.
-2. Work out what the customer needs to understand and do.
-3. List the facts that are known.
-4. Run a privacy check if the communication involves personal or sensitive information.
-5. Apply any service policy that covers the issue, or flag it if none does.
-6. Apply the service's communication judgements.
+1. Establish the service context: read the one given, or help the user create one.
+2. Work out what the communication is for, and which pattern fits.
+3. Work out what the customer needs to understand and do.
+4. Adapt the pattern using the service's confirmed facts.
+5. Run a privacy check if the communication involves personal or sensitive information.
+6. Apply any confirmed service decision that covers the issue, or flag it if none does.
 7. Apply GOV.UK content guidance.
 8. Draft or review.
 9. List assumptions and unresolved questions.
@@ -137,7 +132,7 @@ https://www.notifications.service.gov.uk/using-notify
 - text message sender IDs
 - the letter specification
 
-**Caveat:** it only applies if the service sends through Notify. We don't know yet whether Drivers Medical does.
+**Caveat:** it only applies if the service sends through Notify. The service context says whether it does.
 
 ## 4. What each source covers, by channel
 
@@ -187,52 +182,20 @@ Each one is recorded in the relevant reference, citing both sources. The skills 
 
 Decided on 6 October 2026: guidance lives inside each skill, following standard practice for agent skills. The shared `knowledge/` folder has been removed.
 
-```
-skills/
-  govuk-content/
-    SKILL.md
-    references/
-    sources.md
-  privacy-aware-communications/
-  government-communication/
-services/
-  drivers-medical/
-evals/
-  govuk-content/
-```
+See "Repository structure" in `ARCHITECTURE.md`. There's no `services/` folder.
 
 - each skill works on its own, so it can be shared as a single file
 - privacy guidance can only be used through the privacy skill
 - the core principles go in `SKILL.md`, and detail goes in a few reference files read only when needed
 - each skill lists its sources in `sources.md`
 
-## 8. Source material for Drivers Medical
-
-The most useful material for the service layer is real:
-
-- existing communications
-- wording that was debated
-- written answers from data protection or policy
-- any DVLA correspondence standards
+## 8. Source material
 
 **This repository is public.** Real communications, case details or internal policy emails must never be committed.
 
-I'd handle source material like this:
-
-- keep raw material in a local folder that git ignores, like `_source-material/`
-- add only extracts that have been anonymised and cleared for publication, recorded in `services/drivers-medical/` with their kind and source
-- if that's too restrictive, make the repository private before adding anything sensitive
-
-When extracts are added, the job is to classify them, not to merge them into rules straight away:
-
-| Source | Kind |
-|---|---|
-| DTx-experiments `DESIGN.md` | communication judgement or hypothesis |
-| GOV.UK guidance | generic content guidance |
-| ICO or data protection guidance | generic privacy principle |
-| A policy email | service policy decision |
-| An approved customer letter | precedent |
-| A prototype | hypothesis |
+- keep raw material in a local folder that git ignores, `_source-material/`
+- use it only as evidence that a moment occurs, recorded without naming the service
+- a service's own material belongs in that service's own service context, in their own project
 
 ## 9. Evals
 
@@ -248,8 +211,8 @@ For `govuk-content`, there are 5 cases, covering what it should improve and what
 - a web page passage with known style errors
 - a passage with nothing wrong, to check nothing is flagged
 - an email that breaks the phishing rules
-- a Drivers Medical status message with the policy question taken out. For example, "Your application is currently with our medical team and will be processed in due course." The skill should flag the vague status, the passive voice, the missing next step, the unclear timescale and the likely unanswered question
-- the same message, testing the boundary: the skill must not decide to say "your GP hasn't replied", because that's a disclosure and policy question
+- a vague status message, like "Your application is currently with our specialist team and will be processed in due course." The skill should flag the vague status, the passive voice, the missing next step, the unclear timescale and the likely unanswered question
+- the same message, testing the boundary: the skill must not decide to say who hasn't replied, because that's a disclosure and policy question
 
 For `privacy-aware-communications`:
 
@@ -257,40 +220,33 @@ For `privacy-aware-communications`:
 - a draft that discloses third-party medical information where no policy decision exists, so the skill must flag it rather than decide
 - the same draft where a recorded policy decision does exist, so the skill must apply and cite it
 
-For `government-communication`:
+For `government-communication`, using invented services:
 
-- a Drivers Medical letter without service knowledge, to check no service rules leak into the generic skills
-- the same letter with service knowledge
+- a request with no service context, to check the skill helps build one and no service rules leak in
+- the same request with a service context, to check confirmed facts are used and unconfirmed ones are flagged
 
 Running the evals is manual for now. Only add tooling if that becomes painful.
 
 ## 10. Build order
 
-The rhythm for each step is: take a source, extract the principles, test them against examples, refine, then add the next source.
-
-1. Choose where things live (section 7). Done.
-2. Build `govuk-content`, using the main sources only. First version done, not yet tested.
-3. Test it with the 5 evals, including Drivers Medical examples with the policy questions taken out. Refine.
-4. Build `privacy-aware-communications`, with every entry marked "needs confirmation". Test it with its 3 evals.
-5. Add Drivers Medical as a service. Classify the source material, starting with `DESIGN.md`, rather than turning it into rules.
-6. Build `government-communication`, with the leak test eval.
+1. Choose where things live. Done.
+2. Build and test `govuk-content`. Done.
+3. Build and test `privacy-aware-communications`. Done.
+4. Draft the moments in `case-communication-patterns`. Done.
+5. Write a substantially written pattern for each moment, starting with moments 1, 5 and 9.
+6. Build `government-communication`, including the service context format and how to help a user create one.
+7. Add evals for steps 5 and 6, using invented services.
 
 ## 11. Open questions
 
+Each service's own open questions belong in its service context, not here.
+
 | Question | Who could answer |
 |---|---|
-| Does Drivers Medical send emails, texts and letters through GOV.UK Notify? | DVLA service team |
-| Which channels does Drivers Medical use now, and which are planned? | DVLA service team |
-| Can a text message or email mention that it is about a medical case at all, including in the sender name or subject line? | DVLA DPO |
-| What is the lawful basis for processing health data in Drivers Medical, and does it limit channels? | DVLA DPO, legal |
-| In what circumstances can DVLA tell a customer it is waiting for their GP? | DVLA policy, DPO |
-| Does DVLA say a decision is made at first notification? | DVLA policy |
-| What do DVLA's Welsh language duties require for these communications? | DVLA Welsh language team |
 | Is "You don't need to ask permission to send transactional messages" still correct under UK GDPR and PECR? | DPO, or ICO guidance |
-| Should this repository stay public once service material is added? | you |
 
 ## 12. Reviewed and not used
 
-- **NHS digital service manual content guide:** excluded for now. It becomes a source when the NHS service-specific skill is built
+- **NHS digital service manual content guide:** excluded. An NHS service can bring it into its own service context
 - **govuk-design-guide:** it's about GOV.UK website templates, not writing
 - **prompt-to-page:** it only hosts app installers, and the app is proprietary

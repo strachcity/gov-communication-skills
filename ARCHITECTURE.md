@@ -2,183 +2,209 @@
 
 What we are building, how the parts fit together, and why.
 
-Written 6 October 2026, after reviewing the Drivers Medical proactive communications storyboards and HM Passport Office's caseworker guidance "How we communicate with customers".
+Last revised 6 October 2026.
 
 ## The idea
 
-Every government service that handles a customer's case has the same set of communication moments. Something is received, work starts, the service waits on someone, it needs something from the customer, it plans a call, it makes a decision.
+Every government service that handles a customer's case has the same communication moments. Something is received, work starts, the service waits on someone, it needs something from the customer, it plans a call, it makes a decision.
 
-If we design those moments well once, a service only has to tailor them: its words, its timescales, its channels and its policy decisions. The skills do the tailoring and check the result.
+If those moments are written well once, as generic patterns, a service only has to supply its facts: its words, timescales, channels and decisions. The plugin adapts the pattern and checks the result.
 
-## Where we are
+## One plugin for any service
 
-| Part | Status |
-|---|---|
-| Repository structure and rules (`CLAUDE.md`) | done |
-| `govuk-content` skill: how to write | tested, see `evals/results.md` |
-| 6 evals for `govuk-content` | run 3 times each, marked blind |
-| `communication-moments` skill: what to say and when | draft in `skills/communication-moments/`, 2 evals written, not run |
-| `privacy-aware-communications` skill: what a message can reveal | tested, see `evals/results.md` |
-| 3 evals for `privacy-aware-communications` | run 3 times each, marked blind |
-| Drivers Medical service pack | planned |
-| `government-communication` skill: putting it together | planned |
+This repository is service-agnostic. The same installed plugin works for any government service, without changes and without a bespoke skill.
 
-## What the examples show
+The plugin contains:
 
-### Drivers Medical storyboards
+- reusable, substantially written case communication patterns
+- the reasoning for recognising which pattern fits, and adapting it
+- GOV.UK content guidance
+- privacy-aware communication guidance
+- a front-door skill that combines these
 
-The board maps 9 moments in a postal application, each with a customer need, the service event behind it, the benefits to the customer and the service, and a draft email.
+The plugin does not contain:
 
-The drafts already follow most of the Service Manual: "Dear [firstname lastname]", the reference near the top, "What happens next", "You do not need to do anything now", and a full GOV.UK tracking link. They share one structure, which is the strongest sign that a reusable foundation exists.
+- any named service's facts, policy, wording or decisions
+- skills, folders or packs for named services
+- pattern names or examples taken from a named service
 
-The sticky notes record privacy thinking in progress:
+Service facts come from a service context. The user supplies it at the point of use, or keeps it in their own project. It never becomes part of the plugin.
 
-- a reference number is personal data
-- an internal prefix in the reference should be dropped
-- text messages should be brief, with details behind a sign-in or a phone call
+## What using it looks like
 
-The drafts also say "a third party" rather than naming who. That's a deliberate choice to reveal less, and it pulls against the customer need "I want to know what is happening while I wait". This is exactly the kind of question the privacy layer must flag rather than settle.
-
-### HM Passport Office guide
-
-The guide is caseworker guidance, not writing guidance. It's mostly about when and how to contact customers, not wording. It adds 3 things the board does not have:
-
-- **more moments:** approval, issue and delivery, reminders to act, renewal reminders, and what happens if the customer never replies
-- **contact rules:** like only calling between 9am and 8pm, 3 call attempts in a day, and set voicemail wording
-- **a governance model:** staff build messages from approved templates and preset phrases in a "Comms builder", and must not write free text unless there's no alternative
-
-Its text messages are short pointers, like "We have emailed you about your passport application", with the detail in the email or behind tracking. That matches the Drivers Medical sticky note about keeping texts brief.
-
-Some of its choices are service-specific and should not become generic. For example, its text messages name the person who confirmed the customer's identity. Whether that's acceptable depends on each service's privacy position.
-
-### Drivers Medical communications matrix
-
-A first draft from a September 2026 workshop: 19 communications for the postal and telephone route, each with a trigger, purpose, content, primary channel and alternatives, plus how each one changes across channels. It's marked as a draft, and its channel rules came from the workshop, not from data protection or other guidance. So we use it for its structure and its moments, and not for its rules.
-
-It adds:
-
-- **more moments:** a written record of a phone conversation, a delay message, a "still waiting" update, and a deliberate decision to send nothing when an internal event doesn't change anything for the customer
-- **legal effect:** some messages are formal notices that must be served in writing. Others must not look like a notice, and must not arrive before the notice they refer to
-- **a channel table:** one message across letter, phone, text, email and status tracker, including "not suitable". This is the output we're planning to produce
-
-## The foundations: communication moments
-
-These are the moments the examples share, written without any service's words. Each one is a candidate for the generic library.
-
-| Moment | The customer wants to know | Drivers Medical board | HM Passport Office |
-|---|---|---|---|
-| 1. We've received it | that it arrived, and their reference | 2 | "We've received your documents" |
-| 2. Work has started | that someone is working on it | 3 | no |
-| 3. We're waiting on someone else | what's happening while they wait | 4 | referee messages |
-| 4. Something has changed | that their case has moved on | 5 | identity check messages |
-| 5. We need something from you | what to send, how, and by when | 6 | "Remember to send your documents" |
-| 6. We've received what you sent | that it arrived, and what's next | 6 (second email) | no |
-| 7. We'll contact you | when, how, and that it's genuine | 7 | no |
-| 8. Reminder | that the contact is still planned | 8 | appointment reminders |
-| 9. We couldn't reach you | what to do now | 9 | voicemail and letter after 3 attempts |
-| 10. We've made a decision | the outcome and what it means | not yet designed | "We've approved your application" |
-| 11. What happens after the decision | what arrives, and anything they need to do | not yet designed | printing, delivery, "sign your passport" |
-| 12. You need to act before a date | that something is due | not yet designed | passport expiry reminders |
-| 13. We're closing your case | why, and how to restart | not yet designed | withdrawn applications |
-| 14. Here's a record of what we discussed | what was asked and answered | matrix only | no |
-| 15. There's a delay | why, whose action it waits on, and whether they need to do anything | matrix only | no |
-| 16. We're still waiting | that someone is still chasing | matrix only | no |
-
-Moments 10 to 13 are the gaps in the Drivers Medical board. The matrix covers 10 and 12. Moment 10 is also where the open question about decision language sits.
-
-### What every message contains
-
-The drafts on the board share an anatomy, and the Service Manual asks for the same parts:
-
-1. A headline that says what has happened.
-2. A greeting with the customer's full name.
-3. The reference.
-4. What happens next, and when.
-5. What the customer needs to do and by when, or that they do not need to do anything.
-6. What happens if they do not act, where that applies.
-7. How to track progress or get help.
-8. Who it's from.
-
-Each moment also has properties that change how it's written:
-
-- **legal effect:** is this a formal notice? If so, the channel and wording need legal review, and the skills flag it rather than decide. Which messages have legal effect is a service fact
-- **action:** does the customer need to do something, or nothing? The wording differs sharply
-- **sensitivity:** what would the message reveal, and in which channel? This is a privacy question
-
-Each part is a slot. Some slots are generic, like the order. Some are filled by the service, like the timescale. Some need a privacy decision, like how much the headline can say.
-
-## The architecture
-
-### Layers
-
-Each layer has one job, and evals test every layer. Knowledge only flows downwards. A service's choices never flow back up into the generic layers without a recorded decision.
+1. Install the plugin.
+2. Tell it about the service, or point it to existing service documentation.
+3. The plugin creates the service context, or reads an existing one.
+4. It identifies the generic case communication pattern that fits.
+5. It adapts the pattern using the service's confirmed facts.
+6. It runs privacy and policy checks.
+7. It applies GOV.UK content guidance.
+8. It returns a strong first draft, and lists anything that still needs a service decision.
 
 ```mermaid
 flowchart TB
-    subgraph sources["Sources"]
+    U["User: a request, plus the service<br/>or its documentation"] --> C{"Is there a<br/>service context?"}
+    C -- "no" --> B["Build one with the user:<br/>ask questions, read their documents,<br/>mark what is not confirmed"]
+    C -- "yes" --> R["Read the service context"]
+    B --> R
+    R --> P["Identify the pattern<br/>case-communication-patterns"]
+    P --> A["Adapt the pattern<br/>with confirmed service facts"]
+    A --> V["Privacy and policy checks<br/>privacy-aware-communications"]
+    V --> W["Apply GOV.UK content guidance<br/>govuk-content"]
+    W --> O["First draft for each channel,<br/>plus what still needs a service decision"]
+```
+
+## Layers
+
+Knowledge only flows one way. The service context is read by the plugin, and nothing in it flows back into the generic skills.
+
+```mermaid
+flowchart TB
+    subgraph sources["Public sources"]
         S1["GOV.UK publishing guidance"]
         S2["Service Manual"]
         S3["GOV.UK Notify"]
-        S4["UK GDPR and ICO guidance"]
-        S5["Service examples, like Drivers Medical and HM Passport Office"]
+        S4["UK GDPR, ICO and departments'<br/>published guidance"]
+        S5["Patterns seen across services,<br/>recorded as evidence"]
     end
 
-    subgraph generic["Generic skills, true for any service"]
+    subgraph plugin["The plugin, true for any service"]
         G1["govuk-content<br/>how to write it"]
-        G2["communication-moments<br/>what to say and when"]
+        G2["case-communication-patterns<br/>what to say and when"]
         G3["privacy-aware-communications<br/>what it can reveal, and where"]
+        O["government-communication<br/>the front door"]
     end
 
-    subgraph service["Service packs, true for one service"]
-        P1["drivers-medical<br/>journey, words, timescales,<br/>channels, policy decisions"]
-        P2["next service"]
+    subgraph user["The user's own project, not in this repository"]
+        SC["Service context<br/>facts, decisions, constraints"]
     end
-
-    O["government-communication<br/>puts it together for a service"]
 
     S1 --> G1
     S2 --> G1
     S3 --> G1
     S2 --> G2
-    S5 -.->|"patterns, by recorded decision only"| G2
+    S5 -.->|"by recorded decision only"| G2
     S4 --> G3
-    S2 --> G3
     G1 --> O
     G2 --> O
     G3 --> O
-    P1 --> O
-    P2 --> O
+    SC --> O
 ```
 
-### How a message set is made
+## The skills
 
-The orchestrator takes a service, a moment and the channels, and produces a message for each channel with a list of what still needs checking.
+| Skill | Job | Status |
+|---|---|---|
+| `government-communication` | the front door. Establishes the service context, then runs the other skills in order | planned |
+| `case-communication-patterns` | the moments, the patterns for each, and how to recognise and adapt them | draft. The moments exist, the substantially written patterns are next |
+| `privacy-aware-communications` | what a message reveals in each channel, applying confirmed decisions and flagging the rest | tested, see `evals/results.md` |
+| `govuk-content` | drafts and reviews wording against GOV.UK guidance | tested, see `evals/results.md` |
 
-```mermaid
-flowchart TB
-    A["Request: service, moment, channels"] --> B["Load the moment:<br/>customer need and message anatomy"]
-    B --> C["Load the service pack:<br/>words, timescales, sender, decisions"]
-    C --> D{"Does the message reveal<br/>personal or sensitive information?"}
-    D -- "no" --> G
-    D -- "yes" --> E{"Has the service recorded<br/>a decision that covers it?"}
-    E -- "yes" --> F["Apply the decision and cite it"]
-    E -- "no" --> X["Flag the question<br/>and who can answer it"]
-    F --> G["Write it with govuk-content"]
-    X --> G
-    G --> H["Shape it for each channel:<br/>text, email, letter, web page"]
-    H --> I["Output: a message for each channel,<br/>plus 'Check before publishing'"]
-```
+Each generic skill also works on its own, with or without a service context.
 
-### How a generic moment becomes a service message
+## The service context
+
+A service context is what the plugin needs to know about one service. It lives with the user, not here:
+
+- a file in their own project, like `service-context.md`
+- a document in a claude.ai project, or a file they attach
+- or facts they give in the conversation
+
+### What it can contain
+
+- what the service does
+- its users
+- terminology, including internal terms customers should never see
+- case states
+- known timescales
+- available channels
+- sender and contact information
+- tracking routes
+- formal or legally significant communications
+- confirmed policy or disclosure decisions
+- known constraints
+- justified departures from the generic patterns, with the reason
+
+Every section is optional. A missing fact stays a placeholder in the draft and is listed for the service to fill in.
+
+Decisions made by a whole organisation, like a department's disclosure policy, can go in the service context too. The service context says where each one came from.
+
+### How each fact is recorded
+
+Each fact or decision records:
+
+- **kind:** policy decision, communication judgement, precedent or hypothesis
+- **source:** a document, meeting or person
+- **status:** confirmed, needs confirmation or open question
+- **owner:** who can confirm it, if known
+- **last checked:** a date
+
+The kinds are:
+
+- **policy decision:** made by someone with authority, so it says who and when
+- **communication judgement:** a design decision based on research or experience
+- **precedent:** wording that was approved or rejected, with the reason if known
+- **hypothesis:** from prototypes or workshops, not yet tested or agreed
+
+The skills only use facts marked confirmed. A hypothesis or judgement is never treated as a policy decision.
+
+### When there isn't one yet
+
+The front-door skill helps the user create one:
+
+1. Ask what the service does, and who it's for.
+2. Read any documentation the user points to.
+3. Draft the service context, in the format above.
+4. Mark everything as "needs confirmation" unless the user confirms it.
+5. List the open questions, and who could answer each.
+
+Anything taken only from published content stays "needs confirmation". Published content can be out of date or wrong, so it's never treated as the service's policy.
+
+The skill offers the service context back to the user to save in their own project. It's never added to this repository.
+
+The detailed format will live in the front-door skill, at `skills/government-communication/references/service-context.md`.
+
+## Case communication patterns
+
+A moment is the situation, like "we're waiting on someone else". A pattern is the generic message for it.
+
+Each pattern will contain:
+
+- **recognising it:** the customer's situation, their questions, and how to tell it from similar moments
+- **the message:** substantially written, with every service fact as a placeholder, for each channel the moment suits
+- **adapting it:** which placeholders the service fills, the variants (like action needed or not), and what must not change
+- **checks:** legal effect, privacy questions and common failures
+- **evidence:** what supports the pattern, and its status
+
+### What every message contains
+
+The Service Manual asks for these parts, and the examples we reviewed share them:
+
+1. What has happened, as a headline or first line.
+2. A greeting with the customer's full name, for emails and letters.
+3. The reference.
+4. What happens next, and when.
+5. What the customer needs to do and by when, or that they don't need to do anything.
+6. What happens if they don't act, where that applies.
+7. How to track progress or get help.
+8. Who it's from.
+
+Each moment also has properties that change how it's written:
+
+- **legal effect:** is this a formal notice? Which messages have legal effect is a service fact. The skills flag it, they don't decide it
+- **action:** does the customer need to do something, or nothing? The wording differs sharply
+- **sensitivity:** what would the message reveal, and in which channel? This is a privacy question
+
+### How a pattern becomes a service message
 
 ```mermaid
 flowchart LR
-    M["Generic moment<br/>'We're waiting on someone else'"] --> T["Service pack fills the slots"]
-    T --> T1["who: 'a third party'<br/>(privacy decision)"]
-    T --> T2["timescale: '[X weeks]'<br/>(service fact)"]
+    M["Generic pattern<br/>'We're waiting on someone else'"] --> T["Service context fills the placeholders"]
+    T --> T1["who was asked<br/>(disclosure decision)"]
+    T --> T2["timescale<br/>(service fact)"]
     T --> T3["sender and channel<br/>(service fact)"]
     T --> T4["what if no reply<br/>(policy decision)"]
-    T1 --> R["Service message, checked by govuk-content,<br/>with any unfilled slot flagged"]
+    T1 --> R["Service message, checked for privacy<br/>and style, with any unfilled placeholder flagged"]
     T2 --> R
     T3 --> R
     T4 --> R
@@ -186,7 +212,7 @@ flowchart LR
 
 ### Channels for one moment
 
-Both examples point to the same channel pattern: a brief text that points somewhere safer, with the detail in an email, a letter or behind a sign-in.
+The services we reviewed share a channel pattern: a brief text that points somewhere safer, with the detail in an email, a letter or behind a sign-in.
 
 ```mermaid
 flowchart LR
@@ -196,7 +222,26 @@ flowchart LR
     Mo --> WP["Web page<br/>tracking and status, behind sign-in"]
 ```
 
-Interpretation: this pattern comes from 2 services. It's a strong candidate for the privacy skill, but it stays a hypothesis until a privacy source or a recorded decision supports it.
+Interpretation: a pattern seen in more than one service. It stays a hypothesis for privacy purposes until a privacy source or a service's confirmed decision supports it.
+
+## Evidence and provenance
+
+The patterns were informed by research into real services. That research is recorded as evidence, not as part of the architecture.
+
+- a published source, like a department's guidance on GOV.UK, is cited by name in the skill's `sources.md`, so anyone can check it
+- unpublished prototype work only shows that a moment occurs. No detail is recorded, and the service is not named
+- pattern names, skill text and examples are written in generic words, never a named service's words
+- a moment's status counts how many services show it, so evidence still matters without naming them
+
+### Adding a moment or pattern
+
+A moment can join the library when:
+
+- a main source supports the need behind it, or it is seen in at least 2 services
+- it's written in generic words, with its evidence recorded as above
+- it's marked as a proposal until tested with users or confirmed by a content lead
+
+This rule does not apply to privacy. A practice seen in several services is not evidence of what is lawful.
 
 ## Privacy and data protection
 
@@ -206,114 +251,69 @@ Only public sources inform the privacy skill. Practice that nobody owns, like ru
 
 | Kind | Examples | Where it lives | Status |
 |---|---|---|---|
-| The law, the regulator and GOV.UK guidance | UK GDPR, PECR, ICO guidance, Service Standard point 9, Service Manual, GOV.UK Notify security, Government Security Classifications | generic, in `privacy-aware-communications` | quoted from the source, not legal advice |
-| Departments' published guidance | HM Passport Office data protection guidance, HMRC's information disclosure guide | generic, as examples of how accountable organisations apply the law | examples, not rules for other organisations |
-| Default positions for each channel | "no special category information in a text message" | generic, derived from the sources above and marked as interpretation | needs confirmation by each organisation's DPO |
-| An organisation's published position | a department's personal information charter or privacy notice | the service pack | confirmed only for what it actually says |
+| The law, the regulator and GOV.UK guidance | UK GDPR, PECR, ICO guidance, Service Standard point 9, Service Manual, GOV.UK Notify security, Government Security Classifications | `privacy-aware-communications` | quoted from the source, not legal advice |
+| Departments' published guidance | data protection and disclosure guidance published on GOV.UK | `privacy-aware-communications`, as examples of how accountable organisations apply the law | examples, not rules for other organisations |
+| Default positions for each channel | "no special category information in a text message" | `privacy-aware-communications`, marked as interpretation | needs confirmation by each organisation's DPO |
+| An organisation's own decisions | a DPO's decision, a privacy notice, a disclosure policy | the user's service context | confirmed only for what it actually says |
 
 There's no single cross-government disclosure policy on GOV.UK. Departments publish their own, and they apply the same principles: check identity before discussing a case, need to know, and lawful authority before telling a third party.
-
-Interpretation: a pattern seen in several services, like brief text messages that point to an email, is not evidence of what is required or lawful. The rule that lets a moment enter the generic library after appearing in 2 services does not apply to privacy.
 
 ### What the privacy skill does
 
 1. Spots what a message would reveal, in each channel.
-2. Checks it against the principles in GOV.UK guidance, the law and ICO guidance, like data minimisation, security, and health as special category data.
-3. Looks for a confirmed decision in the service pack that covers it, and applies and cites it.
-4. Otherwise, flags the exact question and who should answer it.
+2. Checks it against GOV.UK guidance, the law and ICO guidance, like data minimisation, security, and health as special category data.
+3. Looks for a confirmed decision in the service context that covers it, and applies and cites it.
+4. Otherwise, uses the default position, marked "needs confirmation", or flags the exact question and who should answer it.
 
-### A disclosure inventory
-
-For a set of messages, the skill lists what each moment reveals in each channel. A DPO or information assurance lead can review one table instead of every message. It can also feed a DPIA.
-
-```mermaid
-flowchart TB
-    L["GOV.UK guidance, law, ICO"] --> P["privacy-aware-communications<br/>principles and channel risks"]
-    D["Published organisation positions"] --> SP["Service pack<br/>confirmed decisions, with owner and date"]
-    M["Draft message set"] --> P
-    P --> Q{"Is there a confirmed decision<br/>that covers this?"}
-    SP --> Q
-    Q -- "yes" --> A["Apply it and cite it"]
-    Q -- "no" --> F["Flag the question<br/>and who should answer it"]
-    A --> I["Disclosure inventory<br/>for DPO review"]
-    F --> I
-    I -. "answers become decisions" .-> SP
-```
-
-### An organisation layer, later
-
-Data protection policy is usually set by a department or agency, not a service. When a second service from the same organisation arrives, its shared decisions should live once, in an organisation layer above the service packs, rather than be copied into each one.
+For a set of messages, it can list what each moment reveals in each channel. A DPO can review one table instead of every message, and it can feed a DPIA. Their answers become confirmed decisions in the service context.
 
 ## How this differs from building an LLM
 
 We're not building or training a language model. We're writing what a general model reads before it starts work.
 
 - **the model:** a general model, like Claude, already knows how to write. Nothing about it changes
-- **the skills:** instructions, checklists and quoted guidance in plain Markdown, which the model reads at the moment it does the task. They work like the style guide, decision log and checklist you'd hand a new content designer
+- **the skills:** instructions, patterns and quoted guidance in plain Markdown, which the model reads when it does the task
 - **the evals:** worked examples that test whether the model, with the skills, does the right thing
 
-This matters for government work:
+Every rule can be traced to a source, fixed by editing a file, and moved to a different model without rebuilding. Unknowns are flagged, not guessed. The model can still make mistakes, so human review and approval stay in place.
 
-- every rule can be traced to a source, and checked
-- a rule can be fixed the same day guidance changes, by editing a file
-- unknowns are flagged, not guessed
-- the skills can move to a different model without being rebuilt
+## What it produces
 
-The model can still make mistakes. The evals measure how often, and human review and approval stay in place.
+The plugin doesn't send messages or replace approval. It produces drafts a service can review and load into a template tool, like GOV.UK Notify.
 
-## What we're building, exactly
+- **input:** a request, a service context (or what's needed to build one), and the channels
+- **output:** one message for each channel, with placeholders for facts not yet known, and a list of open privacy, policy and fact questions
+- **review mode:** the same steps, run against an existing message, producing the review table
 
-The skills don't send messages or replace approval. They produce a draft message set, in a form a service can review and load into a template tool, like GOV.UK Notify.
+## Repository structure
 
-- **input:** a service, a moment (or a whole journey) and the channels
-- **output:** one message for each channel, with placeholders for facts not yet known, and a "Check before publishing" list of open privacy, policy and fact questions
-- **review mode:** the same layers, run against an existing message, producing the review table
+```
+.claude-plugin/
+  plugin.json
+  marketplace.json
+skills/
+  government-communication/        planned, the front door
+    SKILL.md
+    references/
+      service-context.md           the format, and how to build one
+  case-communication-patterns/
+    SKILL.md
+    references/
+      moments.md                   the moments, anatomy and evidence
+      patterns/                    planned, one substantially written pattern per moment
+    sources.md
+  privacy-aware-communications/
+  govuk-content/
+evals/
+  <skill>/                         cases use invented services only
+```
 
-HM Passport Office's "Comms builder" suggests where this leads: an approved set of templates and preset phrases that staff choose from. The skills help design and check that set. They don't generate free text at the point of contact.
+There's no `services/` directory. Service contexts belong in the user's own project.
 
-## Decisions needed
-
-### Add a communication moments skill
-
-**Recommendation:** add `communication-moments` as a fourth skill, holding the 13 moments and the message anatomy.
-
-Why it's a separate skill:
-
-- it's not writing guidance, so it doesn't belong in `govuk-content`
-- it's not privacy guidance
-- it's the foundation the idea depends on
-
-### Rule for moving a pattern into the generic library
-
-`CLAUDE.md` says a service rule only becomes generic when a generic source supports it. Moments are patterns seen across services, and the Service Manual supports the idea of transactional messages but not each moment.
-
-**Recommendation:** a moment can enter the generic library when:
-
-- the Service Manual or another main source supports the need behind it, or it is seen in at least 2 services
-- it's written in generic words, with the services that show it named as evidence
-- it's marked "hypothesis" until tested with users or confirmed by a content lead
-
-### Phone calls
-
-Moments 7 to 9 are about calls. The messages about calls are in scope. Call and voicemail scripts are not, for now.
-
-### The HM Passport Office guide
-
-**Recommendation:** treat it as evidence for the moments and as an example of how a mature service governs its messages, not as a writing source. Its rules stay with HM Passport Office.
-
-## What not to commit
-
-This repository is public. The board and the passport office screenshots are fine as evidence for this review, but should not be added to the repository as they are.
-
-- the passport office screenshots include people's names and what look like real references
-- the board names internal systems and an internal reference format
-- the matrix names staff, a supplier contract and internal systems
-
-The Drivers Medical service pack should hold anonymised, cleared extracts only.
+Evals need service facts to test adaptation. They use invented services, written into each case, and never a real service's facts.
 
 ## Next steps
 
-1. Agree the decisions above.
-2. Run the 5 `govuk-content` evals, adding one of the board's draft emails as a sixth case.
-3. Write `communication-moments`, starting with moments 1, 5 and 9, which both examples share most clearly.
-4. Start the Drivers Medical service pack by mapping the board's 9 moments to the generic ones, with every privacy note recorded as a hypothesis.
+1. Write the substantially written patterns, starting with moments 1, 5 and 9.
+2. Build `government-communication`, including the service context format and how to build one.
+3. Add evals for both, using invented services, including one with no service context.

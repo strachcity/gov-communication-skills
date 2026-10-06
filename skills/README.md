@@ -15,11 +15,11 @@ skill-name/
 
 - says what task it carries out and what it outputs
 - keeps the guidance it needs in its own `references/`, not copied into other skills
-- takes the service as an input when service knowledge is relevant
+- takes the user's service context as an input when service facts are relevant
 - flags unknown legal or policy positions for the user, instead of resolving them
 
 ## What a skill must not do
 
-- contain rules for a single service, unless the skill is clearly named and placed as service-specific
+- contain rules, words or examples from a named service. There are no service-specific skills in this repository
 - present a guess about legal or policy positions as fact
 - use another skill's references directly. If 2 skills need the same guidance, ask before deciding where it lives

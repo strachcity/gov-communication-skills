@@ -129,4 +129,4 @@ Interpretation, drawn from the defaults above:
 
 ## Organisation decisions
 
-An organisation's DPO or information assurance team may confirm, tighten or relax any default here. Record their decision in the service pack, with owner and date. The skill then applies the decision instead of the default.
+An organisation's DPO or information assurance team may confirm, tighten or relax any default here. Record their decision in the service's own service context, with owner and date. The skill then applies the decision instead of the default.

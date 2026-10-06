@@ -2,7 +2,7 @@
 
 Tests that the skill drafts a generic message with placeholders for every service detail.
 
-- **skill:** communication-moments
+- **skill:** case-communication-patterns
 - **task:** draft
 - **channel:** email
 - **service:** none

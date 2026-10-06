@@ -7,7 +7,7 @@ Worked examples that test whether the skills behave correctly.
 One Markdown file per case, in a folder named after the skill it tests. Each case has:
 
 - the input, like a draft letter or a request to draft one
-- the service, if any
+- the service context, if any. Always an invented service, never a real one
 - what a correct response must do
 - what a correct response must not do
 
@@ -18,7 +18,7 @@ Write expectations as things a reviewer can check, like "flags the semicolon in 
 - the skill applying a rule correctly
 - the skill leaving correct content alone
 - the skill flagging an unknown legal or policy position instead of guessing
-- a generic skill with no service knowledge loaded, to check no service rule has leaked into it
+- a skill with no service context, to check no service rule has leaked into it
 
 ## Data
 
@@ -26,4 +26,4 @@ Invented details only. Never a real person's data, and never real case or licenc
 
 ## Status
 
-Placeholder. No evals have been added yet.
+See `results.md` for the latest results.

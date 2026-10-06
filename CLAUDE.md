@@ -1,6 +1,15 @@
 # CLAUDE.md
 
-This repository holds agent skills and supporting knowledge for UK government customer communications. Read `README.md` for the layout. This file covers how knowledge is added and the rules that keep the layers apart.
+This repository holds agent skills and supporting knowledge for UK government customer communications. Read `README.md` for the layout and `ARCHITECTURE.md` for the design. This file covers how knowledge is added and the rules that keep the layers apart.
+
+## This repository is service-agnostic
+
+The plugin must work for any government service without changes.
+
+- do not create, propose or require skills, folders or packs for named services
+- do not use a named service's words in pattern names, skill text, examples or the architecture
+- service facts come from the user's service context, supplied at the point of use or kept in their own project. See "The service context" in `ARCHITECTURE.md`
+- the plugin can help a user create a service context, but never stores one here
 
 ## Where things go
 
@@ -8,11 +17,12 @@ Ask one question first: would this still be true for a different government serv
 
 - yes, and it comes from GOV.UK content guidance: `skills/govuk-content/references/`
 - yes, and it is about personal data, channels or special category data: `skills/privacy-aware-communications/references/`
-- no, it is true for one service only: `services/<service>/`
+- yes, and it is a moment or pattern that case-based services share: `skills/case-communication-patterns/references/`
+- no, it is true for one service only: not in this repository. It belongs in that service's own service context
 - it describes how to carry out a drafting or review task: the skill's `SKILL.md`
-- it is a worked example with an expected result: `evals/<skill>/`
+- it is a worked example with an expected result: `evals/<skill>/`, using an invented service
 
-If you are not sure which, put it in the service folder and say why in the entry. Something wrongly kept specific does little harm. Something wrongly made generic changes the output for every service.
+If you are not sure, leave it out and record the question. Something wrongly kept out does little harm. Something wrongly made generic changes the output for every service.
 
 Do not create a new top-level directory without asking.
 
@@ -22,7 +32,7 @@ Service-specific policy must never be moved, copied or rephrased into generic kn
 
 This includes doing it by accident. Watch for:
 
-- a generic rule worded from one service's example, like a rule about "medical conditions" in content design guidance
+- a generic rule or pattern worded from one service's example, like a rule about "medical conditions" in content design guidance
 - a skill that hardcodes a service's vocabulary, channels, timescales or decisions
 - an eval for a generic skill that only passes if the skill knows a service's policy
 - a service decision restated as "best practice" because it seemed sensible
@@ -33,7 +43,9 @@ A service rule can become generic only when:
 2. The generic entry cites that source, not the service.
 3. The change is made in its own commit, and the commit message says what was promoted and why.
 
-Until then it stays in the service folder, even if it looks universal.
+Until then it stays in that service's own context, outside this repository, even if it looks universal.
+
+Patterns seen across services are evidence for a moment, recorded as described under "Evidence and provenance" in `ARCHITECTURE.md`. A published source is cited by name. Unpublished work only shows that a moment occurs, and the service is not named.
 
 ## Flag unknown positions, never infer them
 
@@ -71,26 +83,13 @@ The publishing guidance site is in public beta, so check links still work and up
 
 Privacy guidance cites the legislation, ICO guidance, GOV.UK guidance, or a department's published guidance. It is not legal advice. Default positions derived from these sources are marked as interpretation and "needs confirmation" until the organisation's data protection officer confirms them.
 
-## How to add service knowledge
+## Service context
 
-One topic per file in `services/<service>/`, named for the topic in lower case with hyphens. Start each file with these lines:
-
-```
-Kind: policy decision | communication judgement | precedent | hypothesis
-Source: <document, meeting or person>
-Last checked: <date, like 6 October 2026>
-Status: confirmed | needs confirmation | open question
-Owner: <person or role who can confirm it, if known>
-```
-
-The kinds are:
-
-- `policy decision`: made by someone with authority, so say who and when
-- `communication judgement`: a design decision based on research or experience
-- `precedent`: wording that was approved or rejected, with the reason if known
-- `hypothesis`: from prototypes or workshops, not yet tested or agreed
+Service facts are never added here. The format a service context follows, and the kinds of fact it records (policy decision, communication judgement, precedent, hypothesis), are set out under "The service context" in `ARCHITECTURE.md`.
 
 Never present a hypothesis or judgement as a policy decision.
+
+Evals that need service facts use an invented service, written into the eval case.
 
 ## This repository is public
 
@@ -104,7 +103,7 @@ One folder per skill in `skills/`, following `skills/README.md`.
 
 - `SKILL.md` starts with a `name` and a `description`. The description says what the skill does and when to use it
 - keep `SKILL.md` under 500 lines, and say when to read each reference file
-- a generic skill takes the service as an input and contains no service rules
+- a skill takes the service context as an input and contains no service rules
 - add evals in `evals/<skill>/` before calling a skill ready
 
 ## Writing style for this repository

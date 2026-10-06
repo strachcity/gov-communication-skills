@@ -2,7 +2,7 @@
 
 Tests that the skill maps service events to generic moments without moving service detail into the moments.
 
-- **skill:** communication-moments
+- **skill:** case-communication-patterns
 - **task:** plan
 - **service:** an invented licensing service
 

@@ -2,9 +2,9 @@
 
 Agent skills and supporting knowledge for designing and reviewing UK government customer communications.
 
-The first use case is DVLA Drivers Medical. The generic skills are written so that any government service can use them. Nothing in them should depend on Drivers Medical.
+It works for any government service. The same plugin is used by every service, with no bespoke skill for each one. You tell it about your service, and it adapts generic case communication patterns using your service's facts.
 
-Nothing here is legal advice, and nothing here is an official GOV.UK or DVLA publication.
+Nothing here is legal advice, and nothing here is an official GOV.UK publication.
 
 ## Install
 
@@ -32,33 +32,45 @@ To try it from a local copy instead:
 claude --plugin-dir path/to/gov-communication-skills
 ```
 
-The plugin adds 3 skills. Claude uses them when a task fits, or you can ask for one by name, like "use govuk-content to review this email".
+Claude uses the skills when a task fits, or you can ask for one by name, like "use govuk-content to review this email".
+
+## Using it for your service
+
+1. Install the plugin.
+2. Tell it about your service, or point it to your service's documentation.
+3. It creates a service context, or reads the one you already have.
+4. It finds the generic case communication pattern that fits your request.
+5. It adapts the pattern using your service's confirmed facts.
+6. It runs privacy and policy checks.
+7. It applies GOV.UK content guidance.
+8. It returns a first draft, and lists anything that still needs a decision from your service.
+
+The service context holds your service's facts and decisions, like its terminology, case states, timescales, channels, sender details and confirmed policy or disclosure decisions. Keep it in your own project, not in this repository. `ARCHITECTURE.md` describes what it can contain.
+
+Steps 2, 3 and 8 come with the `government-communication` skill, which is planned. Until then, give the other skills your service's facts in the conversation.
 
 ## How the repository is organised
 
-- `skills/`: one folder per skill. Each generic skill holds its own guidance in `references/` and lists its sources in `sources.md`
-- `services/<service>/`: what is true for one service only, including its policy decisions
-- `evals/`: worked examples that test whether the skills behave correctly, one folder per skill
+- `skills/`: one folder per skill. Each skill holds its own guidance in `references/` and lists its sources in `sources.md`
+- `evals/`: worked examples that test whether the skills behave correctly, one folder per skill. They use invented services only
 
-Each directory has a README that sets out what belongs there and what does not.
+There's no folder for any named service. Each directory has a README that sets out what belongs there and what does not.
 
 ## Skills
 
 | Skill | What it does | Status |
 |---|---|---|
-| `govuk-content` | drafts and reviews content against GOV.UK guidance, and flags privacy and policy questions without answering them | tested, see `evals/results.md` |
-| `communication-moments` | the moments every case-based service shares, what each message must establish, and the evidence for each | draft, evals written but not run |
+| `government-communication` | the front door. Helps you create a service context, then uses the other skills to draft or review a whole communication | planned |
+| `case-communication-patterns` | the moments every case-based service shares, a generic pattern for each, and how to recognise and adapt them | draft. The moments exist, evals written but not run. The written patterns are next |
 | `privacy-aware-communications` | lists what a message reveals in each channel, applies confirmed decisions, flags the rest, and drafts the communications part of a DPIA | tested, see `evals/results.md` |
-| `government-communication` | combines the other skills with service knowledge to draft or review a whole communication | planned |
+| `govuk-content` | drafts and reviews content against GOV.UK guidance, and flags privacy and policy questions without answering them | tested, see `evals/results.md` |
 
-## How the layers depend on each other
+## Rules that keep it service-agnostic
 
-- generic skills never refer to a service
-- service knowledge can narrow generic guidance, but must say so when it does
-- generic skills load service knowledge only when told which service they are working on
-- evals can use any layer
-
-If a skill only works for one service, it is not generic. It belongs with that service, or the service-specific part belongs in `services/`.
+- no skill refers to a named service, or uses a named service's words
+- service facts come from the user's service context, at the point of use
+- a service context can narrow generic guidance, but must say so and give a reason
+- nothing from a service context is added to the plugin without a recorded decision and a generic source
 
 ## Working here
 

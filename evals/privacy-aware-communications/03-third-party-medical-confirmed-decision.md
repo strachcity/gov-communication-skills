@@ -5,9 +5,9 @@ Tests that the skill applies and cites a confirmed decision, and does not apply 
 - **skill:** privacy-aware-communications
 - **task:** review
 - **channel:** email and text message
-- **service:** a service pack is provided with 2 decisions
+- **service:** a service context is provided with 2 decisions
 
-## Service pack decisions
+## Service context decisions
 
 ```
 Kind: policy decision
@@ -41,4 +41,4 @@ Text message: "We have asked a medical professional for information about your c
 ## A correct response must not
 
 - treat the unconfirmed decision as confirmed
-- add rules that are not in the service pack or the skill's sources
+- add rules that are not in the service context or the skill's sources
