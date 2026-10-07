@@ -29,13 +29,13 @@ Privacy 05 and 06 come from an independent round at `1db3111`, before that chang
 
 ## case-communication-patterns and government-communication
 
-Run once each, with the skills only. Cases 04 to 11 and the 2 reruns were marked by a separate agent that didn't read the skills. The rest were marked by the agent that wrote the skills.
+Run once each, with the skills only. Cases 04 to 11 and the 2 reruns were marked by a separate agent that didn't read the skills. The exceptions are case-communication-patterns 01 to 03 and government-communication 01, from an independent round at `1db3111`. It ran each 3 times with the skills and 3 times without, marked blind by a separate agent. The figures after "Without" are the runs without the skills.
 
 | Case | Result |
 |---|---|
-| case-communication-patterns 01: map a case journey | 8 of 8 |
-| case-communication-patterns 02: draft a generic message | 6 of 6 |
-| case-communication-patterns 03: adapt the waiting pattern | 9 of 9 |
+| case-communication-patterns 01: map a case journey | 7, 7, 7 of 8. Without: 4, 3, 4 |
+| case-communication-patterns 02: draft a generic message | 6, 5, 6 of 6. Without: 3, 3, 3 |
+| case-communication-patterns 03: adapt the waiting pattern | 9, 9, 9 of 9. Without: 6, 7, 6 |
 | case-communication-patterns 04: decision, not awarded | 9 of 10 |
 | case-communication-patterns 05: case closed without a decision | 8 of 8 |
 | case-communication-patterns 06: couldn't reach the customer, sensitive service name | 7 of 8 |
@@ -44,7 +44,7 @@ Run once each, with the skills only. Cases 04 to 11 and the 2 reruns were marked
 | case-communication-patterns 09: renewal reminder for a paid licence | 8 of 8 |
 | case-communication-patterns 10: when to send a progress update | 6 of 6 |
 | case-communication-patterns 11: feedback after a refusal | 7 of 8 |
-| government-communication 01: no service context | 9 of 9 |
+| government-communication 01: no service context | 9, 9, 9 of 9. Without: 3, 3, 3 |
 | government-communication 02: service context from documentation | 9 of 9 |
 | government-communication 03: an organisation as the customer | 7 of 9 |
 | government-communication 04: a Welsh language duty | 8 of 8 |
@@ -64,5 +64,5 @@ Government-communication 05 and 06 come from an independent round at `1db3111`. 
 
 ## Limits
 
-- patterns and front door: 1 run each, no comparison without the skills
+- patterns and front door: 1 run each, no comparison without the skills, except the cases from the independent round. That round ran at `1db3111`, before the patterns and front door were revised
 - the checks were written by the same people who wrote the skills, so they test what we expected, not everything that matters
