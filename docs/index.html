@@ -4,18 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>gov-communication-skills</title>
-<meta name="description" content="Government services repeatedly write the same kinds of case communication. Design those patterns once, then adapt them using each service's facts.">
+<meta name="description" content="Agent skills for drafting and reviewing UK government case communications, for Claude and Microsoft 365 Copilot. Beta.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-/* Palette from govuk-frontend 6.0.0 (the GOV.UK rebrand), as used in
-   strachcity/DTx-experiments components.html. Inter stands in for
+/* Palette from govuk-frontend 6.0.0 (the GOV.UK rebrand). Inter stands in for
    GDS Transport, which is licence-restricted off gov.uk. */
 :root{
   --black:#0b0c0c;--white:#fff;--blue:#1d70b8;--dark-blue:#0f385c;--link:#1a65a6;
   --green:#0f7a52;--green-shade:#083d29;--yellow:#fd0;--light-yellow:#fff7bf;
-  --light-grey:#f4f8fb;--mid-grey:#cecece;--dark-grey:#484949;--purple:#54319f;
-  --pale-blue:#d2e2f1;--focus:#fd0;
+  --light-grey:#f4f8fb;--mid-grey:#cecece;--dark-grey:#484949;--pale-blue:#d2e2f1;--focus:#fd0;
   --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -27,80 +25,41 @@ a:focus{outline:3px solid var(--focus);background:var(--focus);color:var(--black
 [id]{scroll-margin-top:20px}
 .w{max-width:960px;margin:0 auto;padding:0 15px}
 
-/* header, phase banner, hero */
+/* header and phase banner */
 .header{background:var(--blue);color:var(--white)}
 .header .w{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;flex-wrap:wrap}
 .wordmark{font-weight:700;font-size:20px;color:var(--white);text-decoration:none}
-.tagline{color:#c8dcef;font-size:15px;margin-left:10px}
-.nav{display:flex;gap:20px;font-size:16px}
+.nav{display:flex;gap:20px;font-size:16px;flex-wrap:wrap}
 .nav a{color:var(--white);text-decoration:none;font-weight:600}
 .nav a:hover{text-decoration:underline;text-decoration-thickness:3px;color:var(--white)}
-.phase{border-bottom:1px solid var(--mid-grey);background:var(--white)}
+.phase{border-bottom:1px solid var(--mid-grey)}
 .phase .w{padding-top:10px;padding-bottom:10px;font-size:16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .phase-tag{background:var(--blue);color:var(--white);font-weight:700;font-size:14px;padding:2px 8px;text-transform:uppercase;letter-spacing:1px}
-.hero{background:var(--blue);color:var(--white);padding:48px 0 44px}
-.hero h1{font-size:44px;line-height:1.1;margin:0 0 20px;max-width:20ch;letter-spacing:-.01em}
-.hero .lede{font-size:22px;line-height:1.4;margin:0 0 30px;max-width:36ch;color:#eaf2fa}
-.ctas{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+
+/* type */
+h1{font-size:44px;line-height:1.1;margin:44px 0 20px;letter-spacing:-.01em;max-width:22ch}
+h2{font-size:32px;line-height:1.15;margin:0 0 15px;letter-spacing:-.01em}
+p{margin:0 0 20px}
+.lede{font-size:22px;line-height:1.4;max-width:42ch}
+.small{font-size:16px;color:var(--dark-grey)}
+code{font-family:var(--mono);font-size:.85em}
+section{padding:48px 0 8px;margin-top:40px;border-top:1px solid var(--mid-grey)}
+.ctas{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
 .btn{display:inline-block;background:var(--green);color:var(--white);font-weight:700;font-size:19px;padding:10px 20px;text-decoration:none;box-shadow:0 3px 0 var(--green-shade)}
 .btn:hover{background:#0b5c3e;color:var(--white)}
-.ctas .alt{color:var(--white);font-weight:600}
-.ctas .alt:hover{color:var(--white)}
-
-/* meta + number band */
-.meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 24px;padding:24px 0 14px;font-size:16px;color:var(--dark-grey)}
-.meta b{color:var(--black)}
-.band{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;margin-bottom:10px}
-.box{background:var(--light-grey);padding:20px 22px;border-top:4px solid var(--blue)}
-.box .label{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-grey)}
-.box .num{font-size:40px;font-weight:700;color:var(--blue);line-height:1.1;margin:6px 0 6px}
-.box p{margin:0;font-size:16px;color:var(--dark-grey)}
-
-/* sections */
-section{padding:56px 0 8px}
-.tag{font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin:0 0 6px}
-h2{font-size:36px;line-height:1.11;margin:0 0 15px;letter-spacing:-.01em}
-h3{font-size:24px;line-height:1.25;margin:0 0 10px}
-p{margin:0 0 20px}
-.body-l{font-size:22px;line-height:1.4;max-width:38ch}
-.small{font-size:16px;color:var(--dark-grey)}
-.callout{border-left:10px solid var(--blue);padding:6px 0 6px 22px;margin:30px 0 10px;font-size:22px;line-height:1.4;font-weight:700;max-width:40ch}
+.ctas a:not(.btn){font-weight:600}
 
 /* govuk tags */
 .gtag{display:inline-block;font-size:16px;line-height:1.3;font-weight:700;padding:2px 8px 3px;color:var(--dark-blue);background:var(--pale-blue);white-space:nowrap}
 .gtag--green{color:#083d29;background:#cfe4dc}
 .gtag--yellow{color:#7a3c1c;background:#ffee80}
 
-/* ---------- 1. write once, adapt ---------- */
-.flow{margin:30px 0 0;display:flex;flex-direction:column;align-items:center}
-.node{width:100%;max-width:560px;border:2px solid var(--black);background:var(--white)}
-.node-h{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:8px 16px;border-bottom:2px solid var(--black)}
-.node ul{list-style:none;margin:0;padding:10px 16px 12px}
-.node li{font-size:19px;padding:3px 0}
-.node.lib li.more{color:var(--dark-grey);font-size:16px;font-weight:400}
-.node.lib li{font-weight:700}
-.node.ctx{border-color:var(--blue)}
-.node.ctx .node-h{background:var(--blue);color:var(--white);border-color:var(--blue)}
-.node.ctx ul{display:flex;flex-wrap:wrap;gap:8px}
-.node.ctx li{padding:0}
-.join{display:flex;flex-direction:column;align-items:center;font-size:16px;font-weight:700;color:var(--dark-grey);padding:6px 0}
-.join::before{content:"";width:2px;height:18px;background:var(--black)}
-.join::after{content:"\25BC";font-size:12px;color:var(--black);line-height:1;margin-top:2px}
-.join span{padding:4px 0}
-.checks{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;max-width:560px}
-.check{border:2px solid var(--black);padding:10px 14px;font-weight:700;font-size:17px;background:var(--light-grey)}
-.check small{display:block;font-weight:400;font-size:15px;color:var(--dark-grey)}
-.outs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;width:100%}
-.out{border:1px solid var(--mid-grey);border-top:4px solid var(--green);padding:12px 14px;font-size:15px;line-height:1.45;background:var(--white)}
-.out .ch{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--green);margin-bottom:6px}
-.out p{margin:0 0 6px}
-.out .fade{color:var(--dark-grey)}
-.plus{font-size:28px;font-weight:700;line-height:1;padding:10px 0 6px}
-.flag{width:100%;max-width:560px;background:var(--light-yellow);border:4px solid var(--yellow);padding:12px 16px;font-size:17px}
-.flag b{display:block;font-size:14px;text-transform:uppercase;letter-spacing:.06em}
+/* how it works */
+.how{margin:24px 0 0;padding-left:28px;max-width:44em}
+.how li{margin-bottom:10px;padding-left:4px}
 
-/* ---------- 2. journey ---------- */
-.journey{margin-top:30px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:3px}
+/* moments */
+.journey{margin-top:24px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:3px}
 .stage{background:var(--light-grey);padding:14px 12px 16px;position:relative}
 .stage-name{font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin:0 0 10px}
 .stage:not(:last-child)::after{content:"\25B6";position:absolute;right:-9px;top:14px;font-size:12px;color:var(--blue);z-index:1}
@@ -108,19 +67,9 @@ p{margin:0 0 20px}
 .m .n{display:block;font-size:13px;font-weight:600;color:var(--dark-grey)}
 .v{font-size:14px;color:var(--dark-grey);margin:-2px 0 8px 14px;line-height:1.35}
 .v div::before{content:"\2514\00a0";color:var(--mid-grey)}
-.grammar{margin-top:34px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px;align-items:start}
-.stack{display:flex;flex-direction:column;align-items:center;text-align:center}
-.mod{border:2px dashed var(--black);padding:6px 16px;font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.05em;background:var(--white)}
-.fol{border:2px dotted var(--purple);color:var(--purple)}
-.arrow{font-size:20px;line-height:1;padding:6px 0;color:var(--dark-grey)}
-.core{border:2px solid var(--black);border-left-width:6px;padding:10px 18px;font-weight:700;font-size:19px;background:var(--light-grey)}
-.stack .cap{font-size:15px;color:var(--dark-grey);margin-top:12px;max-width:30ch}
-.legend{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:16px;margin-top:24px}
-.legend span{display:inline-flex;gap:8px;align-items:center}
-.sw{display:inline-block;width:22px;height:14px;font-style:normal}
 
-/* ---------- 3. one pattern ---------- */
-.three{margin-top:30px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr) minmax(0,1.2fr);border-top:2px solid var(--black)}
+/* example */
+.three{margin-top:24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr) minmax(0,1.2fr);border-top:2px solid var(--black)}
 .col{padding:16px 18px 0}
 .col:first-child{padding-left:0}
 .col:last-child{padding-right:0}
@@ -146,58 +95,30 @@ p{margin:0 0 20px}
 .ticks li::before{content:"\2713";position:absolute;left:4px;top:8px;color:var(--green);font-size:20px}
 .ticks small{display:block;font-weight:400;font-size:16px;color:var(--dark-grey)}
 .q{background:var(--light-yellow);border:4px solid var(--yellow);padding:16px 20px}
-.q .qh{display:flex;gap:12px;align-items:center;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
-.q .qh::before{content:"?";flex:none;width:32px;height:32px;border-radius:50%;background:var(--black);color:var(--white);display:grid;place-items:center;font-size:20px;letter-spacing:0}
-.q .qq{font-size:24px;font-weight:700;line-height:1.25;margin:0 0 10px}
+.q .qh{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.q .qq{font-size:22px;font-weight:700;line-height:1.25;margin:0 0 10px}
 .q p{font-size:16px;margin:0 0 6px}
-.compare{margin-top:30px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:3px}
-.compare div{background:var(--light-grey);padding:16px 20px;font-size:17px}
-.compare b{display:block;font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--dark-grey);margin-bottom:4px}
-.compare .ours{border-top:4px solid var(--blue)}
-.compare .ours b{color:var(--blue)}
 
-/* ---------- 4. assurance ---------- */
-.steps{margin:28px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px}
-.steps li{background:var(--light-grey);padding:12px 14px;font-size:16px;line-height:1.35}
-.steps li b{display:block;font-size:17px;margin-bottom:2px}
-.steps li.people{background:var(--light-yellow)}
-.steps li.back{background:var(--pale-blue)}
-.loopnote{font-size:16px;color:var(--dark-blue);font-weight:700;margin:8px 0 0}
-.loopnote::before{content:"\21BA\00a0"}
-.table-wrap{overflow-x:auto;margin-top:26px}
-table{border-collapse:collapse;width:100%;min-width:640px;font-size:17px}
-caption{text-align:left;font-weight:700;font-size:24px;padding-bottom:10px}
+/* tables */
+.table-wrap{overflow-x:auto;margin-top:24px}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:17px}
+caption{text-align:left;font-weight:700;font-size:22px;padding-bottom:10px}
 caption span{display:block;font-weight:400;font-size:16px;color:var(--dark-grey)}
 th,td{text-align:left;vertical-align:top;padding:10px 15px 10px 0;border-bottom:1px solid var(--mid-grey)}
 thead th{border-bottom:2px solid var(--black);font-size:16px}
 td .s{display:block;font-size:14px;color:var(--dark-grey);margin-top:4px}
+td code{font-weight:700;font-size:15px}
 
-/* ---------- 5. architecture ---------- */
-.arch{margin-top:28px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:36px;align-items:start}
-.a3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.ab{border:2px solid var(--black);padding:10px 12px;background:var(--white)}
-.ab code{display:block;font-family:var(--mono);font-size:13px;font-weight:700;overflow-wrap:anywhere}
-.ab span{display:block;font-size:15px;color:var(--dark-grey);margin-top:4px;line-height:1.3}
-.ab.front{background:var(--black);color:var(--white)}
-.ab.front span{color:#d0d0d0}
-.ab.svc{border-style:dashed;border-color:var(--blue);background:var(--light-grey)}
-.ab.svc code{color:var(--blue)}
-.ab.out{border-color:var(--green);border-top-width:4px}
-.a2{display:grid;grid-template-columns:minmax(0,1.3fr) auto minmax(0,1fr);gap:8px;align-items:center}
-.a2 .p{font-size:24px;font-weight:700}
-.down{text-align:center;font-size:20px;padding:4px 0;color:var(--dark-grey)}
-.ticks.plain li::before{content:"\2022";color:var(--blue)}
-
-/* ---------- install ---------- */
-code{font-family:var(--mono);font-size:.85em}
-.term{margin:20px 0 20px;font-family:var(--mono)}
-.term .chrome{background:#2c3a44;color:#8ba0af;font-size:13px;padding:7px 16px}
-.term pre{margin:0;background:var(--black);color:#e8edee;padding:16px 20px;font-size:14px;line-height:1.7;overflow-x:auto}
-.term .pr{color:#41b6e6;user-select:none}
+/* install */
 .installs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:24px 0}
 .installs .opt{border:1px solid var(--mid-grey);border-top:5px solid var(--blue);padding:16px 18px 0;display:flex;flex-direction:column}
+.installs h3{font-size:22px;margin:0 0 8px}
+.installs .opt p{font-size:17px}
 .installs .opt p:last-child{margin-top:auto}
 .installs .btn{font-size:17px}
+.term{margin:0 0 20px;font-family:var(--mono)}
+.term pre{margin:0;background:var(--black);color:#e8edee;padding:16px 20px;font-size:14px;line-height:1.7;overflow-x:auto}
+.term .pr{color:#41b6e6;user-select:none}
 
 /* footer */
 .footer{background:var(--light-grey);border-top:10px solid var(--blue);margin-top:64px;padding:30px 0 40px;font-size:16px;color:var(--dark-grey)}
@@ -208,23 +129,18 @@ code{font-family:var(--mono);font-size:.85em}
   .stage:nth-child(3)::after{display:none}
   .three{grid-template-columns:1fr 1fr}
   .three .col:last-child{grid-column:1/-1;border-left:0;padding-left:0;border-top:1px solid var(--mid-grey);margin-top:16px}
-  .steps{grid-template-columns:1fr 1fr}
 }
 @media (max-width:640px){
   body{font-size:17px}
-  .tagline{display:none}
-  .hero h1{font-size:32px}
-  .hero .lede{font-size:19px}
-  h2{font-size:28px}
-  .band,.checks,.outs,.grammar,.result,.compare,.arch,.a3,.a2{grid-template-columns:1fr}
-  .a2 .p{text-align:center}
+  h1{font-size:32px}
+  h2{font-size:26px}
+  .lede{font-size:19px}
+  .result,.installs{grid-template-columns:1fr}
   .journey{grid-template-columns:1fr 1fr}
   .stage::after{display:none!important}
   .three{grid-template-columns:1fr}
   .three .col{padding:16px 0 0!important;border-left:0!important}
   .three .col+.col{border-top:1px solid var(--mid-grey);margin-top:16px}
-  .steps{grid-template-columns:1fr}
-  .installs{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -232,95 +148,43 @@ code{font-family:var(--mono);font-size:.85em}
 
 <header class="header">
   <div class="w">
-    <div><a class="wordmark" href="#top">gov-communication-skills</a><span class="tagline">Case communication patterns</span></div>
+    <a class="wordmark" href="#top">gov-communication-skills</a>
     <nav class="nav" aria-label="Sections">
-      <a href="#library">Patterns</a>
+      <a href="#how">How it works</a>
       <a href="#example">Example</a>
-      <a href="#assurance">Assurance</a>
+      <a href="#skills">Skills</a>
       <a href="install.html">Install</a>
+      <a href="https://github.com/strachcity/gov-communication-skills">GitHub</a>
     </nav>
   </div>
 </header>
 <div class="phase">
-  <div class="w"><span class="phase-tag">Draft</span><span>Not an official GOV.UK publication, and not legal advice. The example service on this page is invented.</span></div>
+  <div class="w"><span class="phase-tag">Beta</span><span>This is new and still being tested. Not an official GOV.UK publication, and not legal advice. <a href="https://github.com/strachcity/gov-communication-skills/issues/new">Tell us what goes wrong</a>.</span></div>
 </div>
 
-<main id="top">
-<div class="hero">
-  <div class="w">
-    <h1>Government services repeatedly write the same kinds of case communication.</h1>
-    <p class="lede">We can design those patterns once, then adapt them using each service's facts and confirmed decisions.</p>
-    <div class="ctas">
-      <a class="btn" href="install.html">Download or install</a>
-      <a class="alt" href="#example">See one pattern adapted</a>
-    </div>
-  </div>
-</div>
-
-<div class="w">
-  <div class="meta">
-    <span>Last revised <b>6 October 2026</b></span>
-    <span>4 skills · plain Markdown · Open Government Licence v3.0</span>
-  </div>
-  <div class="band">
-    <div class="box"><div class="label">Moments</div><div class="num">9</div><p>Each with a substantially written pattern, plus 3 modifiers and 1 follow-up</p></div>
-    <div class="box"><div class="label">Channels</div><div class="num">4</div><p>Email, text message, letter and status page in each pattern</p></div>
-    <div class="box"><div class="label">Service rules in the plugin</div><div class="num">0</div><p>Service facts stay in the service's own context, never in the library</p></div>
+<main id="top" class="w">
+  <h1>Draft and review case communications for any government service</h1>
+  <p class="lede">Agent skills for Claude and Microsoft 365 Copilot. They adapt generic message patterns using your service's facts, check GOV.UK style and privacy, and list anything your service still needs to decide.</p>
+  <div class="ctas">
+    <a class="btn" href="install.html">Install</a>
+    <a href="#example">See an example</a>
   </div>
 
-  <!-- 1. WRITE ONCE, ADAPT -->
   <section id="how">
-    <p class="tag">How it works</p>
-    <h2>Write once, adapt for each service</h2>
-
-    <div class="flow" role="img" aria-label="A generic library of patterns is combined with a service context, checked against GOV.UK content guidance and privacy guidance, and produces a text message, email and letter, with open decisions flagged.">
-      <div class="node lib">
-        <div class="node-h">Generic library</div>
-        <ul>
-          <li>We've received it</li>
-          <li>We need something from you</li>
-          <li>We're waiting on someone else</li>
-          <li>We'll contact you</li>
-          <li>We couldn't reach you</li>
-          <li>We've made a decision</li>
-          <li class="more">and 3 more moments</li>
-        </ul>
-      </div>
-      <div class="join"><span>+ service facts</span></div>
-      <div class="node ctx">
-        <div class="node-h">Service context</div>
-        <ul>
-          <li><span class="gtag">terminology</span></li>
-          <li><span class="gtag">timescales</span></li>
-          <li><span class="gtag">channels</span></li>
-          <li><span class="gtag">policy decisions</span></li>
-          <li><span class="gtag">disclosure decisions</span></li>
-        </ul>
-      </div>
-      <div class="join"><span>checked against</span></div>
-      <div class="checks">
-        <div class="check">GOV.UK content<small>style and channel guidance</small></div>
-        <div class="check">Privacy and disclosure<small>what each channel reveals</small></div>
-      </div>
-      <div class="join"><span>drafts</span></div>
-      <div class="outs">
-        <div class="out"><div class="ch">Text message</div><p>Your permit application is waiting for information from someone else.</p><p class="fade">You do not need to do anything...</p></div>
-        <div class="out"><div class="ch">Email</div><p>Dear Alex Morgan</p><p>We're waiting for information we need...</p><p class="fade">What happens next</p></div>
-        <div class="out"><div class="ch">Letter</div><p>We're waiting for information about your permit application</p><p class="fade">What happens next</p></div>
-      </div>
-      <div class="plus" aria-hidden="true">+</div>
-      <div class="flag"><b>Open decisions flagged</b>Can the email name who we're waiting on?</div>
-    </div>
-
-    <p class="callout">The model writes less from scratch. It adapts an already-designed communication pattern using the facts and decisions of the service.</p>
+    <h2>How it works</h2>
+    <ol class="how">
+      <li>Tell it about your service, or point it to your service's documentation.</li>
+      <li>It creates a service context with you, or reads the one you already have. You keep it in your own files.</li>
+      <li>It finds the pattern that fits your request and adapts it with your service's confirmed facts.</li>
+      <li>It checks what each version reveals in each channel, and applies GOV.UK content guidance.</li>
+      <li>It returns a draft for each channel and a list of what still needs a decision from your service.</li>
+    </ol>
+    <p>It doesn't invent your policy. Anything your service hasn't decided, like a timescale or what a message can disclose, is flagged for a person to decide.</p>
   </section>
 
-  <!-- 2. THE LIBRARY AS A JOURNEY -->
-  <section id="library">
-    <p class="tag">The pattern library</p>
-    <h2>A grammar for case communication, not a folder of templates</h2>
-    <p class="body-l">9 moments describe where the customer stands in their case. Not every service uses every moment, and some happen more than once.</p>
-
+  <section id="moments">
+    <h2>The 9 moments</h2>
+    <p>Each moment has a pattern, with baseline copy for email, text message, letter and status page. Not every service uses every moment, and some happen more than once.</p>
     <div class="journey">
       <div class="stage"><p class="stage-name">Submit</p>
         <div class="m"><span class="n">1</span>We've received it</div>
@@ -348,39 +212,12 @@ code{font-family:var(--mono);font-size:.85em}
         <div class="m"><span class="n">9</span>You need to act before a date</div>
       </div>
     </div>
-
-    <div class="grammar">
-      <div class="stack">
-        <div class="mod">Reminder</div>
-        <div class="arrow" aria-hidden="true">&darr;</div>
-        <div class="core">We need something from you</div>
-        <div class="arrow" aria-hidden="true">&uarr;</div>
-        <div class="mod">Final reminder</div>
-        <p class="cap">A modifier changes how a moment is said, without being a moment of its own. Delay is the third.</p>
-      </div>
-      <div class="stack">
-        <div class="core">We've made a decision</div>
-        <div class="arrow" aria-hidden="true">&darr;</div>
-        <div class="mod fol">Ask for feedback</div>
-        <p class="cap">A follow-up comes after a moment. It tells the customer nothing about their case, and never implies it affects it.</p>
-      </div>
-    </div>
-
-    <div class="legend" aria-label="Key">
-      <span><i class="sw" style="background:var(--white);border:2px solid var(--black);border-left-width:5px"></i>moment</span>
-      <span><i class="sw" style="color:var(--dark-grey)">&#9492;</i>variant</span>
-      <span><i class="sw" style="border:2px dashed var(--black)"></i>modifier</span>
-      <span><i class="sw" style="border:2px dotted var(--purple)"></i>follow-up</span>
-    </div>
-    <p class="small" style="margin-top:16px">Writing real patterns cut the list from 16 moments to 12, then 9. Every moment records its evidence, and none is marked tested with users yet.</p>
+    <p class="small" style="margin-top:16px">Reminder, final reminder and delay change how a moment is said. Asking for feedback can follow a moment, and never implies it affects the case.</p>
   </section>
 
-  <!-- 3. ONE PATTERN BECOMES A COMMUNICATION -->
   <section id="example">
-    <p class="tag">Worked example</p>
-    <h2>One pattern becoming a real communication</h2>
-    <p class="body-l">"We're waiting on someone else", adapted for an invented permit service.</p>
-
+    <h2>Example</h2>
+    <p>"We're waiting on someone else", adapted for an invented permit service.</p>
     <div class="three">
       <div class="col">
         <p class="col-h">Generic pattern<small>The same for every service</small></p>
@@ -424,28 +261,11 @@ code{font-family:var(--mono);font-size:.85em}
         <p>It's recorded as a hypothesis, not a decision. The data protection officer decides. Until then, the email says "someone else".</p>
       </div>
     </div>
-
-    <div class="compare">
-      <div><b>A general AI tool</b>"Here is an email."</div>
-      <div class="ours"><b>This plugin</b>"Here is the pattern, here are the service facts I've applied, and here is the decision I won't make for you."</div>
-    </div>
   </section>
 
-  <!-- 4. ASSURANCE -->
-  <section id="assurance">
-    <p class="tag">Assurance</p>
-    <h2>Reviewers look at one table, not every message</h2>
-    <p class="body-l">For a set of messages, the privacy skill lists what each one reveals in each channel. The answers become confirmed decisions in the service context.</p>
-
-    <ol class="steps">
-      <li><b>Patterns</b>the generic library</li>
-      <li><b>Service context</b>the service's facts and decisions</li>
-      <li><b>Proposed messages</b>a draft for each moment and channel</li>
-      <li class="people"><b>IA, data protection and policy</b>review the flagged rows</li>
-      <li class="back"><b>Confirmed decisions</b>recorded in the service context, with owner and date</li>
-    </ol>
-    <p class="loopnote">The next draft uses them, so each decision is made once</p>
-
+  <section id="reveals">
+    <h2>What each message reveals</h2>
+    <p>For a set of messages, the privacy skill lists what each one reveals in each channel. Reviewers check the flagged rows, and their answers go into the service context as confirmed decisions.</p>
     <div class="table-wrap">
       <table>
         <caption>Disclosure inventory<span>Illustrative, for the invented permit service</span></caption>
@@ -459,48 +279,31 @@ code{font-family:var(--mono);font-size:.85em}
         </tbody>
       </table>
     </div>
-    <p class="callout">Assurance decisions become reusable service context, rather than being lost in meetings or email threads.</p>
   </section>
 
-  <!-- 5. ARCHITECTURE -->
-  <section id="architecture">
-    <p class="tag">How it's made reliable</p>
-    <h2>4 skills, and 1 context that stays with the service</h2>
-
-    <div class="arch">
-      <div>
-        <div class="a3">
-          <div class="ab"><code>case-communication-patterns</code><span>what to say</span></div>
-          <div class="ab"><code>govuk-content</code><span>how to write it</span></div>
-          <div class="ab"><code>privacy-aware-communications</code><span>what it reveals</span></div>
-        </div>
-        <div class="down" aria-hidden="true">&darr;</div>
-        <div class="a2">
-          <div class="ab front"><code>government-communication</code><span>the front door</span></div>
-          <div class="p" aria-hidden="true">+</div>
-          <div class="ab svc"><code>service context</code><span>in the service's own project</span></div>
-        </div>
-        <div class="down" aria-hidden="true">&darr;</div>
-        <div class="ab out"><code>draft + open decisions</code></div>
-      </div>
-      <ul class="ticks plain">
-        <li>The generic skills are reusable<small>The same plugin works for any government service, with no bespoke skill for each one</small></li>
-        <li>Service rules don't leak back<small>The service context is read, never written into the plugin. A rule becomes generic only by a recorded decision with a public source</small></li>
-        <li>It produces drafts, not sent messages<small>A service reviews them and loads them into a template tool, like GOV.UK Notify</small></li>
-        <li>It's tested, but not finished<small>The content and privacy skills have blind-marked evals. The patterns and front door have had evals run once. No user testing yet</small></li>
-      </ul>
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Skill</th><th>What it does</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><code>government-communication</code></td><td>the front door. Sets up a service context, then uses the other 3 skills to draft or review a whole communication</td><td>evals run once</td></tr>
+          <tr><td><code>case-communication-patterns</code></td><td>the 9 moments, a pattern for each, and how to adapt them</td><td>evals run once</td></tr>
+          <tr><td><code>privacy-aware-communications</code></td><td>what a message reveals in each channel, and the communications part of a DPIA</td><td>tested with blind-marked evals</td></tr>
+          <tr><td><code>govuk-content</code></td><td>drafts and reviews content against GOV.UK content guidance</td><td>tested with blind-marked evals</td></tr>
+        </tbody>
+      </table>
     </div>
+    <p class="small" style="margin-top:16px">No pattern has been tested with users yet. The Copilot version hasn't been tested in Copilot. Sources and evals are on <a href="https://github.com/strachcity/gov-communication-skills">GitHub</a>.</p>
   </section>
 
-  <!-- INSTALL -->
   <section id="install">
-    <p class="tag">Get started</p>
-    <h2>Install it</h2>
+    <h2>Install</h2>
     <p>Choose the AI tool you use. Each option has its own steps on the <a href="install.html">install page</a>.</p>
     <div class="installs">
       <div class="opt">
         <h3>Claude skills</h3>
-        <p>Any Claude plan, including free. Upload the 4 skills one at a time under Customize, then Skills.</p>
+        <p>Any Claude plan, including free. Upload the 4 skills one at a time.</p>
         <p><a class="btn" href="install.html#claude-skills">Get the skills</a></p>
       </div>
       <div class="opt">
@@ -516,13 +319,10 @@ code{font-family:var(--mono);font-size:.85em}
     </div>
     <p>In Claude Code, run:</p>
     <div class="term">
-      <div class="chrome">Claude Code</div>
 <pre><span class="pr">&gt; </span>/plugin marketplace add strachcity/gov-communication-skills
 <span class="pr">&gt; </span>/plugin install gov-communication-skills@gov-communication-skills</pre>
     </div>
-    <p>Then tell it about your service, or point it to your service's documentation. It creates a service context with you, or reads the one you already have.</p>
   </section>
-</div>
 </main>
 
 <footer class="footer">
