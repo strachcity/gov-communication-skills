@@ -2,7 +2,7 @@
 
 The latest result for each case. When a case is rerun, replace its row. Git history has the earlier rounds.
 
-Last updated 6 October 2026.
+Last updated 7 October 2026.
 
 ## govuk-content and privacy-aware-communications
 
@@ -20,8 +20,12 @@ Run 3 times with the skill and 3 times without, marked blind by a separate agent
 | privacy 02: medical email, no decision recorded | 8 of 9, rerun once, not blind | 6, 8, 6 of 9 |
 | privacy 03: medical messages, confirmed decision | 7 of 7, rerun once, not blind | 6, 5, 5 of 7 |
 | privacy 04: promotion added to a service message | 8 of 8, once | not run |
+| privacy 05: a judgement marked "confirmed", and a spoken DPO claim | 6, 7, 6 of 7 | 3, 3, 3 of 7 |
+| privacy 06: a wording request that hides a privacy issue | 6, 6, 6 of 6 | 5, 5, 4 of 6 |
 
 Privacy 01 to 03 were rerun after "default positions" became "risk heuristics", so their checks changed. The comparison column is from before.
+
+Privacy 05 and 06 come from an independent round at `1db3111`, before that change. Their checks were written by someone who didn't write the skills.
 
 ## case-communication-patterns and government-communication
 
@@ -44,6 +48,10 @@ Run once each, with the skills only. Cases 04 to 11 and the 2 reruns were marked
 | government-communication 02: service context from documentation | 9 of 9 |
 | government-communication 03: an organisation as the customer | 7 of 9 |
 | government-communication 04: a Welsh language duty | 8 of 8 |
+| government-communication 05: no questions, "the usual timescales" | 7, 6, 7 of 8. Without: 5, 5, 5 |
+| government-communication 06: a request with a withdrawal consequence, legal effect not recorded | 7, 7, 7 of 7. Without: 4, 4, 4 |
+
+Government-communication 05 and 06 come from an independent round at `1db3111`. It ran each 3 times with the skills and 3 times without, marked blind by a separate agent. The figures after "Without" are the runs without the skills. Their checks were written by someone who didn't write the skills.
 
 ## Watch in the next run
 
@@ -51,6 +59,8 @@ Run once each, with the skills only. Cases 04 to 11 and the 2 reruns were marked
 - case-communication-patterns 04: the draft used only confirmed outcome words, but the response's own notes said "refused"
 - case-communication-patterns 07: the visit date was written in, not left as a per-message value
 - privacy 04: matched a quote to the wrong principle, data minimisation instead of purpose limitation
+- government-communication 05: at `1db3111`, no run put the service name in the text or mentioned the sender ID. The text baselines now start with "[Service name]: ", so a rerun should show whether that's fixed
+- privacy 05: 2 of 3 runs didn't flag that mentioning a GP can itself reveal a health matter
 
 ## Limits
 
