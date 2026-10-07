@@ -1,0 +1,57 @@
+name: Publish downloads
+
+# Builds the zips with ports/build.py and attaches them to the "downloads"
+# release, so the links in README.md always point at the latest skills.
+# Nothing is committed back to the repository.
+#
+# If the front door or a skill description has changed since ports/core.md
+# was last reviewed, the build exits 2 and this job fails on purpose. Update
+# core.md, run python3 ports/build.py --accept, and push.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "skills/**"
+      - "ports/**"
+      - ".claude-plugin/**"
+      - "LICENSE"
+      - ".github/workflows/downloads.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: downloads
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The build dates the zips by the last commit touching the skills.
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build the zips
+        run: python3 ports/build.py
+
+      - name: Publish to the downloads release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git tag -f downloads
+          git push -f origin refs/tags/downloads
+          notes="Built from ${GITHUB_SHA::12} on $(date -u +%Y-%m-%d). Install steps are in the README."
+          if gh release view downloads >/dev/null 2>&1; then
+            gh release edit downloads --notes "$notes"
+          else
+            gh release create downloads --title "Downloads" --notes "$notes"
+          fi
+          gh release upload downloads ports/dist/*.zip --clobber

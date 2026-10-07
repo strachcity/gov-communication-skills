@@ -22,7 +22,13 @@ It doesn't invent your policy. Anything your service hasn't decided is listed fo
 
 ## Install
 
-This repository is a plugin marketplace.
+[![Download the skills (zip)](https://img.shields.io/badge/Download_the_skills-zip-0f7a52?style=for-the-badge)](https://github.com/strachcity/gov-communication-skills/releases/download/downloads/gov-communication-skills-plugin.zip)
+
+There are 3 ways to use it. Pick the one that fits the tool you have.
+
+### Add it as a plugin
+
+This repository is a plugin marketplace, so it stays up to date.
 
 In claude.ai, Cowork or the Claude desktop app:
 
@@ -46,6 +52,37 @@ To try it from a local copy instead:
 claude --plugin-dir path/to/gov-communication-skills
 ```
 
+### Download the skills as a zip
+
+Use this if you can't add a marketplace, or want a copy to share.
+
+1. [Download the plugin (zip)](https://github.com/strachcity/gov-communication-skills/releases/download/downloads/gov-communication-skills-plugin.zip).
+2. In Claude, go to Customize, then Plugins, then upload the zip. Don't unzip it first.
+
+If your plan has Skills but not Plugins, upload these one at a time under Customize, then Skills:
+
+- [government-communication](https://github.com/strachcity/gov-communication-skills/releases/download/downloads/gov-communication-skills-government-communication.zip)
+- [case-communication-patterns](https://github.com/strachcity/gov-communication-skills/releases/download/downloads/gov-communication-skills-case-communication-patterns.zip)
+- [privacy-aware-communications](https://github.com/strachcity/gov-communication-skills/releases/download/downloads/gov-communication-skills-privacy-aware-communications.zip)
+- [govuk-content](https://github.com/strachcity/gov-communication-skills/releases/download/downloads/gov-communication-skills-govuk-content.zip)
+
+Upload all 4. The front door uses the other 3.
+
+A download doesn't update itself. Download it again to get changes.
+
+### Use it in Microsoft 365 Copilot
+
+1. [Download the Copilot version (zip)](https://github.com/strachcity/gov-communication-skills/releases/download/downloads/gov-communication-skills-copilot.zip), and extract it. On Windows, right-click it and choose Extract All. On a Mac, double-click it.
+2. In Copilot Chat, select Create agent. If it opens a chat with the agent builder, select Skip or Configure.
+3. Open "1 Paste into Instructions.txt", copy everything in it, and paste it into the Instructions box.
+4. Under Skills, upload each zip in "2 Upload these 4 skills", one at a time. Don't unzip or rename them.
+5. If there's no Skills option, upload the 4 files in "3 No Skills option - upload these as knowledge instead" under Knowledge instead.
+6. Select Create.
+
+The Copilot version hasn't been tested yet. See `ports/testing.md`.
+
+### Using it
+
 Claude uses the skills when a task fits, or you can ask for one by name, like "use govuk-content to review this email".
 
 ## Using it for your service
@@ -65,6 +102,7 @@ The service context holds your service's facts and decisions, like its terminolo
 
 - `skills/`: one folder per skill. Each skill holds its own guidance in `references/` and lists its sources in `sources.md`
 - `evals/`: worked examples that test whether the skills behave correctly, one folder per skill. They use invented services only
+- `ports/`: builds the downloads and the Microsoft 365 Copilot version from `skills/`. See `ports/README.md`
 
 There's no folder for any named service. Each directory has a README that sets out what belongs there and what does not.
 
@@ -88,7 +126,10 @@ There's no folder for any named service. Each directory has a README that sets o
 
 Read `CLAUDE.md` before adding or changing anything. It covers how knowledge is added, where it goes, and what to do when a position is not known. `ARCHITECTURE.md` explains what we are building and how the parts fit. `PLAN.md` has the build plan.
 
-No build step, no package manager, no framework. Everything is Markdown, except one small script: `python3 evals/text-message-lengths.py` checks every text message baseline fits in one text.
+No build step to use it, no package manager, no framework. Everything is Markdown, except 2 small scripts:
+
+- `python3 evals/text-message-lengths.py` checks every text message baseline fits in one text
+- `python3 ports/build.py` builds the downloads. A GitHub Action runs it for you when a skill changes
 
 ## Licence
 

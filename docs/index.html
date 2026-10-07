@@ -194,6 +194,7 @@ code{font-family:var(--mono);font-size:.85em}
 .term .chrome{background:#2c3a44;color:#8ba0af;font-size:13px;padding:7px 16px}
 .term pre{margin:0;background:var(--black);color:#e8edee;padding:16px 20px;font-size:14px;line-height:1.7;overflow-x:auto}
 .term .pr{color:#41b6e6;user-select:none}
+.ctas.dl{margin:24px 0}
 
 /* footer */
 .footer{background:var(--light-grey);border-top:10px solid var(--blue);margin-top:64px;padding:30px 0 40px;font-size:16px;color:var(--dark-grey)}
@@ -246,7 +247,7 @@ code{font-family:var(--mono);font-size:.85em}
     <h1>Government services repeatedly write the same kinds of case communication.</h1>
     <p class="lede">We can design those patterns once, then adapt them using each service's facts and confirmed decisions.</p>
     <div class="ctas">
-      <a class="btn" href="#install">Install the plugin</a>
+      <a class="btn" href="#install">Download or install</a>
       <a class="alt" href="#example">See one pattern adapted</a>
     </div>
   </div>
@@ -490,13 +491,16 @@ code{font-family:var(--mono);font-size:.85em}
   <!-- INSTALL -->
   <section id="install">
     <p class="tag">Get started</p>
-    <h2>Install the plugin</h2>
-    <p>In claude.ai, Cowork or the Claude desktop app, go to Customize, then Plugins, and add the marketplace <code>strachcity/gov-communication-skills</code>. In Claude Code, run:</p>
+    <h2>Install it</h2>
+    <p>Download the skills and upload the zip in Claude under Customize, then Plugins. Don't unzip it first.</p>
+    <p class="ctas dl"><a class="btn" href="https://github.com/strachcity/gov-communication-skills/releases/download/downloads/gov-communication-skills-plugin.zip">Download the skills (zip)</a> <a href="https://github.com/strachcity/gov-communication-skills/releases/download/downloads/gov-communication-skills-copilot.zip">Microsoft 365 Copilot version (zip)</a></p>
+    <p>Or add it as a plugin, so it stays up to date. In claude.ai, Cowork or the Claude desktop app, go to Customize, then Plugins, and add the marketplace <code>strachcity/gov-communication-skills</code>. In Claude Code, run:</p>
     <div class="term">
       <div class="chrome">Claude Code</div>
 <pre><span class="pr">&gt; </span>/plugin marketplace add strachcity/gov-communication-skills
 <span class="pr">&gt; </span>/plugin install gov-communication-skills@gov-communication-skills</pre>
     </div>
+    <p>Plans with Skills but not Plugins, and the Copilot steps, are in the <a href="https://github.com/strachcity/gov-communication-skills#install">README</a>.</p>
     <p>Then tell it about your service, or point it to your service's documentation. It creates a service context with you, or reads the one you already have.</p>
   </section>
 </div>

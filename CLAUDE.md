@@ -105,6 +105,7 @@ One folder per skill in `skills/`, following `skills/README.md`.
 - keep `SKILL.md` under 500 lines, and say when to read each reference file
 - a skill takes the service context as an input and contains no service rules
 - add evals in `evals/<skill>/` before calling a skill ready
+- add it to `SKILL_ORDER` in `ports/build.py`, so the downloads include it. If it changes what the front door does, update `ports/core.md` too
 
 ## Writing style for this repository
 
