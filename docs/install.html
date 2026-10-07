@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install gov-communication-skills</title>
+<meta name="description" content="Install gov-communication-skills in Claude, as Claude skills or a Claude plugin, or build it as an agent in Microsoft 365 Copilot.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Same palette and type as index.html. */
+:root{
+  --black:#0b0c0c;--white:#fff;--blue:#1d70b8;--dark-blue:#0f385c;--link:#1a65a6;
+  --green:#0f7a52;--green-shade:#083d29;--yellow:#fd0;--light-yellow:#fff7bf;
+  --light-grey:#f4f8fb;--mid-grey:#cecece;--dark-grey:#484949;--pale-blue:#d2e2f1;--focus:#fd0;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--black);font-family:"GDS Transport","Inter",Arial,sans-serif;font-size:19px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:var(--link)}
+a:hover{color:var(--dark-blue)}
+a:focus{outline:3px solid var(--focus);background:var(--focus);color:var(--black);text-decoration:none}
+[id]{scroll-margin-top:20px}
+.w{max-width:960px;margin:0 auto;padding:0 15px}
+.header{background:var(--blue);color:var(--white)}
+.header .w{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;flex-wrap:wrap}
+.wordmark{font-weight:700;font-size:20px;color:var(--white);text-decoration:none}
+.nav{display:flex;gap:20px;font-size:16px;flex-wrap:wrap}
+.nav a{color:var(--white);text-decoration:none;font-weight:600}
+.nav a:hover{text-decoration:underline;text-decoration-thickness:3px;color:var(--white)}
+.phase{border-bottom:1px solid var(--mid-grey)}
+.phase .w{padding-top:10px;padding-bottom:10px;font-size:16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.phase-tag{background:var(--blue);color:var(--white);font-weight:700;font-size:14px;padding:2px 8px;text-transform:uppercase;letter-spacing:1px}
+main{padding-bottom:20px}
+h1{font-size:44px;line-height:1.1;margin:40px 0 20px;letter-spacing:-.01em}
+h2{font-size:36px;line-height:1.11;margin:0 0 15px;letter-spacing:-.01em}
+h3{font-size:24px;line-height:1.25;margin:36px 0 10px}
+p{margin:0 0 20px}
+ul,ol{margin:0 0 20px;padding-left:34px}
+li{margin-bottom:8px}
+.lede{font-size:22px;line-height:1.4;max-width:40ch}
+section{padding:48px 0 8px;border-top:1px solid var(--mid-grey);margin-top:40px}
+code{font-family:var(--mono);font-size:.85em;background:var(--light-grey);padding:1px 4px}
+pre{font-family:var(--mono);background:var(--black);color:#e8edee;padding:16px 20px;font-size:14px;line-height:1.7;overflow-x:auto;margin:0 0 20px}
+.btn{display:inline-block;background:var(--green);color:var(--white);font-weight:700;font-size:19px;padding:10px 20px;text-decoration:none;box-shadow:0 3px 0 var(--green-shade);margin:0 0 20px}
+.btn:hover{background:#0b5c3e;color:var(--white)}
+.hint{color:var(--dark-grey);font-size:17px;display:block;margin-top:6px}
+.choose{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:30px 0 10px}
+.choose a{display:block;border:1px solid var(--mid-grey);border-top:5px solid var(--blue);padding:16px 18px;text-decoration:none;color:var(--black)}
+.choose a:hover{background:var(--light-grey);color:var(--black)}
+.choose b{display:block;font-size:22px;color:var(--link)}
+.choose span{display:block;font-size:16px;color:var(--dark-grey)}
+.inset{border-left:10px solid var(--pale-blue);padding:10px 0 10px 18px;margin:0 0 20px}
+.inset p:last-child{margin-bottom:0}
+.copy{display:block;font-family:var(--mono);font-size:15px;background:var(--light-grey);border:1px solid var(--mid-grey);padding:10px 14px;margin:6px 0 10px;white-space:pre-wrap}
+details{border-bottom:1px solid var(--mid-grey);padding:12px 0}
+summary{cursor:pointer;color:var(--link);font-weight:600}
+details[open] summary{margin-bottom:10px}
+details p:last-child{margin-bottom:0}
+.footer{background:var(--light-grey);border-top:10px solid var(--blue);margin-top:64px;padding:30px 0 40px;font-size:16px;color:var(--dark-grey)}
+.footer p{margin:0 0 8px}
+@media (max-width:640px){
+  body{font-size:17px}
+  h1{font-size:32px}
+  h2{font-size:28px}
+  .lede{font-size:19px}
+  .choose{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="w">
+    <a class="wordmark" href="index.html">gov-communication-skills</a>
+    <nav class="nav" aria-label="Install options">
+      <a href="#claude-skills">Claude skills</a>
+      <a href="#claude-plugin">Claude plugin</a>
+      <a href="#copilot">Copilot</a>
+      <a href="#questions">Questions</a>
+    </nav>
+  </div>
+</header>
+<div class="phase">
+  <div class="w"><span class="phase-tag">Draft</span><span>Not an official GOV.UK publication, and not legal advice.</span></div>
+</div>
+
+<main class="w">
+  <h1>Install gov-communication-skills</h1>
+  <p class="lede">Choose the AI tool you use. You set it up once, on a computer, and it takes between 2 and 10 minutes.</p>
+
+  <div class="choose">
+    <a href="#claude-skills"><b>Claude skills</b><span>Any Claude plan · 5 min</span></a>
+    <a href="#claude-plugin"><b>Claude plugin</b><span>Paid plans and Claude Code · 2 min</span></a>
+    <a href="#copilot"><b>Microsoft 365 Copilot</b><span>An agent · 10 min</span></a>
+  </div>
+  <p>The skills and the plugin give you the same thing in Claude. The plugin installs in one go and can update itself. Skills work on every plan, including the free plan.</p>
+
+  <!-- CLAUDE SKILLS -->
+  <section id="claude-skills">
+    <h2>Claude skills</h2>
+    <p>Add the 4 skills one at a time. This works on every Claude plan.</p>
+
+    <h3>What you need</h3>
+    <ul>
+      <li>Claude on a computer: in your browser at <a href="https://claude.ai">claude.ai</a>, or the Claude desktop app</li>
+      <li>code execution switched on. Open Settings, then Capabilities. It's on by default for most people. If it's off, the skills install and then appear to do nothing</li>
+    </ul>
+
+    <h3>Download</h3>
+    <p>Download all 4. Leave them zipped: Claude wants each file exactly as it arrives.</p>
+    <ol>
+      <li><a href="https://github.com/strachcity/gov-communication-skills/releases/download/downloads/gov-communication-skills-government-communication.zip">government-communication</a>, the front door</li>
+      <li><a href="https://github.com/strachcity/gov-communication-skills/releases/download/downloads/gov-communication-skills-case-communication-patterns.zip">case-communication-patterns</a></li>
+      <li><a href="https://github.com/strachcity/gov-communication-skills/releases/download/downloads/gov-communication-skills-privacy-aware-communications.zip">privacy-aware-communications</a></li>
+      <li><a href="https://github.com/strachcity/gov-communication-skills/releases/download/downloads/gov-communication-skills-govuk-content.zip">govuk-content</a></li>
+    </ol>
+
+    <h3>Install it</h3>
+    <ol>
+      <li>In Claude, open Customize, then Skills.</li>
+      <li>Select +, then Create skill, and upload one of the zips. Do not unzip it.</li>
+      <li>Check it's switched on, then repeat for the other 3.</li>
+      <li>Start a new chat.</li>
+    </ol>
+    <div class="inset"><p>Add all 4. The front door, government-communication, uses the other 3. If you only want style reviews, govuk-content works on its own.</p></div>
+    <p>Claude may warn that it can't verify skills made by other people. That's correct, and it appears for everything of this kind. Everything the skills contain is readable in the <a href="https://github.com/strachcity/gov-communication-skills/tree/main/skills">skills folder on GitHub</a>.</p>
+
+    <h3>Check it worked</h3>
+    <p>All 4 are listed under Skills and switched on. Nothing appears in your chat window, and nothing is supposed to.</p>
+    <p>Start a new chat and ask for a message for your service, like "draft an email telling someone we've received their application". It should ask about your service, or draft with placeholders and list what still needs a decision. It should not guess your timescales or policy.</p>
+
+    <h3>If it goes wrong</h3>
+    <details><summary>It installed but seems to do nothing</summary>
+      <p>Check code execution is on, in Settings, then Capabilities, and start a new chat. Skills don't load into a chat that was already open.</p></details>
+    <details><summary>I have a folder, not a zip</summary>
+      <p>Safari on a Mac unzips downloads on its own. Claude needs the zip, so put it back: right-click the folder and choose Compress, then upload the new zip. To stop it happening again, open Safari, then Settings, then General, and untick Open "safe" files after downloading.</p></details>
+    <details><summary>The skills have been updated</summary>
+      <p>Skills don't update themselves. Download the new zips, remove the old skills and upload the new ones. The <a href="#claude-plugin">plugin</a> can update itself instead.</p></details>
+  </section>
+
+  <!-- CLAUDE PLUGIN -->
+  <section id="claude-plugin">
+    <h2>Claude plugin</h2>
+    <p>Install all 4 skills as one plugin. You can upload it as a zip, or add it from GitHub so it updates itself.</p>
+
+    <h3>What you need</h3>
+    <ul>
+      <li>Claude on a computer: in your browser at <a href="https://claude.ai">claude.ai</a>, Cowork, or the Claude desktop app. Or Claude Code</li>
+      <li>a paid plan (Pro, Max, Team or Enterprise). On the free plan, use <a href="#claude-skills">Claude skills</a> instead</li>
+      <li>code execution switched on. Open Settings, then Capabilities</li>
+    </ul>
+
+    <h3>Install from the zip</h3>
+    <a class="btn" href="https://github.com/strachcity/gov-communication-skills/releases/download/downloads/gov-communication-skills-plugin.zip">Download the plugin (zip)</a>
+    <p>One zip. Leave it zipped. If you end up with a folder instead, see <a href="#plugin-wrong">If it goes wrong</a>.</p>
+    <ol>
+      <li>In Claude, open Customize, then Plugins.</li>
+      <li>Select Add, then Upload local plugin.</li>
+      <li>Drag the zip in, or browse to it, and select Upload.</li>
+      <li>Wait for the security scan to finish, then switch it on.</li>
+      <li>Start a new chat.</li>
+    </ol>
+
+    <h3>Or add it from GitHub, so it updates itself</h3>
+    <p>A zip install stays at the version you downloaded. To get updates automatically, add this repository as a marketplace instead:</p>
+    <ol>
+      <li>In Customize, then Plugins, select Add, then Add marketplace.</li>
+      <li>Paste this and select Sync:<span class="copy">strachcity/gov-communication-skills</span></li>
+      <li>Select Install next to "GOV.UK communication skills", then start a new chat.</li>
+    </ol>
+    <p>A plugin added on claude.ai is also available in Claude Code when you sign in with the same account.</p>
+
+    <h3>In Claude Code</h3>
+    <pre>/plugin marketplace add strachcity/gov-communication-skills
+/plugin install gov-communication-skills@gov-communication-skills</pre>
+
+    <h3>Check it worked</h3>
+    <p>"GOV.UK communication skills" is listed under Personal plugins and switched on. Start a new chat and ask for a message for your service. It should ask about your service, or draft with placeholders and list what still needs a decision.</p>
+
+    <h3 id="plugin-wrong">If it goes wrong</h3>
+    <details><summary>It installed but seems to do nothing</summary>
+      <p>Check code execution is on, in Settings, then Capabilities, and start a new chat. Plugins don't load into a chat that was already open.</p></details>
+    <details><summary>The marketplace install fails with "Failed to fetch content: 403"</summary>
+      <p>If this happens in the desktop app, try Claude in a browser first. If the browser fails too, upload the zip instead. It installs the same plugin by a different route.</p></details>
+    <details><summary>I have a folder, not a zip</summary>
+      <p>Safari on a Mac unzips downloads on its own. Claude needs the zip, so put it back: right-click the folder and choose Compress, then upload the new zip.</p></details>
+    <details><summary>There's no Upload local plugin option</summary>
+      <p>That option needs a paid plan, or your organisation may have switched it off. Use <a href="#claude-skills">Claude skills</a> instead: it works on every plan.</p></details>
+  </section>
+
+  <!-- COPILOT -->
+  <section id="copilot">
+    <h2>Microsoft 365 Copilot</h2>
+    <p>This builds the skills as an agent in Copilot Chat. It runs on Microsoft's models with the same written rules as the Claude version. Expect it to drift from them more, especially over a long conversation. It hasn't been tested in Copilot yet.</p>
+
+    <h3>What you need</h3>
+    <ul>
+      <li>a work Microsoft account with Copilot Chat</li>
+      <li>permission to create agents. Open Copilot Chat and look for Create agent, sometimes New agent, in the left-hand panel. If it isn't there, your organisation has switched agent creation off. Ask your IT service</li>
+      <li>no admin rights</li>
+    </ul>
+    <p>Depending on your account, you add the detailed guidance as skills, as knowledge files, or not at all. The agent works in every case, with less depth the less it has.</p>
+
+    <h3>Download</h3>
+    <a class="btn" href="https://github.com/strachcity/gov-communication-skills/releases/download/downloads/gov-communication-skills-copilot.zip">Download for Copilot (zip)</a>
+    <p>Unzip it first, unlike the Claude version. On Windows, right-click the zip and choose Extract All: opening it with a double-click isn't enough, because Copilot can't upload files from inside a zip. On a Mac, double-click it. You get a folder with the files numbered in the order you use them. Inside it, leave the 4 skill zips zipped.</p>
+
+    <h3>Build the agent</h3>
+    <ol>
+      <li>Open Copilot Chat and select Create agent.</li>
+      <li>If Copilot opens a chat asking you to describe your agent, select Skip. If you see tabs instead, choose Configure, not Describe. The chat would write its own version of the agent and replace what you paste in.</li>
+      <li>In Name, paste:<span class="copy">GOV.UK communications</span></li>
+      <li>In Description, paste:<span class="copy">Drafts and reviews UK government customer communications using generic case patterns, GOV.UK style and privacy checks. Uses your service's facts and flags anything not decided.</span></li>
+      <li>Instructions: open "1 Paste into Instructions.txt", select everything, and copy and paste it into the box. Scroll to the end to check it pasted whole. The last words should be "Open Government Licence v3.0." If they're not, clear the box and paste again.</li>
+      <li>Skills: upload each of the 4 zip files in "2 Upload these 4 skills", one at a time. Don't unzip or rename them. If there's no Skills section, upload the 4 files in "3 No Skills option - upload these as knowledge instead" under Knowledge instead. If there's no upload option there either, skip this step.</li>
+      <li>Web search: switch it off. The skills must never treat a service's published content as its policy, and the Claude version doesn't search unless asked.</li>
+      <li>Other settings: switch off Create images and Discourage model knowledge. Discourage model knowledge would limit the agent to the files you added, which hold the guidance but not the plain English it needs to write with.</li>
+      <li>Starter prompts: add these, title then message.
+        <span class="copy">Set up my service
+Help me set up a service context for my service, so you can draft messages for it.</span>
+        <span class="copy">Draft a message
+Draft an email and a text message telling someone we've received their application.</span>
+        <span class="copy">Review a message
+Review this email against GOV.UK style, and tell me what it reveals about the person.</span>
+        <span class="copy">Plan a case journey
+Help me plan the messages someone gets from applying to getting a decision.</span></li>
+      <li>Select Create.</li>
+    </ol>
+
+    <h3>Check it worked</h3>
+    <p>Open the agent and try a starter prompt. It should ask about your service, or draft with placeholders and list what still needs a decision. It should not guess your timescales or policy.</p>
+    <p>To share it, use Share to send a link to people in your organisation, if your organisation allows it. People outside it need to follow these steps themselves.</p>
+
+    <h3>If it goes wrong</h3>
+    <details><summary>There's no Create agent button</summary>
+      <p>Your organisation has switched agent creation off. Only your IT service can change that.</p></details>
+    <details><summary>The instructions were cut short</summary>
+      <p>Clear the box and paste again, then check the last words are "Open Government Licence v3.0." The full text fits inside Copilot's 8,000-character limit.</p></details>
+    <details><summary>There's no Skills section, or no Upload files option under Knowledge</summary>
+      <p>What you can add depends on your account and your organisation's settings. Skills are a newer Copilot feature that not every organisation has switched on, and uploading knowledge files may need a paid Copilot licence. Use whichever you have. If you have neither, skip the step: the instructions carry the core rules and the agent works from them alone.</p>
+      <p>Linking to the files on GitHub doesn't work instead. Copilot searches linked sites rather than reading whole files.</p></details>
+    <details><summary>The upload can't find the files, or won't take them</summary>
+      <p>You're probably looking inside the zip without having unzipped it. Close the upload window, unzip the download as described above, and upload from the folder that appears. For skills, upload each zip file itself, not a folder.</p></details>
+    <details><summary>It ignores the detailed guidance</summary>
+      <p>The core rules are in the instructions and always apply. The patterns and style guidance are in the skills or knowledge files. Naming the job usually helps, like "use the case communication patterns to draft this".</p></details>
+    <details><summary>The skills have been updated</summary>
+      <p>Updates aren't automatic. Download the new zip, paste the new instructions and replace the skills or knowledge files.</p></details>
+  </section>
+
+  <!-- QUESTIONS -->
+  <section id="questions">
+    <h2>Questions</h2>
+    <details><summary>Is it free?</summary>
+      <p>Yes. You need access to the AI tool you install it in.</p></details>
+    <details><summary>Can I share it or change it?</summary>
+      <p>Yes. It's licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>. You can use, share and adapt it, as long as you credit it. Every file in the Copilot download carries a credit line. Keep it in anything you share.</p></details>
+    <details><summary>Will my organisation allow it?</summary>
+      <p>None of the routes needs admin rights, but each depends on a setting your organisation controls. Some organisations limit Claude plugins, and Copilot needs agent creation switched on.</p></details>
+    <details><summary>Does anything I paste get sent to you?</summary>
+      <p>No. The skills are written instructions with no code in them. There's no server and no account, so nothing you paste is sent to us or stored by us.</p>
+      <p>Your conversations are handled by the company behind the tool you use, under your plan or your organisation's agreement. Your organisation's rules on personal data still apply. Check what your organisation allows before you paste in real case details.</p></details>
+    <details><summary>Does it know my service's rules?</summary>
+      <p>No. It works for any government service and holds no service's rules. You tell it about your service, and it helps you write a service context to keep in your own files. Anything your service hasn't decided is listed for a person to decide.</p></details>
+    <details><summary>How do I update or remove it?</summary>
+      <p>A Claude plugin added from GitHub updates itself. Everything else stays at the version you installed: to update, repeat the steps with the new download. To remove it, switch it off or delete it where you added it.</p></details>
+
+    <h3>Tell us when it goes wrong</h3>
+    <p>Say which tool you used, and for Copilot whether you added skills, knowledge files or neither. Remove anything identifying first, then <a href="https://github.com/strachcity/gov-communication-skills/issues/new">open an issue on GitHub</a>.</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="w">
+    <p><a href="index.html">About gov-communication-skills</a> · <a href="https://github.com/strachcity/gov-communication-skills">github.com/strachcity/gov-communication-skills</a></p>
+    <p>Licensed under the Open Government Licence v3.0. Not an official GOV.UK publication, and not legal advice.</p>
+  </div>
+</footer>
+</body>
+</html>

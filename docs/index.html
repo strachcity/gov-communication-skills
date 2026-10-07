@@ -194,6 +194,10 @@ code{font-family:var(--mono);font-size:.85em}
 .term .chrome{background:#2c3a44;color:#8ba0af;font-size:13px;padding:7px 16px}
 .term pre{margin:0;background:var(--black);color:#e8edee;padding:16px 20px;font-size:14px;line-height:1.7;overflow-x:auto}
 .term .pr{color:#41b6e6;user-select:none}
+.installs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:24px 0}
+.installs .opt{border:1px solid var(--mid-grey);border-top:5px solid var(--blue);padding:16px 18px 0;display:flex;flex-direction:column}
+.installs .opt p:last-child{margin-top:auto}
+.installs .btn{font-size:17px}
 
 /* footer */
 .footer{background:var(--light-grey);border-top:10px solid var(--blue);margin-top:64px;padding:30px 0 40px;font-size:16px;color:var(--dark-grey)}
@@ -220,6 +224,7 @@ code{font-family:var(--mono);font-size:.85em}
   .three .col{padding:16px 0 0!important;border-left:0!important}
   .three .col+.col{border-top:1px solid var(--mid-grey);margin-top:16px}
   .steps{grid-template-columns:1fr}
+  .installs{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -232,7 +237,7 @@ code{font-family:var(--mono);font-size:.85em}
       <a href="#library">Patterns</a>
       <a href="#example">Example</a>
       <a href="#assurance">Assurance</a>
-      <a href="#install">Install</a>
+      <a href="install.html">Install</a>
     </nav>
   </div>
 </header>
@@ -246,7 +251,7 @@ code{font-family:var(--mono);font-size:.85em}
     <h1>Government services repeatedly write the same kinds of case communication.</h1>
     <p class="lede">We can design those patterns once, then adapt them using each service's facts and confirmed decisions.</p>
     <div class="ctas">
-      <a class="btn" href="#install">Install the plugin</a>
+      <a class="btn" href="install.html">Download or install</a>
       <a class="alt" href="#example">See one pattern adapted</a>
     </div>
   </div>
@@ -490,8 +495,26 @@ code{font-family:var(--mono);font-size:.85em}
   <!-- INSTALL -->
   <section id="install">
     <p class="tag">Get started</p>
-    <h2>Install the plugin</h2>
-    <p>In claude.ai, Cowork or the Claude desktop app, go to Customize, then Plugins, and add the marketplace <code>strachcity/gov-communication-skills</code>. In Claude Code, run:</p>
+    <h2>Install it</h2>
+    <p>Choose the AI tool you use. Each option has its own steps on the <a href="install.html">install page</a>.</p>
+    <div class="installs">
+      <div class="opt">
+        <h3>Claude skills</h3>
+        <p>Any Claude plan, including free. Upload the 4 skills one at a time under Customize, then Skills.</p>
+        <p><a class="btn" href="install.html#claude-skills">Get the skills</a></p>
+      </div>
+      <div class="opt">
+        <h3>Claude plugin</h3>
+        <p>Paid plans and Claude Code. All 4 skills in one zip, or added from GitHub so it updates itself.</p>
+        <p><a class="btn" href="install.html#claude-plugin">Get the plugin</a></p>
+      </div>
+      <div class="opt">
+        <h3>Microsoft 365 Copilot</h3>
+        <p>Builds the skills as an agent in Copilot Chat. Needs permission to create agents.</p>
+        <p><a class="btn" href="install.html#copilot">Get the Copilot version</a></p>
+      </div>
+    </div>
+    <p>In Claude Code, run:</p>
     <div class="term">
       <div class="chrome">Claude Code</div>
 <pre><span class="pr">&gt; </span>/plugin marketplace add strachcity/gov-communication-skills
