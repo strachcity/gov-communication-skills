@@ -206,12 +206,3 @@ It takes about [how long]. It's optional, and it will not affect your [case]: [s
 
 - no published source we've found says whether a public sector feedback request is a service message
 - no published source shows how services word a feedback invitation
-
-### Adapted for invented services
-
-Interpretation, from adapting this follow-up for a permit, a benefit and a registration service on 6 October 2026:
-
-- "it will not affect your [case]" was weak after a decision, and didn't cover the customer's real worry in one service, a later rating by another organisation. The baseline now says "or any decision about it", with [what it won't affect]
-- the text with a supplier's web address was 185 characters. The baseline is shorter, and the survey domain stays a flagged conflict
-- asking after a decision and after delivery overlapped when both happened together
-- one service's text rules only allowed a pointer to a letter, so feedback could only go by post

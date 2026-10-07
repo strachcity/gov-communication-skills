@@ -4,7 +4,7 @@ Moment 8 in `../moments.md`. Draft, last revised 6 October 2026.
 
 Lines starting with ">" are quotes. Lines starting with "Interpretation:" are ours. "How to use the baseline copy" in `../moments.md` explains the 2 kinds of placeholder.
 
-This was moment 9, "What happens after the decision". It has been narrowed to what's issued, sent or made available after a decision. Actions after a decision use "We need something from you" or "You need to act before a date".
+It covers what's issued, sent or made available after a decision. Actions after a decision use "We need something from you" or "You need to act before a date".
 
 ## Purpose
 
@@ -214,11 +214,3 @@ If it has not arrived by then
 
 - no published source shows what services tell customers to do if something doesn't arrive
 - no published source covers collection or download
-
-### Adapted for invented services
-
-Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026:
-
-- 2 services sent the document by email on the day of the decision. "Should arrive by" didn't fit, and the attachment conflict wasn't raised. Variant E and the attachment checkpoint were added, with a pointer to combining with the decision
-- "This is the last message" was wrong where a renewal reminder follows
-- one service had a standing duty to report changes. An optional "If anything changes" section was added

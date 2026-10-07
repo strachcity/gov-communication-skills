@@ -86,7 +86,7 @@ The start of a case. Use the baseline copy below.
 
 ### B. Received something we asked for
 
-The customer has sent something the service asked for during the case. This was moment 6 (see "Changes to the moments" in `../moments.md`).
+The customer has sent something the service asked for during the case.
 
 Change the baseline:
 
@@ -106,7 +106,7 @@ Every customer needs to do something next, like send a document or book an appoi
 
 ### E. We've recorded what you told us
 
-The customer gave information in a conversation, like a phone call, and the service confirms what it recorded. This was moment 12 (see "Changes to the moments" in `../moments.md`).
+The customer gave information in a conversation, like a phone call, and the service confirms what it recorded.
 
 Change the baseline:
 
@@ -291,22 +291,3 @@ Keep personal information out of the page title, the main heading and the web ad
 ### Evidence gaps
 
 - variant E, a record of a conversation, has no published evidence. No published source we've found shows a service confirming in writing what a customer said on a call
-
-### Tested against the evidence
-
-Interpretation, from adapting this pattern back to each source:
-
-- a very short text with a reference and a tracking route meets the core need, so what happens next is optional in a text
-- a published service gives the reference in its own notification. The pattern allows this
-- the date received matters most to customers who posted something. It's optional rather than core
-- the date can also matter legally, which added the "legal significance" checkpoint
-
-### Adapted for invented services
-
-Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026:
-
-- a case word that is also the outcome, like "registration", made "We've received your registration" read as "you're registered". [what we received] now warns against this
-- every business in one service had a standard next step, so "You do not need to do anything now" was false. Variant D was added
-- a decision timescale applied only once an application was checked as complete. [timescale condition] was added
-- a service that only lets texts point to a letter had no text to start from. The pointer text was added
-- a reference prefix could reveal the service on a lock screen. The reference checkpoint now covers the format

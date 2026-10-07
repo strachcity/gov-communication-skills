@@ -6,6 +6,20 @@ It works for any government service. The same plugin is used by every service, w
 
 Nothing here is legal advice, and nothing here is an official GOV.UK publication.
 
+## What it does
+
+Government services repeatedly write the same kinds of case communication. The plugin holds generic patterns for them, and adapts each one using your service's facts.
+
+```mermaid
+flowchart LR
+    P["Reusable patterns<br/>one for each shared moment"] --> R
+    S["Service facts<br/>from your service context"] --> R
+    G["Guardrails<br/>GOV.UK content and privacy checks"] --> R
+    R["Ready-to-review communications<br/>a draft for each channel, plus open decisions"]
+```
+
+It doesn't invent your policy. Anything your service hasn't decided is listed for a person to decide.
+
 ## Install
 
 This repository is a plugin marketplace.
@@ -59,7 +73,7 @@ There's no folder for any named service. Each directory has a README that sets o
 | Skill | What it does | Status |
 |---|---|---|
 | `government-communication` | the front door. Helps you create a service context, then uses the other skills to draft or review a whole communication | draft, evals run once, see `evals/results.md` |
-| `case-communication-patterns` | the 9 moments every case-based service shares, a substantially written pattern for each, a feedback follow-up, and how to recognise and adapt them | draft. Every pattern adapted for 3 invented services, evals run once, see `evals/results.md` |
+| `case-communication-patterns` | the 9 moments case-based services share, a substantially written pattern for each, a feedback follow-up, and how to recognise and adapt them | draft. Every pattern adapted for 3 invented services, evals run once, see `evals/results.md` |
 | `privacy-aware-communications` | lists what a message reveals in each channel, applies confirmed decisions, flags the rest, and drafts the communications part of a DPIA | tested, see `evals/results.md` |
 | `govuk-content` | drafts and reviews content against GOV.UK guidance, and flags privacy and policy questions without answering them | tested, see `evals/results.md` |
 

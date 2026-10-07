@@ -250,14 +250,3 @@ The call times and number of attempts are one service's policy. They're evidence
 
 - no published source shows a text or email sent after a missed call
 - the evidence for variant C comes from one published service only
-
-### Adapted for invented services
-
-Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026:
-
-- one service's name would reveal a sensitive subject on a voicemail. [caller name] was added, with the trade-off flagged in `../moments.md`
-- one service hadn't decided whether it tries again. The pattern now says not to choose between A and B
-- the email assumed a deadline. It's now optional
-- one service only had a general helpline. [how to get in touch] now covers that
-- one service had only email and a status page, so variant C had no other channel. The pattern now says to flag this
-- for a business, a bounced email often meant the named contact had left
