@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>gov-communication-skills</title>
+<title>gov-communication-skills demo</title>
 <meta name="description" content="Agent skills for drafting and reviewing UK government case communications, for Claude and Microsoft 365 Copilot. Beta.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
@@ -54,51 +54,6 @@ section{padding:48px 0 8px;margin-top:40px;border-top:1px solid var(--mid-grey)}
 .gtag--green{color:#083d29;background:#cfe4dc}
 .gtag--yellow{color:#7a3c1c;background:#ffee80}
 
-/* how it works */
-.how{margin:24px 0 0;padding-left:28px;max-width:44em}
-.how li{margin-bottom:10px;padding-left:4px}
-
-/* moments */
-.journey{margin-top:24px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:3px}
-.stage{background:var(--light-grey);padding:14px 12px 16px;position:relative}
-.stage-name{font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin:0 0 10px}
-.stage:not(:last-child)::after{content:"\25B6";position:absolute;right:-9px;top:14px;font-size:12px;color:var(--blue);z-index:1}
-.m{background:var(--white);border-left:4px solid var(--black);padding:8px 10px;margin-bottom:8px;font-weight:700;font-size:16px;line-height:1.3}
-.m .n{display:block;font-size:13px;font-weight:600;color:var(--dark-grey)}
-.v{font-size:14px;color:var(--dark-grey);margin:-2px 0 8px 14px;line-height:1.35}
-.v div::before{content:"\2514\00a0";color:var(--mid-grey)}
-
-/* example */
-.three{margin-top:24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr) minmax(0,1.2fr);border-top:2px solid var(--black)}
-.col{padding:16px 18px 0}
-.col:first-child{padding-left:0}
-.col:last-child{padding-right:0}
-.col+.col{border-left:1px solid var(--mid-grey)}
-.col-h{font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px}
-.col-h small{display:block;font-weight:400;text-transform:none;letter-spacing:0;color:var(--dark-grey);font-size:15px}
-.copy{font-size:18px;line-height:1.45}
-.copy p{margin:0 0 12px}
-.ph{background:var(--pale-blue);color:var(--dark-blue);padding:0 3px;font-weight:600}
-.kv{margin:0;font-size:16px}
-.kv div{border-bottom:1px solid var(--mid-grey);padding:8px 0}
-.kv dt{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-grey)}
-.kv dd{margin:2px 0 4px;font-weight:700;overflow-wrap:anywhere}
-.kv .gtag{font-size:14px;white-space:normal}
-.msg{border:1px solid var(--mid-grey);padding:12px 14px;margin-bottom:12px;font-size:16px;line-height:1.45}
-.msg .ch{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--green);margin-bottom:6px}
-.msg p{margin:0 0 8px}
-.msg p:last-child{margin:0}
-.sms{background:#e9e9eb;border-radius:16px;border:0}
-.result{margin-top:28px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px;align-items:start}
-.ticks{list-style:none;margin:0;padding:0;border-top:1px solid var(--mid-grey)}
-.ticks li{padding:10px 0 10px 34px;border-bottom:1px solid var(--mid-grey);position:relative;font-weight:700}
-.ticks li::before{content:"\2713";position:absolute;left:4px;top:8px;color:var(--green);font-size:20px}
-.ticks small{display:block;font-weight:400;font-size:16px;color:var(--dark-grey)}
-.q{background:var(--light-yellow);border:4px solid var(--yellow);padding:16px 20px}
-.q .qh{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
-.q .qq{font-size:22px;font-weight:700;line-height:1.25;margin:0 0 10px}
-.q p{font-size:16px;margin:0 0 6px}
-
 /* tables */
 .table-wrap{overflow-x:auto;margin-top:24px}
 table{border-collapse:collapse;width:100%;min-width:600px;font-size:17px}
@@ -108,6 +63,18 @@ th,td{text-align:left;vertical-align:top;padding:10px 15px 10px 0;border-bottom:
 thead th{border-bottom:2px solid var(--black);font-size:16px}
 td .s{display:block;font-size:14px;color:var(--dark-grey);margin-top:4px}
 td code{font-weight:700;font-size:15px}
+
+/* architecture */
+h3{font-size:24px;line-height:1.25;margin:32px 0 10px}
+ul,ol{margin:0 0 20px;padding-left:28px;max-width:44em}
+li{margin-bottom:6px}
+.prose{max-width:44em}
+.diagram{margin:24px 0 28px;padding:20px;background:var(--light-grey);overflow-x:auto;text-align:center}
+.diagram svg{max-height:760px;height:auto}
+.diagram pre.mermaid{margin:0;font-family:inherit;background:none;color:var(--black)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px}
+.cols h3{margin-top:0}
+.interp{border-left:10px solid var(--pale-blue);padding:8px 0 8px 18px;max-width:44em}
 
 /* install */
 .installs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:24px 0}
@@ -124,23 +91,13 @@ td code{font-weight:700;font-size:15px}
 .footer{background:var(--light-grey);border-top:10px solid var(--blue);margin-top:64px;padding:30px 0 40px;font-size:16px;color:var(--dark-grey)}
 .footer p{margin:0 0 8px}
 
-@media (max-width:900px){
-  .journey{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .stage:nth-child(3)::after{display:none}
-  .three{grid-template-columns:1fr 1fr}
-  .three .col:last-child{grid-column:1/-1;border-left:0;padding-left:0;border-top:1px solid var(--mid-grey);margin-top:16px}
-}
 @media (max-width:640px){
   body{font-size:17px}
   h1{font-size:32px}
   h2{font-size:26px}
   .lede{font-size:19px}
-  .result,.installs{grid-template-columns:1fr}
-  .journey{grid-template-columns:1fr 1fr}
-  .stage::after{display:none!important}
-  .three{grid-template-columns:1fr}
-  .three .col{padding:16px 0 0!important;border-left:0!important}
-  .three .col+.col{border-top:1px solid var(--mid-grey);margin-top:16px}
+  .cols,.installs{grid-template-columns:1fr}
+  .diagram{padding:12px}
 }
 </style>
 </head>
@@ -150,9 +107,10 @@ td code{font-weight:700;font-size:15px}
   <div class="w">
     <a class="wordmark" href="#top">gov-communication-skills</a>
     <nav class="nav" aria-label="Sections">
-      <a href="#how">How it works</a>
-      <a href="#example">Example</a>
-      <a href="#skills">Skills</a>
+      <a href="#idea">The idea</a>
+      <a href="#service-context">Service context</a>
+      <a href="#patterns">Patterns</a>
+      <a href="#privacy">Privacy</a>
       <a href="install.html">Install</a>
       <a href="https://github.com/strachcity/gov-communication-skills">GitHub</a>
     </nav>
@@ -167,134 +125,345 @@ td code{font-weight:700;font-size:15px}
   <p class="lede">Agent skills for Claude and Microsoft 365 Copilot. They adapt generic message patterns using your service's facts, check GOV.UK style and privacy, and list anything your service still needs to decide.</p>
   <div class="ctas">
     <a class="btn" href="install.html">Install</a>
-    <a href="#example">See an example</a>
+    <a href="#how">How it works</a>
   </div>
 
+  <section id="idea">
+    <h2>The idea</h2>
+    <div class="prose">
+      <p>Every government service that handles a customer's case has the same communication moments. Something is received, work starts, the service waits on someone, it needs something from the customer, it plans a call, it makes a decision.</p>
+      <p>If those moments are written well once, as generic patterns, a service only has to supply its facts: its words, timescales, channels and decisions. The plugin adapts the pattern and checks the result.</p>
+    </div>
+  </section>
+
+  <section id="any-service">
+    <h2>One plugin for any service</h2>
+    <p class="prose">This repository is service-agnostic. The same installed plugin works for any government service, without changes and without a bespoke skill.</p>
+    <div class="cols">
+      <div>
+        <h3>The plugin contains</h3>
+        <ul>
+          <li>reusable, substantially written case communication patterns</li>
+          <li>the reasoning for recognising which pattern fits, and adapting it</li>
+          <li>GOV.UK content guidance</li>
+          <li>privacy-aware communication guidance</li>
+          <li>a front-door skill that combines these</li>
+        </ul>
+      </div>
+      <div>
+        <h3>The plugin does not contain</h3>
+        <ul>
+          <li>any named service's facts, policy, wording or decisions</li>
+          <li>skills, folders or packs for named services</li>
+          <li>pattern names or examples taken from a named service</li>
+        </ul>
+      </div>
+    </div>
+    <p class="prose">Service facts come from a service context. The user supplies it at the point of use, or keeps it in their own project. It never becomes part of the plugin.</p>
+  </section>
+
   <section id="how">
-    <h2>How it works</h2>
-    <ol class="how">
-      <li>Tell it about your service, or point it to your service's documentation.</li>
-      <li>It creates a service context with you, or reads the one you already have. You keep it in your own files.</li>
-      <li>It finds the pattern that fits your request and adapts it with your service's confirmed facts.</li>
-      <li>It checks what each version reveals in each channel, and applies GOV.UK content guidance.</li>
-      <li>It returns a draft for each channel and a list of what still needs a decision from your service.</li>
+    <h2>What using it looks like</h2>
+    <ol>
+      <li>Install the plugin.</li>
+      <li>Tell it about the service, or point it to existing service documentation.</li>
+      <li>The plugin creates the service context, or reads an existing one.</li>
+      <li>It identifies the generic case communication pattern that fits.</li>
+      <li>It adapts the pattern using the service's facts, and only its confirmed decisions.</li>
+      <li>It runs privacy and policy checks.</li>
+      <li>It applies GOV.UK content guidance.</li>
+      <li>It returns a strong first draft, and lists anything that still needs a service decision.</li>
     </ol>
-    <p>It doesn't invent your policy. Anything your service hasn't decided, like a timescale or what a message can disclose, is flagged for a person to decide.</p>
+<figure class="diagram" aria-label="How a request becomes a first draft"><pre class="mermaid">
+flowchart TB
+    U[&quot;User: a request, plus the service&lt;br/&gt;or its documentation&quot;] --&gt; C{&quot;Is there a&lt;br/&gt;service context?&quot;}
+    C -- &quot;no&quot; --&gt; B[&quot;Build one with the user:&lt;br/&gt;ask questions, read their documents,&lt;br/&gt;mark what is not confirmed&quot;]
+    C -- &quot;yes&quot; --&gt; R[&quot;Read the service context&quot;]
+    B --&gt; R
+    R --&gt; P[&quot;Identify the pattern&lt;br/&gt;case-communication-patterns&quot;]
+    P --&gt; A[&quot;Adapt the pattern&lt;br/&gt;with confirmed service facts&quot;]
+    A --&gt; V[&quot;Privacy and policy checks&lt;br/&gt;privacy-aware-communications&quot;]
+    V --&gt; W[&quot;Apply GOV.UK content guidance&lt;br/&gt;govuk-content&quot;]
+    W --&gt; O[&quot;First draft for each channel,&lt;br/&gt;plus what still needs a service decision&quot;]
+</pre></figure>
   </section>
 
-  <section id="moments">
-    <h2>The 9 moments</h2>
-    <p>Each moment has a pattern, with baseline copy for email, text message, letter and status page. Not every service uses every moment, and some happen more than once.</p>
-    <div class="journey">
-      <div class="stage"><p class="stage-name">Submit</p>
-        <div class="m"><span class="n">1</span>We've received it</div>
-        <div class="v"><div>received what you sent</div><div>a record of a conversation</div></div>
-      </div>
-      <div class="stage"><p class="stage-name">Progress</p>
-        <div class="m"><span class="n">2</span>Your case has moved on</div>
-        <div class="m"><span class="n">3</span>We're waiting on someone else</div>
-        <div class="v"><div>still waiting</div><div>the wait has ended</div></div>
-      </div>
-      <div class="stage"><p class="stage-name">Action</p>
-        <div class="m"><span class="n">5</span>We need something from you</div>
-        <div class="v"><div>a replacement is needed</div></div>
-      </div>
-      <div class="stage"><p class="stage-name">Contact</p>
-        <div class="m"><span class="n">4</span>We'll contact you</div>
-        <div class="m"><span class="n">6</span>We couldn't reach you</div>
-      </div>
-      <div class="stage"><p class="stage-name">Decision</p>
-        <div class="m"><span class="n">7</span>We've made a decision</div>
-        <div class="v"><div>closed without a decision</div></div>
-        <div class="m"><span class="n">8</span>What you applied for is on its way</div>
-      </div>
-      <div class="stage"><p class="stage-name">Later</p>
-        <div class="m"><span class="n">9</span>You need to act before a date</div>
-      </div>
-    </div>
-    <p class="small" style="margin-top:16px">Reminder, final reminder and delay change how a moment is said. Asking for feedback can follow a moment, and never implies it affects the case.</p>
-  </section>
+  <section id="layers">
+    <h2>Layers</h2>
+    <p class="prose">Knowledge only flows one way. The service context is read by the plugin, and nothing in it flows back into the generic skills.</p>
+<figure class="diagram" aria-label="Public sources feed the plugin, and the service context is read by the front door"><pre class="mermaid">
+flowchart TB
+    subgraph sources[&quot;Public sources&quot;]
+        S1[&quot;GOV.UK publishing guidance&quot;]
+        S2[&quot;Service Manual&quot;]
+        S3[&quot;GOV.UK Notify&quot;]
+        S4[&quot;UK GDPR, ICO and departments&#x27;&lt;br/&gt;published guidance&quot;]
+        S5[&quot;Patterns seen across services,&lt;br/&gt;recorded as evidence&quot;]
+    end
 
-  <section id="example">
-    <h2>Example</h2>
-    <p>"We're waiting on someone else", adapted for an invented permit service.</p>
-    <div class="three">
-      <div class="col">
-        <p class="col-h">Generic pattern<small>The same for every service</small></p>
-        <div class="copy">
-          <p>We're waiting for information we need from <span class="ph">[who we've asked]</span> before we can continue with your <span class="ph">[case]</span>.</p>
-          <p>You do not need to do anything now.</p>
-          <p>We'll update you by <span class="ph">((update date))</span>.</p>
-        </div>
-      </div>
-      <div class="col">
-        <p class="col-h">Service context<small>Invented</small></p>
-        <dl class="kv">
-          <div><dt>Case</dt><dd>permit application</dd></div>
-          <div><dt>Third party in texts</dt><dd>not described</dd><span class="gtag gtag--green">Confirmed decision</span></div>
-          <div><dt>Third party in email</dt><dd>"the local council"</dd><span class="gtag gtag--yellow">Not confirmed</span></div>
-          <div><dt>Next update</dt><dd>18 October 2026</dd><span class="gtag gtag--green">From a confirmed commitment</span></div>
-          <div><dt>Tracking</dt><dd>gov.uk/check-market-stall-permit</dd></div>
-        </dl>
-      </div>
-      <div class="col">
-        <p class="col-h">Communications<small>One version for each channel</small></p>
-        <div class="msg sms"><div class="ch">Text message</div><p>Your permit application is waiting for information from someone else. You do not need to do anything. We'll update you by 18 October 2026.</p></div>
-        <div class="msg"><div class="ch">Email</div>
-          <p>Dear Alex Morgan</p>
-          <p>We're waiting for information we need from someone else before we can continue with your permit application.</p>
-          <p>You do not need to do anything now.</p>
-          <p><b>What happens next</b><br>We'll update you by 18 October 2026, or sooner if we get what we need.</p>
-        </div>
-      </div>
-    </div>
+    subgraph plugin[&quot;The plugin, true for any service&quot;]
+        G1[&quot;govuk-content&lt;br/&gt;how to write it&quot;]
+        G2[&quot;case-communication-patterns&lt;br/&gt;what to say and when&quot;]
+        G3[&quot;privacy-aware-communications&lt;br/&gt;what it can reveal, and where&quot;]
+        O[&quot;government-communication&lt;br/&gt;the front door&quot;]
+    end
 
-    <div class="result">
-      <ul class="ticks">
-        <li>No invented timescale<small>The update date comes from a confirmed commitment, not a guess at when the third party replies</small></li>
-        <li>No unapproved disclosure<small>Neither version describes the third party. The text follows a confirmed decision</small></li>
-        <li>GOV.UK content guidance applied<small>What happens next and when, and "You do not need to do anything now"</small></li>
-      </ul>
-      <div class="q">
-        <div class="qh">Needs a service decision</div>
-        <p class="qq">Can the email say we're waiting on "the local council"?</p>
-        <p>It's recorded as a hypothesis, not a decision. The data protection officer decides. Until then, the email says "someone else".</p>
-      </div>
-    </div>
-  </section>
+    subgraph user[&quot;The user&#x27;s own project, not in this repository&quot;]
+        SC[&quot;Service context&lt;br/&gt;facts, decisions, constraints&quot;]
+    end
 
-  <section id="reveals">
-    <h2>What each message reveals</h2>
-    <p>For a set of messages, the privacy skill lists what each one reveals in each channel. Reviewers check the flagged rows, and their answers go into the service context as confirmed decisions.</p>
-    <div class="table-wrap">
-      <table>
-        <caption>Disclosure inventory<span>Illustrative, for the invented permit service</span></caption>
-        <thead><tr><th>Moment</th><th>Channel</th><th>What it reveals</th><th>Status</th></tr></thead>
-        <tbody>
-          <tr><td>We've received it</td><td>Text message</td><td>that the person has an application</td><td><span class="gtag">Needs confirmation</span><span class="s">risk heuristic applied</span></td></tr>
-          <tr><td>We're waiting on someone else</td><td>Text message</td><td>that the application is waiting. No third party</td><td><span class="gtag gtag--green">Confirmed</span><span class="s">data protection officer</span></td></tr>
-          <tr><td>We're waiting on someone else</td><td>Email</td><td>that the local council is involved, if it's named</td><td><span class="gtag gtag--yellow">Open question</span><span class="s">can email name the council?</span></td></tr>
-          <tr><td>We couldn't reach you</td><td>Voicemail</td><td>the caller's name. No reference or reason for the call</td><td><span class="gtag gtag--yellow">Open question</span><span class="s">can the caller give their first name?</span></td></tr>
-          <tr><td>We've made a decision</td><td>Email subject</td><td>that a decision exists. The outcome stays out of the preview</td><td><span class="gtag">Needs confirmation</span><span class="s">interpretation in the pattern</span></td></tr>
-        </tbody>
-      </table>
-    </div>
+    S1 --&gt; G1
+    S2 --&gt; G1
+    S3 --&gt; G1
+    S2 --&gt; G2
+    S5 -.-&gt;|&quot;by recorded decision only&quot;| G2
+    S4 --&gt; G3
+    G1 --&gt; O
+    G2 --&gt; O
+    G3 --&gt; O
+    SC --&gt; O
+</pre></figure>
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
+    <h2>The skills</h2>
+<figure class="diagram" aria-label="How the 4 skills and the service context combine"><pre class="mermaid">
+flowchart TB
+    CP[&quot;case-communication-patterns&lt;br/&gt;what to say&quot;] --&gt; GC
+    GK[&quot;govuk-content&lt;br/&gt;how to write it&quot;] --&gt; GC
+    PA[&quot;privacy-aware-communications&lt;br/&gt;what it reveals&quot;] --&gt; GC
+    SC[&quot;service context&lt;br/&gt;in the user&#x27;s own project&quot;] -.-&gt;|&quot;read, never written back&quot;| GC
+    GC[&quot;government-communication&lt;br/&gt;the front door&quot;] --&gt; O[&quot;Draft + open decisions&quot;]
+</pre></figure>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Skill</th><th>What it does</th><th>Status</th></tr></thead>
+        <thead><tr><th>Skill</th><th>Job</th></tr></thead>
         <tbody>
-          <tr><td><code>government-communication</code></td><td>the front door. Sets up a service context, then uses the other 3 skills to draft or review a whole communication</td><td>evals run once</td></tr>
-          <tr><td><code>case-communication-patterns</code></td><td>the 9 moments, a pattern for each, and how to adapt them</td><td>evals run once</td></tr>
-          <tr><td><code>privacy-aware-communications</code></td><td>what a message reveals in each channel, and the communications part of a DPIA</td><td>tested with blind-marked evals</td></tr>
-          <tr><td><code>govuk-content</code></td><td>drafts and reviews content against GOV.UK content guidance</td><td>tested with blind-marked evals</td></tr>
+          <tr><td><code>government-communication</code></td><td>the front door. Establishes the service context, then runs the other skills in order</td></tr>
+          <tr><td><code>case-communication-patterns</code></td><td>the moments, the patterns for each, and how to recognise and adapt them</td></tr>
+          <tr><td><code>privacy-aware-communications</code></td><td>what a message reveals in each channel, applying confirmed decisions and flagging the rest</td></tr>
+          <tr><td><code>govuk-content</code></td><td>drafts and reviews wording against GOV.UK guidance</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="small" style="margin-top:16px">No pattern has been tested with users yet. The Copilot version hasn't been tested in Copilot. Sources and evals are on <a href="https://github.com/strachcity/gov-communication-skills">GitHub</a>.</p>
+    <p class="prose" style="margin-top:20px">Each skill's status is in the <a href="https://github.com/strachcity/gov-communication-skills#skills">README</a>. Each generic skill also works on its own, with or without a service context.</p>
+  </section>
+
+  <section id="service-context">
+    <h2>The service context</h2>
+    <p class="prose">A service context is what the plugin needs to know about one service. It lives with the user, not here:</p>
+    <ul>
+      <li>a file in their own project, like <code>service-context.md</code></li>
+      <li>a document in a claude.ai project, or a file they attach</li>
+      <li>or facts they give in the conversation</li>
+    </ul>
+
+    <h3>What it can contain</h3>
+    <ul>
+      <li>what the service does</li>
+      <li>its users</li>
+      <li>terminology, including internal terms customers should never see</li>
+      <li>case states</li>
+      <li>known timescales</li>
+      <li>available channels</li>
+      <li>sender and contact information</li>
+      <li>tracking routes</li>
+      <li>formal or legally significant communications</li>
+      <li>confirmed policy or disclosure decisions</li>
+      <li>known constraints</li>
+      <li>justified departures from the generic patterns, with the reason</li>
+    </ul>
+    <div class="prose">
+      <p>Every section is optional. A missing fact stays a placeholder in the draft and is listed for the service to fill in.</p>
+      <p>Decisions made by a whole organisation, like a department's disclosure policy, can go in the service context too. The service context says where each one came from.</p>
+    </div>
+
+    <h3>How each fact is recorded</h3>
+    <div class="cols">
+      <div>
+        <p>Each fact or decision records:</p>
+        <ul>
+          <li><b>kind:</b> policy decision, communication judgement, precedent or hypothesis</li>
+          <li><b>source:</b> a document, meeting or person</li>
+          <li><b>status:</b> confirmed, needs confirmation or open question</li>
+          <li><b>owner:</b> who can confirm it, if known</li>
+          <li><b>last checked:</b> a date</li>
+        </ul>
+      </div>
+      <div>
+        <p>The kinds are:</p>
+        <ul>
+          <li><b>policy decision:</b> made by someone with authority, so it says who and when</li>
+          <li><b>communication judgement:</b> a design decision based on research or experience</li>
+          <li><b>precedent:</b> wording that was approved or rejected, with the reason if known</li>
+          <li><b>hypothesis:</b> from prototypes or workshops, not yet tested or agreed</li>
+        </ul>
+      </div>
+    </div>
+    <p class="prose">The skills use descriptive facts the user gives them, like the service name or contact details, as they are. Decisions, like timescales, consequences, channel and disclosure decisions, are only used if they're marked confirmed. A hypothesis or judgement is never treated as a policy decision.</p>
+
+    <h3>When there isn't one yet</h3>
+    <p>The front-door skill helps the user create one:</p>
+    <ol>
+      <li>Ask what the service does, and who it's for.</li>
+      <li>Read any documentation the user points to.</li>
+      <li>Draft the service context, in the format above.</li>
+      <li>Mark everything as "needs confirmation" unless the user confirms it.</li>
+      <li>List the open questions, and who could answer each.</li>
+    </ol>
+    <div class="prose">
+      <p>Anything taken only from published content stays "needs confirmation". Published content can be out of date or wrong, so it's never treated as the service's policy.</p>
+      <p>The skill offers the service context back to the user to save in their own project. It's never added to this repository.</p>
+      <p>The detailed format, with a template, is in the front-door skill, at <a href="https://github.com/strachcity/gov-communication-skills/blob/main/skills/government-communication/references/service-context.md"><code>skills/government-communication/references/service-context.md</code></a>.</p>
+    </div>
+  </section>
+
+  <section id="patterns">
+    <h2>Case communication patterns</h2>
+    <p class="prose">A moment is the situation, like "we're waiting on someone else". A pattern is the generic message for it.</p>
+
+    <h3>The moments</h3>
+    <p class="prose">The 9 moments, roughly in the order a case meets them. Not every service uses every moment, and the action and contact moments can happen at any point. <a href="https://github.com/strachcity/gov-communication-skills/blob/main/skills/case-communication-patterns/references/moments.md"><code>moments.md</code></a> has each moment's variants and evidence.</p>
+<figure class="diagram" aria-label="The 9 moments, grouped by stage"><pre class="mermaid">
+flowchart TB
+    subgraph submit[&quot;Submit&quot;]
+        M1[&quot;1. We&#x27;ve received it&quot;]
+    end
+    subgraph progress[&quot;Progress&quot;]
+        M2[&quot;2. Your case has moved on&quot;]
+        M3[&quot;3. We&#x27;re waiting on someone else&quot;]
+    end
+    subgraph decision[&quot;Decision&quot;]
+        M7[&quot;7. We&#x27;ve made a decision&quot;]
+        M8[&quot;8. What you applied for is on its way&quot;]
+    end
+    subgraph later[&quot;Later&quot;]
+        M9[&quot;9. You need to act before a date&quot;]
+    end
+    subgraph any[&quot;At any point&quot;]
+        M5[&quot;5. We need something from you&quot;]
+        M4[&quot;4. We&#x27;ll contact you&quot;]
+        M6[&quot;6. We couldn&#x27;t reach you&quot;]
+    end
+    submit --&gt; progress --&gt; decision --&gt; later
+    progress -.- any
+</pre></figure>
+    <p class="prose">Modifiers change how a moment's message is written. A follow-up is a separate message after a moment. For example:</p>
+<figure class="diagram" aria-label="Modifiers and a follow-up"><pre class="mermaid">
+flowchart LR
+    R([&quot;Reminder&quot;]) -.-&gt; M5[&quot;5. We need something from you&quot;]
+    F([&quot;Final reminder&quot;]) -.-&gt; M5
+    D([&quot;Delay&quot;]) -.-&gt; M3[&quot;3. We&#x27;re waiting on someone else&quot;]
+    M7[&quot;7. We&#x27;ve made a decision&quot;] --&gt; FB([&quot;Ask for feedback&lt;br/&gt;follow-up&quot;])
+</pre></figure>
+    <p>Each pattern contains:</p>
+    <ul>
+      <li><b>recognising it:</b> the customer's situation, their questions, and how to tell it from similar moments</li>
+      <li><b>the message:</b> substantially written, with every service fact as a placeholder, for each channel the moment suits</li>
+      <li><b>adapting it:</b> which placeholders the service fills, the variants (like action needed or not), and what must not change</li>
+      <li><b>checks:</b> legal effect, privacy questions and common failures</li>
+      <li><b>evidence:</b> what supports the pattern, and its status</li>
+    </ul>
+
+    <h3>What every message contains</h3>
+    <p class="prose">The Service Manual asks for these parts, and the examples we reviewed share them:</p>
+    <ol>
+      <li>What has happened, as a headline or first line.</li>
+      <li>A greeting with the customer's full name, for emails and letters.</li>
+      <li>The reference.</li>
+      <li>What happens next, and when.</li>
+      <li>What the customer needs to do and by when, or that they don't need to do anything.</li>
+      <li>What happens if they don't act, where that applies.</li>
+      <li>How to track progress or get help.</li>
+      <li>Who it's from.</li>
+    </ol>
+    <p>Each moment also has properties that change how it's written:</p>
+    <ul>
+      <li><b>legal effect:</b> is this a formal notice? Which messages have legal effect is a service fact. The skills flag it, they don't decide it</li>
+      <li><b>action:</b> does the customer need to do something, or nothing? The wording differs sharply</li>
+      <li><b>sensitivity:</b> what would the message reveal, and in which channel? This is a privacy question</li>
+    </ul>
+
+    <h3>How a pattern becomes a service message</h3>
+<figure class="diagram" aria-label="A generic pattern filled from the service context"><pre class="mermaid">
+flowchart LR
+    M[&quot;Generic pattern&lt;br/&gt;&#x27;We&#x27;re waiting on someone else&#x27;&quot;] --&gt; T[&quot;Service context fills the placeholders&quot;]
+    T --&gt; T1[&quot;who was asked&lt;br/&gt;(disclosure decision)&quot;]
+    T --&gt; T2[&quot;timescale&lt;br/&gt;(service fact)&quot;]
+    T --&gt; T3[&quot;sender and channel&lt;br/&gt;(service fact)&quot;]
+    T --&gt; T4[&quot;what if no reply&lt;br/&gt;(policy decision)&quot;]
+    T1 --&gt; R[&quot;Service message, checked for privacy&lt;br/&gt;and style, with any unfilled placeholder flagged&quot;]
+    T2 --&gt; R
+    T3 --&gt; R
+    T4 --&gt; R
+</pre></figure>
+
+    <h3>Channels for one moment</h3>
+    <p class="prose">The services we reviewed share a channel pattern: a brief text that points somewhere safer, with the detail in an email, a letter or behind a sign-in.</p>
+<figure class="diagram" aria-label="One moment across text message, email, letter and web page"><pre class="mermaid">
+flowchart LR
+    Mo[&quot;One moment&quot;] --&gt; SMS[&quot;Text message&lt;br/&gt;brief, no sensitive detail,&lt;br/&gt;points to email or tracking&quot;]
+    Mo --&gt; EM[&quot;Email&lt;br/&gt;full message anatomy&quot;]
+    Mo --&gt; LE[&quot;Letter&lt;br/&gt;for customers without email,&lt;br/&gt;or where the law needs one&quot;]
+    Mo --&gt; WP[&quot;Web page&lt;br/&gt;tracking and status, behind sign-in&quot;]
+</pre></figure>
+    <p class="interp">Interpretation: a pattern seen in more than one service. It stays a hypothesis for privacy purposes until a privacy source or a service's confirmed decision supports it.</p>
+  </section>
+
+  <section id="evidence">
+    <h2>Evidence and provenance</h2>
+    <p class="prose">The patterns were informed by research into real services. That research is recorded as evidence, not as part of the architecture.</p>
+    <ul>
+      <li>a published source, like a department's guidance on GOV.UK, is cited by name in the skill's <code>sources.md</code>, so anyone can check it</li>
+      <li>unpublished prototype work only shows that a moment occurs. No detail is recorded, and the service is not named</li>
+      <li>pattern names, skill text and examples are written in generic words, never a named service's words</li>
+      <li>a moment's status counts how many services show it, so evidence still matters without naming them</li>
+    </ul>
+
+    <h3>Adding a moment or pattern</h3>
+    <p>A moment can join the library when:</p>
+    <ul>
+      <li>a main source supports the need behind it, or it is seen in at least 2 services</li>
+      <li>it's written in generic words, with its evidence recorded as above</li>
+      <li>it's marked as a proposal until tested with users or confirmed by a content lead</li>
+    </ul>
+    <p class="prose">This rule does not apply to privacy. A practice seen in several services is not evidence of what is lawful.</p>
+  </section>
+
+  <section id="privacy">
+    <h2>Privacy and data protection</h2>
+
+    <h3>Where privacy knowledge comes from</h3>
+    <p class="prose">Only public sources inform the privacy skill. Practice that nobody owns, like rules agreed in a workshop, is not a source, and nor are unpublished documents.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Kind</th><th>Examples</th><th>Where it lives</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>The law, the regulator and GOV.UK guidance</td><td>UK GDPR, PECR, ICO guidance, Service Standard point 9, Service Manual, GOV.UK Notify security, Government Security Classifications</td><td><code>privacy-aware-communications</code></td><td>quoted from the source, not legal advice</td></tr>
+          <tr><td>Departments' published guidance</td><td>data protection and disclosure guidance published on GOV.UK</td><td><code>privacy-aware-communications</code>, as examples of how accountable organisations apply the law</td><td>examples, not rules for other organisations</td></tr>
+          <tr><td>Risk heuristics for each channel</td><td>"special category information, or wording that lets it be inferred, is high risk in a text message"</td><td><code>privacy-aware-communications</code>, marked as interpretation</td><td>describes a risk, not a policy. Needs a confirmed position from each organisation's DPO</td></tr>
+          <tr><td>An organisation's own decisions</td><td>a DPO's decision, a privacy notice, a disclosure policy</td><td>the user's service context</td><td>confirmed only for what it actually says</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="prose" style="margin-top:20px">There's no single cross-government disclosure policy on GOV.UK. Departments publish their own, and they apply the same principles: check identity before discussing a case, need to know, and lawful authority before telling a third party.</p>
+
+    <h3>What the privacy skill does</h3>
+    <ol>
+      <li>Spots what a message would reveal, in each channel.</li>
+      <li>Checks it against GOV.UK guidance, the law and ICO guidance, like data minimisation, security, and health as special category data.</li>
+      <li>Looks for a confirmed decision in the service context that covers it, and applies and cites it.</li>
+      <li>Otherwise, gives the risk heuristic and its lower-risk option, marked "needs confirmation", or flags the exact question and who should answer it.</li>
+    </ol>
+    <p class="prose">For a set of messages, it can list what each moment reveals in each channel. A DPO can review one table instead of every message, and it can feed a DPIA. Their answers become confirmed decisions in the service context.</p>
+<figure class="diagram" aria-label="Disclosure review loop: drafts, inventory, review, confirmed decisions"><pre class="mermaid">
+flowchart LR
+    A[&quot;Patterns +&lt;br/&gt;service context&quot;] --&gt; B[&quot;Draft&lt;br/&gt;communications&quot;]
+    B --&gt; C[&quot;Disclosure inventory&lt;br/&gt;what each message reveals&quot;]
+    C --&gt; D[&quot;IA, data protection&lt;br/&gt;and policy review&lt;br/&gt;the flagged questions&quot;]
+    D --&gt; E[&quot;Confirmed decisions&quot;]
+    E --&gt;|&quot;recorded by the service&quot;| A
+</pre></figure>
   </section>
 
   <section id="install">
@@ -325,10 +494,31 @@ td code{font-weight:700;font-size:15px}
   </section>
 </main>
 
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: "base",
+    securityLevel: "strict",
+    themeVariables: {
+      fontFamily: "Inter, Arial, sans-serif",
+      fontSize: "15px",
+      primaryColor: "#ffffff",
+      primaryBorderColor: "#0b0c0c",
+      primaryTextColor: "#0b0c0c",
+      lineColor: "#484949",
+      clusterBkg: "#ffffff",
+      clusterBorder: "#cecece",
+      edgeLabelBackground: "#f4f8fb"
+    },
+    flowchart: { curve: "basis", useMaxWidth: true, wrappingWidth: 280 }
+  });
+</script>
+
 <footer class="footer">
   <div class="w">
     <p><a href="https://github.com/strachcity/gov-communication-skills">github.com/strachcity/gov-communication-skills</a></p>
-    <p>Licensed under the Open Government Licence v3.0. Not an official GOV.UK publication, and not legal advice. The permit service, its decisions and the customer on this page are invented.</p>
+    <p>Licensed under the Open Government Licence v3.0. Not an official GOV.UK publication, and not legal advice.</p>
   </div>
 </footer>
 </body>

@@ -6,7 +6,8 @@ It works for any government service. The same plugin is used by every service, w
 
 This is a beta. Nothing here is legal advice, and nothing here is an official GOV.UK publication.
 
-Website and install guide: https://strachcity.github.io/gov-communication-skills/
+- [Demo](https://strachcity.github.io/gov-communication-skills/): how it works, with diagrams
+- [Install guide](https://strachcity.github.io/gov-communication-skills/install.html)
 
 ## What it does
 
