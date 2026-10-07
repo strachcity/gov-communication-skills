@@ -80,7 +80,7 @@ KNOWLEDGE_HOW = (
 README = """gov-communication-skills for Microsoft 365 Copilot, version {version}
 
 Full steps, with help if something goes wrong:
-{repo}#microsoft-365-copilot
+https://strachcity.github.io/gov-communication-skills/install.html#copilot
 
 In short:
 1. In Copilot Chat, select Create agent. If it asks you to describe your

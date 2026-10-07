@@ -4,19 +4,13 @@ Agent skills and supporting knowledge for designing and reviewing UK government 
 
 It works for any government service. The same plugin is used by every service, with no bespoke skill for each one. You tell it about your service, and it adapts generic case communication patterns using your service's facts.
 
-Nothing here is legal advice, and nothing here is an official GOV.UK publication.
+This is a beta. Nothing here is legal advice, and nothing here is an official GOV.UK publication.
+
+Website and install guide: https://strachcity.github.io/gov-communication-skills/
 
 ## What it does
 
 Government services repeatedly write the same kinds of case communication. The plugin holds generic patterns for them, and adapts each one using your service's facts.
-
-```mermaid
-flowchart LR
-    P["Reusable patterns<br/>one for each shared moment"] --> R
-    S["Service facts<br/>from your service context"] --> R
-    G["Guardrails<br/>GOV.UK content and privacy checks"] --> R
-    R["Ready-to-review communications<br/>a draft for each channel, plus open decisions"]
-```
 
 It doesn't invent your policy. Anything your service hasn't decided is listed for a person to decide.
 
@@ -103,7 +97,7 @@ Updates aren't automatic. To update, download again and repeat the steps.
 - Copilot can't find the files: you're looking inside the zip. Unzip it first, then upload from the folder
 - Copilot instructions cut short: clear the box, paste again, and check the last words
 
-The full install guide, with more help, is in `docs/install.html`.
+The [full install guide](https://strachcity.github.io/gov-communication-skills/install.html) has more help.
 
 ### Using it
 
