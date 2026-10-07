@@ -20,11 +20,11 @@ Use only public sources:
 
 Never use unpublished practice, workshop notes or "how we usually do it" as a source. `sources.md` lists every source and when it was checked.
 
-The ICO says some of its guidance is under review following the Data (Use and Access) Act. Check `sources.md` dates before relying on anything.
+The ICO says some of its guidance is under review following the Data (Use and Access) Act. When you cite ICO guidance, check its date in `sources.md`, and say it may change.
 
 ## Reference files
 
-- `references/principles.md`: always. The legal principles that bear on communications, quoted from the source
+- `references/principles.md`: always, for a review, a disclosure inventory or a DPIA. The legal principles that bear on communications, quoted from the source. If you're checking a draft adapted from a pattern, its checkpoints already name the questions, so read it only to cite a principle a checkpoint raises
 - `references/channels.md`: always. What each channel can expose, and risk heuristics for each, derived from the sources
 - `references/disclosure.md`: when a communication would tell someone something about a person, including the person themselves on a call, or a third party
 - `references/dpia.md`: when asked for a DPIA, or for a privacy assessment of a set of messages

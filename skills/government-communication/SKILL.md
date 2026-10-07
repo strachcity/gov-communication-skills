@@ -11,13 +11,30 @@ It works for any government service. Service facts come from a service context, 
 
 ## Reference files
 
-- `references/service-context.md`: always. What a service context contains, how to read one, and how to help the user create one
+- `references/service-context.md`: when helping the user create a service context, or taking facts from documentation. It has the template and the full rules. If the user gave you a service context, the rules in step 1 are enough
 
 The other skills in this plugin hold the guidance:
 
 - `case-communication-patterns`: which pattern fits, and the baseline copy
 - `privacy-aware-communications`: what the message can reveal, in each channel
 - `govuk-content`: how it's written
+
+## Read only what the task needs
+
+Each skill's own rules always apply. What changes is which reference files you read.
+
+**Drafting or adapting a message from a pattern**, the usual task:
+
+- `case-communication-patterns`: its SKILL.md, `references/moments.md`, and the one pattern file you need
+- `privacy-aware-communications`: its SKILL.md and `references/channels.md`. Add `references/disclosure.md` if the message tells someone about another person, and `references/kinds-of-message.md` for feedback, optional or promotional content
+- `govuk-content`: its SKILL.md. The baseline copy already follows the style guide, so read `references/style-a-to-z.md` only to check wording you add or change, and `references/channels.md` only for a channel the pattern has no baseline for
+
+**Other tasks** need more:
+
+- creating a service context: `references/service-context.md`
+- reviewing an existing message: `govuk-content` and `privacy-aware-communications` as those skills say, with all the references they mark for a review
+- a DPIA, or a disclosure inventory for a set of messages: `privacy-aware-communications` as that skill says
+- planning the messages for a case journey: `references/moments.md`. Read a pattern file only when you draft for that moment
 
 ## How it works
 
@@ -35,7 +52,21 @@ If there isn't one, help the user create one. Follow "When there isn't one yet" 
 
 If the user doesn't want to give any context, carry on. Use placeholders for every service fact.
 
-Use descriptive facts the user gives you, like the service name or contact details, without asking for a status. Use decisions, like timescales, consequences, channel and disclosure decisions, only if they're marked "confirmed". Anything else becomes a placeholder and goes on the list for the service. "2 kinds of fact" in `references/service-context.md` has the detail.
+Use descriptive facts the user gives you, like the service name or contact details, without asking for a status. Use decisions, like timescales, consequences, channel and disclosure decisions, only if they're marked "confirmed". Anything else becomes a placeholder and goes on the list for the service.
+
+When you read a service context:
+
+- a descriptive fact marked "needs confirmation" or "open question" isn't used
+- a fact taken from documentation, not given by the user, is listed under "Taken from documentation" with its source
+- if 2 facts conflict, use neither. Flag both
+- a decision with no status is "needs confirmation"
+- a hypothesis or communication judgement is never a policy decision, even if it's marked confirmed. Say so if you see one marked that way
+- "About the service" and "Users" are background, not facts to put in a message
+- "must" is right only if the service context says it's a legal requirement. Otherwise use "need to", and flag it
+- a message missing from "Formal or legally significant communications" is not confirmation it has no legal effect
+- a confirmed fact with no owner, or with an old date, can be used. Note the missing owner or the date
+
+These summarise "2 kinds of fact" and "Reading a service context" in `references/service-context.md`. If they differ, that file wins.
 
 ### 2. Understand the request
 

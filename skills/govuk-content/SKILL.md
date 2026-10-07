@@ -19,8 +19,8 @@ Work out these things from the request and the content. Only ask if a wrong gues
 
 Then read the reference files the task needs:
 
-- `references/style-a-to-z.md`: always, for any review or draft. It holds the A to Z style rules
-- `references/channels.md`: always, for the rules that apply to the channel, including what each channel can and cannot contain
+- `references/style-a-to-z.md`: always, for a review or for wording you write yourself. It holds the A to Z style rules. If you're adapting a pattern's baseline copy, which already follows them, read it only to check wording you add or change
+- `references/channels.md`: always, for the rules that apply to the channel, including what each channel can and cannot contain. If you're adapting a pattern's baseline copy for a channel it covers, read it only if you change the structure
 
 Each reference file separates what a source says from our interpretation of it. `sources.md` lists every source, with the date it was last checked.
 
