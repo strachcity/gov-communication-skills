@@ -93,12 +93,23 @@ flowchart TB
 
 ## The skills
 
-| Skill | Job | Status |
-|---|---|---|
-| `government-communication` | the front door. Establishes the service context, then runs the other skills in order | draft, evals run once |
-| `case-communication-patterns` | the moments, the patterns for each, and how to recognise and adapt them | draft. 9 moments, 3 modifiers and 1 follow-up, each with a pattern adapted for 3 invented services, evals run once |
-| `privacy-aware-communications` | what a message reveals in each channel, applying confirmed decisions and flagging the rest | tested, see `evals/results.md` |
-| `govuk-content` | drafts and reviews wording against GOV.UK guidance | tested, see `evals/results.md` |
+```mermaid
+flowchart TB
+    CP["case-communication-patterns<br/>what to say"] --> GC
+    GK["govuk-content<br/>how to write it"] --> GC
+    PA["privacy-aware-communications<br/>what it reveals"] --> GC
+    SC["service context<br/>in the user's own project"] -.->|"read, never written back"| GC
+    GC["government-communication<br/>the front door"] --> O["Draft + open decisions"]
+```
+
+| Skill | Job |
+|---|---|
+| `government-communication` | the front door. Establishes the service context, then runs the other skills in order |
+| `case-communication-patterns` | the moments, the patterns for each, and how to recognise and adapt them |
+| `privacy-aware-communications` | what a message reveals in each channel, applying confirmed decisions and flagging the rest |
+| `govuk-content` | drafts and reviews wording against GOV.UK guidance |
+
+Each skill's status is in the README.
 
 Each generic skill also works on its own, with or without a service context.
 
@@ -167,6 +178,45 @@ The detailed format, with a template, is in the front-door skill, at `skills/gov
 ## Case communication patterns
 
 A moment is the situation, like "we're waiting on someone else". A pattern is the generic message for it.
+
+### The moments
+
+The 9 moments, roughly in the order a case meets them. Not every service uses every moment, and the action and contact moments can happen at any point. `moments.md` has each moment's variants and evidence.
+
+```mermaid
+flowchart TB
+    subgraph submit["Submit"]
+        M1["1. We've received it"]
+    end
+    subgraph progress["Progress"]
+        M2["2. Your case has moved on"]
+        M3["3. We're waiting on someone else"]
+    end
+    subgraph decision["Decision"]
+        M7["7. We've made a decision"]
+        M8["8. What you applied for is on its way"]
+    end
+    subgraph later["Later"]
+        M9["9. You need to act before a date"]
+    end
+    subgraph any["At any point"]
+        M5["5. We need something from you"]
+        M4["4. We'll contact you"]
+        M6["6. We couldn't reach you"]
+    end
+    submit --> progress --> decision --> later
+    progress -.- any
+```
+
+Modifiers change how a moment's message is written. A follow-up is a separate message after a moment. For example:
+
+```mermaid
+flowchart LR
+    R(["Reminder"]) -.-> M5["5. We need something from you"]
+    F(["Final reminder"]) -.-> M5
+    D(["Delay"]) -.-> M3["3. We're waiting on someone else"]
+    M7["7. We've made a decision"] --> FB(["Ask for feedback<br/>follow-up"])
+```
 
 Each pattern will contain:
 
@@ -267,6 +317,15 @@ There's no single cross-government disclosure policy on GOV.UK. Departments publ
 
 For a set of messages, it can list what each moment reveals in each channel. A DPO can review one table instead of every message, and it can feed a DPIA. Their answers become confirmed decisions in the service context.
 
+```mermaid
+flowchart LR
+    A["Patterns +<br/>service context"] --> B["Draft<br/>communications"]
+    B --> C["Disclosure inventory<br/>what each message reveals"]
+    C --> D["IA, data protection<br/>and policy review<br/>the flagged questions"]
+    D --> E["Confirmed decisions"]
+    E -->|"recorded by the service"| A
+```
+
 ## How this differs from building an LLM
 
 We're not building or training a language model. We're writing what a general model reads before it starts work.
@@ -314,4 +373,4 @@ Evals need service facts to test adaptation. They use invented services, written
 
 ## Next steps
 
-`PLAN.md` has the current work package, in order.
+`PLAN.md` has the next steps.

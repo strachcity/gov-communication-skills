@@ -4,8 +4,6 @@ Moment 2 in `../moments.md`. Draft, last revised 6 October 2026.
 
 Lines starting with ">" are quotes. Lines starting with "Interpretation:" are ours. "How to use the baseline copy" in `../moments.md` explains the 2 kinds of placeholder.
 
-This pattern merges 2 earlier moments, "Work has started" and "Something has changed". See "Changes to the moments" in `../moments.md`. It's deliberately narrow.
-
 ## Purpose
 
 To tell the customer their case has reached a stage that changes what they can expect, when they'd otherwise wonder whether anything is happening.
@@ -165,29 +163,12 @@ Interpretation: a status page may be enough on its own for this moment, without 
 
 ## Evidence
 
-- **status:** seen in 2 services, counting both earlier moments. The need is supported by the Service Manual's description of transactional messages. Not yet tested with users
+- **status:** seen in 2 services. The need is supported by the Service Manual's description of transactional messages. Not yet tested with users
 - **Service Manual**, "Planning and writing text messages and emails": the quotes under "When to send it"
 - **HM Passport Office**, "How we communicate with customers" (published): tells customers when "we have finished automatic identity checks". Its staff must not add "anything in the letter about Public Protection concerns such as identity or fraud"
 - **unpublished design work in one service:** both "work has started" and a change of stage occur. No detail is recorded
-
-### Why the 2 moments were merged
-
-Interpretation, 6 October 2026:
-
-- "Work has started" had evidence from 1 unpublished service. Its message differed from "We've received it" only when there's a gap between receipt and work starting
-- most of the evidence for "Something has changed" was a wait ending, which is now part of "We're waiting on someone else"
-- what's left of both is the same message: the case has reached a stage that changes what the customer can expect
-- the "When to send it" test keeps it narrow, so it doesn't become a reason to send updates about internal steps
 
 ### Evidence gaps
 
 - no published source shows a "work has started" message
 - the only published evidence for a stage finishing is one service's identity check message
-
-### Adapted for invented services
-
-Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026:
-
-- "work has started after a 2-week queue" fitted variant A, but the decision timescale was a rule counting from an unclear date. The shared rule on timescales in `../moments.md` now covers this
-- a case passed to another organisation fitted "We're waiting on someone else", variant E, better than this pattern
-- a case word that is also an outcome produced "Your registration has been registered". The shared rule in `../moments.md` now covers this

@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-This repository holds agent skills and supporting knowledge for UK government customer communications. Read `README.md` for the layout and `ARCHITECTURE.md` for the design. This file covers how knowledge is added and the rules that keep the layers apart.
+This repository holds agent skills and supporting knowledge for UK government customer communications. `README.md` has the layout and `ARCHITECTURE.md` the design. Read them only when a task needs them. This file covers how knowledge is added and the rules that keep the layers apart.
 
 ## This repository is service-agnostic
 
@@ -119,3 +119,11 @@ Everything here follows the guidance it holds.
 ## Keep it small
 
 No build tooling, package manager, framework or schema validator. Add structure only when a real problem needs it, and say what the problem was.
+
+Skill files are read every time a skill runs, so keep them to what the agent needs to do the task.
+
+- no change history, old numbering or "this was" notes in skill files. Git history records them
+- evidence in a pattern file is its status, its sources and its gaps, not how the pattern was written
+- `PLAN.md` holds next steps only. Remove an item when it's done
+- `evals/results.md` holds the latest result for each case. Replace a row when a case is rerun
+- run only the evals for the skill you changed, once. See "Running evals without wasting usage" in `PLAN.md`

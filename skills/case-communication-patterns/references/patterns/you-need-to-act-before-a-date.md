@@ -266,15 +266,3 @@ You do not need to do anything if nothing has changed.
 ### Evidence gaps
 
 - the 2 Service Manual examples point in different directions: one is transactional, the other a subscription. Which a reminder is depends on the service. That's why "kind of message" is a checkpoint
-
-### Adapted for invented services
-
-Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026:
-
-- for any licence, "renewal due" and "expiring" overlapped. They merged into variant A
-- the baseline said "is due on" where an expiry needed "expires on". [due wording] was added
-- the copy implied renewing on the expiry date was in time. ((last date to act)) was added
-- [cost] wasn't used in the copy, and there was no licence number. Both are fixed
-- an annual review of an ongoing award didn't fit "not a live case". Variant B now covers reviews of something the customer already has
-- one service context said "must return" without saying it was a legal requirement. The [consequence] placeholder now says to flag this
-- a standing duty to report changes fitted no moment. Variant D was added for it

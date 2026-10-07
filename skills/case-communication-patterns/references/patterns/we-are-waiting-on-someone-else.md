@@ -95,7 +95,7 @@ Use the baseline copy below.
 
 ### B. Still waiting
 
-The service is still waiting after the first message. This was moment 16 (see "Changes to the moments" in `../moments.md`).
+The service is still waiting after the first message.
 
 Only send it if there's something new to say, like a new update date, that the service has chased, or that the customer can now help. Don't repeat variant A.
 
@@ -290,23 +290,3 @@ We'll update you by ((update date)).
 - **status:** seen in 2 services. No main source describes this need directly. Adapted for 3 invented services. Not yet tested with users
 - **HM Passport Office**, "How we communicate with customers" (published): tells customers when "we send an email to their digital referee asking them to complete the referee section of the application", when "the referee has completed the application", and when "we reject their referee and need a new one"
 - **unpublished design work in one service:** the moment occurs. No detail is recorded
-
-### Tested against the evidence
-
-Interpretation, from adapting this pattern back to each source:
-
-- both services tell the customer when the wait starts and when it ends. That supports variant C as part of this pattern
-- a published service names the role of a third party the customer chose. That added the "what the customer already knows" checkpoint
-- when the third party can't be used, a published service asks the customer for someone else. That's variant D, handing over to "We need something from you"
-- "no action needed" and "you need to act" need sharply different wording, so they're separate variants
-- the evidence doesn't say what services do if the third party never replies. [if no reply] stays a policy placeholder
-
-### Adapted for invented services
-
-Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026:
-
-- a channel-specific disclosure decision mapped cleanly onto the levels for describing the third party
-- one service passed the case to another organisation for the next stage, rather than waiting for information. Variant E was added
-- one service named a different organisation for each case. ((third party name)) was added
-- a third party linked to a person the customer cares for could reveal that person's health information. The "whose information" checkpoint was added
-- a service recorded chasing as a communication judgement. The checkpoint now says that doesn't settle a policy question

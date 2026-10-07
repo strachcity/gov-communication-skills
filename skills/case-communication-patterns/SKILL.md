@@ -13,7 +13,7 @@ This is a draft. The moments are proposals, tested and revised as evidence is ad
 
 ## Reference files
 
-- `references/moments.md`: always. The moments, the message anatomy, the modifiers, and the evidence for each moment
+- `references/moments.md`: always. The moments, the message anatomy, the modifiers and how to use the baseline copy
 - `references/patterns/<pattern>.md`: when drafting or adapting a message for a moment that has a pattern. Read only the pattern you need. Every moment has a pattern, and so does the "Ask for feedback" follow-up
 
 ## The service context

@@ -109,7 +109,7 @@ The service will contact the customer within a period, without a set time. Give 
 
 ## Modifiers that apply
 
-- **reminder:** before the contact, the same message again, shorter. This was moment 8 (see "Changes to the moments" in `../moments.md`)
+- **reminder:** before the contact, the same message again, shorter
 - **delay:** if the contact has to move
 
 ## Common failure modes
@@ -254,12 +254,3 @@ The call hours are one service's policy, not a rule for other services. That a p
 
 - no published source shows a message telling a customer a call is planned
 - no published source covers home or premises visits
-
-### Adapted for invented services
-
-Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026:
-
-- one service only uses letters and pointer texts, so nothing could announce a call the next day. The "arriving in time" checkpoint was added
-- the visit variant had no text, and the text left out how to recognise the officer. Both are fixed
-- the letter had a [missed consequence] placeholder but no line for it
-- when another organisation will make the contact, the hand-off belongs in "We're waiting on someone else", variant E

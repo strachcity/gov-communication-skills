@@ -104,7 +104,7 @@ Say what they've got, then what they haven't, then the conditions. Keep each in 
 
 ### D. Closed without a decision
 
-The case ends without a decision on its merits, for example because the customer didn't reply, asked to stop, or no longer needs it. This was moment 11 (see "Changes to the moments" in `../moments.md`).
+The case ends without a decision on its merits, for example because the customer didn't reply, asked to stop, or no longer needs it.
 
 - say the case is closed, and why, in one sentence
 - say what this means, like whether anything they paid or sent is returned. Only from the service context
@@ -327,17 +327,3 @@ Text, as a pointer:
 - no published source we've found shows how a government service words a refusal, or its reasons, in a customer message
 - no published source shows how services word a challenge route in a message
 - the closure evidence comes from one published service only
-
-### Adapted for invented services
-
-Interpretation, from adapting this pattern for a permit, a benefit and a registration service on 6 October 2026:
-
-- "We've [outcome] your [case]" failed for "not awarded". [outcome sentence] replaced it
-- one service had a 2-stage challenge route, a review then an appeal. [challenge route] now allows steps
-- the challenge deadline counted from the decision date, which the baseline didn't show. A decision date line was added, with a checkpoint on how the deadline is counted
-- the action and formal notice variants combined with the others, so they moved to "Apply with any variant"
-- one service granted and emailed a permit on the same day. "Issued at the same time" was added
-- the variant B advice put the challenge route after the reasons, but the baseline didn't. The baseline order now matches
-- variant D had only an email body. It now has a headline, a text, and a checkpoint on whether closing can be challenged
-- one service bans the word "approved". The [outcome] placeholder now warns about banned words
-- one service has a standing duty to report changes. An optional "If anything changes" section was added
