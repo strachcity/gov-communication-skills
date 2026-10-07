@@ -99,6 +99,102 @@ li{margin-bottom:6px}
   .cols,.installs{grid-template-columns:1fr}
   .diagram{padding:12px}
 }
+
+/* demo conversation, scoped to .tourwrap */
+.tourwrap{--line:#dfe3e6;--muted:#6f777b;--user:#e8f1f8;--ease:cubic-bezier(.2,.7,.2,1)}
+.tourwrap .sub{color:var(--dark-grey);max-width:44em}
+.tourwrap table{min-width:0;font-size:13.5px}
+.tourwrap caption{display:none}
+.tourwrap .window{background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  box-shadow:0 1px 2px rgba(11,12,12,.05),0 18px 40px -16px rgba(11,12,12,.22)}
+.tourwrap .chrome{display:flex;align-items:center;gap:8px;padding:11px 16px;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
+.tourwrap .dots{display:flex;gap:6px;margin-right:6px}
+.tourwrap .dots span{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.tourwrap .replay{margin-left:auto;background:none;border:1px solid var(--line);border-radius:999px;font:500 12px/1 Inter,Arial,sans-serif;color:var(--dark-grey);padding:6px 10px;cursor:pointer}
+.tourwrap .replay:hover{border-color:var(--dark-grey)}
+.tourwrap .app{display:grid;grid-template-columns:230px minmax(0,1fr)}
+.tourwrap .side{border-right:1px solid var(--line);background:#fafbfc;padding:14px 10px;font-size:13px;color:var(--muted)}
+.tourwrap .side-h{font-size:12px;padding:4px 10px 8px;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.tourwrap .skills{list-style:none;margin:0;padding:0}
+.tourwrap .skills li{display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:7px;transition:background-color .5s var(--ease),color .5s var(--ease)}
+.tourwrap .skills li i{width:8px;height:8px;border-radius:2px;background:var(--line);flex:none;transition:background-color .5s var(--ease)}
+.tourwrap .skills li.on{background:var(--pale-blue);color:var(--dark-blue)}
+.tourwrap .skills li.on i{background:var(--blue)}
+.tourwrap .side .ctx{margin-top:18px;border-top:1px solid var(--line);padding:12px 10px 0}
+.tourwrap .side .ctx b{display:block;color:var(--black);font-weight:600;margin-bottom:2px}
+.tourwrap .chat{position:relative;height:560px;overflow:hidden}
+.tourwrap .scenes{display:grid;padding:26px 30px 40px;transform:translateY(var(--follow,0px));transition:transform .8s var(--ease)}
+.tourwrap .scene{grid-area:1/1;display:grid;align-content:start;gap:18px;min-width:0;transition:opacity .4s var(--ease),visibility 0s}
+.tourwrap .scene:not(.active){opacity:0;visibility:hidden;transition:opacity .25s,visibility 0s .25s}
+.tourwrap .user{justify-self:end;max-width:86%;display:grid;gap:8px;justify-items:end}
+.tourwrap .bubble{background:var(--user);border-radius:14px 14px 4px 14px;padding:9px 13px;font-size:15px;min-height:1.6em}
+.tourwrap .caret{display:inline-block;width:1.5px;height:1.05em;background:var(--black);vertical-align:-2px;margin-left:1px;opacity:0}
+.tourwrap .typing .caret{opacity:1;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.tourwrap .attach{border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13px;background:var(--white);max-width:360px}
+.tourwrap .attach .k{font-size:12px;color:var(--muted);margin-bottom:4px}
+.tourwrap .attach div{display:flex;justify-content:space-between;gap:10px}
+.tourwrap .agent{display:grid;grid-template-columns:22px minmax(0,1fr);column-gap:12px}
+.tourwrap .mark{width:22px;height:22px;border-radius:6px;background:var(--blue);margin-top:1px}
+.tourwrap .thinking .mark{animation:breathe 1.2s var(--ease) infinite}
+@keyframes breathe{50%{opacity:.35}}
+.tourwrap .who{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;min-height:22px}
+.tourwrap .chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;border:1px solid var(--line);border-radius:999px;padding:2px 9px 2px 7px;color:var(--dark-grey)}
+.tourwrap .chip i{width:6px;height:6px;border-radius:1px;background:var(--blue)}
+.tourwrap .thinking .chip i{animation:breathe 1.2s var(--ease) infinite}
+.tourwrap .reply p{margin:0 0 10px;font-size:15px}
+.tourwrap .pl{font-weight:600;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:14px 0 6px}
+.tourwrap .sms{background:#e9e9eb;border-radius:16px;padding:10px 14px;font-size:14.5px;max-width:420px;margin:0 0 6px}
+.tourwrap .mail{border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:14px;max-width:520px}
+.tourwrap .mail p{font-size:14px;margin:0 0 6px}
+.tourwrap .ph{font-family:var(--mono);font-size:12.5px;color:var(--dark-blue);border-radius:3px;padding:0 3px;
+  background:linear-gradient(var(--pale-blue),var(--pale-blue)) no-repeat 0 0/0% 100%;transition:background-size .9s var(--ease)}
+.tourwrap .hl-on .ph{background-size:100% 100%}
+.tourwrap .fact{border-radius:3px;padding:0 2px;background:linear-gradient(#cfe4dc,#cfe4dc) no-repeat 0 0/0% 100%;transition:background-size .9s var(--ease)}
+.tourwrap .hl-on .fact{background-size:100% 100%}
+.tourwrap .decide{background:var(--light-yellow);border-left:5px solid var(--yellow);padding:10px 14px;font-size:14px;max-width:560px}
+.tourwrap .decide>b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.tourwrap .decide li b{font-weight:600}
+.tourwrap .decide ul{margin:0;padding-left:18px}
+.tourwrap .decide li{margin-bottom:3px}
+.tourwrap .used{font-size:13.5px;color:var(--dark-grey);max-width:560px}
+.tourwrap .used ul{margin:0;padding-left:18px}
+.tourwrap table{border-collapse:collapse;font-size:13.5px;max-width:560px;width:100%}
+.tourwrap th,.tourwrap td{text-align:left;padding:6px 10px 6px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.tourwrap th{font-size:12px;color:var(--muted);font-weight:600}
+.tourwrap .tag{display:inline-block;font-size:12px;font-weight:700;padding:1px 6px;background:var(--pale-blue);color:var(--dark-blue)}
+.tourwrap .tag.y{background:#ffee80;color:#7a3c1c}
+.tourwrap .tag.g{background:#cfe4dc;color:#083d29}
+.tourwrap .q{font-weight:600;border-left:3px solid var(--blue);padding-left:12px;margin-top:12px!important}
+.tourwrap .flag{color:#7a3c1c}
+.tourwrap .plan td{font-size:13px}
+.tourwrap .plan .s{display:block;font-size:12px;color:var(--muted)}
+.tourwrap .plan tr.zoom td{background:var(--light-grey)}
+.tourwrap .plan tr.zoom td:first-child{box-shadow:inset 3px 0 0 var(--blue);padding-left:8px}
+.tourwrap .plan tr.none td{color:var(--muted);font-style:italic}
+.tourwrap .record{border:1px solid var(--line);border-left:4px solid var(--green);border-radius:6px;padding:10px 14px;font-size:13.5px;max-width:460px}
+.tourwrap .record .k{font-size:12px;color:var(--muted);margin-bottom:4px}
+.tourwrap .record dl{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;margin:6px 0 0}
+.tourwrap .record dl div{display:contents}
+.tourwrap .record dt{color:var(--muted)}
+.tourwrap .record dd{margin:0}
+.tourwrap .step{opacity:0;transform:translateY(8px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.tourwrap .step.on{opacity:1;transform:none}
+.tourwrap .tour-nav{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
+.tourwrap .tour-nav button{position:relative;overflow:hidden;background:var(--white);border:1px solid var(--mid-grey);border-radius:999px;padding:10px 16px;font:500 14px/1 Inter,Arial,sans-serif;color:var(--dark-grey);cursor:pointer}
+.tourwrap .tour-nav button[aria-pressed="true"]{border-color:var(--black);color:var(--black)}
+.tourwrap .tour-nav .n{color:var(--muted);margin-right:6px}
+.tourwrap .tour-nav .bar{position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--blue)}
+.tourwrap .note{text-align:center;color:var(--muted);font-size:13px;margin-top:14px}
+@media (max-width:760px){
+.tourwrap .app{grid-template-columns:1fr}
+.tourwrap .side{display:none}
+.tourwrap .scenes{padding:18px 14px 30px}
+.tourwrap .chat{height:620px}
+}
+@media (prefers-reduced-motion:reduce){
+.tourwrap .step,.tourwrap .scene,.tourwrap .ph,.tourwrap .fact,.tourwrap .scenes{transition:none!important}
+}
 </style>
 </head>
 <body>
@@ -107,6 +203,7 @@ li{margin-bottom:6px}
   <div class="w">
     <a class="wordmark" href="#top">gov-communication-skills</a>
     <nav class="nav" aria-label="Sections">
+      <a href="#how-it-works">How it works</a>
       <a href="#idea">The idea</a>
       <a href="#service-context">Service context</a>
       <a href="#patterns">Patterns</a>
@@ -125,8 +222,110 @@ li{margin-bottom:6px}
   <p class="lede">Agent skills for Claude and Microsoft 365 Copilot. They adapt generic message patterns using your service's facts, check GOV.UK style and privacy, and list anything your service still needs to decide.</p>
   <div class="ctas">
     <a class="btn" href="install.html">Install</a>
-    <a href="#how">How it works</a>
+    <a href="#how-it-works">See how it works</a>
   </div>
+
+  <section id="how-it-works" class="tourwrap">
+    <h2>How I think this will work</h2>
+    <p class="sub">A scripted conversation, not a recording. It plans a whole case journey, zooms into one message, then records a policy decision.</p>
+  <div class="window" id="tour">
+    <div class="chrome">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <span>Your AI assistant, with gov-communication-skills</span>
+      <button class="replay" id="replay" type="button">Replay</button>
+    </div>
+    <div class="app">
+      <aside class="side" aria-hidden="true">
+        <div class="side-h">Skills</div>
+        <ul class="skills">
+          <li data-sk="gc"><i></i>government-communication</li>
+          <li data-sk="cp"><i></i>case-communication-patterns</li>
+          <li data-sk="pa"><i></i>privacy-aware-communications</li>
+          <li data-sk="gk"><i></i>govuk-content</li>
+        </ul>
+        <div class="ctx"><b>Service context</b><span id="ctx">none yet</span></div>
+      </aside>
+      <div class="chat" id="chat">
+        <div class="scenes" id="scenes">
+
+          <!-- 1: the whole journey -->
+          <div class="scene" data-scene="0">
+            <div class="user">
+              <div class="attach step"><div class="k">service-context.md</div><div><span>Permit service: case states, channels, timescales</span></div><div><span>3 confirmed decisions, 2 hypotheses</span></div></div>
+              <div class="bubble" data-type="Plan every message someone gets, from applying for a permit to it being issued."></div>
+            </div>
+            <div class="agent">
+              <div class="mark"></div>
+              <div class="reply">
+                <div class="who"><span class="chip"><i></i>government-communication</span><span class="chip"><i></i>case-communication-patterns</span><span class="chip"><i></i>privacy-aware-communications</span></div>
+                <p class="step">Here's the journey, mapped to the shared moments. 7 points need a message, and 1 doesn't.</p>
+                <div class="step"><table class="plan"><thead><tr><th>When</th><th>Moment</th><th>Customer acts?</th><th>Channels</th></tr></thead><tbody>
+                  <tr><td>application submitted</td><td>We've received it</td><td>no</td><td>text, email</td></tr>
+                  <tr><td>a document is missing</td><td>We need something from you<span class="s">with reminder and final reminder</span></td><td><b>yes, by a date</b></td><td>email, text</td></tr>
+                  <tr class="zoom"><td>a medical report is requested from the GP</td><td>We're waiting on someone else</td><td>no</td><td>text, email</td></tr>
+                  <tr><td>an inspection is booked</td><td>We'll contact you</td><td>be available</td><td>email, letter</td></tr>
+                  <tr class="none"><td>internal quality check</td><td colspan="3">no message needed. Next: the decision</td></tr>
+                  <tr><td>decision made</td><td>We've made a decision</td><td>only to challenge it</td><td>email, letter</td></tr>
+                  <tr><td>permit issued</td><td>What you applied for is on its way</td><td>no</td><td>email</td></tr>
+                  <tr><td>before expiry</td><td>You need to act before a date</td><td><b>yes, by a date</b></td><td>email, text</td></tr>
+                </tbody></table></div>
+                <p class="step" style="margin-top:12px">I've drafted the disclosure inventory for every version, so your DPO can review one table instead of every message.</p>
+                <div class="step decide"><b>Needs a service decision, by who decides</b><ul>
+                  <li><b>data protection officer:</b> can an email say we're waiting on the customer's GP? Can a text mention the inspection?</li>
+                  <li><b>policy lead:</b> what happens if the GP doesn't reply</li>
+                  <li><b>decision owner:</b> does a refusal need a letter to have legal effect?</li>
+                  <li><b>service team:</b> the timescale for a decision</li>
+                </ul></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2: zoom into one message -->
+          <div class="scene" data-scene="1">
+            <div class="user"><div class="bubble" data-type="Draft the message for when we're waiting on the GP."></div></div>
+            <div class="agent">
+              <div class="mark"></div>
+              <div class="reply">
+                <div class="who"><span class="chip"><i></i>case-communication-patterns</span><span class="chip"><i></i>privacy-aware-communications</span><span class="chip"><i></i>govuk-content</span></div>
+                <p class="pl step">Step 3 of the plan. Pattern: We're waiting on someone else, variant A</p>
+                <div class="step"><div class="sms">Your <span class="fact">permit application</span> is waiting for information from <span class="fact">someone else</span>. You do not need to do anything. We'll update you by <span class="fact">18 October 2026</span>.</div></div>
+                <div class="step mail"><p>Dear <span class="ph">((first name))</span> <span class="ph">((last name))</span></p><p>We're waiting for information we need from <span class="fact">someone else</span> before we can continue with your <span class="fact">permit application</span>.</p><p>You do not need to do anything now.</p><p><b>What happens next</b><br>We'll update you by <span class="fact">18 October 2026</span>, or sooner if we get what we need.</p></div>
+                <div class="step" style="margin-top:6px"><table><thead><tr><th>Version</th><th>What it reveals</th><th>Status</th></tr></thead><tbody><tr><td>Text</td><td>that the application is waiting. No third party, so nothing about health</td><td><span class="tag g">confirmed</span></td></tr><tr><td>Email</td><td>that a GP is involved, if named, so a health matter can be inferred. Special category</td><td><span class="tag y">open question</span></td></tr></tbody></table></div>
+                <div class="step decide" style="margin-top:12px"><b>Needs a service decision</b><ul><li>can the email say "your GP"? Naming a GP can reveal health information, which is special category data. Your service context records it as a hypothesis, not a decision. Until your DPO decides, the email says "someone else"</li><li>what happens if the GP doesn't reply. Left out until your policy lead confirms it</li></ul></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3: a decision flows back -->
+          <div class="scene" data-scene="2">
+            <div class="user"><div class="bubble" data-type="Our DPO has confirmed emails can say &quot;your GP&quot;. Texts still can't."></div></div>
+            <div class="agent">
+              <div class="mark"></div>
+              <div class="reply">
+                <div class="who"><span class="chip"><i></i>government-communication</span><span class="chip"><i></i>privacy-aware-communications</span></div>
+                <p class="step">I've recorded it in your service context:</p>
+                <div class="step record"><div class="k">service-context.md</div><b>Third party in email: "your GP"</b><dl><div><dt>kind</dt><dd>policy decision</dd></div><div><dt>owner</dt><dd>data protection officer</dd></div><div><dt>status</dt><dd><span class="tag g">confirmed</span></dd></div><div><dt>last checked</dt><dd>7 October 2026</dd></div></dl></div>
+                <p class="pl step">The email now says</p>
+                <div class="step mail"><p>We're waiting for information we need from <span class="fact">your GP</span> before we can continue with your <span class="fact">permit application</span>.</p></div>
+                <div class="step used" style="margin-top:10px"><b>It applies to every email in the plan</b> that mentions the GP, not just this one. The texts don't change. Those rows in the disclosure inventory are now confirmed.</div>
+                <div class="step decide" style="margin-top:12px"><b>Still open</b><ul><li><b>policy lead:</b> what happens if the GP doesn't reply</li><li><b>decision owner:</b> does a refusal need a letter?</li></ul></div>
+                <p class="step q">Save the updated service-context.md in your project, so the next draft starts from these decisions.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tour-nav" role="group" aria-label="Scenes">
+    <button type="button" data-go="0"><span class="n">1</span>Plan the whole journey<span class="bar"></span></button>
+    <button type="button" data-go="1"><span class="n">2</span>Zoom into one message<span class="bar"></span></button>
+    <button type="button" data-go="2"><span class="n">3</span>Record a decision<span class="bar"></span></button>
+  </div>
+  <p class="note">Plays through on its own. Choose a scene to jump to it.</p>
+  </section>
 
   <section id="idea">
     <h2>The idea</h2>
@@ -521,5 +720,82 @@ flowchart LR
     <p>Licensed under the Open Government Licence v3.0. Not an official GOV.UK publication, and not legal advice.</p>
   </div>
 </footer>
+<script>
+(() => {
+  const tour = document.getElementById('tour');
+  const scenes = [...document.querySelectorAll('#tour .scene')];
+  const buttons = [...document.querySelectorAll('.tour-nav button')];
+  const chat = document.getElementById('chat');
+  const box = document.getElementById('scenes');
+  const ctx = document.getElementById('ctx');
+  const skillsFor = [['gc','cp','pa'], ['cp','pa','gk'], ['gc','pa']];
+  const ctxFor = ['permit service: 3 decisions confirmed', 'permit service: 3 decisions confirmed', 'permit service: 4 decisions confirmed'];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let run = 0, current = 0;
+
+  const wait = (ms, id) => new Promise((ok, no) => setTimeout(() => id === run ? ok() : no('stop'), reduce ? 0 : ms));
+
+  function follow(step) {
+    const bottom = step.getBoundingClientRect().bottom - box.getBoundingClientRect().top;
+    const over = bottom + 40 - chat.clientHeight;
+    box.style.setProperty('--follow', over > 0 ? `-${over}px` : '0px');
+  }
+
+  function reset(scene) {
+    scene.querySelectorAll('.step').forEach(s => s.classList.remove('on'));
+    scene.querySelectorAll('.bubble').forEach(b => b.innerHTML = '<span class="caret"></span>');
+    scene.querySelectorAll('.who').forEach(w => w.style.visibility = 'hidden');
+    scene.classList.remove('hl-on', 'thinking', 'typing');
+    box.style.setProperty('--follow', '0px');
+  }
+
+  async function play(i, id) {
+    current = i;
+    scenes.forEach((s, n) => s.classList.toggle('active', n === i));
+    buttons.forEach((b, n) => { b.setAttribute('aria-pressed', n === i); b.querySelector('.bar').style.cssText = 'width:0'; });
+    document.querySelectorAll('#tour .skills li').forEach(li => li.classList.remove('on'));
+    ctx.textContent = ctxFor[i];
+    const scene = scenes[i];
+    reset(scene);
+    const steps = [...scene.querySelectorAll('.step')];
+    const user = scene.querySelector('.user');
+    // attachments in the user message appear first
+    for (const s of user.querySelectorAll('.step')) { s.classList.add('on'); await wait(500, id); }
+    const bubble = scene.querySelector('.bubble');
+    const text = bubble.dataset.type;
+    scene.classList.add('typing');
+    for (let c = 1; c <= text.length; c++) {
+      bubble.innerHTML = text.slice(0, c) + '<span class="caret"></span>';
+      await wait(28, id);
+    }
+    scene.classList.remove('typing');
+    bubble.innerHTML = text;
+    await wait(400, id);
+    scene.classList.add('thinking');
+    scene.querySelector('.who').style.visibility = 'visible';
+    skillsFor[i].forEach(k => document.querySelector(`.skills [data-sk="${k}"]`).classList.add('on'));
+    await wait(1600, id);
+    scene.classList.remove('thinking');
+    for (const s of steps.filter(s => !user.contains(s))) {
+      s.classList.add('on');
+      follow(s);
+      await wait(900, id);
+    }
+    scene.classList.add('hl-on');
+    const bar = buttons[i].querySelector('.bar');
+    bar.style.cssText = `width:0;transition:none`;
+    await wait(30, id);
+    bar.style.cssText = `width:100%;transition:width ${reduce ? 0 : 6}s linear`;
+    await wait(6000, id);
+    play((i + 1) % scenes.length, id).catch(() => {});
+  }
+
+  function start(i) { run++; play(i, run).catch(() => {}); }
+  buttons.forEach((b, n) => b.addEventListener('click', () => start(n)));
+  document.getElementById('replay').addEventListener('click', () => start(current));
+  const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); start(0); } }, { threshold: .3 });
+  io.observe(tour);
+})();
+</script>
 </body>
 </html>
