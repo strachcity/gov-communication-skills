@@ -20,7 +20,7 @@ python3 ports/build.py            build into ports/dist/
 python3 ports/build.py --check    validate only, write nothing
 ```
 
-You don't need to run it to publish. The `Publish downloads` GitHub Action runs it on every push to `main` that changes a skill, and attaches the zips to the `downloads` release. The README links there.
+You don't need to run it to publish. The `Publish downloads` GitHub Action runs it on every push to `main` that changes a skill, and attaches the zips to the `downloads` release. The README and `docs/install.html` link there, and both hold the install steps. Change them together.
 
 ## What it builds
 

@@ -79,18 +79,21 @@ KNOWLEDGE_HOW = (
 
 README = """gov-communication-skills for Microsoft 365 Copilot, version {version}
 
-Full steps: {repo}#use-it-in-microsoft-365-copilot
+Full steps, with help if something goes wrong:
+{repo}#microsoft-365-copilot
 
 In short:
-1. In Copilot Chat, select Create agent. If it opens a chat with the agent
-   builder, select Skip or Configure.
-2. Open "{instructions}", select everything, copy it, and paste it into the
-   Instructions box.
-3. Under Skills, upload each of the {count} zip files in "{skills}", one at a
+1. In Copilot Chat, select Create agent. If it asks you to describe your
+   agent, select Skip, or choose Configure instead of Describe.
+2. In Name, enter: GOV.UK communications
+3. Open "{instructions}", select everything, copy it, and paste it into the
+   Instructions box. Check the last words are "Open Government Licence v3.0."
+4. Under Skills, upload each of the {count} zip files in "{skills}", one at a
    time. Do not unzip them and do not rename them.
    No Skills option? Under Knowledge, upload the {count} files in
-   "{knowledge}" instead.
-4. Select Create.
+   "{knowledge}" instead. No upload option at all? Skip this step.
+5. Switch off web search, Create images and Discourage model knowledge.
+6. Select Create.
 
 Cannot upload the files? You may be looking inside the zip without having
 extracted it. On Windows, right-click the zip and choose Extract All. On a
