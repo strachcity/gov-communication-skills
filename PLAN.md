@@ -13,10 +13,11 @@ Last updated 7 October 2026.
 
 ## Next steps
 
-1. Test with a new team. Give the plugin to someone outside this work, with only the README. Ask them to set up a service context and draft messages for their own service. Record where they got stuck, and fix the instructions rather than adding rules.
-2. Run the blind evaluation for the patterns and the front door. Run each eval once with the skills and once without, marked by a separate agent that can't tell which is which. Rerun only the cases that fail or look inconsistent.
-3. Test the patterns with users. A test pack can be written then.
-4. Test the Microsoft 365 Copilot port, following `ports/testing.md`. Confirm Agent Builder's limits on skills and knowledge files against Microsoft's guidance, and update `ports/build.py` if they differ.
+1. Run the government-communication and privacy-aware-communications evals once, including the 5 new cases. Both skills now say a draft uses the lower-risk wording until a decision is confirmed, and the voicemail and link guidance changed.
+2. Test with a new team. Give the plugin to someone outside this work, with only the README. Ask them to set up a service context and draft messages for their own service. Record where they got stuck, and fix the instructions rather than adding rules.
+3. Run the blind evaluation for the patterns and the front door. Run each eval once with the skills and once without, marked by a separate agent that can't tell which is which. Rerun only the cases that fail or look inconsistent.
+4. Test the patterns with users. A test pack can be written then.
+5. Test the Microsoft 365 Copilot port, following `ports/testing.md`. Confirm Agent Builder's limits on skills and knowledge files against Microsoft's guidance, and update `ports/build.py` if they differ.
 
 ## Running evals without wasting usage
 

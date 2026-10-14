@@ -44,6 +44,8 @@ Interpretation, for every channel:
 - treat what is visible before opening (sender, subject, preview, envelope) as revealed to anyone who sees the device or the post
 - treat inference the same as stating it. A sender name naming a medical team reveals health information as surely as naming a condition
 - the reference number is personal data, because it identifies the person's case. It's usually needed, so include it, but do not add other identifiers
+- a reference format, like a prefix, can reveal the service or team as much as a name can
+- an organisation may have its own policy on links or channels that is stricter than the Service Manual. If the service context doesn't record one, ask. Never assume there's none
 
 ## Text messages
 
@@ -111,6 +113,7 @@ Interpretation: 2 departments' published guidance apply the security principle i
 Risk heuristics (interpretation):
 
 - **high risk:** anything about the case in a voicemail. The lower-risk option says who is calling, a reference if needed, and how to call back
+- **raised risk:** the person's name, or a reference, in a voicemail. Both are personal data. A voicemail can reach the wrong person through a misdial, a shared phone or an out-of-date number. Leaving the name out discloses less, but the right person may not know the message is for them. Flag the trade-off for the DPO
 - **high risk:** discussing the case on a call before checking the person's identity. See `disclosure.md`
 
 ## Web pages and status trackers

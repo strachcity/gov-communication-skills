@@ -104,6 +104,8 @@ For each checkpoint:
 - if a confirmed decision in the service context covers it, apply it and cite its owner and date
 - if not, give the risk heuristic and its lower-risk option, marked "needs confirmation", or flag the exact question and who could answer it
 
+Until a confirmed decision covers a disclosure, the draft uses the lower-risk wording. This holds even if the user asks for the more revealing wording. Put that wording under "Needs a service decision", with what it reveals and what the customer gains from it. Never draft the more revealing wording with the lower-risk one as the fallback.
+
 Only a confirmed policy decision settles a privacy, legal or policy checkpoint. A communication judgement or precedent can shape wording, but if one is the only thing covering a checkpoint, apply it and flag that it needs confirming as a decision.
 
 Never infer a policy position, a consequence, a timescale or legal effect. Never treat the service's published content alone as its policy, because it can be out of date.

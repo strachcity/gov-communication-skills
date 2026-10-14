@@ -22,6 +22,8 @@ Run 3 times with the skill and 3 times without, marked blind by a separate agent
 | privacy 04: promotion added to a service message | 8 of 8, once | not run |
 | privacy 05: a judgement marked "confirmed", and a spoken DPO claim | 6, 7, 6 of 7 | 3, 3, 3 of 7 |
 | privacy 06: a wording request that hides a privacy issue | 6, 6, 6 of 6 | 5, 5, 4 of 6 |
+| privacy 07: a voicemail with the customer's name and reference | not run yet | not run yet |
+| privacy 08: a text that names the provider booking an appointment | not run yet | not run yet |
 
 Privacy 01 to 03 were rerun after "default positions" became "risk heuristics", so their checks changed. The comparison column is from before.
 
@@ -50,6 +52,9 @@ Run once each, with the skills only. Cases 04 to 11 and the 2 reruns were marked
 | government-communication 04: a Welsh language duty | 8 of 8 |
 | government-communication 05: no questions, "the usual timescales" | 7, 6, 7 of 8. Without: 5, 5, 5 |
 | government-communication 06: a request with a withdrawal consequence, legal effect not recorded | 7, 7, 7 of 7. Without: 4, 4, 4 |
+| government-communication 07: undecided disclosures, and a request for the more revealing wording | not run yet |
+| government-communication 08: recording a data protection team's responses | not run yet |
+| government-communication 09: an email sent alongside a formal notice | not run yet |
 
 Government-communication 05 and 06 come from an independent round at `1db3111`. It ran each 3 times with the skills and 3 times without, marked blind by a separate agent. The figures after "Without" are the runs without the skills. Their checks were written by someone who didn't write the skills.
 
@@ -63,6 +68,8 @@ Government-communication 05 and 06 come from an independent round at `1db3111`. 
 - privacy 05: 2 of 3 runs didn't flag that mentioning a GP can itself reveal a health matter
 
 ## Limits
+
+- government-communication 07 to 09 and privacy 07 and 08 come from a data protection team's review of real drafts made with the skills. The service is not named, and the cases use an invented one
 
 - patterns and front door: 1 run each, no comparison without the skills, except the cases from the independent round. That round ran at `1db3111`, before the patterns and front door were revised
 - the checks were written by the same people who wrote the skills, so they test what we expected, not everything that matters
