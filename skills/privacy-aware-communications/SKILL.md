@@ -68,6 +68,8 @@ If you were given a service context, look for a decision that covers the item. O
 
 Otherwise, give the risk heuristic: say what the risk is, give the lower-risk option, and mark it "needs confirmation". Never present a heuristic as the organisation's policy. If the heuristic doesn't settle it, flag the exact question and who should answer it, usually the DPO or information assurance team.
 
+If you draft or redraft a message, use the lower-risk option in the draft until a confirmed decision allows more. Give the more revealing wording as an option for the DPO, not the lower-risk one as a fallback.
+
 ## Boundaries
 
 Never decide:
