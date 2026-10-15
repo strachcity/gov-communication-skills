@@ -13,6 +13,7 @@ A service context holds one service's facts and decisions. It belongs to the use
 - 2 kinds of fact
 - Template
 - Reading a service context
+- Recording responses to a decision request
 - When there isn't one yet
 - Which facts each pattern needs
 
@@ -170,6 +171,20 @@ Status: confirmed | needs confirmation | open question
 - a fact that uses "must" is only a legal requirement if the service context says so. Otherwise use "need to", and flag it
 - a message missing from "Formal or legally significant communications" is not confirmation it has no legal effect
 - only a confirmed policy decision settles a privacy, legal or policy question. A communication judgement or precedent can shape wording
+
+## Recording responses to a decision request
+
+When a user brings back answers from a DPO, policy lead or other decision maker, record each answer at the strength it was given. Don't make it stronger or weaker.
+
+- **approved:** a policy decision, "confirmed", with the date. If the response gives only initials or a name, ask for the owner's role
+- **approved with a condition:** a confirmed decision for what was approved. Record the condition as an open question, with who could answer it, like another team's review
+- **not decided, with a steer:** keep the question open. Record the steer as "needs confirmation". It can shape wording, but it isn't a decision
+- **deferred, like "not for the first release":** keep it open, and record why and until when. A deferral is not a decision for or against
+- **ambiguous or contradictory, like "all good" with a condition that changes the proposal:** record it as an open question, and ask what was meant before drafting from it
+- **a question from the reviewer:** an open question, never a decision
+- **parts the response doesn't cover:** if the request asked several things and the answer covers only some, keep the rest open
+
+Record a person named only as a source of wording as the source, not the owner. Then say which drafts each recorded answer changes.
 
 ## When there isn't one yet
 

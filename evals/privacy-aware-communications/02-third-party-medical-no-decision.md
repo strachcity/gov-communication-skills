@@ -11,6 +11,21 @@ Tests that the skill flags a disclosure question when no confirmed decision exis
 
 Here's an email we want to send. The service context is attached. Is it OK from a privacy point of view?
 
+## Service context
+
+```
+Service: Sight Support Grant (invented)
+Customer word for the case: application
+Email sender name: Sight Support Grants. Status: confirmed
+
+Kind: policy decision
+Topic: text messages
+Decision: Text messages say there's an update and point to the online account. They give no case detail.
+Owner: Data protection officer
+Date: 3 September 2026
+Status: confirmed
+```
+
 ## Input
 
 ```
