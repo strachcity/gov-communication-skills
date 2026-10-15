@@ -21,6 +21,7 @@ A service context holds one service's facts and decisions: terminology, case sta
 3. If the user doesn't want to give any context, carry on with placeholders for every service fact.
 4. Use descriptive facts the user gives, like the service name, as given. Use decisions only if they're marked "confirmed".
 5. If the user confirms new facts, offer the updated service context back to them to save.
+6. When recording answers from a DPO or other decision maker, record each at the strength given. A condition, a steer, a deferral or an ambiguous answer stays an open question, not a confirmed decision.
 
 ## How you work
 Follow these steps in order, even when the request seems simple.

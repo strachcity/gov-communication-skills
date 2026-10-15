@@ -11,7 +11,7 @@ It works for any government service. Service facts come from a service context, 
 
 ## Reference files
 
-- `references/service-context.md`: when helping the user create a service context, or taking facts from documentation. It has the template and the full rules. If the user gave you a service context, the rules in step 1 are enough
+- `references/service-context.md`: when helping the user create or update a service context, taking facts from documentation, or recording responses from a decision maker. It has the template and the full rules. If the user gave you a service context, the rules in step 1 are enough
 
 The other skills in this plugin hold the guidance:
 
@@ -31,7 +31,7 @@ Each skill's own rules always apply. What changes is which reference files you r
 
 **Other tasks** need more:
 
-- creating a service context: `references/service-context.md`
+- creating or updating a service context: `references/service-context.md`
 - reviewing an existing message: `govuk-content` and `privacy-aware-communications` as those skills say, with all the references they mark for a review
 - a DPIA, or a disclosure inventory for a set of messages: `privacy-aware-communications` as that skill says
 - planning the messages for a case journey: `references/moments.md`. Read a pattern file only when you draft for that moment
