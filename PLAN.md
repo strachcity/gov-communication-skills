@@ -13,7 +13,7 @@ Last updated 7 October 2026.
 
 ## Next steps
 
-1. Say in `skills/government-communication/references/service-context.md` how to record a response that is conditional, deferred or ambiguous, then rerun government-communication 08. Also add the missing service context to privacy 02. See "Watch in the next run" in `evals/results.md`.
+1. Rerun government-communication 08 once, now its input mentions sharing contact details. If 09 again misses that a request is not a decision, add that to the "We need something from you" pattern. See "Watch in the next run" in `evals/results.md`.
 2. Test with a new team. Give the plugin to someone outside this work, with only the README. Ask them to set up a service context and draft messages for their own service. Record where they got stuck, and fix the instructions rather than adding rules.
 3. Run the blind evaluation for the patterns and the front door. Run each eval once with the skills and once without, marked by a separate agent that can't tell which is which. Rerun only the cases that fail or look inconsistent.
 4. Test the patterns with users. A test pack can be written then.

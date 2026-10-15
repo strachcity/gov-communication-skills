@@ -17,7 +17,7 @@ Run 3 times with the skill and 3 times without, marked blind by a separate agent
 | govuk-content 05: request to mention the GP in a text | 10, 10, 10 of 10 | 7, 7, 7 of 10 |
 | govuk-content 06: third-party update email | 9, 10, 10 of 10 | 5, 5, 5 of 10 |
 | privacy 01: sender name reveals health | 9 of 9, once | 4, 4, 4 of 8 |
-| privacy 02: medical email, no decision recorded | 8 of 9, once | 6, 8, 6 of 9 |
+| privacy 02: medical email, no decision recorded | 9 of 9, once | 6, 8, 6 of 9 |
 | privacy 03: medical messages, confirmed decision | 7 of 7, once | 6, 5, 5 of 7 |
 | privacy 04: promotion added to a service message | 8 of 8, once | not run |
 | privacy 05: a judgement marked "confirmed", and a spoken DPO claim | 7 of 7, once | 3, 3, 3 of 7 |
@@ -25,7 +25,7 @@ Run 3 times with the skill and 3 times without, marked blind by a separate agent
 | privacy 07: a voicemail with the customer's name and reference | 11 of 11, once | not run |
 | privacy 08: a text that names the provider booking an appointment | 10 of 10, once | not run |
 
-All 8 privacy cases were rerun once on 15 October 2026, after the lower-risk drafting change, marked blind by a separate agent. The "without skill" column is from earlier rounds, before the skill changed.
+All 8 privacy cases were rerun once on 15 October 2026. Privacy 02 was run again after its missing service context was added, after the lower-risk drafting change, marked blind by a separate agent. The "without skill" column is from earlier rounds, before the skill changed.
 
 Privacy 05 and 06 were written by someone who didn't write the skills.
 
@@ -53,17 +53,16 @@ Run once each, with the skills only. Cases 04 to 11 and the 2 reruns were marked
 | government-communication 05: no questions, "the usual timescales" | 8 of 8. Without, at `1db3111`: 5, 5, 5 |
 | government-communication 06: a request with a withdrawal consequence, legal effect not recorded | 7 of 7. Without, at `1db3111`: 4, 4, 4 |
 | government-communication 07: undecided disclosures, and a request for the more revealing wording | 11 of 11 |
-| government-communication 08: recording a data protection team's responses | 9 of 12 |
+| government-communication 08: recording a data protection team's responses | 11 of 12 |
 | government-communication 09: an email sent alongside a formal notice | 10 of 11 |
 
-All 9 government-communication cases were rerun once on 15 October 2026, after the lower-risk drafting change, with the skills only, marked blind by a separate agent. The figures after "Without" are from the independent round at `1db3111`. The checks for 05 and 06 were written by someone who didn't write the skills.
+All 9 government-communication cases were rerun once on 15 October 2026. Case 08 was run again after `service-context.md` said how to record responses, after the lower-risk drafting change, with the skills only, marked blind by a separate agent. The figures after "Without" are from the independent round at `1db3111`. The checks for 05 and 06 were written by someone who didn't write the skills.
 
 ## Watch in the next run
 
-- government-communication 08: recorded a deferred decision as "confirmed for the first release", treated a decision with an open condition as undecided, and didn't keep sharing contact details with the provider as an open question. `service-context.md` doesn't say how to record a conditional or deferred response
+- government-communication 08: after `service-context.md` said how to record responses, the rerun scored 11 of 12. It missed the open question about sharing contact details with the provider, but the case input never said they were shared. The input now says so. Rerun it
 - government-communication 09: said "this decision" could be misread, but didn't say plainly that a request to book is not a decision
 - government-communication 03: passed, but never used the words "personal data" for the contact's name and email address
-- privacy 02: the case says a service context is attached, but the case file has none, so the check that the skill reads it can't pass. Fix the case before the next run
 - privacy 08: gave the less revealing text as the draft, without its own "needs confirmation" label
 - case-communication-patterns 04: the draft used only confirmed outcome words, but the response's own notes said "refused"
 - case-communication-patterns 07: the visit date was written in, not left as a per-message value

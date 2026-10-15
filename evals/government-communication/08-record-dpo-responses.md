@@ -21,7 +21,7 @@ Organisation: Department for Community Support (invented)
 | 1 | Email sign-off | Sign off as "Disability Assessment Team" | Use the department name, not the team | RK: use the department name. PL: agree. Keep subject lines generic too |
 | 2 | Reference in texts | Give the reference in the first text | Can use the reference. No "DAT" prefix | RK: only where the customer needs to quote it. PL: is a unique reference safe to send by text? Ask the security team |
 | 3 | Is "review" neutral in texts? | Yes | Not decided. Avoid "review" where possible, let's learn first | RK: "your application" instead. PL: be as generic as possible |
-| 4 | Naming the provider that books assessments | Name it in emails only | "Our provider", keep it generic. Sam Okafor can give the current wording | RK: I think we already say "our provider"? |
+| 4 | Naming the provider that books assessments | Name it in emails only. Share the customer's phone number with it to arrange the assessment. Please confirm the basis for sharing | "Our provider", keep it generic. Sam Okafor can give the current wording | RK: I think we already say "our provider"? |
 | 5 | Voicemails | Say the department name and the customer's name | All good, as long as no name and no more information | RK: is the reference new each time? PL: risk of a misdial, so keep it generic if voicemails are allowed at all |
 | 6 | Links in emails | GOV.UK links in full | Links in emails when appropriate. Goes through the cyber team. Never in texts | PL: what is the department's current policy on links? |
 | 7 | Asking for medical evidence by email | Say what we need in the email body | Not for the first release, until the journey is worked through | RK: further discussion needed |
