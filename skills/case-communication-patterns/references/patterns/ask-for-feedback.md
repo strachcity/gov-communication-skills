@@ -117,9 +117,9 @@ After a call, appointment or visit. For phone or face-to-face support, the Servi
 
 Check these with `privacy-aware-communications`. Don't decide them here.
 
-- **kind of message:** is this a service message, research or promotion? Don't assume it's a service message. The ICO page on direct marketing in the public sector doesn't cover feedback requests. See `kinds-of-message.md`
+- **kind of message:** is this a service message, research or promotion? Don't assume it's a service message. The ICO says genuine market research is not direct marketing, unless it includes promotion or feeds later marketing. It doesn't name feedback surveys. See `kinds-of-message.md`
 - **lawful basis:** what lawful basis supports processing the person's data to send it, and to collect their answers? This is for the DPO
-- **objections and preferences:** can the customer stop these requests, and does the service have to? This is for the DPO
+- **objections and preferences:** can the customer stop these requests, and does the service have to? UK GDPR needs the right to object brought to their attention by the first communication, not necessarily in every message. Whether an existing route, like the privacy notice, does this is for the DPO
 - **free text:** don't invite sensitive case details by default. If the research needs them, the research design must support it, and the DPO should confirm
 - **survey domain:** the Service Manual says emails and texts should "only send links which point to the GOV.UK domain". Many survey tools use other domains. This is a conflict to flag, not to resolve
 - **survey supplier:** if a supplier runs the survey, they may process the customer's data. Flag it for the DPO
@@ -201,8 +201,9 @@ It takes about [how long]. It's optional, and it will not affect your [case]: [s
 - **Service Manual**, "Measuring user satisfaction": the quotes under "When to send it", and its points about users who drop out and about assisted digital support
 - **Service Manual**, "Planning and writing text messages and emails": the rule on GOV.UK links
 - **ICO**, "Direct marketing and the public sector": doesn't cover feedback requests. See `kinds-of-message.md`
+- **ICO**, "Identify direct marketing": genuine market research is not direct marketing. See `kinds-of-message.md`
 
 ### Evidence gaps
 
-- no published source we've found says whether a public sector feedback request is a service message
+- no published source we've found names feedback or satisfaction surveys, or says whether they need an opt-out in each message
 - no published source shows how services word a feedback invitation

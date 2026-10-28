@@ -9,6 +9,7 @@ The ICO says some of its guidance is under review following the Data (Use and Ac
 | Source | Address | What we took | Used in | Last checked |
 |---|---|---|---|---|
 | UK GDPR | https://www.legislation.gov.uk/eur/2016/679/contents | Article 5 principles, Articles 6 and 9, as quoted by the ICO | principles.md | 6 October 2026 |
+| UK GDPR Article 21: Right to object | https://www.legislation.gov.uk/eur/2016/679/article/21 | the right to object must be brought to the person's attention by the first communication | kinds-of-message.md | 28 October 2026 |
 | Privacy and Electronic Communications Regulations 2003 | https://www.legislation.gov.uk/uksi/2003/2426/contents | context for direct marketing rules, as explained by the ICO | principles.md | 6 October 2026 |
 
 ## ICO
@@ -21,7 +22,7 @@ The ICO says some of its guidance is under review following the Data (Use and Ac
 | Data security advice | https://ico.org.uk/for-organisations/advice-for-small-organisations/information-security/data-security-advice/ | special category data, conditions, the fact of receiving a message can reveal information | principles.md, channels.md, dpia.md | 6 October 2026 |
 | What is personal data? | https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/personal-information-what-is-it/what-is-personal-data/what-is-personal-data/ | information about companies, sole traders, partners, directors and employees | principles.md | 6 October 2026 |
 | Direct marketing and the public sector | https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/direct-marketing-and-the-public-sector/ | service messages and examples, mixed and promotional messages, the right to object | principles.md, kinds-of-message.md | 6 October 2026 |
-| Identify direct marketing | https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/direct-marketing-guidance/identify-direct-marketing/ | service messages | principles.md | 6 October 2026 |
+| Identify direct marketing | https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/direct-marketing-guidance/identify-direct-marketing/ | service messages, genuine market research is not direct marketing | principles.md, kinds-of-message.md | 28 October 2026 |
 | Data Protection Impact Assessments (DPIAs) | https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/accountability-and-governance/data-protection-impact-assessments-dpias/ | DPIA process | dpia.md | 6 October 2026 |
 | How do we do a DPIA? | https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/accountability-and-governance/data-protection-impact-assessments-dpias/how-do-we-do-a-dpia/ | the 7 steps, template, risk assessment | dpia.md | 6 October 2026 |
 | When do we need to do a DPIA? | https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/accountability-and-governance/data-protection-impact-assessments-dpias/when-do-we-need-to-do-a-dpia/ | high risk factors | dpia.md | 6 October 2026 |

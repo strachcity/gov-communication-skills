@@ -2,7 +2,7 @@
 
 How to tell what kind of message something is, and what that means for whether it can be sent.
 
-Last checked: 6 October 2026
+Last checked: 28 October 2026
 
 Lines starting with ">" are quoted from the source. Lines starting with "Interpretation:" are ours. This is not legal advice.
 
@@ -11,6 +11,7 @@ Lines starting with ">" are quoted from the source. Lines starting with "Interpr
 - Why consent is the wrong starting question
 - The 3 questions
 - What the ICO says
+- Feedback and research requests
 - 4 kinds of message
 - What this means for the patterns
 
@@ -71,6 +72,26 @@ On the right to object:
 
 The page doesn't cover feedback requests or surveys.
 
+## Feedback and research requests
+
+From the ICO's "Identify direct marketing":
+
+> Contacting people to conduct genuine market research is not direct marketing. However, if your market research messages include promotional material, or if the research is ultimately being carried out for you or others to send direct marketing to the people involved, then this is direct marketing. This is sometimes referred to as 'sugging' (selling under the guise of research).
+
+The page doesn't mention customer satisfaction or feedback surveys by name. It doesn't say whether research messages need an opt-out.
+
+From UK GDPR Article 21, on the right to object to processing under public task or legitimate interests:
+
+> At the latest at the time of the first communication with the data subject, the right referred to in paragraphs 1 and 2 shall be explicitly brought to the attention of the data subject and shall be presented clearly and separately from any other information.
+
+Interpretation, needs confirmation by the DPO:
+
+- a feedback request that is genuine research, with no promotion, is likely not direct marketing. If so, PECR's marketing rules, including an opt-out in each message, would not apply
+- it stops being genuine research if it includes promotion, or if the answers are used to target the person with marketing
+- not being direct marketing doesn't remove the need for a lawful basis, transparency or respect for the right to object
+- Article 21 needs the right to object brought to the person's attention by the first communication. It doesn't say this must be in every message. Whether a privacy notice or another existing route meets this is for the DPO
+- whether a service must stop sending feedback requests when someone objects is for the DPO
+
 ## 4 kinds of message
 
 Interpretation, from the ICO guidance above. Needs confirmation by the organisation's DPO.
@@ -79,7 +100,7 @@ Interpretation, from the ICO guidance above. Needs confirmation by the organisat
 |---|---|---|---|
 | core service message | a receipt, a request for evidence, a decision | usually not needed just because it's an email or text | the lawful basis, transparency, and suitable contact details and channel |
 | optional service update | proactive progress updates, convenience reminders | may not be needed if it's necessary and proportionate to the service's function, but preferences and objections matter | whether the service treats it as optional, and how a person can stop it |
-| feedback or satisfaction request | "tell us about your experience" | depends on its purpose and lawful basis. Don't assume it's a service message | whether it's research or promotion, and whether taking part is genuinely optional |
+| feedback or satisfaction request | "tell us about your experience" | depends on its purpose and lawful basis. Genuine research with no promotion is likely not direct marketing. Don't assume it's a service message | the lawful basis, whether taking part is genuinely optional, and how the right to object is brought to the person's attention |
 | promotional message | promoting an unrelated or paid-for service, or fundraising | direct marketing rules may apply | PECR and UK GDPR |
 
 Interpretation, for every kind:
@@ -91,7 +112,7 @@ Interpretation, for every kind:
 ## What this means for the patterns
 
 - messages for case moments, like "We've received it" or "We need something from you", are likely to be core service messages
-- a follow-up asking for feedback is a different kind of message, even when attached to a case message. Flag its classification
+- a follow-up asking for feedback is a different kind of message, even when attached to a case message. Flag its classification, and how a person can object
 - if a service adds promotion to a case message, like encouraging take-up of another service, flag that it may become direct marketing
 
 ## Sources
